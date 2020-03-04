@@ -36,7 +36,7 @@ spring:
         # 连接池最小空闲链接
         min-idle: 0
     # 链接超时时间
-    timeout: 10000
+    timeout: 30000
 # 集成Mybatis
 mybatis:
   # Mybatis映射

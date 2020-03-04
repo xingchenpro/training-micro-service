@@ -15,12 +15,43 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LoginController {
 
-    /*必须POST请求，否则跳转到此页面*/
-    @RequestMapping(value="/login_page",method = RequestMethod.POST)
-    public Result loginPage() {
-        Result result = new Result();
-        result.setBusErrInfos("未登录","未登录");
+
+    /**
+     * 登录成功
+     *
+     * @return
+     */
+    @RequestMapping("/success")
+    public Result success() {
+        Result result = new Result(200, "登录成功!");
         return result;
+    }
+
+    /**
+     * 登录失败
+     *
+     * @return
+     */
+    @RequestMapping("/fail")
+    public Result fail() {
+        Result result = new Result();
+        result.setErrInfos(401, "用户名或密码错误!");
+        return result;
+    }
+
+    /**
+     * 注销
+     *
+     * @return
+     */
+    @RequestMapping("/loginPage")
+    public Result page() {
+        return new Result(401, "请登录");
+    }
+
+    @RequestMapping(value = "/admin")
+    public String admin() {
+        return "admin";
     }
 
 }

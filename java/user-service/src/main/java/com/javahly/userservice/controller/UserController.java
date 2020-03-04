@@ -29,25 +29,25 @@ public class UserController {
     UserService userService;
 
     //修改密码
-    @RequestMapping(value = "/password",method = RequestMethod.PATCH)
-    public Result updatePassWord(HttpServletRequest request, String newPassword, String oldPassword){
+    @RequestMapping(value = "/password", method = RequestMethod.PATCH)
+    public Result updatePassWord(HttpServletRequest request, String newPassword, String oldPassword) {
         Result result = new Result();
         Map<String, Object> paramMap = new HashMap<>();
         String username = (String) request.getSession().getAttribute("username");
-        if(username!=null&&!"".equals(username.trim())){
-            paramMap.put("username",username);
+        if (username != null && !"".equals(username.trim())) {
+            paramMap.put("username", username);
             User user = userService.selectUser(paramMap);
-           if(BPwdEncoderUtils.matches(oldPassword,user.getPassword())){
-               try {
-                   paramMap.put("newPassword",BPwdEncoderUtils.BCryptPassword(newPassword));
-                   userService.updatePassWord(paramMap);
-               } catch (Exception e) {
-                   result.setBusErrInfos("","修改密码失败!!!");
-                   e.printStackTrace();
-               }
-           }else{
-               result.setErrInfos(403,"修改密码失败!!!","原始密码错误!!!");
-           }
+            if (BPwdEncoderUtils.matches(oldPassword, user.getPassword())) {
+                try {
+                    paramMap.put("newPassword", BPwdEncoderUtils.BCryptPassword(newPassword));
+                    userService.updatePassWord(paramMap);
+                } catch (Exception e) {
+                    result.setErrInfos(403, "修改密码失败!!!");
+                    e.printStackTrace();
+                }
+            } else {
+                result.setErrInfos(403, "修改密码失败!!!");
+            }
         }
         return result;
     }
