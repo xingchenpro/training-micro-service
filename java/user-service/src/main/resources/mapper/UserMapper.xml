@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.javahly.userservice.dao.UserDao">
+
+    <resultMap id="userMap" type="User">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <collection property="roles" ofType="Role">
+            <result property="name" column="name"/>
+        </collection>
+    </resultMap>
+
+    <!--修改密码-->
+    <update id="updatePassWord" parameterType="Map">
+        UPDATE `user`
+        <set>
+            <if test="newPassword!=null">
+                password = #{newPassword},
+            </if>
+        </set>
+        WHERE username = #{username}
+    </update>
+
+    <!--根据用户名查询用户-->
+    <select id="selectUser" parameterType="Map" resultType="User">
+        SELECT * FROM `user` WHERE username = #{username}
+    </select>
+</mapper>
