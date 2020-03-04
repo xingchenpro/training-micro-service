@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
  * @author :hly
  * @github :https://github.com/huangliangyun
  * @blog :blog.csdn.net/Sirius_hly
- * @date :2018/11/28
+ * @date :2020/3/2
  */
-
+@Repository
 public interface LoginDao {
 
     //通过用户名查询用户

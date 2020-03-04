@@ -7,7 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
  * @github :https://github.com/huangliangyun
  * @blog :http://www.javahly.com/
  * @CSDN :blog.csdn.net/Sirius_hly
- * @date :2019/5/3
+ * @date :2020/3/2
  */
 public class BPwdEncoderUtils {
 

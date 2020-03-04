@@ -28,12 +28,11 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
         //httpServletResponse.sendRedirect("http://localhost:8081/v1/user/success");
         String username = authentication.getName();
         httpServletRequest.getSession().setAttribute("username", username);
-        System.err.println(httpServletRequest.getSession().getAttribute("username"));
         httpServletResponse.setContentType("application/json;charset=utf-8");
         PrintWriter out = httpServletResponse.getWriter();
         out.write("{\"resultCode\":\"200\",\"result\":\"登录成功!\",\"role\":" + "\"" + authentication.getAuthorities() + "\"}");
         out.flush();
         out.close();
-        log.info("登录成功!");
+        log.info("{} 登录成功!", httpServletRequest.getSession().getAttribute("username"));
     }
 }

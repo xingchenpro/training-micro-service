@@ -2,6 +2,12 @@ package com.javahly.userservice.util;
 
 import lombok.Data;
 
+/**
+ * @author :hly
+ * @github :https://github.com/huangliangyun
+ * @date :2020/3/2
+ * @QQ :1136513099
+ */
 @Data
 public class Result {
 

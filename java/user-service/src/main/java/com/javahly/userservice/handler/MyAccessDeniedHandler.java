@@ -33,6 +33,6 @@ public class MyAccessDeniedHandler implements AccessDeniedHandler {
         out.write("{\"resultCode\":\"401\",\"result\":\"权限不足!\"}");
         out.flush();
         out.close();
-        log.info("权限不足");
+        log.info("权限不足!");
     }
 }

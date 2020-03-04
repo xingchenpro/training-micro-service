@@ -44,11 +44,11 @@ mybatis:
   type-aliases-package: com.javahly.userservice.entity
 
 # 端口设置
-server:
-  port: 8081
-  servlet.context-path: /v1/user
+#server:
+#  port: 8081
+#  servlet.context-path: /v1/user
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://106.13.1.171:8761/eureka/
+#eureka:
+# client:
+#   serviceUrl:
+ #     defaultZone: http://106.13.1.171:8761/eureka/
