@@ -36,13 +36,12 @@ public class ClassController {
      *  班级信息
      */
     @RequestMapping(value = "/classes", method = RequestMethod.GET)
-    public Result getClasses() {
+    public List<Class> getClasses() {
         Result result = new Result();
         List<Class> classes = classService.getClasses();
         //添加到缓存
-        redisTemplate.opsForValue().set(RedisKey.CLASSES_KEY, classes, 7, TimeUnit.DAYS);
-        result.setResult(classes);
-        return result;
+        //redisTemplate.opsForValue().set(RedisKey.CLASSES_KEY, classes, 7, TimeUnit.DAYS);
+        return classes;
     }
 
 

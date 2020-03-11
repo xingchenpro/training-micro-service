@@ -36,12 +36,12 @@ public class StudentController {
      * 获得所有学生信息
      */
     @RequestMapping(value = "/students",method = RequestMethod.GET)
-    public Result getStudents(){
+    public List<Student> getStudents(){
         Result result = new Result();
         List<Student> students = studentService.getStudents();
         redisTemplate.opsForValue().set(RedisKey.STUDENTS_KEY, students, 7, TimeUnit.DAYS);
         result.setResult(students);
-        return result;
+        return students;
     }
 
 }

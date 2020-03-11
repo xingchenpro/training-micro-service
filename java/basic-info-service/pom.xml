@@ -68,10 +68,6 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>-->
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -100,6 +96,7 @@
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
 
+
 		<!--分布式session共享-->
 		<!--<dependency>
 			<groupId>org.springframework.session</groupId>
@@ -118,12 +115,20 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>20.0</version>
+		</dependency>
+
+
+		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.2.56</version>
 		</dependency>
 	</dependencies>
 
+	<!---Dapollo.configService=http://106.13.1.171:8080-->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

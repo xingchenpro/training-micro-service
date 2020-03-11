@@ -37,12 +37,12 @@ public class SpecialityController {
      * 专业信息
      */
     @RequestMapping(value = "/specialities", method = RequestMethod.GET)
-    public Result getSpecialities() {
+    public List<Speciality> getSpecialities() {
         Result result = new Result();
         List<Speciality> specialities = specialityService.getSpecialities();
         redisTemplate.opsForValue().set(RedisKey.SPECIALITIES_KEY, specialities, 7, TimeUnit.DAYS);
         result.setResult(specialities);
-        return result;
+        return specialities;
     }
 
 

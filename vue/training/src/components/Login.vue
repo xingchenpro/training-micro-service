@@ -46,7 +46,6 @@
     },
     methods: {
       submitClick: function () {
-        var _this = this;
         postRequest('/v1/user/login', {
           username: this.loginForm.username,
           password: this.loginForm.password
@@ -55,7 +54,7 @@
             //成功
             if (resp.data.resultCode === '200') {
               alert('登录成功');
-              _this.$router.replace({path: '/home'});
+              this.$router.replace({path: '/home'});
             } else {
               alert('账号密码错误!');
             }
@@ -63,9 +62,24 @@
             //失败
             alert('登录失败!');
           }
-        }, resp => {
-          alert('找不到服务器!');
         });
+
+        if(!this.loginForm.username||!this.loginForm.password){
+          alert("账号或密码不完整")
+        }else{
+          if(this.loginForm.username==='123'&&this.loginForm.password==='123'){
+            sessionStorage.setItem('username',this.loginForm.username);
+            sessionStorage.setItem('isLogin',true);
+            sessionStorage.setItem('role','5');
+            sessionStorage.setItem('roles','5');
+            this.$router.push('/home');
+            this.$notify({
+              message:'登录成功',
+              type:'success',
+              duration:'2000'
+            })
+          }
+        }
       }
     }
   }

@@ -57,6 +57,44 @@ feign:
     connectTimeout: 2000
     readTimeout: 3000
 
+swagger:
+  apply-default-response-messages: false # 取消使用默认预定义的响应消息,并使用自定义响应消息
+  base-package: com.javahly.askforleave.controller
+  base-path: /**
+  contact:
+    email: 1136513099@qq.com
+    name: huangliangyun
+    url: https://github.com/huangliangyun
+  description: Starter for swagger 2.x
+  enabled: true
+  exclude-path: /error, /ops/**
+  global-response-message:
+    get:
+    - code: 401
+      message: 页面不存在
+    - code: 500
+      message: 系统内部错误
+      modelRef: ERROR
+    post:
+    - code: 500
+      message: 系统内部错误
+      modelRef: ERROR
+  globalOperationParameters:
+  - description: 描述
+    modelRef: string
+    name: name one
+    parameterType: header
+    required: true
+  - description: some description two
+    modelRef: string
+    name: name two
+    parameterType: body
+    required: false
+  license: Apache License, Version 2.0
+  licenseUrl: https://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfServiceUrl: https://github.com/dyc87112/spring-boot-starter-swagger
+  title: spring-boot-starter-swagger
+  version: 1.8.0.RELEASE
 #eureka:
  #client:
   # serviceUrl:
