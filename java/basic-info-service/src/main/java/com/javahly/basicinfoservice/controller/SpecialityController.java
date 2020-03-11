@@ -1,8 +1,8 @@
 package com.javahly.basicinfoservice.controller;
 
 import com.javahly.basicinfoservice.cache.RedisKey;
-import com.javahly.basicinfoservice.entity.Class;
-import com.javahly.basicinfoservice.service.ClassService;
+import com.javahly.basicinfoservice.entity.Speciality;
+import com.javahly.basicinfoservice.service.SpecialityService;
 import com.javahly.basicinfoservice.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -24,24 +24,24 @@ import java.util.concurrent.TimeUnit;
  * @desc :
  */
 @RestController
-public class ClassController {
+public class SpecialityController {
 
     @Resource
-    private RedisTemplate<String,Object> redisTemplate;
+    private RedisTemplate<String, Object> redisTemplate;
 
     @Autowired
-    private ClassService classService;
+    private SpecialityService specialityService;
+
 
     /**
-     *  班级信息
+     * 专业信息
      */
-    @RequestMapping(value = "/classes", method = RequestMethod.GET)
-    public Result getClasses() {
+    @RequestMapping(value = "/specialities", method = RequestMethod.GET)
+    public Result getSpecialities() {
         Result result = new Result();
-        List<Class> classes = classService.getClasses();
-        //添加到缓存
-        redisTemplate.opsForValue().set(RedisKey.CLASSES_KEY, classes, 7, TimeUnit.DAYS);
-        result.setResult(classes);
+        List<Speciality> specialities = specialityService.getSpecialities();
+        redisTemplate.opsForValue().set(RedisKey.SPECIALITIES_KEY, specialities, 7, TimeUnit.DAYS);
+        result.setResult(specialities);
         return result;
     }
 

@@ -3,14 +3,14 @@
 <mapper namespace="com.javahly.basicinfoservice.dao.ClassDao">
 
 
-    <sql id="commCols_class">
+    <sql id="comm_cols_class">
         c_id cId,c_name cName,spec_id specId,t_id tId,startyear startyear,endyear endyear
     </sql>
 
     <!--查询所有班级信息-->
     <select id="getClasses" resultType="class">
         SELECT
-        <include refid="commCols_class"/>
+        <include refid="comm_cols_class"/>
         FROM `class`
     </select>
 

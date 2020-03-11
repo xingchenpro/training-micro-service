@@ -2,6 +2,8 @@ package com.javahly.basicinfoservice.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author :hly
  * @github :https://github.com/huangliangyun
@@ -10,7 +12,7 @@ import lombok.Data;
  * @date :2020/3/11
  */
 @Data
-public class Student {
+public class Student implements Serializable {
 
     private String sId;//
     private String sName;//

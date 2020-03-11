@@ -1,9 +1,12 @@
 package com.javahly.basicinfoservice.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.javahly.basicinfoservice.cache.RedisKey;
-import com.javahly.basicinfoservice.entity.Class;
-import com.javahly.basicinfoservice.service.ClassService;
+import com.javahly.basicinfoservice.entity.Teacher;
+import com.javahly.basicinfoservice.service.TeacherService;
+import com.javahly.basicinfoservice.util.RedisUtil;
 import com.javahly.basicinfoservice.util.Result;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,26 +27,21 @@ import java.util.concurrent.TimeUnit;
  * @desc :
  */
 @RestController
-public class ClassController {
-
-    @Resource
-    private RedisTemplate<String,Object> redisTemplate;
+@Slf4j
+public class TeacherController {
 
     @Autowired
-    private ClassService classService;
+    RedisUtil redisUtil;
+
+    @Autowired
+    private TeacherService teacherService;
 
     /**
-     *  班级信息
+     * 获得所有教师信息
      */
-    @RequestMapping(value = "/classes", method = RequestMethod.GET)
-    public Result getClasses() {
-        Result result = new Result();
-        List<Class> classes = classService.getClasses();
-        //添加到缓存
-        redisTemplate.opsForValue().set(RedisKey.CLASSES_KEY, classes, 7, TimeUnit.DAYS);
-        result.setResult(classes);
-        return result;
+    @RequestMapping(value = "/teachers", method = RequestMethod.GET)
+    public List<Teacher> getStudents() {
+        return teacherService.getTeachers();
     }
-
 
 }

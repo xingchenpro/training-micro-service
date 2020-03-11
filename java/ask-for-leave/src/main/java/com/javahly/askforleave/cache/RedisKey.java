@@ -1,4 +1,4 @@
-package com.javahly.basicinfoservice.cache;
+package com.javahly.askforleave.cache;
 
 /**
  * @author :hly

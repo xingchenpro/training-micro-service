@@ -1,4 +1,4 @@
-package com.javahly.basicinfoservice.entity;
+package com.javahly.askforleave.feign.user.entity;
 
 import lombok.Data;
 

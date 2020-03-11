@@ -1,8 +1,8 @@
 package com.javahly.basicinfoservice.controller;
 
 import com.javahly.basicinfoservice.cache.RedisKey;
-import com.javahly.basicinfoservice.entity.Class;
-import com.javahly.basicinfoservice.service.ClassService;
+import com.javahly.basicinfoservice.entity.Student;
+import com.javahly.basicinfoservice.service.StudentService;
 import com.javahly.basicinfoservice.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -24,26 +24,24 @@ import java.util.concurrent.TimeUnit;
  * @desc :
  */
 @RestController
-public class ClassController {
+public class StudentController {
 
     @Resource
     private RedisTemplate<String,Object> redisTemplate;
 
     @Autowired
-    private ClassService classService;
+    private StudentService studentService;
 
     /**
-     *  班级信息
+     * 获得所有学生信息
      */
-    @RequestMapping(value = "/classes", method = RequestMethod.GET)
-    public Result getClasses() {
+    @RequestMapping(value = "/students",method = RequestMethod.GET)
+    public Result getStudents(){
         Result result = new Result();
-        List<Class> classes = classService.getClasses();
-        //添加到缓存
-        redisTemplate.opsForValue().set(RedisKey.CLASSES_KEY, classes, 7, TimeUnit.DAYS);
-        result.setResult(classes);
+        List<Student> students = studentService.getStudents();
+        redisTemplate.opsForValue().set(RedisKey.STUDENTS_KEY, students, 7, TimeUnit.DAYS);
+        result.setResult(students);
         return result;
     }
-
 
 }

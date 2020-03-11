@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.javahly.basicinfoservice.dao.StudentDao">
+
+
+    <sql id="comm_cols_student">
+        s_id sId,s_name sName,s_sex sSex,s_identitycard sIdentitycard,
+        s_email sEmail,s_phone sPhone,s_address sAddress,s_remark sRemark,c_id cId,spec_id specId
+    </sql>
+
+    <!--查询所有学生信息-->
+    <select id="getStudents" resultType="student">
+        SELECT
+        <include refid="comm_cols_student"></include>
+        FROM student
+    </select>
+</mapper>

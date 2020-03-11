@@ -2,6 +2,8 @@ package com.javahly.basicinfoservice.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author :hly
  * @github :https://github.com/huangliangyun
@@ -10,7 +12,7 @@ import lombok.Data;
  * @date :2020/3/11
  */
 @Data
-public class Speciality {
+public class Speciality implements Serializable{
 
     private String specId;//专业编号
     private String specName;//专业名称
