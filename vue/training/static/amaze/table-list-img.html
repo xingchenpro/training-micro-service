@@ -13,7 +13,6 @@
     <link rel="icon" type="image/png" href="assets/i/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <script src="assets/js/echarts.min.js"></script>
     <link rel="stylesheet" href="assets/css/amazeui.min.css" />
     <link rel="stylesheet" href="assets/css/amazeui.datatables.min.css" />
     <link rel="stylesheet" href="assets/css/app.css">
@@ -199,11 +198,12 @@
                 </div>
             </div>
 
+
             <!-- 菜单 -->
             <ul class="sidebar-nav">
                 <li class="sidebar-nav-heading">Components <span class="sidebar-nav-heading-info"> 附加组件</span></li>
                 <li class="sidebar-nav-link">
-                    <a href="index.html">
+                    <a href="../static/index.html">
                         <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
                     </a>
                 </li>
@@ -213,18 +213,18 @@
                     </a>
                 </li>
                 <li class="sidebar-nav-link">
-                    <a href="calendar.html">
+                    <a href="../static/calendar.html">
                         <i class="am-icon-calendar sidebar-nav-link-logo"></i> 日历
                     </a>
                 </li>
                 <li class="sidebar-nav-link">
-                    <a href="form.html">
+                    <a href="../static/form.html">
                         <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 表单
 
                     </a>
                 </li>
                 <li class="sidebar-nav-link">
-                    <a href="chart.html">
+                    <a href="../static/chart.html">
                         <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
 
                     </a>
@@ -238,13 +238,13 @@
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub" style="display: block;">
                         <li class="sidebar-nav-link">
-                            <a href="table-list.html" class="sub-active">
+                            <a href="table-list.html">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文字列表
                             </a>
                         </li>
 
                         <li class="sidebar-nav-link">
-                            <a href="table-list-img.html">
+                            <a href="table-list-img.html" class="sub-active">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图文列表
                             </a>
                         </li>
@@ -257,7 +257,7 @@
                     </a>
                 </li>
                 <li class="sidebar-nav-link">
-                    <a href="login.html">
+                    <a href="../static/login.html">
                         <i class="am-icon-key sidebar-nav-link-logo"></i> 登录
                     </a>
                 </li>
@@ -269,6 +269,7 @@
 
             </ul>
         </div>
+
 
 
         <!-- 内容区域 -->
@@ -319,9 +320,10 @@
                                 </div>
 
                                 <div class="am-u-sm-12">
-                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black ">
                                         <thead>
                                             <tr>
+                                                <th>文章缩略图</th>
                                                 <th>文章标题</th>
                                                 <th>作者</th>
                                                 <th>时间</th>
@@ -330,10 +332,13 @@
                                         </thead>
                                         <tbody>
                                             <tr class="gradeX">
-                                                <td>Amaze UI 模式窗口</td>
-                                                <td>张鹏飞</td>
-                                                <td>2016-09-26</td>
                                                 <td>
+                                                    <img src="assets/img/k.jpg" class="tpl-table-line-img" alt="">
+                                                </td>
+                                                <td class="am-text-middle">Amaze UI 模式窗口</td>
+                                                <td class="am-text-middle">张鹏飞</td>
+                                                <td class="am-text-middle">2016-09-26</td>
+                                                <td class="am-text-middle">
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;">
                                                             <i class="am-icon-pencil"></i> 编辑
@@ -345,10 +350,13 @@
                                                 </td>
                                             </tr>
                                             <tr class="even gradeC">
-                                                <td>有适配微信小程序的计划吗</td>
-                                                <td>天纵之人</td>
-                                                <td>2016-09-26</td>
                                                 <td>
+                                                    <img src="assets/img/k.jpg" class="tpl-table-line-img" alt="">
+                                                </td>
+                                                <td class="am-text-middle">有适配微信小程序的计划吗</td>
+                                                <td class="am-text-middle">天纵之人</td>
+                                                <td class="am-text-middle">2016-09-26</td>
+                                                <td class="am-text-middle">
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;">
                                                             <i class="am-icon-pencil"></i> 编辑
@@ -360,10 +368,13 @@
                                                 </td>
                                             </tr>
                                             <tr class="gradeX">
-                                                <td>请问有没有amazeui 分享插件</td>
-                                                <td>王宽师</td>
-                                                <td>2016-09-26</td>
                                                 <td>
+                                                    <img src="assets/img/k.jpg" class="tpl-table-line-img" alt="">
+                                                </td>
+                                                <td class="am-text-middle">请问有没有amazeui 分享插件</td>
+                                                <td class="am-text-middle">王宽师</td>
+                                                <td class="am-text-middle">2016-09-26</td>
+                                                <td class="am-text-middle">
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;">
                                                             <i class="am-icon-pencil"></i> 编辑
@@ -375,10 +386,13 @@
                                                 </td>
                                             </tr>
                                             <tr class="even gradeC">
-                                                <td>关于input输入框的问题</td>
-                                                <td>着迷</td>
-                                                <td>2016-09-26</td>
                                                 <td>
+                                                    <img src="assets/img/k.jpg" class="tpl-table-line-img" alt="">
+                                                </td>
+                                                <td class="am-text-middle">关于input输入框的问题</td>
+                                                <td class="am-text-middle">着迷</td>
+                                                <td class="am-text-middle">2016-09-26</td>
+                                                <td class="am-text-middle">
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;">
                                                             <i class="am-icon-pencil"></i> 编辑
@@ -390,10 +404,13 @@
                                                 </td>
                                             </tr>
                                             <tr class="even gradeC">
-                                                <td>有没有发现官网上的下载包不好用</td>
-                                                <td>醉里挑灯看键</td>
-                                                <td>2016-09-26</td>
                                                 <td>
+                                                    <img src="assets/img/k.jpg" class="tpl-table-line-img" alt="">
+                                                </td>
+                                                <td class="am-text-middle">有没有发现官网上的下载包不好用</td>
+                                                <td class="am-text-middle">醉里挑灯看键</td>
+                                                <td class="am-text-middle">2016-09-26</td>
+                                                <td class="am-text-middle">
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;">
                                                             <i class="am-icon-pencil"></i> 编辑
@@ -406,10 +423,13 @@
                                             </tr>
 
                                             <tr class="even gradeC">
-                                                <td>我建议WEB版本文件引入问题</td>
-                                                <td>罢了</td>
-                                                <td>2016-09-26</td>
                                                 <td>
+                                                    <img src="assets/img/k.jpg" class="tpl-table-line-img" alt="">
+                                                </td>
+                                                <td class="am-text-middle">我建议WEB版本文件引入问题</td>
+                                                <td class="am-text-middle">罢了</td>
+                                                <td class="am-text-middle">2016-09-26</td>
+                                                <td class="am-text-middle">
                                                     <div class="tpl-table-black-operation">
                                                         <a href="javascript:;">
                                                             <i class="am-icon-pencil"></i> 编辑
@@ -447,8 +467,6 @@
     </div>
     </div>
     <script src="assets/js/amazeui.min.js"></script>
-    <script src="assets/js/amazeui.datatables.min.js"></script>
-    <script src="assets/js/dataTables.responsive.min.js"></script>
     <script src="assets/js/app.js"></script>
 
 </body>

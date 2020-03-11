@@ -1,10 +1,11 @@
 <template>
 
-  <div class="tpl-login">
-    <div class="tpl-login-content">
-      <div class="tpl-login-logo">
-      </div>
-      <form class="am-form tpl-form-line-form">
+  <div class="login-wrapper">
+    <div class="login">
+      <h4 style="color:white;text-align: center">
+
+      </h4>
+     <form class="am-form tpl-form-line-form">
         <div class="am-form-group">
           <input type="text" class="tpl-form-input" id="username" v-model="loginForm.username" placeholder="请输入账号">
         </div>
@@ -25,6 +26,7 @@
       </form>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -37,8 +39,8 @@
     data() {
       return {
         loginForm: {
-          username: '',
-          password: ''
+          username: 'admin',
+          password: '124'
         },
       }
     },
@@ -70,5 +72,22 @@
 </script>
 
 <style scoped>
+
+
+  .login-wrapper{
+    background:url("../../static/images/雪山.jpg");
+    height: 100%;
+    background-size: 100% 100%  ;
+
+  }
+
+  .login{
+    width:400px;
+    height:100%;
+    margin:0 auto;
+    background:rgba(255,255,255,0);
+    padding: 270px 50px;
+    border-radius:10px;
+  }
 
 </style>
