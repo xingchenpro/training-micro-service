@@ -82,8 +82,8 @@
       <file leaf-file-name="EurekaServiceApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eureka-service/src/main/java/com/javahly/EurekaServiceApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="253">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -174,10 +174,10 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="139" />
-    <option name="y" value="24" />
+    <option name="x" value="51" />
+    <option name="y" value="34" />
     <option name="width" value="1852" />
-    <option name="height" value="1058" />
+    <option name="height" value="1054" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -203,109 +203,6 @@
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="basic-info-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="javahly" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="javahly" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="javahly" type="462c0819:PsiDirectoryNode" />
-              <item name="eurekaservice" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -487,16 +384,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584000370604</updated>
-      <workItem from="1584000373504" duration="1733000" />
+      <workItem from="1584000373504" duration="1810000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1733000" />
+    <option name="totallyTimeSpent" value="1810000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="139" y="24" width="1852" height="1058" extended-state="0" />
-    <editor active="true" />
+    <frame x="51" y="34" width="1852" height="1054" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57464457" sideWeight="0.5046404" order="7" side_tool="true" content_ui="tabs" />
@@ -517,9 +413,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="LuaCheck" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.3299435" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3427283" sideWeight="0.49535963" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3427283" sideWeight="0.49535963" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914287" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20584927" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -889,8 +785,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eureka-service/src/main/java/com/javahly/EurekaServiceApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="253">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
