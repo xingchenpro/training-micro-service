@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jsjxyxt-micro-service:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="jsjxyxt-micro-service.war">
+      <element id="artifact" artifact-name="jsjxyxt-micro-service:war exploded" />
+    </root>
+  </artifact>
+</component>
