@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/ask-for-leave-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/basic-info-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uaa-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/user-service" charset="UTF-8" />
   </component>
 </project>

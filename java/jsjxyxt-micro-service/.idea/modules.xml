@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/basic-info-service/basic-info-service.iml" filepath="$PROJECT_DIR$/basic-info-service/basic-info-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-service/eureka-service.iml" filepath="$PROJECT_DIR$/eureka-service/eureka-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/jsjxyxt-micro-service.iml" filepath="$PROJECT_DIR$/jsjxyxt-micro-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uaa-service/uaa-service.iml" filepath="$PROJECT_DIR$/uaa-service/uaa-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-service/user-service.iml" filepath="$PROJECT_DIR$/user-service/user-service.iml" />
     </modules>
   </component>
