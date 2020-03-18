@@ -11,6 +11,7 @@
 	<artifactId>eureka-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>eureka-service</name>
+	<packaging>jar</packaging>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -48,6 +49,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>eureka-service</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

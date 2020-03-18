@@ -1,0 +1,24 @@
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: user-route
+        uri: lb://uaa-service
+        predicates:
+        - Path=/uaa-service/**
+        filters:
+        - StripPrefix=1
+
+eureka:
+ client:
+   serviceUrl:
+    defaultZone: http://49.233.192.8:8761/eureka/
+server:
+  port: 8889
+

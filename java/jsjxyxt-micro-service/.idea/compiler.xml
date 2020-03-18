@@ -9,7 +9,9 @@
         <module name="ask-for-leave-service" />
         <module name="basic-info-service" />
         <module name="eureka-service" />
-        <module name="jsjxyxt-micro-service" />
+        <module name="gateway-service" />
+        <module name="training-service" />
+        <module name="txlcn-tm-service" />
         <module name="uaa-service" />
         <module name="user-service" />
       </profile>
@@ -18,7 +20,10 @@
       <module name="ask-for-leave-service" target="1.8" />
       <module name="basic-info-service" target="1.8" />
       <module name="eureka-service" target="1.8" />
+      <module name="gateway-service" target="1.8" />
       <module name="jsjxyxt-micro-service" target="1.8" />
+      <module name="training-service" target="1.8" />
+      <module name="txlcn-tm-service" target="1.8" />
       <module name="uaa-service" target="1.8" />
       <module name="user-service" target="1.8" />
     </bytecodeTargetLevel>

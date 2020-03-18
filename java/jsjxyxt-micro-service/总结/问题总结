@@ -1,0 +1,11 @@
+打包出现问题
+1、父 pom 修改以下配置
+<packaging>pom</packaging>
+2、子 pom 添加
+<packaging>jar</packaging>
+3、修改打包名字，不然为父类名字
+<finalName>eureka-service</finalName>
+4、去掉
+<relativePath/> <!-- lookup parent from repository -->
+
+---

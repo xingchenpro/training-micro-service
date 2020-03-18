@@ -1,0 +1,15 @@
+打包
+mvn install -Dmaven.test.skip=true
+
+---
+sentinel 控制台启动
+
+java -Dserver.port=8718 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject.name=sentinel-dashboard -Dcsp.sentinel.api.port=8719 -jar sentinel-dashboard-1.6.2.jar
+
+-Dserver.port=8718 控制台端口sentinel 控制台是一个 spring boot 程序,可以通过这个端口访问控制台。
+-Dcsp.sentinel.dashboard.server=localhost:8718 向控制台发送心跳包的控制台地址，指定控制台后客户端会自动向该地址发送心跳包。
+-Dproject.name=sentinel-dashboard 指定Sentinel控制台程序的名称
+-Dcsp.sentinel.api.port=8719 客户端提供给Dashboard访问或者查看Sentinel的运行访问的参数,默认8719
+
+---
+
