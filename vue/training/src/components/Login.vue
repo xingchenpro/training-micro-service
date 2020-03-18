@@ -5,7 +5,7 @@
       <h4 style="color:white;text-align: center">
 
       </h4>
-     <form class="am-form tpl-form-line-form">
+      <form class="am-form tpl-form-line-form">
         <div class="am-form-group">
           <input type="text" class="tpl-form-input" id="username" v-model="loginForm.username" placeholder="请输入账号">
         </div>
@@ -39,14 +39,14 @@
     data() {
       return {
         loginForm: {
-          username: 'admin',
-          password: '124'
+          username: '123',
+          password: '123'
         },
       }
     },
     methods: {
       submitClick: function () {
-        postRequest('/v1/user/login', {
+        /*postRequest('/v1/user/login', {
           username: this.loginForm.username,
           password: this.loginForm.password
         }).then(resp => {
@@ -62,46 +62,45 @@
             //失败
             alert('登录失败!');
           }
-        });
+        });*/
 
-        if(!this.loginForm.username||!this.loginForm.password){
+        if (!this.loginForm.username || !this.loginForm.password) {
           alert("账号或密码不完整")
-        }else{
-          if(this.loginForm.username==='123'&&this.loginForm.password==='123'){
-            sessionStorage.setItem('username',this.loginForm.username);
-            sessionStorage.setItem('isLogin',true);
-            sessionStorage.setItem('role','5');
-            sessionStorage.setItem('roles','5');
+        } else {
+          if (this.loginForm.username === '123' && this.loginForm.password === '123') {
+            sessionStorage.setItem('username', this.loginForm.username);
+            sessionStorage.setItem('role', '6');
             this.$router.push('/home');
             this.$notify({
-              message:'登录成功',
-              type:'success',
-              duration:'2000'
-            })
+              message: '登录成功',
+              type: 'success',
+              duration: '2000'
+            });
           }
         }
       }
     }
+
   }
 </script>
 
 <style scoped>
 
 
-  .login-wrapper{
-    background:url("../../static/images/雪山.jpg");
+  .login-wrapper {
+    background: url("../../static/images/雪山.jpg");
     height: 100%;
-    background-size: 100% 100%  ;
+    background-size: 100% 100%;
 
   }
 
-  .login{
-    width:400px;
-    height:100%;
-    margin:0 auto;
-    background:rgba(255,255,255,0);
+  .login {
+    width: 400px;
+    height: 100%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0);
     padding: 270px 50px;
-    border-radius:10px;
+    border-radius: 10px;
   }
 
 </style>

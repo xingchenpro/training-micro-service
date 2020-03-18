@@ -285,10 +285,11 @@ ul.tpl-dropdown-content .tpl-dropdown-menu-messages-item .menu-messages-content 
 }
 .tpl-user-panel-profile-picture {
   border-radius: 50%;
-  width: 82px;
-  height: 82px;
-  margin-bottom: 10px;
+  width: 72px;
+  height: 72px;
   overflow: hidden;
+  margin: 10px auto;
+
 }
 .tpl-user-panel-profile-picture img {
   width: auto;
@@ -300,15 +301,18 @@ ul.tpl-dropdown-content .tpl-dropdown-menu-messages-item .menu-messages-content 
 }
 .user-panel-logged-in-text {
   display: block;
-  color: #cfcfcf;
+  color: #0c132f;
   font-size: 14px;
+  text-align: center;
 }
 .tpl-user-panel-action-link {
   color: #6d787c;
   font-size: 12px;
+  text-align: center;
 }
 .tpl-user-panel-action-link:hover {
   color: #a2aaad;
+  text-align: center;
 }
 .sidebar-nav {
   list-style-type: none;
