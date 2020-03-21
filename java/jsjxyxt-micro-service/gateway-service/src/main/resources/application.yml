@@ -8,12 +8,19 @@ spring:
         locator:
           enabled: true
       routes:
-      - id: user-route
+      - id: uaa-route
         uri: lb://uaa-service
         predicates:
         - Path=/uaa-service/**
         filters:
         - StripPrefix=1
+      - id: basic-route
+        uri: lb://basic-info-service
+        predicates:
+        - Path=/basic-service/**
+        filters:
+        - StripPrefix=1
+
 
 eureka:
  client:
@@ -22,3 +29,9 @@ eureka:
 server:
   port: 8889
 
+app:
+  id: sentinel
+
+apollo:
+  meta: http://49.233.192.8:8080
+  cacheDir: /app/war/apollo/temp/

@@ -5,7 +5,7 @@ apollo:
   bootstrap:
     enabled: true
     namespaces: application
-  meta: http://106.13.1.171:8080/
+  meta: http://49.233.192.8:8080
   cacheDir: /app/war/apollo/temp/
 
 spring:
@@ -18,12 +18,15 @@ spring:
       password: roof
       url: jdbc:mysql://localhost:3306/basicinfoservice?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true
   redis:
+    sentinel:
+      master: mymaster
+      nodes: 106.13.9.117:26379,123.56.219.53:26379,106.13.1.171:26379
     # Redis数据库索引，默认为0
-    database: 0
+    database: 2
     # Redis服务器地址
-    host: 106.13.9.117
+    #host: 106.13.9.117
     # Redis服务器连接端口
-    port: 16379
+    #port: 16379
     # Redis密码，默认为空
     password: "!@#redis"
     # Redis连接池最大连接数(负值表示没有限制
@@ -43,11 +46,6 @@ mybatis:
   # Mybatis映射
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.javahly.basicinfoservice.entity
-
-# 端口设置
-server:
-  port: 8082
-  servlet.context-path: /v1/info
 
 swagger:
   apply-default-response-messages: false # 取消使用默认预定义的响应消息,并使用自定义响应消息
@@ -89,7 +87,15 @@ swagger:
   version: v1
 
 
-#eureka:
- #client:
-  # serviceUrl:
-   # defaultZone: http://106.13.1.171:8761/eureka/
+eureka:
+ client:
+   serviceUrl:
+    defaultZone: http://49.233.192.8:8761/eureka/
+# 端口设置
+server:
+  port: 8082
+  servlet:
+    session:
+      timeout: 600
+# 必须改成这种格式否则无法注册
+server.servlet.context-path: /v1/info

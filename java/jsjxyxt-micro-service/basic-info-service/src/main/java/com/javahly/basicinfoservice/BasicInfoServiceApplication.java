@@ -5,12 +5,7 @@ import com.spring4all.swagger.EnableSwagger2Doc;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.serializer.RedisSerializer;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
-
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 /**
  *
  * 　　　　　　　   ┏┓　   ┏┓+ +
@@ -41,6 +36,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @SpringBootApplication
 @MapperScan("com.javahly.basicinfoservice.dao")
 @EnableApolloConfig
+@EnableEurekaClient
 @EnableSwagger2Doc//http://localhost:8083/v1/leave/swagger-ui.html#/
 public class BasicInfoServiceApplication {
 
