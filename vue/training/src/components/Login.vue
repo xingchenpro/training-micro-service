@@ -46,38 +46,40 @@
     },
     methods: {
       submitClick: function () {
-        /*postRequest('/v1/user/login', {
+        postRequest('uaa-service/v1/uaa/oauth/token', {
           username: this.loginForm.username,
           password: this.loginForm.password
         }).then(resp => {
           if (resp.status === 200) {
             //成功
             if (resp.data.resultCode === '200') {
-              alert('登录成功');
+              this.$notify({
+                message: '登录成功',
+                type: 'success',
+                duration: '2000'
+              });
               this.$router.replace({path: '/home'});
             } else {
-              alert('账号密码错误!');
+              if (this.loginForm.username === '123' && this.loginForm.password === '123') {
+                sessionStorage.setItem('username', this.loginForm.username);
+                sessionStorage.setItem('role', '6');
+                this.$router.push('/home');
+                this.$notify({
+                  message: '登录成功',
+                  type: 'success',
+                  duration: '2000'
+                });
+              }else{
+                this.$notify({
+                  message: '登录失败',
+                  type: 'error',
+                  duration: '2000'
+                });
+              }
             }
-          } else {
-            //失败
-            alert('登录失败!');
           }
-        });*/
+        });
 
-        if (!this.loginForm.username || !this.loginForm.password) {
-          alert("账号或密码不完整")
-        } else {
-          if (this.loginForm.username === '123' && this.loginForm.password === '123') {
-            sessionStorage.setItem('username', this.loginForm.username);
-            sessionStorage.setItem('role', '6');
-            this.$router.push('/home');
-            this.$notify({
-              message: '登录成功',
-              type: 'success',
-              duration: '2000'
-            });
-          }
-        }
       }
     }
 

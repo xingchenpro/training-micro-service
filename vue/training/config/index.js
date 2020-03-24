@@ -12,7 +12,7 @@ module.exports = {
     proxyTable: {
       //别名
       '/': {
-        target: 'http://localhost:8081',
+        target: 'http://localhost:8889',
         changeOrigin: true,
         pathRewrite: {
           '^/': ''

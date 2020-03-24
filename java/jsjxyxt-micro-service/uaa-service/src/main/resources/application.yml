@@ -50,3 +50,5 @@ eureka:
     serviceUrl:
       defaultZone: http://49.233.192.8:8761/eureka/
 
+# 必须改成这种格式否则无法注册
+server.servlet.context-path: /v1/uaa

@@ -14,7 +14,7 @@
     </div>
 
     <!-- 管理员菜单 -->
-    <ul class="sidebar-nav" v-if="role==='1'">
+    <ul class="sidebar-nav"  v-if="role==='7'">
       <li class="sidebar-nav-heading">Components <span class="sidebar-nav-heading-info"> 附加组件</span></li>
       <li class="sidebar-nav-link">
         <a href="index.html" class="active">
@@ -90,8 +90,6 @@
           <span>导航一</span>
         </template>
         <el-menu-item index="1-1">选项1</el-menu-item>
-        <el-menu-item index="1-2">选项2</el-menu-item>
-        <el-menu-item index="1-3">选项3</el-menu-item>
         <el-submenu index="1-4">
           <template slot="title">选项4</template>
           <el-menu-item index="1-4-1">选项1</el-menu-item>
@@ -108,10 +106,6 @@
         <span slot="title">导航三</span>
       </el-menu-item>
 
-      <el-menu-item index="4">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item>
 
       <el-menu-item index="5">
         <i class="el-icon-menu"></i>
@@ -119,12 +113,15 @@
       </el-menu-item>
       <el-menu-item index="6">
         <i class="el-icon-menu"></i>
-        <span slot="title">导航六</span>
+        <span slot="title">历史公告</span>
       </el-menu-item>
+
+      <router-link to="/home/info">
       <el-menu-item index="7">
         <i class="el-icon-menu"></i>
-        <span slot="title">导航七</span>
+        <span slot="title">个人信息</span>
       </el-menu-item>
+      </router-link>
     </el-menu>
 
     <!--第几周-->
@@ -148,7 +145,6 @@
     created() {
       this.role = sessionStorage.getItem("role");
     },
-
   };
 </script>
 
