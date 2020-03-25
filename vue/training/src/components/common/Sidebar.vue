@@ -14,7 +14,7 @@
     </div>
 
     <!-- 管理员菜单 -->
-    <ul class="sidebar-nav"  v-if="role==='7'">
+    <ul class="sidebar-nav"  v-if="role==='1'">
       <li class="sidebar-nav-heading">Components <span class="sidebar-nav-heading-info"> 附加组件</span></li>
       <li class="sidebar-nav-link">
         <a href="index.html" class="active">

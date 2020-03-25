@@ -1,12 +1,13 @@
 package com.javahly.uaaservice.entity;
 
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
-
+@Data
 public class User implements UserDetails, Serializable {
 
     private int id;

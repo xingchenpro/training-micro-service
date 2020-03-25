@@ -88,6 +88,7 @@ public class OAuth2ServerConfig {
                     .secret(finalSecret)
                     .accessTokenValiditySeconds(2*3600);//2小时过期
 
+
         }
 
         @Override

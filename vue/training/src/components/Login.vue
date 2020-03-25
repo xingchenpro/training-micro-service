@@ -39,25 +39,34 @@
     data() {
       return {
         loginForm: {
-          username: '123',
+          username: '201611104033',
           password: '123'
         },
       }
     },
     methods: {
       submitClick: function () {
-        postRequest('uaa-service/v1/uaa/oauth/token', {
+        postRequest('/uaa-service/v1/uaa/oauth/token', {
           username: this.loginForm.username,
-          password: this.loginForm.password
+          password: this.loginForm.password,
+          grant_type: 'password',
+          scope: 'server',
+          client_id: 'client-service',
+          client_secret: '123456',
         }).then(resp => {
+          console.log(resp);
           if (resp.status === 200) {
             //成功
-            if (resp.data.resultCode === '200') {
+            if (resp.data.resultCode === 200) {
               this.$notify({
                 message: '登录成功',
                 type: 'success',
                 duration: '2000'
               });
+              sessionStorage.setItem('username', this.loginForm.username);
+              sessionStorage.setItem('role', resp.data.result.role[0].authority);
+              sessionStorage.setItem('token', resp.data.result.accessToken);
+              alert(sessionStorage.getItem("token"))
               this.$router.replace({path: '/home'});
             } else {
               if (this.loginForm.username === '123' && this.loginForm.password === '123') {
@@ -69,7 +78,7 @@
                   type: 'success',
                   duration: '2000'
                 });
-              }else{
+              } else {
                 this.$notify({
                   message: '登录失败',
                   type: 'error',

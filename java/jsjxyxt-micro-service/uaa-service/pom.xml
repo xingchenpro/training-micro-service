@@ -59,7 +59,6 @@
 			<scope>runtime</scope>
 		</dependency>
 
-
 		<!-- 使用数据库连接池 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -76,6 +75,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
