@@ -96,10 +96,12 @@
         </el-submenu>
       </el-submenu>
 
+      <router-link to="/home/leave">
       <el-menu-item index="2">
         <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
+        <span slot="title">请假申请</span>
       </el-menu-item>
+      </router-link>
 
       <el-menu-item index="3">
         <i class="el-icon-document"></i>

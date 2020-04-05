@@ -33,12 +33,11 @@ public class JsonSentinelGatewayBlockExceptionHandler implements WebExceptionHan
         this.messageWriters = serverCodecConfigurer.getWriters();
     }
 
-
     @Override
     public Mono<Void> handle(ServerWebExchange exchange, Throwable ex) {
         ServerHttpResponse serverHttpResponse = exchange.getResponse();
         serverHttpResponse.getHeaders().add("Content-Type", "application/json;charset=UTF-8");
-        byte[] datas = "{\"code\":403,\"msg\":\"接口已经被限流\"}".getBytes(StandardCharsets.UTF_8);
+        byte[] datas = "{\"resultCode\":403,\"msg\":\"接口已经被限流\"}".getBytes(StandardCharsets.UTF_8);
         DataBuffer buffer = serverHttpResponse.bufferFactory().wrap(datas);
         return serverHttpResponse.writeWith(Mono.just(buffer));
     }

@@ -1,4 +1,12 @@
- 1、<el-form ref="info" :model="info" label-width="80px"> //ref?
+1、<el-form ref="info" :model="info" label-width="80px"> //ref?
+https://ask.csdn.net/questions/762337?depth_1-utm_source=distribute.pc_relevant.none-task-ask_topic-BlogCommendFromBaidu-1&utm_source=distribute.pc_relevant.none-task-ask_topic-BlogCommendFromBaidu-1
+ ref类似于获取这个元素，不值table里有ref，其他标签你都可以用ref，然后通过this.$refs.xxx来获取
 
- 2、meta: {requireAuth: true}
+2、meta: {requireAuth: true}
 
+3、:class=
+https://blog.csdn.net/dandan_18/article/details/95504028
+：class用来展示某个div的active状态
+
+4、flex
+https://www.cnblogs.com/yt0817/p/11825587.html

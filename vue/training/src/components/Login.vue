@@ -68,30 +68,29 @@
               sessionStorage.setItem('token', resp.data.result.accessToken);
               alert(sessionStorage.getItem("token"))
               this.$router.replace({path: '/home'});
+            } else if (resp.data.resultCode === 403) {
+              this.$router.replace({path: '/error/limit'});
             } else {
-              if (this.loginForm.username === '123' && this.loginForm.password === '123') {
-                sessionStorage.setItem('username', this.loginForm.username);
-                sessionStorage.setItem('role', '6');
-                this.$router.push('/home');
-                this.$notify({
-                  message: '登录成功',
-                  type: 'success',
-                  duration: '2000'
-                });
-              } else {
-                this.$notify({
-                  message: '登录失败',
-                  type: 'error',
-                  duration: '2000'
-                });
-              }
+              this.$notify({
+                message: '登录失败',
+                type: 'error',
+                duration: '2000'
+              });
             }
           }
         });
-
+        if (this.loginForm.username === '201611104033' && this.loginForm.password === '123') {
+          sessionStorage.setItem('username', this.loginForm.username);
+          sessionStorage.setItem('role', '6');
+          this.$router.push('/home');
+          this.$notify({
+            message: '登录成功',
+            type: 'success',
+            duration: '2000'
+          });
+        }
       }
     }
-
   }
 </script>
 
