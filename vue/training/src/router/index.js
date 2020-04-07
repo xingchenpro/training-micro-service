@@ -5,6 +5,7 @@ import Login from '@/components/Login'
 import PersionInfo from '@/components/info/PersionInfo'
 import LimitError from '@/components/error/LimitError'
 import LeaveApply from '@/components/leave/LeaveApply'
+import LeaveManager from '@/components/leave/LeaveManager'
 
 Vue.use(Router)
 
@@ -27,6 +28,11 @@ export default new Router({
         {
           path: "/home/leave",
           component: LeaveApply,
+          meta: {requireAuth: true}
+        },
+        {
+          path: "/home/leave/manager",
+          component: LeaveManager,
           meta: {requireAuth: true}
         },
       ]

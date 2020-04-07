@@ -21,113 +21,38 @@
                 </div>
 
                 <div class="progress-box">
-                <span
-                  class="progress-bar"
-                  :class="[leStatus !== -10 ? 'active' : '']"
-                ></span>
+                <span class="progress-bar" :class="[leStatus !== -10 ? 'active' : '']"></span>
                   <div class="circle-wrapper">
-                    <i
-                      class="fa fa-dot-circle-o"
-                      :class="[
-                      leStatus !== -10 && (leStatus > 0 || leStatus < -1)
-                        ? 'font-active'
-                        : ''
-                    ]"
-                    ></i>
-                  </div>
-                  <p
-                    class="p2 font-active1 "
-                    v-if="leStatus !== -10 && (leStatus > 0 || leStatus < -1)"
-                  >
-                    班主任审核已通过<i class="fa fa-check"></i>
-                  </p>
-                  <p class="p2" v-if="leStatus === 0 || leStatus === -10">
-                    等待班主任审核
-                  </p>
-                  <p class="p2 font-active-refuse " v-if="leStatus === -1">
-                    班主任审核未通过<i class="fa fa-close"></i>
-                  </p>
+                    <i class="fa fa-dot-circle-o" :class="[leStatus !== -10 && (leStatus > 0 || leStatus < -1)? 'font-active': '']"></i></div>
+                  <p class="p2 font-active1 " v-if="leStatus !== -10 && (leStatus > 0 || leStatus < -1)">班主任审核已通过<i class="fa fa-check"></i></p>
+                  <p class="p2" v-if="leStatus === 0 || leStatus === -10">等待班主任审核</p>
+                  <p class="p2 font-active-refuse " v-if="leStatus === -1">班主任审核未通过<i class="fa fa-close"></i></p>
                 </div>
+
                 <div class="progress-box">
-                <span
-                  class="progress-bar"
-                  :class="[
-                    leStatus !== -10 && (leStatus > 0 || leStatus < -1)
-                      ? 'active'
-                      : ''
-                  ]"
-                ></span>
+                <span class="progress-bar" :class="[leStatus !== -10 && (leStatus > 0 || leStatus < -1)? 'active': '']"></span>
                   <div class="circle-wrapper">
-                    <i
-                      class="fa fa-dot-circle-o"
-                      :class="[
-                      leStatus !== -10 && (leStatus > 1 || leStatus < -2)
-                        ? 'font-active'
-                        : ''
-                    ]"
-                    ></i>
+                    <i class="fa fa-dot-circle-o" :class="[leStatus !== -10 && (leStatus > 1 || leStatus < -2)? 'font-active': '']"></i>
                   </div>
-                  <p
-                    class="p3 font-active1 "
-                    v-if="leStatus !== -10 && (leStatus > 1 || leStatus < -2)"
-                  >
-                    指导教师审核已通过<i class="fa fa-check"></i>
-                  </p>
-                  <p
-                    class="p3"
-                    v-if="leStatus === 0 || leStatus === 1 || leStatus === -10"
-                  >
-                    等待指导教师审核
-                  </p>
-                  <p class="p3 font-active-refuse " v-if="leStatus === -2">
-                    指导教师审核未通过<i class="fa fa-close"></i>
-                  </p>
+                  <p class="p3 font-active1 " v-if="leStatus !== -10 && (leStatus > 1 || leStatus < -2)">指导教师审核已通过<i class="fa fa-check"></i></p>
+                  <p class="p3" v-if="leStatus === 0 || leStatus === 1 || leStatus === -10">等待指导教师审核</p>
+                  <p class="p3 font-active-refuse " v-if="leStatus === -2">指导教师审核未通过<i class="fa fa-close"></i></p>
                 </div>
+
                 <div class="progress-box">
-                <span
-                  class="progress-bar"
-                  :class="[
-                    leStatus !== -10 && (leStatus > 1 || leStatus < -2)
-                      ? 'active'
-                      : ''
-                  ]"
-                ></span>
+                <span class="progress-bar" :class="[leStatus !== -10 && (leStatus > 1 || leStatus < -2)? 'active': '']"></span>
                   <div class="circle-wrapper">
-                    <i
-                      class="fa fa-dot-circle-o"
-                      :class="[
-                      leStatus !== -10 && leStatus > 2 ? 'font-active' : ''
-                    ]"
-                    ></i>
+                    <i class="fa fa-dot-circle-o" :class="[leStatus !== -10 && leStatus > 2 ? 'font-active' : '']"></i>
                   </div>
-                  <p class="p4 font-active1 " v-if="leStatus > 2">
-                    专业负责人审核已通过<i class="fa fa-check"></i>
-                  </p>
-                  <p
-                    class="p4"
-                    v-if="
-                    leStatus === 0 ||
-                      leStatus === 1 ||
-                      leStatus === 2 ||
-                      leStatus === -10
-                  "
-                  >
-                    等待专业负责人审核
-                  </p>
-                  <p class="p4 font-active-refuse " v-if="leStatus === -3">
-                    专业负责人审核未通过<i class="fa fa-close"></i>
-                  </p>
+                  <p class="p4 font-active1 " v-if="leStatus > 2">专业负责人审核已通过<i class="fa fa-check"></i></p>
+                  <p class="p4" v-if="leStatus === 0 ||leStatus === 1 ||leStatus === 2 ||leStatus === -10">等待专业负责人审核</p>
+                  <p class="p4 font-active-refuse " v-if="leStatus === -3">专业负责人审核未通过<i class="fa fa-close"></i></p>
                 </div>
+
                 <div class="progress-box">
-                <span
-                  class="progress-bar"
-                  :class="[leStatus > 2 ? 'active' : '']"
-                ></span>
+                <span class="progress-bar" :class="[leStatus > 2 ? 'active' : '']"></span>
                   <div class="circle-wrapper">
-                    <i
-                      class="fa fa-check"
-                      :class="[leStatus > 2 ? 'font-active' : '']"
-                    ></i>
+                    <i class="fa fa-check" :class="[leStatus > 2 ? 'font-active' : '']"></i>
                   </div>
                 </div>
               </div>
@@ -532,6 +457,5 @@
       width: 300px;
     }
   }
-
 
 </style>
