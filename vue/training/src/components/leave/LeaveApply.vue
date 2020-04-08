@@ -7,7 +7,6 @@
         <div class="row">
           <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
             <div class="widget am-cf" style="min-height: 110px;width: 98.5%;margin: 0 auto 10px">
-              <span class="am-icon-home page-header-heading-icon"></span>
               校外实训申请
               <!--申请状态开始-->
               <div class="progress-container">
@@ -24,9 +23,9 @@
                 <span class="progress-bar" :class="[leStatus !== -10 ? 'active' : '']"></span>
                   <div class="circle-wrapper">
                     <i class="fa fa-dot-circle-o" :class="[leStatus !== -10 && (leStatus > 0 || leStatus < -1)? 'font-active': '']"></i></div>
-                  <p class="p2 font-active1 " v-if="leStatus !== -10 && (leStatus > 0 || leStatus < -1)">班主任审核已通过<i class="fa fa-check"></i></p>
-                  <p class="p2" v-if="leStatus === 0 || leStatus === -10">等待班主任审核</p>
-                  <p class="p2 font-active-refuse " v-if="leStatus === -1">班主任审核未通过<i class="fa fa-close"></i></p>
+                  <p class="p2 font-active1 " v-if="leStatus !== -10 && (leStatus > 0 || leStatus < -1)">辅导员审核已通过<i class="fa fa-check"></i></p>
+                  <p class="p2" v-if="leStatus === 0 || leStatus === -10">等待辅导员审核</p>
+                  <p class="p2 font-active-refuse " v-if="leStatus === -1">辅导员审核未通过<i class="fa fa-close"></i></p>
                 </div>
 
                 <div class="progress-box">
@@ -331,7 +330,6 @@
 
     },
     created() {
-
 
     },
 

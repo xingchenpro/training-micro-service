@@ -10,7 +10,7 @@
               </div>
               <!--信息栏开始-->
               <div class="widget-body am-fr">
-                <el-form ref="info" :model="info" label-width="80px"  style="margin:0 auto;width:400px;min-height:700px;">
+                <el-form ref="info" :model="info" label-width="80px"  style="margin:0 auto;width:400px;min-height:780px;">
                   <el-form-item label="姓名">
                     <el-input v-model="info.name"></el-input>
                   </el-form-item>

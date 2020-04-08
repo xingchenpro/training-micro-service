@@ -81,7 +81,7 @@
         });
         if (this.loginForm.username === '201611104033' && this.loginForm.password === '123') {
           sessionStorage.setItem('username', this.loginForm.username);
-          sessionStorage.setItem('role', '2');
+          sessionStorage.setItem('role', '6');
           this.$router.push('/home');
           this.$notify({
             message: '登录成功',

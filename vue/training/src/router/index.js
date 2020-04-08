@@ -3,9 +3,13 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Login from '@/components/Login'
 import PersionInfo from '@/components/info/PersionInfo'
+import Notice from '@/components/history/Notice'
 import LimitError from '@/components/error/LimitError'
 import LeaveApply from '@/components/leave/LeaveApply'
 import LeaveManager from '@/components/leave/LeaveManager'
+import Subject from '@/components/training/Subject'
+import Document from '@/components/training/Document'
+import WeekSummary from '@/components/training/WeekSummary'
 
 Vue.use(Router)
 
@@ -33,6 +37,26 @@ export default new Router({
         {
           path: "/home/leave/manager",
           component: LeaveManager,
+          meta: {requireAuth: true}
+        },
+        {
+          path: "/home/history/notice",
+          component: Notice,
+          meta: {requireAuth: true}
+        },
+        {
+          path: "/home/training/subject",
+          component: Subject,
+          meta: {requireAuth: true}
+        },
+        {
+          path: "/home/training/document",
+          component: Document,
+          meta: {requireAuth: true}
+        },
+        {
+          path: "/home/training/weekSummary",
+          component: WeekSummary,
           meta: {requireAuth: true}
         },
       ]

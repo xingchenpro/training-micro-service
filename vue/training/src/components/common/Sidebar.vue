@@ -14,7 +14,7 @@
     </div>
 
     <!-- 管理员菜单 -->
-    <ul class="sidebar-nav"  v-if="role==='1'">
+    <ul class="sidebar-nav" v-if="role==='1'">
       <li class="sidebar-nav-heading">Components <span class="sidebar-nav-heading-info"> 附加组件</span></li>
       <li class="sidebar-nav-link">
         <a href="index.html" class="active">
@@ -132,45 +132,46 @@
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
-          <span>导航一</span>
+          <span>实训过程</span>
         </template>
-        <el-menu-item index="1-1">选项1</el-menu-item>
-        <el-submenu index="1-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
-        </el-submenu>
+        <router-link to="/home/training/weekSummary">
+          <el-menu-item index="1-1">我的周总结</el-menu-item>
+        </router-link>
+
+        <router-link to="/home/training/document">
+          <el-menu-item index="1-4-1">我的文档</el-menu-item>
+        </router-link>
       </el-submenu>
 
       <router-link to="/home/leave">
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">请假申请</span>
-      </el-menu-item>
+        <el-menu-item index="2">
+          <i class="el-icon-menu"></i>
+          <span slot="title">请假申请</span>
+        </el-menu-item>
       </router-link>
 
-      <el-menu-item index="3">
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
+      <router-link to="/home/training/subject">
+        <el-menu-item index="3">
+          <i class="el-icon-document"></i>
+          <span slot="title">实训课题</span>
+        </el-menu-item>
+      </router-link>
 
 
-      <el-menu-item index="5">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航五</span>
-      </el-menu-item>
-      <el-menu-item index="6">
-        <i class="el-icon-menu"></i>
-        <span slot="title">历史公告</span>
-      </el-menu-item>
+      <router-link to="/home/history/notice">
+        <el-menu-item index="6">
+          <i class="el-icon-menu"></i>
+          <span slot="title">历史公告</span>
+        </el-menu-item>
+      </router-link>
 
       <router-link to="/home/info">
-      <el-menu-item index="7">
-        <i class="el-icon-menu"></i>
-        <span slot="title">个人信息</span>
-      </el-menu-item>
+        <el-menu-item index="7">
+          <i class="el-icon-menu"></i>
+          <span slot="title">个人信息</span>
+        </el-menu-item>
       </router-link>
     </el-menu>
-
 
 
     <!--第几周-->
