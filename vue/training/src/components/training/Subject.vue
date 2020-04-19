@@ -80,7 +80,7 @@
                     </el-form-item>
 
                     <el-form-item>
-                      <el-button type="primary" @click="submitForm('subjectFrom')">立即创建</el-button>
+                      <el-button type="primary" @click="submitForm('subjectFrom')">保存</el-button>
                       <el-button @click="resetForm('subjectFrom')">重置</el-button>
                     </el-form-item>
 

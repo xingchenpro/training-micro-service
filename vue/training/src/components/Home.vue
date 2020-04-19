@@ -3,7 +3,7 @@
   <div data-type="index">
     <div class="am-g tpl-g">
       <Header></Header>
-      <Skin></Skin>
+    <!--  <Skin></Skin>-->
       <keep-alive>
         <!--显示路由匹配到的组件-->
         <router-view ></router-view>

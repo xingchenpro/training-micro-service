@@ -1,5 +1,6 @@
 package com.javahly.gatewayservice;
 
+import brave.sampler.Sampler;
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,5 +27,10 @@ public class GatewayServiceApplication {
 				return chain.filter(exchange);
 			}
 		};
+	}
+
+	@Bean
+	public Sampler defaultSampler() {
+		return Sampler.ALWAYS_SAMPLE;
 	}
 }

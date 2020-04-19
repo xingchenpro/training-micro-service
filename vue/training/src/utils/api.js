@@ -7,7 +7,7 @@
 
 import axios from 'axios'
 
-let base = ''
+let base = 'http://localhost:8889'
 export const postRequest = (url, params) => {
   return axios({
     method: 'post',
@@ -58,7 +58,7 @@ export const putRequest = (url, params) => {
       return newData
     }],
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
     }
   });
 }

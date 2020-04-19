@@ -1,42 +1,50 @@
 <template>
   <div>
-    <div class="tpl-content-wrapper">
-      <div class="row-content am-cf">
-        <div class="row">
-          <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
-            <div class="widget am-cf">
-              <div class="widget-head am-cf">
-                <div class="widget-title am-fl">个人信息</div>
+    <div cId="tpl-content-wrapper">
+      <div cId="row-content am-cf">
+        <div cId="row">
+          <div cId="am-u-sm-12 am-u-md-12 am-u-lg-12">
+            <div cId="widget am-cf">
+              <div cId="widget-head am-cf">
+                <div cId="widget-title am-fl">个人信息</div>
               </div>
               <!--信息栏开始-->
-              <div class="widget-body am-fr">
-                <el-form ref="info" :model="info" label-width="80px"  style="margin:0 auto;width:400px;min-height:780px;">
+              <div cId="widget-body am-fr">
+                <el-form ref="info" :model="info" label-width="80px"
+                         style="margin:0 auto;width:400px;min-height:780px;">
                   <el-form-item label="姓名">
-                    <el-input v-model="info.name"></el-input>
-                  </el-form-item>
-                  <el-form-item label="电话">
-                    <el-input v-model="info.phone"></el-input>
-                  </el-form-item>
-                  <el-form-item label="邮箱">
-                    <el-input v-model="info.email"></el-input>
-                  </el-form-item>
-                  <el-form-item label="年龄">
-                    <el-input v-model="info.age"></el-input>
-                  </el-form-item>
-                  <el-form-item label="班级">
-                    <el-input v-model="info.class"></el-input>
-                  </el-form-item>
-                  <el-form-item label="专业">
-                    <el-input v-model="info.speciality"></el-input>
-                  </el-form-item>
-                  <el-form-item label="学号">
-                    <el-input v-model="info.num"></el-input>
+                    <el-input v-model="info.sName"></el-input>
                   </el-form-item>
                   <el-form-item label="性别">
-                    <el-select v-model="info.sex" placeholder="请选择性别" style="width:320px;">
-                      <el-option label="男" value="shanghai"></el-option>
-                      <el-option label="女" value="beijing"></el-option>
+                    <el-select v-model="info.sSex" placeholder="请选择性别" style="width:320px;">
+                      <el-option label="男" value="男"></el-option>
+                      <el-option label="女" value="女"></el-option>
                     </el-select>
+                  </el-form-item>
+                  <el-form-item label="电话">
+                    <el-input v-model="info.sPhone"></el-input>
+                  </el-form-item>
+                  <el-form-item label="邮箱">
+                    <el-input v-model="info.sEmail"></el-input>
+                  </el-form-item>
+
+                  <el-form-item label="地址">
+                    <el-input v-model="info.sAddress"></el-input>
+                  </el-form-item>
+                  <el-form-item label="备注">
+                    <el-input v-model="info.sRemark"></el-input>
+                  </el-form-item>
+                  <el-form-item label="班级">
+                    <el-input v-model="info.cId" :disabled="true"></el-input>
+                  </el-form-item>
+                  <el-form-item label="专业">
+                    <el-input v-model="info.specId" :disabled="true"></el-input>
+                  </el-form-item>
+                  <el-form-item label="学号">
+                    <el-input v-model="info.sId" :disabled="true"></el-input>
+                  </el-form-item>
+                  <el-form-item label="身份证号">
+                    <el-input v-model="info.sIdentitycard"></el-input>
                   </el-form-item>
 
                   <el-form-item>
@@ -55,25 +63,53 @@
 </template>
 
 <script>
+
   export default {
-    name: "persionInfo",
     data() {
       return {
+        username: '',
         info: {
-          name: '',
-          sex: '',
-          age: '',
-          email: '',
-          phone: '',
-          speciality: '',
-          class: '',
-          num: '',
+          sName: '',
+          sSex: '',
+          sIdentitycard: '',
+          sAddress: '',
+          sRemark: '',
+          sEmail: '',
+          sPhone: '',
+          specId: '',
+          cId: '',
+          sId: '',
         }
       }
     },
+    created() {
+      this.username = sessionStorage.getItem("username");
+      console.log(this.username);
+      this.$axios.get("/basic-service/v1/info/student", {
+        params: {
+          sId: this.username,
+        },
+      }).then(res => {
+        console.log(res);
+        if (res.data.resultCode === 200) {
+          this.info = res.data.result;
+        }
+      }).catch(err => {
+        console.log(err);
+      });
+    },
     methods: {
       onSubmit() {
-        console.log('submit!');
+        this.$axios.put("/basic-service/v1/info/student",this.info).then(res=>{
+          if(res.data.resultCode===200){
+            this.$notify({
+              type:'success',
+              message:'保存成功!'
+            })
+          }
+       }).catch(err=>{
+         console.log(err);
+       });
       }
     }
   }

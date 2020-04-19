@@ -1,3 +1,13 @@
 1、OAuth自定义格式
 
 https://blog.csdn.net/u014481096/article/details/103325886
+
+---
+
+2、zipkin持久化到内存
+https://blog.csdn.net/qq_38187437/article/details/105171275
+
+java -jar zipkin-server-2.10.1-exec.jar --STORAGE_TYPE=mysql --MYSQL_HOST=127.0.0.1 --MYSQL_TCP_PORT=3306 --MYSQL_DB=zipkin --MYSQL_USER=root --MYSQL_PASS=roof
+
+---
+

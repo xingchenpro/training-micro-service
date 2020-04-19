@@ -29,7 +29,7 @@ import java.util.Set;
  * @QQ :1136513099
  * @desc : https://github.com/alibaba/Sentinel/wiki/%E7%BD%91%E5%85%B3%E9%99%90%E6%B5%81
  */
-@Configuration
+//@Configuration
 public class GatewayConfiguration {
 
     private final List<ViewResolver> viewResolvers;

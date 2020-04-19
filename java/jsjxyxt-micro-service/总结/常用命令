@@ -1,8 +1,8 @@
-打包
+1、打包
 mvn install -Dmaven.test.skip=true
 
 ---
-sentinel 控制台启动
+2、sentinel 控制台启动
 
 java -Dserver.port=8718 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject.name=sentinel-dashboard -Dcsp.sentinel.api.port=8719 -jar sentinel-dashboard-1.6.2.jar
 
@@ -13,3 +13,14 @@ java -Dserver.port=8718 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject
 
 ---
 
+3、注册中心后台启动
+nohup java -jar eureka-service-0.0.1-SNAPSHOT.jar &
+
+---
+
+4、linux清理内存
+
+echo 1 > /proc/sys/vm/drop_caches
+
+
+---

@@ -66,7 +66,7 @@
               sessionStorage.setItem('username', this.loginForm.username);
               sessionStorage.setItem('role', resp.data.result.role[0].authority);
               sessionStorage.setItem('token', resp.data.result.accessToken);
-              alert(sessionStorage.getItem("token"))
+              /*alert(sessionStorage.getItem("token"))*/
               this.$router.replace({path: '/home'});
             } else if (resp.data.resultCode === 403) {
               this.$router.replace({path: '/error/limit'});
@@ -101,7 +101,6 @@
     background: url("../../static/images/雪山.jpg");
     height: 100%;
     background-size: 100% 100%;
-
   }
 
   .login {

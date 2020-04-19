@@ -14,4 +14,26 @@
         <include refid="comm_cols_student"></include>
         FROM student
     </select>
+
+    <select id="getStudent" resultType="student">
+        SELECT
+        <include refid="comm_cols_student"></include>
+        FROM student
+        WHERE s_id=#{sId}
+    </select>
+
+    <!--学生修改信息-->
+    <update id="updateStudent" parameterType="student">
+        UPDATE student
+        <set>
+            <if test="sName!=null || sName!=''">s_name=#{sName},</if>
+            <if test="sSex!=null || sSex!=''">s_sex=#{sSex},</if>
+            <if test="sEmail!=null || sEmail!=''">s_email=#{sEmail},</if>
+            <if test="sPhone!=null || sPhone!=''">s_phone=#{sPhone},</if>
+            <if test="sAddress!=null || sAddress!=''">s_address=#{sAddress},</if>
+            <if test="sRemark!=null || sRemark!=''">s_remark=#{sRemark},</if>
+            <if test="sIdentitycard!=null || sIdentitycard!=''">s_identitycard=#{sIdentitycard},</if>
+        </set>
+        WHERE s_id = #{sId}
+    </update>
 </mapper>

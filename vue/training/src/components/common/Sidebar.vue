@@ -8,116 +8,91 @@
           <img src="../../../static/images/user.jpg">
         </div>
         <span class="user-panel-logged-in-text">
-              管理员
+              {{username}}
           </span>
       </div>
     </div>
 
-    <!-- 管理员菜单 -->
-    <ul class="sidebar-nav" v-if="role==='1'">
-      <li class="sidebar-nav-heading">Components <span class="sidebar-nav-heading-info"> 附加组件</span></li>
-      <li class="sidebar-nav-link">
-        <a href="index.html" class="active">
-          <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
-        </a>
-      </li>
-      <li class="sidebar-nav-link">
-        <a href="../src/tables.html">
-          <i class="am-icon-table sidebar-nav-link-logo"></i> 表格
-        </a>
-      </li>
-      <li class="sidebar-nav-link">
-        <a href="calendar.html">
-          <i class="am-icon-calendar sidebar-nav-link-logo"></i> 日历
-        </a>
-      </li>
-      <li class="sidebar-nav-link">
-        <a href="form.html">
-          <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 表单
-
-        </a>
-      </li>
-      <li class="sidebar-nav-link">
-        <a href="chart.html">
-          <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
-
-        </a>
-      </li>
-
-      <li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
-      <li class="sidebar-nav-link">
-        <a href="javascript:;" class="sidebar-nav-sub-title">
-          <i class="am-icon-table sidebar-nav-link-logo"></i> 数据列表
-          <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
-        </a>
-        <ul class="sidebar-nav sidebar-nav-sub">
-          <li class="sidebar-nav-link">
-            <a href="../src/table-list.html">
-              <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文字列表
-            </a>
-          </li>
-
-          <li class="sidebar-nav-link">
-            <a href="../src/table-list-img.html">
-              <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图文列表
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="sidebar-nav-link">
-        <a href="../src/sign-up.html">
-          <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
-          <span class="am-badge am-badge-secondary sidebar-nav-link-logo-ico am-round am-fr am-margin-right-sm">6</span>
-        </a>
-      </li>
-      <li class="sidebar-nav-link">
-        <a href="login.html">
-          <i class="am-icon-key sidebar-nav-link-logo"></i> 登录
-        </a>
-      </li>
-      <li class="sidebar-nav-link">
-        <a href="../src/404.html">
-          <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
-        </a>
-      </li>
-    </ul>
-
-
-    <!--辅导员菜单 2-->
-    <el-menu default-active="1" class="el-menu-vertical-demo" v-if="role==='2'">
+    <!--管理员 1-->
+    <el-menu default-active="1" class="el-menu-vertical-demo" v-if="role==='1'">
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
-          <span>导航一</span>
+          <span>实训过程管理</span>
         </template>
-        <el-menu-item index="1-1">选项1</el-menu-item>
-        <el-submenu index="1-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
-        </el-submenu>
+        <el-menu-item index="1-1">实训单位情况</el-menu-item>
+        <el-menu-item index="1-2">实训学生情况</el-menu-item>
       </el-submenu>
 
-      <router-link to="/home/leave/manager">
-        <el-menu-item index="2">
+      <el-submenu index="2">
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span>基本信息管理</span>
+        </template>
+        <el-menu-item index="2-1">用户管理</el-menu-item>
+        <el-menu-item index="2-2">学生管理</el-menu-item>
+        <el-menu-item index="2-3">教师管理</el-menu-item>
+        <el-menu-item index="2-4">班级管理</el-menu-item>
+        <el-menu-item index="2-5">专业管理</el-menu-item>
+        <el-menu-item index="2-6">单位信息管理</el-menu-item>
+        <el-menu-item index="2-7">历史公告管理</el-menu-item>
+      </el-submenu>
+    </el-menu>
+
+    <!--辅导员菜单 2-->
+    <el-menu default-active="1" class="el-menu-vertical-demo" v-if="role==='2'">
+
+      <router-link to="/home/history/notice">
+        <el-menu-item index="1">
           <i class="el-icon-menu"></i>
-          <span slot="title">请假审批</span>
+          <span slot="title">实训单位管理</span>
         </el-menu-item>
       </router-link>
 
-      <el-menu-item index="3">
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
+      <router-link to="/home/history/notice">
+        <el-menu-item index="2">
+          <i class="el-icon-menu"></i>
+          <span slot="title">实训请假审批</span>
+        </el-menu-item>
+      </router-link>
+
+      <router-link to="/home/history/notice">
+        <el-menu-item index="3">
+          <i class="el-icon-menu"></i>
+          <span slot="title">历史公告</span>
+        </el-menu-item>
+      </router-link>
 
 
-      <el-menu-item index="5">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航五</span>
-      </el-menu-item>
-      <el-menu-item index="6">
-        <i class="el-icon-menu"></i>
-        <span slot="title">历史公告</span>
-      </el-menu-item>
+    </el-menu>
+
+
+    <!--指导教师 3-->
+    <el-menu default-active="1" class="el-menu-vertical-demo" v-if="role==='3'">
+      <el-submenu index="1">
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span>实训过程管理</span>
+        </template>
+        <el-menu-item index="1-1">学生周总结</el-menu-item>
+        <el-menu-item index="1-2">实训任务书</el-menu-item>
+        <el-menu-item index="1-2">实训审批</el-menu-item>
+      </el-submenu>
+
+
+      <router-link to="/home/history/notice">
+        <el-menu-item index="6">
+          <i class="el-icon-menu"></i>
+          <span slot="title">历史公告</span>
+        </el-menu-item>
+      </router-link>
+
+      <router-link to="/home/history/notice">
+        <el-menu-item index="6">
+          <i class="el-icon-menu"></i>
+          <span slot="title">历史管理</span>
+        </el-menu-item>
+      </router-link>
 
       <router-link to="/home/info">
         <el-menu-item index="7">
@@ -125,7 +100,74 @@
           <span slot="title">个人信息</span>
         </el-menu-item>
       </router-link>
+
     </el-menu>
+
+    <!--专业负责人 4-->
+    <el-menu default-active="1" class="el-menu-vertical-demo" v-if="role==='4'">
+      <el-submenu index="1">
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span>专业管理</span>
+        </template>
+        <el-menu-item index="1-1">实训审批</el-menu-item>
+        <el-menu-item index="1-2">实训课题管理</el-menu-item>
+        <el-menu-item index="1-3">实训课题审核</el-menu-item>
+        <el-menu-item index="1-4">实训分配</el-menu-item>
+        <el-menu-item index="1-5">实训单位情况</el-menu-item>
+        <el-menu-item index="1-6">实训学生情况</el-menu-item>
+      </el-submenu>
+
+      <router-link to="/home/history/notice">
+        <el-menu-item index="2">
+          <i class="el-icon-menu"></i>
+          <span slot="title">历史公告</span>
+        </el-menu-item>
+      </router-link>
+
+      <router-link to="/home/history/notice">
+        <el-menu-item index="3">
+          <i class="el-icon-menu"></i>
+          <span slot="title">历史管理</span>
+        </el-menu-item>
+      </router-link>
+
+      <router-link to="/home/info">
+        <el-menu-item index="4">
+          <i class="el-icon-menu"></i>
+          <span slot="title">个人信息</span>
+        </el-menu-item>
+      </router-link>
+    </el-menu>
+
+    <!--班主任 5-->
+    <el-menu default-active="1" class="el-menu-vertical-demo" v-if="role==='5'">
+      <el-submenu index="1">
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span>专业管理</span>
+        </template>
+        <el-menu-item index="1-1">学生周总结</el-menu-item>
+        <el-menu-item index="1-2">学生任务书</el-menu-item>
+        <el-menu-item index="1-3">学生实训情况</el-menu-item>
+        <el-menu-item index="1-4">实训报告管理</el-menu-item>
+      </el-submenu>
+
+      <router-link to="/home/history/notice">
+        <el-menu-item index="2">
+          <i class="el-icon-menu"></i>
+          <span slot="title">历史公告</span>
+        </el-menu-item>
+      </router-link>
+
+      <router-link to="/home/info">
+        <el-menu-item index="3">
+          <i class="el-icon-menu"></i>
+          <span slot="title">个人信息</span>
+        </el-menu-item>
+      </router-link>
+    </el-menu>
+
 
     <!--学生菜单 6-->
     <el-menu default-active="1" class="el-menu-vertical-demo" v-if="role==='6'">
@@ -189,11 +231,14 @@
     data() {
       return {
         role: Number,
+        username: String,
         currentWeek: "一"
       }
     },
     created() {
       this.role = sessionStorage.getItem("role");
+      this.username = sessionStorage.getItem("username");
+
     },
   };
 </script>

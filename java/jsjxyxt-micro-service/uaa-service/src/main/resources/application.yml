@@ -31,11 +31,14 @@ spring:
     # 链接超时时间
     timeout: 300000
     password: "!@#redis"
+  # zipkin
+  zipkin:
+    base-url: http://localhost:9411
 
 
 # 端口设置
 server:
-  port: 8763
+  port: 8081
   servlet:
     session:
       timeout: 600

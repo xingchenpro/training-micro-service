@@ -7,7 +7,7 @@
         <div class="row">
           <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
             <div class="widget am-cf" style="min-height: 110px;width: 98.5%;margin: 0 auto 10px">
-              校外实训申请
+              请假申请
               <!--申请状态开始-->
               <div class="progress-container">
                 <div class="progress-box">

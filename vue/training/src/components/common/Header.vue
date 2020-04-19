@@ -25,7 +25,14 @@
         <ul>
           <!-- 欢迎语 -->
           <li class="am-text-sm tpl-header-navbar-welcome">
-            <a href="javascript:;">欢迎你, <span>管理员</span> </a>
+            <a>欢迎你,
+              <span v-if="role==='1'">管理员</span>
+              <span v-if="role==='2'">辅导员</span>
+              <span v-if="role==='3'">指导教师</span>
+              <span v-if="role==='4'">专业负责人</span>
+              <span v-if="role==='5'">老师</span>
+              <span v-if="role==='6'">同学</span>
+            </a>
           </li>
 
           <!-- 新邮件 -->
@@ -145,7 +152,18 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+
+    data() {
+      return {
+        role: Number,
+        currentWeek: "一"
+      }
+    },
+    created() {
+      this.role = sessionStorage.getItem("role");
+    },
+  };
 </script>
 
 <style scoped>

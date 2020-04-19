@@ -99,3 +99,4 @@ server:
       timeout: 600
 # 必须改成这种格式否则无法注册
 server.servlet.context-path: /v1/info
+

@@ -2,35 +2,58 @@ spring:
   application:
     name: gateway
   cloud:
+    # 网关配置
     gateway:
       discovery:
         locator:
           enabled: true
       routes:
+      # 权限认证路由
       - id: uaa-route
         uri: lb://uaa-service
         predicates:
         - Path=/uaa-service/**
         filters:
         - StripPrefix=1
+        # 基本信息路由
       - id: basic-route
         uri: lb://basic-info-service
         predicates:
         - Path=/basic-service/**
         filters:
         - StripPrefix=1
+        # 实训路由
+      - id: training-route
+        uri: lb://training-service
+        predicates:
+        - Path=/training-service/**
+        filters:
+        - StripPrefix=1
+        # 请假服务路由
 
+    # sentinel 配置
+    sentinel:
+      transport:
+        dashboard: localhost:8718
+        port: 8719
 
+  # 链路追踪配置
+  zipkin:
+    base-url: http://localhost:9411
+
+# 注册中心配置
 eureka:
  client:
    serviceUrl:
     defaultZone: http://49.233.192.8:8761/eureka/
+
+# 网关服务端口
 server:
   port: 8889
 
+# 配置中心配置
 app:
   id: sentinel
-
 apollo:
   meta: http://49.233.192.8:8080
   cacheDir: /app/war/apollo/temp/

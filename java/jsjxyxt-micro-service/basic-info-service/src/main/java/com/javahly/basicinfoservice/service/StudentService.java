@@ -1,6 +1,7 @@
 package com.javahly.basicinfoservice.service;
 
 import com.javahly.basicinfoservice.entity.Student;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,5 +21,15 @@ public interface StudentService {
      */
     public List<Student> getStudents();
 
+    /**
+     * 根据学号查询单个学生信息
+     */
+    public Student getStudent(String sId);
+
+
+    /**
+     * 修改学生信息
+     */
+    public int updateStudent(Student student);
 
 }
