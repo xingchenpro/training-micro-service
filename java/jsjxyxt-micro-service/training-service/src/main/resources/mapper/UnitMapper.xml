@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.javahly.trainingservice.dao.UnitDao">
+
+
+    <sql id="comm_cols_speciality">
+       u_id uId,u_name uName,u_address uAddress,u_remark uRemark,u_details uDetails,s_id uSId,u_reason uReason,u_status uStatus
+    </sql>
+
+
+    <sql id="unitAddSql">u_name,u_address,u_remark,u_details,s_id,u_status</sql>
+
+    <select id="getUnits" resultType="unit" parameterType="Map">
+        SELECT <include refid="comm_cols_speciality"/> FROM unit
+        <if test="status!=null">WHERE u_status = #{uStatus}</if>
+    </select>
+
+
+
+
+</mapper>

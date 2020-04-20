@@ -20,26 +20,32 @@
                 </div>
 
                 <div class="progress-box">
-                <span class="progress-bar" :class="[leStatus !== -10 ? 'active' : '']"></span>
+                  <span class="progress-bar" :class="[leStatus !== -10 ? 'active' : '']"></span>
                   <div class="circle-wrapper">
-                    <i class="fa fa-dot-circle-o" :class="[leStatus !== -10 && (leStatus > 0 || leStatus < -1)? 'font-active': '']"></i></div>
-                  <p class="p2 font-active1 " v-if="leStatus !== -10 && (leStatus > 0 || leStatus < -1)">辅导员审核已通过<i class="fa fa-check"></i></p>
+                    <i class="fa fa-dot-circle-o"
+                       :class="[leStatus !== -10 && (leStatus > 0 || leStatus < -1)? 'font-active': '']"></i></div>
+                  <p class="p2 font-active1 " v-if="leStatus !== -10 && (leStatus > 0 || leStatus < -1)">辅导员审核已通过<i
+                    class="fa fa-check"></i></p>
                   <p class="p2" v-if="leStatus === 0 || leStatus === -10">等待辅导员审核</p>
                   <p class="p2 font-active-refuse " v-if="leStatus === -1">辅导员审核未通过<i class="fa fa-close"></i></p>
                 </div>
 
                 <div class="progress-box">
-                <span class="progress-bar" :class="[leStatus !== -10 && (leStatus > 0 || leStatus < -1)? 'active': '']"></span>
+                  <span class="progress-bar"
+                        :class="[leStatus !== -10 && (leStatus > 0 || leStatus < -1)? 'active': '']"></span>
                   <div class="circle-wrapper">
-                    <i class="fa fa-dot-circle-o" :class="[leStatus !== -10 && (leStatus > 1 || leStatus < -2)? 'font-active': '']"></i>
+                    <i class="fa fa-dot-circle-o"
+                       :class="[leStatus !== -10 && (leStatus > 1 || leStatus < -2)? 'font-active': '']"></i>
                   </div>
-                  <p class="p3 font-active1 " v-if="leStatus !== -10 && (leStatus > 1 || leStatus < -2)">指导教师审核已通过<i class="fa fa-check"></i></p>
+                  <p class="p3 font-active1 " v-if="leStatus !== -10 && (leStatus > 1 || leStatus < -2)">指导教师审核已通过<i
+                    class="fa fa-check"></i></p>
                   <p class="p3" v-if="leStatus === 0 || leStatus === 1 || leStatus === -10">等待指导教师审核</p>
                   <p class="p3 font-active-refuse " v-if="leStatus === -2">指导教师审核未通过<i class="fa fa-close"></i></p>
                 </div>
 
                 <div class="progress-box">
-                <span class="progress-bar" :class="[leStatus !== -10 && (leStatus > 1 || leStatus < -2)? 'active': '']"></span>
+                  <span class="progress-bar"
+                        :class="[leStatus !== -10 && (leStatus > 1 || leStatus < -2)? 'active': '']"></span>
                   <div class="circle-wrapper">
                     <i class="fa fa-dot-circle-o" :class="[leStatus !== -10 && leStatus > 2 ? 'font-active' : '']"></i>
                   </div>
@@ -49,7 +55,7 @@
                 </div>
 
                 <div class="progress-box">
-                <span class="progress-bar" :class="[leStatus > 2 ? 'active' : '']"></span>
+                  <span class="progress-bar" :class="[leStatus > 2 ? 'active' : '']"></span>
                   <div class="circle-wrapper">
                     <i class="fa fa-check" :class="[leStatus > 2 ? 'font-active' : '']"></i>
                   </div>
@@ -71,8 +77,7 @@
                     label-width="100px"
                     class="demo-ruleForm"
                     :disabled="leStatus>=0"
-                    status-icon
-                  >
+                    status-icon>
                     <el-form-item label="请假时间" prop="leTimeFrame">
                       <el-date-picker
                         v-model="leaveForm.leTimeFrame"
@@ -81,8 +86,7 @@
                         value-format="yyyy-MM-dd"
                         start-placeholder="开始日期"
                         end-placeholder="结束日期"
-                        style="width:100%;"
-                      >
+                        style="width:100%;">
                       </el-date-picker>
                     </el-form-item>
                     <el-form-item label="离校时间" prop="leLeaveTime">
@@ -91,8 +95,7 @@
                         type="date"
                         value-format="yyyy-MM-dd"
                         placeholder="选择日期"
-                        class="setWidth"
-                      >
+                        class="setWidth">
                       </el-date-picker>
                     </el-form-item>
                     <el-form-item label="家庭电话" prop="lePhone">
@@ -114,23 +117,15 @@
                       ></el-input>
                     </el-form-item>
                     <el-form-item label="请假事由" prop="leReason">
-                      <el-input
-                        type="textarea"
-                        v-model="leaveForm.leReason"
-                      ></el-input>
+                      <el-input type="textarea" v-model="leaveForm.leReason"></el-input>
                     </el-form-item>
                     <el-form-item label="校内指导老师" prop="leTeacher">
                       <el-select
                         class="setWidth"
                         v-model="leaveForm.leTeacher"
-                        placeholder="请选择指导教师"
-                      >
-                        <el-option
-                          v-for="(item, index) in teachers"
-                          :key="index"
-                          :label="item.t_name"
-                          :value="item.t_id"
-                        ></el-option>
+                        placeholder="请选择指导教师">
+                        <el-option v-for="(item, index) in teachers" :key="index" :label="item.tName"
+                                   :value="item.tId"></el-option>
                       </el-select>
                     </el-form-item>
                     <el-form-item label="实训证明">
@@ -161,17 +156,17 @@
                         placeholder="实训题目">
                       </el-input>
                     </el-form-item>
-                    <el-form-item label="实训单位" prop="apUid">
+                    <el-form-item label="实训单位" prop="uid">
                       <el-select
-                        v-model="applyForm.apUid"
+                        v-model="applyForm.uId"
                         filterable
                         placeholder="若列表中没有，请先申请公司"
                         style="width:100%">
                         <el-option
                           v-for="item in companies"
                           :key="item.id"
-                          :label="item.name"
-                          :value="item.id">
+                          :label="item.uName"
+                          :value="item.uId">
                         </el-option>
                       </el-select>
                     </el-form-item>
@@ -240,12 +235,14 @@
 </template>
 
 <script>
+
+  import qs from "qs";
+
   export default {
-    name: "leave-apply",
     data() {
       return {
-        state: "",
-        loading: true,
+        sId:"",
+        state: "",//地点
         teachers: [],
         companies: [],
         isApply: 1,
@@ -296,7 +293,7 @@
           apTeaTitle: "",
           apTeaPhone: "",
           tId: "",
-          apUid: ""
+          uId: ""
         },
         //校验实训表
         applyFormRules: {
@@ -327,15 +324,127 @@
         }
       };
 
-
     },
     created() {
+      /*学号*/
+      this.sId = sessionStorage.getItem("username");
+      /*获取教师信息*/
+      this.teachers = JSON.parse(sessionStorage.teachers);
+      /*查询单位*/
+      this.$axios
+        .get("/training-service/v1/training/units").then(res => {
+        this.companies = res.data; //拿到公司信息
+      }).catch(err => {
+        console.log(err);
+      });
+      /*如果有数据则显示*/
+
 
     },
 
-    methods: {},
+    methods: {
+
+      //提交表单
+      commit(leaveForm, applyForm) {
+        this.$confirm("是否确认提交请假申请？", "提示", {
+          confirmButtonText: "确认",
+          cancelButtonText: "取消",
+          type: "warning"
+        })
+          .then(() => {
+            this.$refs[leaveForm].validate(valid => {
+              if (valid) {
+                this.$refs[applyForm].validate(valid2 => {
+                  if (valid2) {
+                    var data1 = {
+                      sId:this.sId,
+                      leStartTime: this.leaveForm.leTimeFrame[0],
+                      leEndTime: this.leaveForm.leTimeFrame[1],
+                      leLeaveTime: this.leaveForm.leLeaveTime,
+                      leReason: this.leaveForm.leReason,
+                      lePhone: this.leaveForm.lePhone,
+                      leStayPlace: this.leaveForm.leStayPlace,
+                      tId: this.leaveForm.leTeacher,
+                      apName: this.applyForm.apName,
+                      apReason: this.applyForm.apReason,
+                      apCompany: this.applyForm.apCompany,
+                      apPlace: this.applyForm.apPlace,
+                      apTeaName: this.applyForm.apTeaName,
+                      apTeaTitle: this.applyForm.apTeaTitle,
+                      apTeaPhone: this.applyForm.apTeaPhone,
+                      uId: this.applyForm.uId,
+                      flag: -10 //课题状态 -10 表示未提交，仅仅是请假时申请的题目。
+                    };
+                    console.log(data1);
+                    var data = this.$qs.stringify(data1);
+                    this.$axios
+                      .post("/leave-service/v1/leave/leave", data)
+                      .then(res => {
+                        if (res.data.resultCode === 200) {
+                          this.loading = false; //关闭等待
+                          this.leStatus = 0;
+                          this.$notify({
+                            title: "成功",
+                            message: "提交成功，请等待审核",
+                            type: "success"
+                          });
+                        }
+                      })
+                      .catch(error => {
+                        console.log(error);
+                      });
+                  } else {
+                    this.$notify({
+                      type: "info",
+                      message: "信息不完整"
+                    });
+                    return false;
+                  }
+                });
+              } else {
+                this.$notify({
+                  type: "info",
+                  message: "信息不完整"
+                });
+                return false;
+              }
+            });
+          })
+          .catch(() => {
+            this.$notify({
+              type: "info",
+              message: "已取消提交"
+            });
+          });
+      }
+    },
     computed: {},
-    watch: {}
+    watch: {
+      leaveForm: {
+        handler(newV, oldV) {
+          this.leaveForm.leStayPlace =
+            this.leaveForm.leCityAddress.join() +
+            "," +
+            this.leaveForm.leDetailAddress;
+        },
+        deep: true
+      },
+      applyForm: {
+        handler(newV, oldV) {
+          this.applyForm.apPlace =
+            this.applyForm.apCityAddress.join() +
+            "," +
+            this.applyForm.apDetailAddress;
+          this.companies.forEach((item, index) => {
+            if (item.uId === this.applyForm.uId) {
+              this.applyForm.apCompany = item.uName;
+            }
+          });
+          console.log(this.applyForm.uId);
+        },
+        deep: true
+      }
+    }
 
   }
 </script>

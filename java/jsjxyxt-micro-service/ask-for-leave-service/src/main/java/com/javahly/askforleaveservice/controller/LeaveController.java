@@ -4,18 +4,25 @@ package com.javahly.askforleaveservice.controller;
 
 
 import com.javahly.askforleaveservice.cache.RedisKey;
+import com.javahly.askforleaveservice.entity.Leave;
+import com.javahly.askforleaveservice.entity.TrainingApply;
 import com.javahly.askforleaveservice.feign.user.entity.Teacher;
 import com.javahly.askforleaveservice.feign.user.service.TeacherService;
+import com.javahly.askforleaveservice.service.LeaveService;
+import com.javahly.askforleaveservice.service.TrainingApplyService;
 import com.javahly.askforleaveservice.util.JsonListUtil;
 import com.javahly.askforleaveservice.util.RedisUtil;
 import com.javahly.askforleaveservice.util.Result;
+import com.netflix.discovery.converters.Auto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
@@ -36,10 +43,29 @@ public class LeaveController {
     private RedisUtil redisUtil;
 
     @Autowired
+    LeaveService leaveService;
+
+    @Autowired
+    TrainingApplyService trainingApplyService;
+
+    @Autowired
     TeacherService teacherService;
 
-    @RequestMapping(value = "/leaves", method = RequestMethod.GET)
-    public Result getLeaves() {
+    //添加请假信息
+    @RequestMapping(value = "/leave", method = RequestMethod.POST)
+    public Result addLeaveInfo(Leave leave,  TrainingApply trainingApply) {
+        Result result = new Result();
+        trainingApply.setSpecId("101");
+        trainingApplyService.addTrainingApplyInfo(trainingApply);
+        leave.setApId(trainingApply.getApId());
+        leaveService.addLeaveInfo(leave);
+        return result;
+    }
+
+
+
+    @RequestMapping(value = "/teachers", method = RequestMethod.GET)
+    public Result getTeacher() {
         Result result = new Result();
 
         List<Teacher> teachers;

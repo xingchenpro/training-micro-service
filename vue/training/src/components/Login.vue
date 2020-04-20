@@ -79,7 +79,7 @@
             }
           }
         });
-        if (this.loginForm.username === '201611104033' && this.loginForm.password === '123') {
+        if (this.loginForm.username === '201611104032' && this.loginForm.password === '123') {
           sessionStorage.setItem('username', this.loginForm.username);
           sessionStorage.setItem('role', '6');
           this.$router.push('/home');

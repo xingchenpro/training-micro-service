@@ -2,6 +2,8 @@ package com.javahly.askforleaveservice.feign.user.service;
 
 import com.javahly.askforleaveservice.feign.user.entity.Teacher;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -16,6 +18,7 @@ import java.util.List;
  * @QQ :1136513099
  * @desc :
  */
+@Service
 @FeignClient(value = "basic-info-service")
 public interface TeacherService {
 

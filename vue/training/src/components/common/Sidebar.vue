@@ -49,7 +49,7 @@
         </el-menu-item>
       </router-link>
 
-      <router-link to="/home/history/notice">
+      <router-link to="/home/leave/manager">
         <el-menu-item index="2">
           <i class="el-icon-menu"></i>
           <span slot="title">实训请假审批</span>

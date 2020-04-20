@@ -40,7 +40,7 @@ public class TeacherController {
      * 获得所有教师信息
      */
     @RequestMapping(value = "/teachers", method = RequestMethod.GET)
-    public List<Teacher> getStudents() {
+    public List<Teacher> getTeacher() {
         return teacherService.getTeachers();
     }
 

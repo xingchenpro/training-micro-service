@@ -4,7 +4,7 @@ apollo:
   bootstrap:
     enabled: true
     namespaces: application
-  meta: http://106.13.1.171:8080/
+  meta: http://49.233.192.8:8080
   cacheDir: /app/war/apollo/temp/
 
 spring:
@@ -17,29 +17,31 @@ spring:
       password: roof
       url: jdbc:mysql://localhost:3306/trainingservice?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true
   redis:
-    # RedisÊı¾İ¿âË÷Òı£¬Ä¬ÈÏÎª0
+    sentinel:
+      master: mymaster
+      nodes: 106.13.9.117:26379,123.56.219.53:26379,106.13.1.171:26379
+    # Redisæ•°æ®åº“ç´¢å¼•ï¼Œé»˜è®¤ä¸º0
     database: 3
-    # Redis·şÎñÆ÷µØÖ·
-    host: 106.13.9.117
-    # Redis·şÎñÆ÷Á¬½Ó¶Ë¿Ú
-    port: 16379
-    # RedisÃÜÂë£¬Ä¬ÈÏÎª¿Õ
+    # RedisæœåŠ¡å™¨åœ°å€
+    #host: 106.13.9.117
+    # RedisæœåŠ¡å™¨è¿æ¥ç«¯å£
+    #port: 16379
+    # Rediså¯†ç ï¼Œé»˜è®¤ä¸ºç©º
     password: "!@#redis"
-    # RedisÁ¬½Ó³Ø×î´óÁ¬½ÓÊı(¸ºÖµ±íÊ¾Ã»ÓĞÏŞÖÆ
+    # Redisè¿æ¥æ± æœ€å¤§è¿æ¥æ•°(è´Ÿå€¼è¡¨ç¤ºæ²¡æœ‰é™åˆ¶
     jedis:
       pool:
         max-active: 10
-        # Á¬½Ó³Ø×î´ó×èÈûµÈ´ıÊ±¼ä
+        # è¿æ¥æ± æœ€å¤§é˜»å¡ç­‰å¾…æ—¶é—´
         max-wait: -1
-        # Á¬½Ó³Ø×î´ó¿ÕÏĞÁ´½Ó
+        # è¿æ¥æ± æœ€å¤§ç©ºé—²é“¾æ¥
         max-idle: 10
-        # Á¬½Ó³Ø×îĞ¡¿ÕÏĞÁ´½Ó
+        # è¿æ¥æ± æœ€å°ç©ºé—²é“¾æ¥
         min-idle: 0
-    # Á´½Ó³¬Ê±Ê±¼ä
+    # é“¾æ¥è¶…æ—¶æ—¶é—´
     timeout: 30000
-# ¼¯³ÉMybatis
+# ????Mybatis
 mybatis:
-  # MybatisÓ³Éä
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.javahly.trainingservice.entity
 
@@ -47,13 +49,13 @@ eureka:
  client:
    serviceUrl:
     defaultZone: http://49.233.192.8:8761/eureka/
-# ¶Ë¿ÚÉèÖÃ
+
 server:
   port: 8083
   servlet:
     session:
       timeout: 600
-# ±ØĞë¸Ä³ÉÕâÖÖ¸ñÊ½·ñÔòÎŞ·¨×¢²á
+
 server.servlet.context-path: /v1/training
 
 

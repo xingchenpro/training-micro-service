@@ -1,11 +1,11 @@
 
 app:
-  id: basic-info-service
+  id: ask-for-leave-service
 apollo:
   bootstrap:
     enabled: true
     namespaces: application
-  meta: http://106.13.1.171:8080/
+  meta: http://49.233.192.8:8080
   cacheDir: /app/war/apollo/temp/
 
 spring:
@@ -18,12 +18,15 @@ spring:
       password: roof
       url: jdbc:mysql://localhost:3306/askforleaveservice?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true
   redis:
+    sentinel:
+      master: mymaster
+      nodes: 106.13.9.117:26379,123.56.219.53:26379,106.13.1.171:26379
     # Redis数据库索引，默认为0
-    database: 0
+    database: 4
     # Redis服务器地址
-    host: 106.13.9.117
+    #host: 106.13.9.117
     # Redis服务器连接端口
-    port: 16379
+    #port: 16379
     # Redis密码，默认为空
     password: "!@#redis"
     # Redis连接池最大连接数(负值表示没有限制
@@ -44,10 +47,15 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.javahly.askforleaveservice.entity
 
+eureka:
+ client:
+   serviceUrl:
+    defaultZone: http://49.233.192.8:8761/eureka/
 # 端口设置
 server:
-  port: 8083
-  servlet.context-path: /v1/leave
+  port: 8084
+# 必须改成这种格式否则无法注册
+server.servlet.context-path: /v1/leave
 
 # 超时时间配置
 feign:
@@ -57,45 +65,3 @@ feign:
     connectTimeout: 2000
     readTimeout: 3000
 
-swagger:
-  apply-default-response-messages: false # 取消使用默认预定义的响应消息,并使用自定义响应消息
-  base-package: com.javahly.askforleave.controller
-  base-path: /**
-  contact:
-    email: 1136513099@qq.com
-    name: huangliangyun
-    url: https://github.com/huangliangyun
-  description: Starter for swagger 2.x
-  enabled: true
-  exclude-path: /error, /ops/**
-  global-response-message:
-    get:
-    - code: 401
-      message: 页面不存在
-    - code: 500
-      message: 系统内部错误
-      modelRef: ERROR
-    post:
-    - code: 500
-      message: 系统内部错误
-      modelRef: ERROR
-  globalOperationParameters:
-  - description: 描述
-    modelRef: string
-    name: name one
-    parameterType: header
-    required: true
-  - description: some description two
-    modelRef: string
-    name: name two
-    parameterType: body
-    required: false
-  license: Apache License, Version 2.0
-  licenseUrl: https://www.apache.org/licenses/LICENSE-2.0.html
-  termsOfServiceUrl: https://github.com/dyc87112/spring-boot-starter-swagger
-  title: 离校申请服务
-  version: v1
-#eureka:
- #client:
-  # serviceUrl:
-   # defaultZone: http://106.13.1.171:8761/eureka/

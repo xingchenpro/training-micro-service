@@ -38,7 +38,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @MapperScan("com.javahly.askforleaveservice.dao")
 @EnableApolloConfig
 @EnableFeignClients
-@EnableSwagger2Doc//http://localhost:8083/v1/leave/swagger-ui.html#/
+//@EnableSwagger2Doc//http://localhost:8083/v1/leave/swagger-ui.html#/
 public class AskForLeaveServiceApplication {
 
 	public static void main(String[] args) {

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.javahly.askforleaveservice.dao.LeaveDao">
+
+
+    <sql id="comm_cols_leave">
+        le_id leId,s_id sId,le_starttime leStartTime,le_endtime leEndTime,le_leavetime leLeaveTime,le_phone lePhone,le_reason leReason,le_stayplace leStayPlace,ap_id apId,le_status leStatus,le_confirmtime leConfirmTime,le_throughtime leThroughTime,le_backreason leBackReason
+    </sql>
+
+
+    <sql id="addLeaveInfoSql">
+        s_id,le_startTime,le_endTime,le_leaveTime,ap_id,le_phone,le_reason,le_stayPlace
+    </sql>
+
+    <!--添加请假信息-->
+    <insert id="addLeaveInfo" parameterType="leave">
+        INSERT INTO `leave`(
+        <include refid="addLeaveInfoSql"/>
+        )VALUES
+        (#{sId},#{leStartTime},#{leEndTime},#{leLeaveTime},#{apId},#{lePhone},#{leReason},#{leStayPlace})
+    </insert>
+
+
+
+</mapper>

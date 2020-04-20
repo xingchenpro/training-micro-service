@@ -30,6 +30,12 @@ spring:
         filters:
         - StripPrefix=1
         # 请假服务路由
+      - id: training-route
+        uri: lb://ask-for-leave-service
+        predicates:
+        - Path=/leave-service/**
+        filters:
+        - StripPrefix=1
 
     # sentinel 配置
     sentinel:

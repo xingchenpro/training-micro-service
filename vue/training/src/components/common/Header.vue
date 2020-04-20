@@ -140,9 +140,11 @@
           </li>
           <!-- 退出 -->
           <li class="am-text-sm">
+            <router-link to="/">
             <a href="javascript:;">
               <span class="am-icon-sign-out"></span> 退出
             </a>
+            </router-link>
           </li>
         </ul>
       </div>

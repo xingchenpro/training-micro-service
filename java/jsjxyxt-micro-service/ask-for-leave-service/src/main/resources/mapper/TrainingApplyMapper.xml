@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.javahly.askforleaveservice.dao.TrainingApplyDao">
+
+    <sql id="comm_cols_apply">
+       ap_id apId,s_id sId,ap_name apName,ap_company apCompany,ap_reason apReason,ap_place apPlace,ap_teaName apTeaName,ap_teaTitle apTeaTitle,ap_teaPhone apTeaPhone,t_id tId,spec_id specId,ifgraduate ifGraduate,u_id uId
+    </sql>
+
+    <sql id="addTrainingApplyInfoSql">
+        s_id,ap_name,ap_company,ap_place,ap_reason,t_id,spec_id,ap_teaName,ap_teaTitle,ap_teaPhone,u_id
+    </sql>
+
+    <!--添加实训信息-->
+    <insert id="addTrainingApplyInfo" parameterType="trainingApply"
+            useGeneratedKeys="true" keyProperty="apId" keyColumn="ap_id">
+        INSERT INTO trainingapply(
+        <include refid="addTrainingApplyInfoSql"/>
+        )VALUES
+        (#{sId},#{apName},#{apCompany},#{apPlace},#{apReason},#{tId},#{specId},#{apTeaName},#{apTeaTitle},#{apTeaPhone},#{uId})
+    </insert>
+
+
+</mapper>
