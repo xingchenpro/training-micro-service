@@ -25,4 +25,9 @@ public class TrainingApplyServiceImpl implements TrainingApplyService {
     public void addTrainingApplyInfo(TrainingApply trainingApply) {
         trainingApplyDao.addTrainingApplyInfo(trainingApply);
     }
+
+    @Override
+    public TrainingApply getTrainingApplyInfoById(Integer apId) {
+        return trainingApplyDao.getTrainingApplyInfoById(apId);
+    }
 }

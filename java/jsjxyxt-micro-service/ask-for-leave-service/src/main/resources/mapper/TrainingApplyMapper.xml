@@ -19,5 +19,11 @@
         (#{sId},#{apName},#{apCompany},#{apPlace},#{apReason},#{tId},#{specId},#{apTeaName},#{apTeaTitle},#{apTeaPhone},#{uId})
     </insert>
 
+    <select id="getTrainingApplyInfoById" resultType="trainingApply">
+        SELECT
+        <include refid="comm_cols_apply"/>
+        FROM trainingapply
+        WHERE ap_id = #{apId}
+    </select>
 
 </mapper>

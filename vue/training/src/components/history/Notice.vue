@@ -17,6 +17,11 @@
                   :data="tableData"
                   style="width: 100%">
                   <el-table-column
+                    prop="id"
+                    label="ID"
+                    width="80">
+                  </el-table-column>
+                  <el-table-column
                     prop="title"
                     label="标题"
                     width="280">
@@ -57,36 +62,43 @@
         dataRange: '',
         tableData: [
           {
+            id:'1',
             title: '专业负责人审批学生题目',
             content: '请仔细查看校外学生实训任务书的各项内容，对填写了任务书的学生题目审核，无填写的审核不通过。',
             releaseTime: '2019-03-01'
           },
           {
+            id:'2',
             title: '任务书现在可以正常保存',
             content: '请认真填写任务书，然后联系专业负责人进行审核,必须认真填写，否则审核无法通过',
             releaseTime: '2019-03-15  '
           },
           {
+            id:'3',
             title: '关于请假日期',
             content: '请假日期请认真填写，填写自己实际的请假截止日期！填写错误，实训审批不予通过！',
             releaseTime: '2019-04-01'
           },
           {
+            id:'4',
             title: '关于请假日期',
             content: '请假日期请认真填写，填写自己实际的请假截止日期！填写错误，实训审批不予通过！',
             releaseTime: '2019-04-01'
           },
           {
+            id:'5',
             title: '关于请假日期',
             content: '请假日期请认真填写，填写自己实际的请假截止日期！填写错误，实训审批不予通过！',
             releaseTime: '2019-04-01'
           },
           {
+            id:'6',
             title: '任务书现在可以正常保存',
             content: '请认真填写任务书，然后联系专业负责人进行审核,必须认真填写，否则审核无法通过',
             releaseTime: '2019-03-15  '
           },
           {
+            id:'7',
             title: '任务书现在可以正常保存',
             content: '请认真填写任务书，然后联系专业负责人进行审核,必须认真填写，否则审核无法通过',
             releaseTime: '2019-03-15  '

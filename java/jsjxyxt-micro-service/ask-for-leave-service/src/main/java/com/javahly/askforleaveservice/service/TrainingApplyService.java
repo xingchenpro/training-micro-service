@@ -16,5 +16,8 @@ public interface TrainingApplyService {
     //添加实训申请
     public void addTrainingApplyInfo(TrainingApply trainingApply);
 
+    //根据id获得记录
+    public TrainingApply getTrainingApplyInfoById(Integer apId);
+
 
 }

@@ -10,6 +10,7 @@
               请假申请
               <!--申请状态开始-->
               <div class="progress-container">
+                <!--是否提交-->
                 <div class="progress-box">
                   <span class="progress-bar" :class="[leStatus !== -10 ? 'active' : '']"></span>
                   <div class="circle-wrapper">
@@ -19,6 +20,7 @@
                   <p class="p1 font-active1" v-if="leStatus !== -10">已提交请假申请<i class="fa fa-check"></i></p>
                 </div>
 
+                <!--辅导员是否审核-->
                 <div class="progress-box">
                   <span class="progress-bar" :class="[leStatus !== -10 ? 'active' : '']"></span>
                   <div class="circle-wrapper">
@@ -30,6 +32,7 @@
                   <p class="p2 font-active-refuse " v-if="leStatus === -1">辅导员审核未通过<i class="fa fa-close"></i></p>
                 </div>
 
+                <!--指导教师是否审核-->
                 <div class="progress-box">
                   <span class="progress-bar"
                         :class="[leStatus !== -10 && (leStatus > 0 || leStatus < -1)? 'active': '']"></span>
@@ -43,6 +46,7 @@
                   <p class="p3 font-active-refuse " v-if="leStatus === -2">指导教师审核未通过<i class="fa fa-close"></i></p>
                 </div>
 
+                <!--专业负责人是否审核-->
                 <div class="progress-box">
                   <span class="progress-bar"
                         :class="[leStatus !== -10 && (leStatus > 1 || leStatus < -2)? 'active': '']"></span>
@@ -164,7 +168,7 @@
                         style="width:100%">
                         <el-option
                           v-for="item in companies"
-                          :key="item.id"
+                          :key="item.uId"
                           :label="item.uName"
                           :value="item.uId">
                         </el-option>
@@ -241,7 +245,7 @@
   export default {
     data() {
       return {
-        sId:"",
+        sId: "",
         state: "",//地点
         teachers: [],
         companies: [],
@@ -323,23 +327,71 @@
           ]
         }
       };
-
     },
     created() {
-      /*学号*/
+      //学号
       this.sId = sessionStorage.getItem("username");
-      /*获取教师信息*/
+      //获取教师信息
       this.teachers = JSON.parse(sessionStorage.teachers);
-      /*查询单位*/
+      //查询单位
       this.$axios
         .get("/training-service/v1/training/units").then(res => {
         this.companies = res.data; //拿到公司信息
       }).catch(err => {
         console.log(err);
       });
-      /*如果有数据则显示*/
+      //如果有数据则显示
+      var url = "/leave-service/v1/leave/leave?sId=" + this.sId;
+      this.$axios
+        .get(url)
+        .then(res => {
+          console.log(res);
+          //判断是否提交.已经提交过的，需要显示出来
+          if (res.data.result.leave) {
+            //请假信息
+            var leaveData = res.data.result.leave;
+            this.reason = leaveData.leBackReason;
+            this.leStatus = leaveData.leStatus;
+            console.log("leStatus", this.leStatus);
+            this.leaveForm.leTimeFrame.push(leaveData.leStartTime.slice(0, 10));
+            this.leaveForm.leTimeFrame.push(leaveData.leEndTime.slice(0, 10));
+            this.leaveForm.leLeaveTime = leaveData.leLeaveTime.slice(0, 10);
+            this.leaveForm.leReason = leaveData.leReason;
+            this.leaveForm.lePhone = leaveData.lePhone;
 
+            //转换地址格式
+            var cityAddress = leaveData.leStayPlace.split(',').slice(0, 3);
+            var detailAddress = leaveData.leStayPlace.split(',')[3];
+            this.leaveForm.leCityAddress = cityAddress;
+            this.leaveForm.leDetailAddress = detailAddress;
 
+            //实训信息
+            var trainingData = res.data.result.trainingApply;
+            this.applyForm.apName = trainingData.apName;
+            this.applyForm.apCompany = trainingData.apCompany;
+            this.applyForm.apPlace = trainingData.apPlace;
+
+            //转换地址格式
+            var cityAddress1 = trainingData.apPlace.split(',').slice(0, 3);
+            var detailAddress1 = trainingData.apPlace.split(',')[3];
+            this.applyForm.apCityAddress = cityAddress1;
+            this.applyForm.apDetailAddress = detailAddress1;
+
+            this.applyForm.apTeaName = trainingData.apTeaName;
+            this.applyForm.apTeaTitle = trainingData.apTeaTitle;
+            this.applyForm.apReason = trainingData.apReason;
+            this.applyForm.apTeaPhone = trainingData.apTeaPhone;
+
+            this.applyForm.uId = trainingData.uId;
+            this.leaveForm.leTeacher = trainingData.tId
+          } else {
+            //还未提交过的，null
+            this.leStatus = -10;
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
 
     methods: {
@@ -357,7 +409,7 @@
                 this.$refs[applyForm].validate(valid2 => {
                   if (valid2) {
                     var data1 = {
-                      sId:this.sId,
+                      sId: this.sId,
                       leStartTime: this.leaveForm.leTimeFrame[0],
                       leEndTime: this.leaveForm.leTimeFrame[1],
                       leLeaveTime: this.leaveForm.leLeaveTime,
@@ -382,7 +434,7 @@
                       .then(res => {
                         if (res.data.resultCode === 200) {
                           this.loading = false; //关闭等待
-                          this.leStatus = 0;
+                          this.leStatus = 0;//提交后改变状态
                           this.$notify({
                             title: "成功",
                             message: "提交成功，请等待审核",
@@ -477,7 +529,6 @@
   i {
     color: #e8e8e8;
   }
-
   .circle-wrapper {
     float: left;
     /*border: 1px solid #104cec;*/

@@ -1,6 +1,7 @@
 package com.javahly.askforleaveservice.dao;
 
 import com.javahly.askforleaveservice.entity.Leave;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,8 +20,8 @@ public interface LeaveDao {
     //添加请假信息
     public void addLeaveInfo(Leave leave);
 
-    //获得请假信息
-    public List<Leave> getLeaveInfo(Map map);
+    //根据学号获得请假信息
+    public Leave getLeaveInfo(@Param("sId") String sId);
 
     //获得已审核请假信息
     public List<Leave> getExaminedLeavesInfo(Map map);

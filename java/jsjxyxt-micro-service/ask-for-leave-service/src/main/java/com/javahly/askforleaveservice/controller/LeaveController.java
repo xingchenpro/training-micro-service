@@ -1,8 +1,6 @@
 package com.javahly.askforleaveservice.controller;
 
 
-
-
 import com.javahly.askforleaveservice.cache.RedisKey;
 import com.javahly.askforleaveservice.entity.Leave;
 import com.javahly.askforleaveservice.entity.TrainingApply;
@@ -23,7 +21,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -53,7 +53,7 @@ public class LeaveController {
 
     //添加请假信息
     @RequestMapping(value = "/leave", method = RequestMethod.POST)
-    public Result addLeaveInfo(Leave leave,  TrainingApply trainingApply) {
+    public Result addLeaveInfo(Leave leave, TrainingApply trainingApply) {
         Result result = new Result();
         trainingApply.setSpecId("101");
         trainingApplyService.addTrainingApplyInfo(trainingApply);
@@ -62,8 +62,32 @@ public class LeaveController {
         return result;
     }
 
+    //查询请假信息
+    @RequestMapping(value = "/leave", method = RequestMethod.GET)
+    public Result addLeaveInfo(String sId) {
+        Result result = new Result();
+        Leave leave = leaveService.getLeaveInfo(sId);
+        TrainingApply trainingApply = null;
+        if (leave != null) {
+            trainingApply = trainingApplyService.getTrainingApplyInfoById(leave.getApId());
+        }
+        Map<String, Object> map = new HashMap<>();
+        if (trainingApply != null) {
+            map.put("leave", leave);
+            map.put("trainingApply", trainingApply);
+            result.setResult(map);
+            return result;
+        }
+        result.setErrInfos(404, "结果不存在");
+        return result;
+    }
 
 
+    /**
+     * 测试
+     *
+     * @return
+     */
     @RequestMapping(value = "/teachers", method = RequestMethod.GET)
     public Result getTeacher() {
         Result result = new Result();
@@ -80,4 +104,6 @@ public class LeaveController {
         result.setResult(teachers);
         return result;
     }
+
+
 }

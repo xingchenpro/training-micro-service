@@ -20,6 +20,13 @@
         (#{sId},#{leStartTime},#{leEndTime},#{leLeaveTime},#{apId},#{lePhone},#{leReason},#{leStayPlace})
     </insert>
 
+    <!--查询-->
+    <select id="getLeaveInfo" resultType="leave">
+        SELECT
+        <include refid="comm_cols_leave"/>
+        FROM `leave`
+        WHERE s_id = #{sId}
+    </select>
 
 
 </mapper>

@@ -2,6 +2,8 @@ package com.javahly.askforleaveservice.service;
 
 import com.javahly.askforleaveservice.entity.Leave;
 
+import java.util.List;
+
 /**
  * @author :hly
  * @github :https://github.com/huangliangyun
@@ -14,6 +16,10 @@ import com.javahly.askforleaveservice.entity.Leave;
 public interface LeaveService {
     //添加请假信息
     public void addLeaveInfo(Leave leave);
+
+
+    //根据学号获得请假信息
+    public Leave getLeaveInfo(String sId);
 
 
 }

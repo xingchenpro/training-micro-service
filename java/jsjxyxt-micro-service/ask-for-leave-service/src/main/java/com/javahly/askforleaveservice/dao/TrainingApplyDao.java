@@ -1,6 +1,7 @@
 package com.javahly.askforleaveservice.dao;
 
 import com.javahly.askforleaveservice.entity.TrainingApply;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public interface TrainingApplyDao {
     public void updateTrainingApplyInfo(TrainingApply trainingApply);
 
     //根据id获得记录
-    public TrainingApply getTrainingApplyInfoById(String studentId);
+    public TrainingApply getTrainingApplyInfoById(@Param("apId") Integer apId);
 
     //根据条件查询学生的实训信息
     public List<TrainingApply> getTrainingInfo(Map<String, Object> map);

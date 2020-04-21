@@ -6,6 +6,8 @@ import com.javahly.askforleaveservice.service.LeaveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author :hly
  * @github :https://github.com/huangliangyun
@@ -26,5 +28,9 @@ public class LeaveServiceImpl implements LeaveService {
         leaveDao.addLeaveInfo(leave);
     }
 
+    @Override
+    public Leave getLeaveInfo(String sId) {
+        return leaveDao.getLeaveInfo(sId);
+    }
 
 }
