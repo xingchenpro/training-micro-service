@@ -11,6 +11,7 @@
         <module name="basic-info-service" />
         <module name="eureka-service" />
         <module name="gateway-service" />
+        <module name="spring-boot-admin" />
         <module name="training-service" />
         <module name="txlcn-tm-service" />
         <module name="uaa-service" />
@@ -23,6 +24,7 @@
       <module name="eureka-service" target="1.8" />
       <module name="gateway-service" target="1.8" />
       <module name="jsjxyxt-micro-service" target="1.8" />
+      <module name="spring-boot-admin" target="1.8" />
       <module name="training-service" target="1.8" />
       <module name="txlcn-tm-service" target="1.8" />
       <module name="uaa-service" target="1.8" />

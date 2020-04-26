@@ -38,7 +38,7 @@
     data() {
       return {
         loginForm: {
-          username: '201611104033',
+          username: 'fdy',
           password: '123'
         },
       }

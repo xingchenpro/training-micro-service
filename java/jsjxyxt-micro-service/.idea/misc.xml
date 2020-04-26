@@ -15,6 +15,7 @@
         <option value="$PROJECT_DIR$/gateway-service/pom.xml" />
         <option value="$PROJECT_DIR$/txlcn-tm-service/pom.xml" />
         <option value="$PROJECT_DIR$/training-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-admin/pom.xml" />
       </list>
     </option>
   </component>

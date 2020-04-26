@@ -48,10 +48,26 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.javahly.uaaservice.entity
 
+
 eureka:
   client:
-    serviceUrl:
+    registryFetchIntervalSeconds: 5
+    service-url:
       defaultZone: http://49.233.192.8:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /v1/uaa/actuator/health
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+
 
 # 必须改成这种格式否则无法注册
 server.servlet.context-path: /v1/uaa

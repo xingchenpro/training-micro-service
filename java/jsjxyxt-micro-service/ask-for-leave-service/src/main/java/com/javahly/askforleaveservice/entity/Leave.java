@@ -31,6 +31,38 @@ public class Leave {
     private String leThroughTime;//专业负责人通过时间
     private String leBackReason;//不批准原因
 
+    //非数据库字段
+    //姓名
+    private String sNeme;
+    //班级
+    private String sClass;
+    //实训信息
+    private TrainingApply trainingApply;
+
+    public String getsNeme() {
+        return sNeme;
+    }
+
+    public void setsNeme(String sNeme) {
+        this.sNeme = sNeme;
+    }
+
+    public String getsClass() {
+        return sClass;
+    }
+
+    public void setsClass(String sClass) {
+        this.sClass = sClass;
+    }
+
+    public TrainingApply getTrainingApply() {
+        return trainingApply;
+    }
+
+    public void setTrainingApply(TrainingApply trainingApply) {
+        this.trainingApply = trainingApply;
+    }
+
     public int getLeId() {
         return leId;
     }

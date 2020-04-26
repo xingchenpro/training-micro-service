@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
 
 @EnableEurekaClient
 @SpringBootApplication
-@EnableApolloConfig
+//@EnableApolloConfig
 public class GatewayServiceApplication {
 
 	public static void main(String[] args) {

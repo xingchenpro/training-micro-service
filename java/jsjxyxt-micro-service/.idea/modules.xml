@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/eureka-service/eureka-service.iml" filepath="$PROJECT_DIR$/eureka-service/eureka-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway-service/gateway-service.iml" filepath="$PROJECT_DIR$/gateway-service/gateway-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/jsjxyxt-micro-service.iml" filepath="$PROJECT_DIR$/jsjxyxt-micro-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-admin/spring-boot-admin.iml" filepath="$PROJECT_DIR$/spring-boot-admin/spring-boot-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/training-service/training-service.iml" filepath="$PROJECT_DIR$/training-service/training-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/txlcn-tm-service/txlcn-tm-service.iml" filepath="$PROJECT_DIR$/txlcn-tm-service/txlcn-tm-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/uaa-service/uaa-service.iml" filepath="$PROJECT_DIR$/uaa-service/uaa-service.iml" />

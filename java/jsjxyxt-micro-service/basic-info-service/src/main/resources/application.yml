@@ -16,7 +16,7 @@ spring:
       driver-class-name: com.mysql.jdbc.Driver
       username: root
       password: roof
-      url: jdbc:mysql://localhost:3306/basicinfoservice?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true
+      url: jdbc:mysql://localhost:3306/basicinformationservice?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true
   redis:
     sentinel:
       master: mymaster
@@ -49,9 +49,22 @@ mybatis:
 
 
 eureka:
- client:
-   serviceUrl:
-    defaultZone: http://49.233.192.8:8761/eureka/
+  client:
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: http://49.233.192.8:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /v1/info/actuator/health
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
 # 端口设置
 server:
   port: 8082

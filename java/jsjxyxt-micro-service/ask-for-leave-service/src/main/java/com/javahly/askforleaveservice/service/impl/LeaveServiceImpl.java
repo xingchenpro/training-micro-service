@@ -33,4 +33,56 @@ public class LeaveServiceImpl implements LeaveService {
         return leaveDao.getLeaveInfo(sId);
     }
 
+    @Override
+    public List<Leave> getLeaves() {
+        return getLeaves(null, null, null);
+    }
+
+    @Override
+    public List<Leave> getLeaves(Integer leStatus) {
+        return getLeaves(leStatus, null, null);
+    }
+
+    @Override
+    public List<Leave> getLeaves(Integer leStatus, String tId) {
+        return getLeaves(leStatus, tId, null);
+    }
+
+    @Override
+    public List<Leave> getLeaves(Integer leStatus, Integer specId) {
+        return getLeaves(leStatus, null,specId);
+    }
+
+
+    @Override
+    public List<Leave> getLeaves(Integer leStatus, String tId, Integer specId) {
+        return leaveDao.getLeaves(leStatus, tId, specId);
+    }
+
+    @Override
+    public List<Leave> getExaminedLeavesInfo() {
+        return getExaminedLeavesInfo(null, null, null);
+    }
+
+    @Override
+    public List<Leave> getExaminedLeavesInfo(Integer leStatus) {
+        System.out.println(leStatus);
+        return getExaminedLeavesInfo(leStatus, null, null);
+    }
+
+    @Override
+    public List<Leave> getExaminedLeavesInfo(Integer leStatus, String tId) {
+        return getExaminedLeavesInfo(leStatus, tId, null);
+    }
+
+    @Override
+    public List<Leave> getExaminedLeavesInfo(Integer leStatus, Integer specId) {
+        return getExaminedLeavesInfo(leStatus, null,specId);
+    }
+
+    @Override
+    public List<Leave> getExaminedLeavesInfo(Integer leStatus, String tId, Integer specId) {
+        return leaveDao.getExaminedLeavesInfo(leStatus, tId, specId);
+    }
+
 }

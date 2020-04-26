@@ -225,7 +225,6 @@
                         审核中无法再次提交
                       </el-button>
                     </el-form-item>
-
                   </el-form>
                 </div>
               </div>
@@ -241,7 +240,6 @@
 <script>
 
   import qs from "qs";
-
   export default {
     data() {
       return {
@@ -395,7 +393,6 @@
     },
 
     methods: {
-
       //提交表单
       commit(leaveForm, applyForm) {
         this.$confirm("是否确认提交请假申请？", "提示", {
@@ -470,7 +467,9 @@
           });
       }
     },
-    computed: {},
+    computed: {
+
+    },
     watch: {
       leaveForm: {
         handler(newV, oldV) {

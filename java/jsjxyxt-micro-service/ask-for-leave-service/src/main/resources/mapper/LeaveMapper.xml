@@ -7,10 +7,42 @@
         le_id leId,s_id sId,le_starttime leStartTime,le_endtime leEndTime,le_leavetime leLeaveTime,le_phone lePhone,le_reason leReason,le_stayplace leStayPlace,ap_id apId,le_status leStatus,le_confirmtime leConfirmTime,le_throughtime leThroughTime,le_backreason leBackReason
     </sql>
 
-
     <sql id="addLeaveInfoSql">
         s_id,le_startTime,le_endTime,le_leaveTime,ap_id,le_phone,le_reason,le_stayPlace
     </sql>
+
+    <!--联合查询-->
+    <resultMap id="leaveResultMap" type="leave">
+        <id column="le_id" property="leId"/>
+        <result column="s_id" property="sId"/>
+        <result column="le_startTime" property="leStartTime"/>
+        <result column="le_endTime" property="leEndTime"/>
+        <result column="le_leaveTime" property="leLeaveTime"/>
+        <result column="ap_id" property="apId"/>
+        <result column="le_phone" property="lePhone"/>
+        <result column="le_reason" property="leReason"/>
+        <result column="le_stayPlace" property="leStayPlace"/>
+        <result column="le_status" property="leStatus"/>
+        <result column="le_confirmTime" property="leConfirmTime"/>
+        <result column="le_throughTime" property="leThroughTime"/>
+        <result column="le_backReason" property="leBackReason"/>
+        <!--联合查询，一对一-->
+        <association property="trainingApply" javaType="trainingApply">
+            <id column="ap_id" property="apId"/>
+            <result column="s_id" property="sId"/>
+            <result column="ap_name" property="apName"/>
+            <result column="ap_reason" property="apReason"/>
+            <result column="ap_company" property="apCompany"/>
+            <result column="ap_place" property="apPlace"/>
+            <result column="ap_teaName" property="apTeaName"/>
+            <result column="ap_teaTitle" property="apTeaTitle"/>
+            <result column="ap_teaPhone" property="apTeaPhone"/>
+            <result column="t_id" property="tId"/>
+            <result column="spec_id" property="specId"/>
+            <result column="ifGraduate" property="ifGraduate"/>
+            <result column="u_id" property="uId"/>
+        </association>
+    </resultMap>
 
     <!--添加请假信息-->
     <insert id="addLeaveInfo" parameterType="leave">
@@ -26,6 +58,24 @@
         <include refid="comm_cols_leave"/>
         FROM `leave`
         WHERE s_id = #{sId}
+    </select>
+
+    <!--查询请假信息-->
+    <select id="getLeaves" resultMap="leaveResultMap">
+        SELECT * FROM `leave`,trainingapply WHERE
+        <if test="leStatus!=null">leave.le_status=#{leStatus} AND</if>
+        <if test="tId!=null">trainingapply.t_id=#{tId} AND</if>
+        <if test="specId!=null">trainingapply.spec_id = #{specId} AND</if>
+        leave.ap_id = trainingapply.ap_id;
+    </select>
+
+    <!--查询已审核请假信息-->
+    <select id="getExaminedLeavesInfo" resultMap="leaveResultMap">
+        SELECT * FROM `leave`,trainingapply WHERE
+        <if test="leStatus!=null">(leave.le_status>=#{leStatus} OR leave.le_status &lt;= ((#{leStatus})*(-1)) ) AND</if>
+        <if test="specId!=null">trainingapply.spec_id = #{specId} AND</if>
+        <if test="tId!=null">trainingapply.t_id=#{tId} AND</if>
+        leave.ap_id = trainingapply.ap_id;
     </select>
 
 

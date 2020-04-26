@@ -6,6 +6,7 @@
     <file url="file://$PROJECT_DIR$/basic-info-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-admin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/training-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/training-service/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/txlcn-tm-service" charset="UTF-8" />

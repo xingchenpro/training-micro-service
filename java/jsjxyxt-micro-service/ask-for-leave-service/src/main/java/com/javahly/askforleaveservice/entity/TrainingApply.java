@@ -24,6 +24,7 @@ public class TrainingApply {
     private int ifGraduate;//是否考研
     private int uId;//单位id
 
+
     public int getApId() {
         return apId;
     }
@@ -127,4 +128,6 @@ public class TrainingApply {
     public void setuId(int uId) {
         this.uId = uId;
     }
+
+
 }

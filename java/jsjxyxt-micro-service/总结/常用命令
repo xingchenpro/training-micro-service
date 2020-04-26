@@ -14,13 +14,19 @@ java -Dserver.port=8718 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject
 ---
 
 3、注册中心后台启动
-nohup java -jar eureka-service-0.0.1-SNAPSHOT.jar &
+nohup java -jar eureka-service-0.0.1-SNAPSHOT.jar >> eureka-service.out &
+nohup java -jar admin-service.jar >> admin-service.out &
 
 ---
 
-4、linux清理内存
+4、
+java -jar zipkin-server-2.10.1-exec.jar --STORAGE_TYPE=mysql --MYSQL_HOST=127.0.0.1 --MYSQL_TCP_PORT=3306 --MYSQL_DB=zipkin --MYSQL_USER=root --MYSQL_PASS=roof
+
+
+5、linux清理内存
 
 echo 1 > /proc/sys/vm/drop_caches
 
 
 ---
+

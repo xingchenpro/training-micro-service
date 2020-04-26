@@ -8,3 +8,7 @@
 
 2、computed & watch
 https://www.cnblogs.com/gunelark/p/8492468.html
+
+
+3、v-for 把序号打印出来
+v-for="(item,index) in showTable"

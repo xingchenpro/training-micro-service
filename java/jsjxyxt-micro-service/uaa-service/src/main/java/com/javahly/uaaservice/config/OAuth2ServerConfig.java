@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
@@ -31,15 +32,16 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 public class OAuth2ServerConfig {
 
     //配置资源服务
-    //@Configuration
-    //@EnableResourceServer
+    @Configuration
+    @EnableResourceServer
     protected static class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
         @Override
         public void configure(HttpSecurity http) throws Exception {
             //资源访问控制，可配置必须通过token认证过后才可以访问的资源，permitAll()表示不需要token可直接访问
-                    http
+            http
                     .authorizeRequests()
-                    .antMatchers("/login").permitAll();
+                    .antMatchers("/login","/actuator/**").
+                    permitAll();
         }
     }
 
@@ -79,14 +81,14 @@ public class OAuth2ServerConfig {
                     .withClient("client-service")
                     //认证类型
                     //客户端模式
-                    .authorizedGrantTypes("password","refresh_token")
+                    .authorizedGrantTypes("password", "refresh_token")
                     //权限范围
                     .scopes("server")
                     //权限信息
                     .authorities("oauth2")
                     //客户端密码
                     .secret(finalSecret)
-                    .accessTokenValiditySeconds(2*3600);//2小时过期
+                    .accessTokenValiditySeconds(2 * 3600);//2小时过期
 
 
         }
@@ -110,7 +112,6 @@ public class OAuth2ServerConfig {
             //配置获取Token的策略,允许表单认证，配置之后可通过表单获取Token
             oauthServer.allowFormAuthenticationForClients();
         }
-
 
 
     }

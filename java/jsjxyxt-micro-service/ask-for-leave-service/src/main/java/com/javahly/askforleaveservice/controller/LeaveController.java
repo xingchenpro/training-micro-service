@@ -1,26 +1,22 @@
 package com.javahly.askforleaveservice.controller;
 
-
 import com.javahly.askforleaveservice.cache.RedisKey;
+import com.javahly.askforleaveservice.enmu.LeaveStatusEnum;
 import com.javahly.askforleaveservice.entity.Leave;
 import com.javahly.askforleaveservice.entity.TrainingApply;
-import com.javahly.askforleaveservice.feign.user.entity.Teacher;
-import com.javahly.askforleaveservice.feign.user.service.TeacherService;
+import com.javahly.askforleaveservice.feign.basic.entity.Student;
+import com.javahly.askforleaveservice.feign.basic.entity.Teacher;
+import com.javahly.askforleaveservice.feign.basic.service.BasicInformationService;
 import com.javahly.askforleaveservice.service.LeaveService;
 import com.javahly.askforleaveservice.service.TrainingApplyService;
+import com.javahly.askforleaveservice.util.InfoUtil;
 import com.javahly.askforleaveservice.util.JsonListUtil;
 import com.javahly.askforleaveservice.util.RedisUtil;
 import com.javahly.askforleaveservice.util.Result;
-import com.netflix.discovery.converters.Auto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -49,12 +45,14 @@ public class LeaveController {
     TrainingApplyService trainingApplyService;
 
     @Autowired
-    TeacherService teacherService;
+    BasicInformationService basicInfoService;
+
 
     //添加请假信息
     @RequestMapping(value = "/leave", method = RequestMethod.POST)
     public Result addLeaveInfo(Leave leave, TrainingApply trainingApply) {
         Result result = new Result();
+        //TODO 查询学生的专业信息
         trainingApply.setSpecId("101");
         trainingApplyService.addTrainingApplyInfo(trainingApply);
         leave.setApId(trainingApply.getApId());
@@ -83,6 +81,61 @@ public class LeaveController {
     }
 
 
+    //获得请假信息
+    //角色，返回的请假状态
+    //2,0 辅导员
+    //3,1 指导教师
+    //4,2 专业负责人
+    @RequestMapping(value = "leaves", method = RequestMethod.GET)
+    public Result getLeaves(@RequestParam("tId") String tId, @RequestParam("role") int role) {
+
+        Result result = new Result();
+        //获取角色对应的需要审批的请假状态
+        int leStatus = LeaveStatusEnum.getStatus(role);
+        //远程调用 学生信息
+        List<Student> students = basicInfoService.getStudents();
+        //查询所有请假信息
+        List<Leave> allLeaves = leaveService.getLeaves();
+        //需要审核
+        List<Leave> needExamineLeaves;
+        //已经审核
+        List<Leave> examinedLeaves;
+        //远程调用专业信息
+        Integer specId = 101;
+
+        //辅导员
+        if (role == 2) {
+            needExamineLeaves = leaveService.getLeaves(leStatus);
+            examinedLeaves = leaveService.getExaminedLeavesInfo(leStatus + 1);
+            result.setResult(matchingStudentInfo(allLeaves, needExamineLeaves, examinedLeaves, students));
+        }
+        //指导教师
+        if (role == 3) {
+            needExamineLeaves = leaveService.getLeaves(leStatus, tId);
+            examinedLeaves = leaveService.getExaminedLeavesInfo(leStatus + 1, tId);
+            result.setResult(matchingStudentInfo(allLeaves, needExamineLeaves, examinedLeaves, students));
+        }
+        //专业负责人
+        if (role == 4) {
+            needExamineLeaves = leaveService.getLeaves(leStatus, specId);
+            examinedLeaves = leaveService.getExaminedLeavesInfo(leStatus + 1, specId);
+            result.setResult(matchingStudentInfo(allLeaves, needExamineLeaves, examinedLeaves, students));
+        }
+        return result;
+    }
+
+    //匹配学生信息
+    private Map<String, Object> matchingStudentInfo(List<Leave> allLeaves, List<Leave> needExamineLeaves, List<Leave> examinedLeaves, List<Student> students) {
+        Map<String, Object> resultMap = new HashMap<>();
+        needExamineLeaves = InfoUtil.matchingStudentInfo(needExamineLeaves, students);
+        examinedLeaves = InfoUtil.matchingStudentInfo(examinedLeaves, students);
+        allLeaves = InfoUtil.matchingStudentInfo(allLeaves, students);
+        resultMap.put("allLeaves", allLeaves);
+        resultMap.put("needExamineLeaves", needExamineLeaves);
+        resultMap.put("examinedLeaves", examinedLeaves);
+        return resultMap;
+    }
+
     /**
      * 测试
      *
@@ -99,7 +152,7 @@ public class LeaveController {
             result.setResult(teachers);
             return result;
         }
-        teachers = teacherService.getTeachers();
+        teachers = basicInfoService.getTeachers();
         redisUtil.setString(RedisKey.TEACHERs_KEY, JsonListUtil.listToJson(teachers));
         result.setResult(teachers);
         return result;

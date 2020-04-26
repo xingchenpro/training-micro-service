@@ -23,8 +23,11 @@ public interface LeaveDao {
     //根据学号获得请假信息
     public Leave getLeaveInfo(@Param("sId") String sId);
 
+    //根据条件获得请假信息
+    public List<Leave> getLeaves(@Param("leStatus") Integer leStatus, @Param("tId") String tId, @Param("specId") Integer specId);
+
     //获得已审核请假信息
-    public List<Leave> getExaminedLeavesInfo(Map map);
+    public List<Leave> getExaminedLeavesInfo(@Param("leStatus") Integer leStatus, @Param("tId") String tId, @Param("specId") Integer specId);
 
     //更新请假信息
     public void updateLeaveInfo(Leave leave);
