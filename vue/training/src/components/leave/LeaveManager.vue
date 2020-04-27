@@ -13,9 +13,11 @@
                   <el-tab-pane label="查看全部请假记录" name="1"></el-tab-pane>
                   <el-tab-pane label="我需要审批的请假记录" name="2"></el-tab-pane>
                   <el-tab-pane label="我已审批的请假记录" name="3"></el-tab-pane>
+                  {{ showRole }}
                 </el-tabs>
               </div>
               <!--搜索-->
+
               <div class="widget-function am-fr" style="width:15%;margin-top: 5px;">
                 <form role="form" class="form-inline">
                   <div class="form-group">
@@ -47,7 +49,7 @@
                 </thead>
                 <!--body内容标签-->
                 <tbody>
-                <tr v-for="(item,index) in showTable"  v-show="currentClass == item.sClass || currentClass === ''">
+                <tr v-for="(item,index) in showTable" v-show="currentClass == item.sClass || currentClass === ''">
                   <td>{{index+1}}</td>
                   <td>{{ item.sId }}</td>
                   <td>{{ item.sClass }}</td>
@@ -65,10 +67,10 @@
                     <span v-show="item.leStatus == -3" style="color:red;">专业负责人审批未通过</span>
                   </td>
 
-                  <td v-show="currentStatus == 2" >
+                  <td v-show="currentStatus == 2">
                     <div class="tpl-table-black-operation">
                       <!--v-if="item.le_status==currentRole-2"-->
-                      <a @click="examine(item.leId,1,item.student.sId,item.trainingApply.apName)"
+                      <a @click="examine(item.leId,1,item.sId,item.trainingApply.apName)"
                          style="width:50px;cursor: pointer;">
                         <i class="am-icon-check"></i> 批准
                       </a>
@@ -130,7 +132,7 @@
     },
 
     created() {
-      this.currentRole = sessionStorage.role;
+      this.currentRole = this.$route.query.currentRole || sessionStorage.role;
       var tId = sessionStorage.username;
       //请求数据
       var url = "/leave-service/v1/leave/leaves?role=" + this.currentRole + "&tId=" + tId;
@@ -142,8 +144,8 @@
           this.examinedLeaves = res.data.result.examinedLeaves;
         }
       }).catch(error => {
-          console.log(error);
-        });
+        console.log(error);
+      });
     },
 
     methods: {
@@ -151,10 +153,101 @@
       handleClick() {
         this.currentClass = ''
       },
-      //审核请假信息
-      examine(id, status, sno, subject) {
-
-      },
+      //审核请假，传递请求
+      examine(leId, status, sId, subject) {
+        //如果是否决操作 statu == 0，需要输入理由
+        var data;
+        if (status == 0) {
+          this.$prompt('请输入否决理由', '否决', {
+            confirmButtonText: '确认',
+            cancelButtonText: '取消',
+            inputType: 'textarea'
+          }).then(({value}) => {
+            data = this.$qs.stringify({
+              tId: sessionStorage.username,
+              leId: leId,
+              role: this.$route.query.currentRole || sessionStorage.role, //一定要加上或者取sessionStorage中的角色，（辅导员）
+              leStatus: status,
+              sId: sId,
+              subject: subject,
+              leBackReason: value
+            });
+            this.$axios
+              .post("/leave-service/v1/leave/examine", data)
+              .then(res => {
+                console.log(res);
+                if (res.data.resultCode === 200) {
+                  console.log(res);
+                  this.allLeaves = res.data.result.allLeaves;
+                  this.needExamineLeaves = res.data.result.needExamineLeaves;
+                  this.examinedLeaves = res.data.result.examinedLeaves;
+                  this.$notify({
+                    type: "success",
+                    message: "操作成功"
+                  });
+                }
+              })
+              .catch(error => {
+                console.log(error);
+                this.$notify({
+                  type: "error",
+                  message: "审核失败"
+                });
+              });
+          }).catch((err) => {
+            this.$notify({
+              type: "info",
+              message: "已取消",
+              duration: "1500"
+            });
+          })
+        }
+        //大于0
+        else {
+          this.$confirm("确认操作？", "提示", {
+            confirmButtonText: "确认",
+            cancelButtonText: "取消",
+            type: "warning"
+          })
+            .then(() => {
+              data = this.$qs.stringify({
+                tId: sessionStorage.username,
+                leId: leId,
+                role: this.$route.query.currentRole || sessionStorage.role, //一定要加上或者取sessionStorage中的角色，（辅导员）
+                leStatus: status,
+                sId: sId,
+                subject: subject
+              });
+              this.$axios
+                .post("/leave-service/v1/leave/examine", data)
+                .then(res => {
+                  if (res.data.resultCode === 200) {
+                    this.allLeaves = res.data.result.allLeaves;
+                    this.needExamineLeaves = res.data.result.needExamineLeaves;
+                    this.examinedLeaves = res.data.result.examinedLeaves;
+                    this.$notify({
+                      type: "success",
+                      message: "操作成功"
+                    });
+                  }
+                })
+                .catch(error => {
+                  console.log(error);
+                  this.$notify({
+                    type: "error",
+                    message: "审核失败"
+                  });
+                });
+            })
+            .catch(() => {
+              this.$notify({
+                type: "info",
+                message: "已取消",
+                duration: "1500"
+              });
+            });
+        }
+      }
     },
 
     computed: {
@@ -168,19 +261,35 @@
           this.currentTable = this.examinedLeaves;
         }
         //动态计算班级
-         var obj = {};
-         this.currentClasses = [];
-         this.currentTable.forEach((item, index) => {
-           obj[item.sClass] = "1";
-         });
-         for (var item in obj) {
-           this.currentClasses.push(item);
-         }
+        var obj = {};
+        this.currentClasses = [];
+        this.currentTable.forEach((item, index) => {
+          obj[item.sClass] = "1";
+        });
+        for (var item in obj) {
+          this.currentClasses.push(item);
+        }
         return this.currentTable;
       },
-
-
+      //监听角色的变化，必学使用  {{ showRole }}
+      showRole() {
+        this.currentRole = this.$route.query.currentRole || sessionStorage.role;
+        var tId = sessionStorage.username;
+        //请求数据
+        var url = "/leave-service/v1/leave/leaves?role=" + this.currentRole + "&tId=" + tId;
+        this.$axios.get(url).then(res => {
+          if (res.data.resultCode === 200) {
+            console.log(res.data);
+            this.allLeaves = res.data.result.allLeaves;
+            this.needExamineLeaves = res.data.result.needExamineLeaves;
+            this.examinedLeaves = res.data.result.examinedLeaves;
+          }
+        }).catch(error => {
+          console.log(error);
+        });
+      }
     },
+
     filters: {
       //格式化日期 取前10位
       dateFormat(value) {

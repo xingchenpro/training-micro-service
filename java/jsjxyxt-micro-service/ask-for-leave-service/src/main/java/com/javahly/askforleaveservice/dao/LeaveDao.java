@@ -29,6 +29,10 @@ public interface LeaveDao {
     //获得已审核请假信息
     public List<Leave> getExaminedLeavesInfo(@Param("leStatus") Integer leStatus, @Param("tId") String tId, @Param("specId") Integer specId);
 
+    //更新审核信息
+    public int updateExamineStatus(@Param("leStatus") Integer leStatus, @Param("leId") Integer leId, @Param("leBackReason") String leBackReason);
+
+
     //更新请假信息
     public void updateLeaveInfo(Leave leave);
 
@@ -37,9 +41,6 @@ public interface LeaveDao {
 
     //根据id获取请假信息
     public Leave getLeaveInfoByStudentId(String studentId);
-
-    //更新审核信息
-    public int updateExamineStatus(Map map);
 
 
 }

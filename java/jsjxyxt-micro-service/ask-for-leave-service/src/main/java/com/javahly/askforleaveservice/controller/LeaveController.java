@@ -81,11 +81,17 @@ public class LeaveController {
     }
 
 
-    //获得请假信息
-    //角色，返回的请假状态
-    //2,0 辅导员
-    //3,1 指导教师
-    //4,2 专业负责人
+    /**
+     * 获得请假信息
+     * 角色，返回的请假状态
+     * 2,0 辅导员
+     * 3,1 指导教师
+     * 4,2 专业负责人
+     *
+     * @param tId
+     * @param role
+     * @return
+     */
     @RequestMapping(value = "leaves", method = RequestMethod.GET)
     public Result getLeaves(@RequestParam("tId") String tId, @RequestParam("role") int role) {
 
@@ -100,7 +106,7 @@ public class LeaveController {
         List<Leave> needExamineLeaves;
         //已经审核
         List<Leave> examinedLeaves;
-        //远程调用专业信息
+        //TODO 远程调用专业信息
         Integer specId = 101;
 
         //辅导员
@@ -136,27 +142,63 @@ public class LeaveController {
         return resultMap;
     }
 
+
     /**
-     * 测试
+     * 审核请假信息
+     * 审核请假信息
+     * 0 否决 ，1 同意 ， -1 撤回
      *
+     * @param leStatus
+     * @param leId
+     * @param role
+     * @param tId
+     * @param subject
+     * @param sId
+     * @param leBackReason
+     * @param flag
      * @return
      */
-    @RequestMapping(value = "/teachers", method = RequestMethod.GET)
-    public Result getTeacher() {
+    @RequestMapping(value = "/examine", method = RequestMethod.POST)
+    public Result updateExamineStatus(int leStatus, int leId, int role, String tId, String subject, String sId, String leBackReason, @RequestParam(value = "flag", required = false) Integer flag) {
         Result result = new Result();
-
-        List<Teacher> teachers;
-        String json = redisUtil.getString(RedisKey.TEACHERs_KEY);
-        if (json != null) {
-            teachers = JsonListUtil.jsonToList(json, Teacher.class);
-            result.setResult(teachers);
-            return result;
+        if (leStatus == 0) {
+            if (role == 2) leStatus = -1;
+            if (role == 3) leStatus = -3;
+            if (role == 4) leStatus = -5;
         }
-        teachers = basicInfoService.getTeachers();
-        redisUtil.setString(RedisKey.TEACHERs_KEY, JsonListUtil.listToJson(teachers));
-        result.setResult(teachers);
+        //远程调用 学生信息
+        List<Student> students = basicInfoService.getStudents();
+        //更新请假信息
+        leaveService.updateExamineStatus(leStatus, leId, leBackReason);
+        //辅导员
+        //查询所有请假信息
+        List<Leave> allLeaves = leaveService.getLeaves();
+        //需要审核
+        List<Leave> needExamineLeaves;
+        //已经审核
+        List<Leave> examinedLeaves;
+        //TODO 远程调用专业信息
+        Integer specId = 101;
+        //获得查询请假信息
+        leStatus = LeaveStatusEnum.getStatus(role);
+        if (role == 2) {
+            needExamineLeaves = leaveService.getLeaves(leStatus);
+            examinedLeaves = leaveService.getExaminedLeavesInfo(leStatus + 1);
+            result.setResult(matchingStudentInfo(allLeaves, needExamineLeaves, examinedLeaves, students));
+        }
+        //指导教师
+        if (role == 3) {
+            needExamineLeaves = leaveService.getLeaves(leStatus, tId);
+            examinedLeaves = leaveService.getExaminedLeavesInfo(leStatus + 1, tId);
+            result.setResult(matchingStudentInfo(allLeaves, needExamineLeaves, examinedLeaves, students));
+        }
+        //专业负责人
+        if (role == 4) {
+            needExamineLeaves = leaveService.getLeaves(leStatus, specId);
+            examinedLeaves = leaveService.getExaminedLeavesInfo(leStatus + 1, specId);
+            result.setResult(matchingStudentInfo(allLeaves, needExamineLeaves, examinedLeaves, students));
+        }
         return result;
     }
-
 
 }

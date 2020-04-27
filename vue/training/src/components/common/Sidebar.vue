@@ -45,107 +45,62 @@
       <router-link to="/home/history/notice">
         <el-menu-item index="1">
           <i class="el-icon-menu"></i>
-          <span slot="title">实训单位管理</span>
+          <span slot="title">单位管理</span>
         </el-menu-item>
       </router-link>
 
       <router-link to="/home/leave/manager">
         <el-menu-item index="2">
           <i class="el-icon-menu"></i>
-          <span slot="title">实训请假审批</span>
-        </el-menu-item>
-      </router-link>
-
-      <router-link to="/home/history/notice">
-        <el-menu-item index="3">
-          <i class="el-icon-menu"></i>
-          <span slot="title">历史公告</span>
+          <span slot="title">实训审批</span>
         </el-menu-item>
       </router-link>
 
 
     </el-menu>
 
-
     <!--指导教师 3-->
-    <el-menu default-active="1" class="el-menu-vertical-demo" v-if="role==='3'">
+    <el-menu default-active="1" class="el-menu-vertical-demo" v-if="roles.indexOf(3)!==-1">
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
-          <span>实训过程管理</span>
+          <span>实训管理</span>
         </template>
         <el-menu-item index="1-1">学生周总结</el-menu-item>
         <el-menu-item index="1-2">实训任务书</el-menu-item>
-        <el-menu-item index="1-2">实训审批</el-menu-item>
+        <router-link :to="{ path : '/home/leave/manager',query: { currentRole: 3 }}">
+          <el-menu-item index="1-1">实训审批</el-menu-item>
+        </router-link>
       </el-submenu>
-
-
-      <router-link to="/home/history/notice">
-        <el-menu-item index="6">
-          <i class="el-icon-menu"></i>
-          <span slot="title">历史公告</span>
-        </el-menu-item>
-      </router-link>
-
-      <router-link to="/home/history/notice">
-        <el-menu-item index="6">
-          <i class="el-icon-menu"></i>
-          <span slot="title">历史管理</span>
-        </el-menu-item>
-      </router-link>
-
-      <router-link to="/home/info">
-        <el-menu-item index="7">
-          <i class="el-icon-menu"></i>
-          <span slot="title">个人信息</span>
-        </el-menu-item>
-      </router-link>
 
     </el-menu>
 
     <!--专业负责人 4-->
-    <el-menu default-active="1" class="el-menu-vertical-demo" v-if="role==='4'">
+    <el-menu default-active="1" class="el-menu-vertical-demo" v-if="roles.indexOf(4)!==-1">
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span>专业管理</span>
         </template>
-        <el-menu-item index="1-1">实训审批</el-menu-item>
+        <router-link :to="{ path : '/home/leave/manager',query: { currentRole: 4 }}">
+          <el-menu-item index="1-1">实训审批</el-menu-item>
+        </router-link>
+        <el-menu-item index="1-4">实训分配</el-menu-item>
         <el-menu-item index="1-2">实训课题管理</el-menu-item>
         <el-menu-item index="1-3">实训课题审核</el-menu-item>
-        <el-menu-item index="1-4">实训分配</el-menu-item>
+
         <el-menu-item index="1-5">实训单位情况</el-menu-item>
         <el-menu-item index="1-6">实训学生情况</el-menu-item>
       </el-submenu>
 
-      <router-link to="/home/history/notice">
-        <el-menu-item index="2">
-          <i class="el-icon-menu"></i>
-          <span slot="title">历史公告</span>
-        </el-menu-item>
-      </router-link>
-
-      <router-link to="/home/history/notice">
-        <el-menu-item index="3">
-          <i class="el-icon-menu"></i>
-          <span slot="title">历史管理</span>
-        </el-menu-item>
-      </router-link>
-
-      <router-link to="/home/info">
-        <el-menu-item index="4">
-          <i class="el-icon-menu"></i>
-          <span slot="title">个人信息</span>
-        </el-menu-item>
-      </router-link>
     </el-menu>
 
     <!--班主任 5-->
-    <el-menu default-active="1" class="el-menu-vertical-demo" v-if="role==='5'">
+    <el-menu default-active="1" class="el-menu-vertical-demo" v-if="roles.indexOf(5)!==-1">
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
-          <span>专业管理</span>
+          <span>学生管理</span>
         </template>
         <el-menu-item index="1-1">学生周总结</el-menu-item>
         <el-menu-item index="1-2">学生任务书</el-menu-item>
@@ -153,19 +108,7 @@
         <el-menu-item index="1-4">实训报告管理</el-menu-item>
       </el-submenu>
 
-      <router-link to="/home/history/notice">
-        <el-menu-item index="2">
-          <i class="el-icon-menu"></i>
-          <span slot="title">历史公告</span>
-        </el-menu-item>
-      </router-link>
 
-      <router-link to="/home/info">
-        <el-menu-item index="3">
-          <i class="el-icon-menu"></i>
-          <span slot="title">个人信息</span>
-        </el-menu-item>
-      </router-link>
     </el-menu>
 
 
@@ -199,6 +142,25 @@
         </el-menu-item>
       </router-link>
 
+      <router-link to="/home/history/notice">
+        <el-menu-item index="6">
+          <i class="el-icon-menu"></i>
+          <span slot="title">历史公告</span>
+        </el-menu-item>
+      </router-link>
+
+      <router-link to="/home/info">
+        <el-menu-item index="7">
+          <i class="el-icon-menu"></i>
+          <span slot="title">个人信息</span>
+        </el-menu-item>
+      </router-link>
+
+    </el-menu>
+
+
+    <!--通用-->
+    <el-menu default-active="1" class="el-menu-vertical-demo">
 
       <router-link to="/home/history/notice">
         <el-menu-item index="6">
@@ -213,6 +175,7 @@
           <span slot="title">个人信息</span>
         </el-menu-item>
       </router-link>
+
     </el-menu>
 
 
@@ -231,12 +194,14 @@
     data() {
       return {
         role: Number,
+        roles: String, //多个角色
         username: String,
         currentWeek: "一"
       }
     },
     created() {
       this.role = sessionStorage.getItem("role");
+      this.roles = sessionStorage.getItem("roles");
       this.username = sessionStorage.getItem("username");
 
     },

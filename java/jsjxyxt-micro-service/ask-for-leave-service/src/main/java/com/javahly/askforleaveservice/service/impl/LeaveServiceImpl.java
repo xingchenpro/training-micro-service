@@ -50,7 +50,7 @@ public class LeaveServiceImpl implements LeaveService {
 
     @Override
     public List<Leave> getLeaves(Integer leStatus, Integer specId) {
-        return getLeaves(leStatus, null,specId);
+        return getLeaves(leStatus, null, specId);
     }
 
 
@@ -77,12 +77,17 @@ public class LeaveServiceImpl implements LeaveService {
 
     @Override
     public List<Leave> getExaminedLeavesInfo(Integer leStatus, Integer specId) {
-        return getExaminedLeavesInfo(leStatus, null,specId);
+        return getExaminedLeavesInfo(leStatus, null, specId);
     }
 
     @Override
     public List<Leave> getExaminedLeavesInfo(Integer leStatus, String tId, Integer specId) {
         return leaveDao.getExaminedLeavesInfo(leStatus, tId, specId);
+    }
+
+    @Override
+    public int updateExamineStatus(Integer leStatus, Integer leId, String leBackReason) {
+        return leaveDao.updateExamineStatus(leStatus, leId, leBackReason);
     }
 
 }

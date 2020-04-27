@@ -78,5 +78,14 @@
         leave.ap_id = trainingapply.ap_id;
     </select>
 
+    <!--审核请假信息-->
+    <update id="updateExamineStatus" >
+        UPDATE `leave`
+        <set>
+            <if test="leStatus!=null||leStatus!=''">le_status = (#{leStatus}+leave.le_status),</if>
+            <if test="leBackReason!=null||leBackReason!=''">le_backReason = #{leBackReason},</if>
+        </set>
+        WHERE le_id = #{leId}
+    </update>
 
 </mapper>

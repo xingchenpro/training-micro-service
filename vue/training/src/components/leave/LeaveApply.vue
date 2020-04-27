@@ -249,7 +249,7 @@
         companies: [],
         isApply: 1,
         dialogVisible: false, // 否决理由显示
-        reason: String, //否决理由
+        leBackReason: String, //否决理由
         leStatus: -10,
         leTimeFrame: "",
         //请假表
@@ -348,7 +348,7 @@
           if (res.data.result.leave) {
             //请假信息
             var leaveData = res.data.result.leave;
-            this.reason = leaveData.leBackReason;
+            this.leBackReason = leaveData.leBackReason;
             this.leStatus = leaveData.leStatus;
             console.log("leStatus", this.leStatus);
             this.leaveForm.leTimeFrame.push(leaveData.leStartTime.slice(0, 10));

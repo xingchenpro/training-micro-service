@@ -2,13 +2,14 @@ package com.javahly.askforleaveservice;
 
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import com.spring4all.swagger.EnableSwagger2Doc;
+import feign.Retryer;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.Bean;
 
 /**
- *
  * 　　　　　　　   ┏┓　   ┏┓+ +
  * 　　　　　　　┏┛┻━━━┛┻┓ + +
  * 　　　　　　　┃　　　　　　　┃
@@ -30,8 +31,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * 　　　　　　　　　┗┓┓┏━┳┓┏┛ + + + +
  * 　　　　　　　　　　┃┫┫　┃┫┫
  * 　　　　　　　　　　┗┻┛　┗┻┛+ + + +
- *
- *
  */
 
 @SpringBootApplication
@@ -41,8 +40,19 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 //@EnableSwagger2Doc//http://localhost:8083/v1/leave/swagger-ui.html#/
 public class AskForLeaveServiceApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AskForLeaveServiceApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AskForLeaveServiceApplication.class, args);
+    }
+
+    /**
+     * Feign 重试 默认 5秒
+     *
+     * @return
+     */
+    @Bean
+    Retryer feignRetryer() {
+        return new Retryer.Default();
+    }
+
 
 }

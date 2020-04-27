@@ -55,4 +55,8 @@ public interface LeaveService {
     //获得已审核请假信息
     public List<Leave> getExaminedLeavesInfo(Integer leStatus, String tId, Integer specId);
 
+    //更新审核信息
+    public int updateExamineStatus(Integer leStatus, Integer leId,  String leBackReason);
+
+
 }

@@ -1,30 +1,30 @@
 <template>
 
   <div id="login_content">
-  <div id="window">
-    <div class="page page-front">
-      <div class="page-content">
-        <div class="input-row">
-          <label class="label fadeIn">用户名</label>
-          <input v-model="loginForm.username" id="username" type="text"  class="input fadeIn delay1" />
-        </div>
-        <div class="input-row">
-          <label class="label fadeIn delay2">密码</label>
-          <input v-model="loginForm.password" id="password" type="password"  class="input fadeIn delay3"/>
-        </div>
-        <div class="input-row perspective">
-          <button id="submit" class="button load-btn fadeIn delay4" @click="submitClick">
-            <span class="default"><i class="ion-arrow-right-b"></i>登录</span>
-            <div class="load-state">
-              <div class="ball"></div>
-              <div class="ball"></div>
-              <div class="ball"></div>
-            </div>
-          </button>
+    <div id="window">
+      <div class="page page-front">
+        <div class="page-content">
+          <div class="input-row">
+            <label class="label fadeIn">用户名</label>
+            <input v-model="loginForm.username" id="username" type="text" class="input fadeIn delay1"/>
+          </div>
+          <div class="input-row">
+            <label class="label fadeIn delay2">密码</label>
+            <input v-model="loginForm.password" id="password" type="password" class="input fadeIn delay3"/>
+          </div>
+          <div class="input-row perspective">
+            <button id="submit" class="button load-btn fadeIn delay4" @click="submitClick">
+              <span class="default"><i class="ion-arrow-right-b"></i>登录</span>
+              <div class="load-state">
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -64,6 +64,14 @@
               });
               sessionStorage.setItem('username', this.loginForm.username);
               sessionStorage.setItem('role', resp.data.result.role[0].authority);
+              var role = resp.data.result.role;
+              //角色数组
+              var roles = '';
+              for (var i in role) {
+                roles += role[i].authority;
+              }
+              alert(roles);
+              sessionStorage.setItem('roles', roles);
               sessionStorage.setItem('token', resp.data.result.accessToken);
               /*alert(sessionStorage.getItem("token"))*/
               this.$router.replace({path: '/home'});
