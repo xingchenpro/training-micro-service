@@ -35,7 +35,6 @@
         <el-menu-item index="2-4">班级管理</el-menu-item>
         <el-menu-item index="2-5">专业管理</el-menu-item>
         <el-menu-item index="2-6">单位信息管理</el-menu-item>
-        <el-menu-item index="2-7">历史公告管理</el-menu-item>
       </el-submenu>
     </el-menu>
 
@@ -142,19 +141,6 @@
         </el-menu-item>
       </router-link>
 
-      <router-link to="/home/history/notice">
-        <el-menu-item index="6">
-          <i class="el-icon-menu"></i>
-          <span slot="title">历史公告</span>
-        </el-menu-item>
-      </router-link>
-
-      <router-link to="/home/info">
-        <el-menu-item index="7">
-          <i class="el-icon-menu"></i>
-          <span slot="title">个人信息</span>
-        </el-menu-item>
-      </router-link>
 
     </el-menu>
 
@@ -162,12 +148,12 @@
     <!--通用-->
     <el-menu default-active="1" class="el-menu-vertical-demo">
 
-      <router-link to="/home/history/notice">
+    <!--  <router-link to="/home/history/notice">
         <el-menu-item index="6">
           <i class="el-icon-menu"></i>
           <span slot="title">历史公告</span>
         </el-menu-item>
-      </router-link>
+      </router-link>-->
 
       <router-link to="/home/info">
         <el-menu-item index="7">

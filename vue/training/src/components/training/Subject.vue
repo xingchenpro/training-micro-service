@@ -10,42 +10,40 @@
               <!--申请状态开始-->
               <div class="progress-container">
                 <div class="progress-box">
-                  <span class="progress-bar" :class="[status !== -10 ? 'active' : '']"></span>
+                  <span class="progress-bar" :class="[subject.status !== -10 ? 'active' : '']"></span>
                   <div class="circle-wrapper">
-                    <i class="fa fa-dot-circle-o" :class="[status !== -10 ? 'font-active' : '']"></i>
+                    <i class="fa fa-dot-circle-o" :class="[subject.status !== -10 ? 'font-active' : '']"></i>
                   </div>
-                  <p class="p1" v-if="status === -10">未提交请假申请</p>
-                  <p class="p1 font-active1" v-if="status !== -10">已提交请假申请<i class="fa fa-check"></i></p>
+                  <p class="p1" v-if="subject.status === -10">未申请课题</p>
+                  <p class="p1 font-active1" v-if="subject.status !== -10">已申请课题<i class="fa fa-check"></i></p>
                 </div>
 
+                <!--指导教师是否审核通过-->
                 <div class="progress-box">
-                  <span class="progress-bar" :class="[status !== -10 ? 'active' : '']"></span>
+                  <span class="progress-bar" :class="[subject.status !== -10 ? 'active' : '']"></span>
                   <div class="circle-wrapper">
                     <i class="fa fa-dot-circle-o"
-                       :class="[status !== -10 && (status > 0 || status < -1)? 'font-active': '']"></i></div>
-                  <p class="p2 font-active1 " v-if="status !== -10 && (status > 0 || status < -1)">指导教师审核已通过<i
-                    class="fa fa-check"></i></p>
-                  <p class="p2" v-if="status === 0 || status === -10">等待指导教师审核</p>
-                  <p class="p2 font-active-refuse " v-if="status === -1">指导教师审核未通过<i class="fa fa-close"></i></p>
+                       :class="[subject.status !== -10 && (subject.status > 0 || subject.status < -1)? 'font-active': '']"></i></div>
+                  <p class="p2 font-active1 " v-if="subject.status !== -10 && (subject.status > 0 || subject.status < -1)">指导教师审核已通过<i class="fa fa-check"></i></p>
+                  <p class="p2" v-if="subject.status === 0 || subject.status === -10">等待指导教师审核</p>
+                  <p class="p2 font-active-refuse " v-if="subject.status === -1">指导教师审核未通过<i class="fa fa-close"></i></p>
                 </div>
 
+                <!--等待专业负责人审核-->
                 <div class="progress-box">
-                  <span class="progress-bar"
-                        :class="[status !== -10 && (status > 0 || status < -1)? 'active': '']"></span>
+                  <span class="progress-bar" :class="[subject.status !== -10 && (subject.status > 0 || subject.status < -1)? 'active': '']"></span>
                   <div class="circle-wrapper">
-                    <i class="fa fa-dot-circle-o"
-                       :class="[status !== -10 && (status > 1 || status < -2)? 'font-active': '']"></i>
+                    <i class="fa fa-dot-circle-o" :class="[subject.status !== -10 && (subject.status > 1 || subject.status < -2)? 'font-active': '']"></i>
                   </div>
-                  <p class="p3 font-active1 " v-if="status !== -10 && (status > 1 || status < -2)">专业负责人审核已通过<i
-                    class="fa fa-check"></i></p>
-                  <p class="p3" v-if="status === 0 || status === 1 || status === -10">等待专业负责人审核</p>
-                  <p class="p3 font-active-refuse " v-if="status === -2">专业负责人审核未通过<i class="fa fa-close"></i></p>
+                  <p class="p2 font-active1 " v-if="subject.status !== -10 && (subject.status > 1 || subject.status < -2)">专业负责人审核已通过<i class="fa fa-check"></i></p>
+                  <p class="p3" v-if="subject.status === 0 || subject.status === 1 || subject.status === -10">等待专业负责人审核</p>
+                  <p class="p3 font-active-refuse " v-if="subject.status === -2">专业负责人审核未通过<i class="fa fa-close"></i></p>
                 </div>
 
                 <div class="progress-box">
-                  <span class="progress-bar" :class="[status > 2 ? 'active' : '']"></span>
+                  <span class="progress-bar" :class="[subject.status >= 2 ? 'active' : '']"></span>
                   <div class="circle-wrapper">
-                    <i class="fa fa-check" :class="[status > 2 ? 'font-active' : '']"></i>
+                    <i class="fa fa-check" :class="[subject.status >= 2 ? 'font-active' : '']"></i>
                   </div>
                 </div>
               </div>
@@ -56,32 +54,32 @@
               <div class="widget am-cf">
                 <div class="widget-body am-fr" style="min-height: 700px;">
 
-                  <el-form :model="subjectFrom" :rules="rules" ref="subjectFrom" label-width="100px"
-                           class="demo-subjectFrom">
+                  <el-form :model="subject" :rules="rules" ref="subject" label-width="100px">
 
                     <el-form-item label="课题名称" prop="name">
-                      <el-input v-model="subjectFrom.name" style="width:25%;"></el-input>
+                      <el-input v-model="subject.title" style="width:25%;"></el-input>
                     </el-form-item>
 
                     <el-form-item label="已知技术参数和实训要求" prop="requirement">
-                      <el-input type="textarea" v-model="subjectFrom.requirement" rows="5"></el-input>
+                      <el-input type="textarea" v-model="subject.requirement" rows="5"></el-input>
                     </el-form-item>
 
                     <el-form-item label="内容和步骤" prop="contentAndStep">
-                      <el-input type="textarea" v-model="subjectFrom.contentAndStep" rows="5"></el-input>
+                      <el-input type="textarea" v-model="subject.contentAndStep" rows="5"></el-input>
                     </el-form-item>
 
                     <el-form-item label="实训工作计划与进度安排" prop="plan">
-                      <el-input type="textarea" v-model="subjectFrom.plan" rows="5"></el-input>
+                      <el-input type="textarea" v-model="subject.plan" rows="5"></el-input>
                     </el-form-item>
 
                     <el-form-item label="实训考核要求" prop="assessmentRequirement">
-                      <el-input type="textarea" v-model="subjectFrom.assessmentRequirement" rows="5"></el-input>
+                      <el-input type="textarea" v-model="subject.assessmentRequirement" rows="5"></el-input>
                     </el-form-item>
 
                     <el-form-item>
-                      <el-button type="primary" @click="submitForm('subjectFrom')">保存</el-button>
-                      <el-button @click="resetForm('subjectFrom')">重置</el-button>
+                      <el-button type="primary" @click="submitForm('subject')" style="margin: 0 auto">保存</el-button>
+                      <el-button @click="resetForm('subject')" style="float: right">重置</el-button>
+
                     </el-form-item>
 
                   </el-form>
@@ -98,20 +96,20 @@
 
 <script>
   export default {
-    name: "subject",
     data() {
       return {
-        status: -10,
-        subjectFrom: {
-          name: '',
+        status: -10,//任务书状态
+        subject: {
+          title: '',
           requirement: '',
           contentAndStep: '',
           plan: '',
           assessmentRequirement: '',
-          desc: ''
+          desc: '',
+          status: -10,//任务书状态
         },
         rules: {
-          name: [
+          title: [
             {required: true, message: '请输入课题名称', trigger: 'blur'},
           ],
           requirement: [
@@ -129,6 +127,21 @@
         }
       };
     },
+
+    created() {
+
+      var url = "/training-service/v1/training/subject?sId=" + sessionStorage.username;
+      //查看实训课题
+      this.$axios.get(url).then((res) => {
+        if (res.data.resultCode === 200) {
+          this.subject = res.data.result.subject;
+        }
+      }).catch((error) => {
+        console.log(error)
+      })
+    },
+
+
     methods: {
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {

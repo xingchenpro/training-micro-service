@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.javahly.trainingservice.dao.TrainingSubjectDao">
+
+    <sql id="comm_cols_subject">
+        id id,s_id sId, title title,requirement requirement,contentAndStep contentAndStep,plan plan,assessmentRequirement assessmentRequirement,status status,state state,tutor tutor,spec_id specId,reason reason
+    </sql>
+
+
+    <!--学生获取自己的课题-->
+    <select id="getTrainingSubject"  resultType="TrainingSubject">
+        SELECT <include refid="comm_cols_subject"/> FROM training_subject
+        <if test="sId!=null">
+            WHERE s_id = #{sId}
+        </if>
+        limit 1
+    </select>
+
+</mapper>

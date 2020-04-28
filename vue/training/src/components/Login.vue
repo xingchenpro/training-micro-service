@@ -38,7 +38,7 @@
     data() {
       return {
         loginForm: {
-          username: 'fdy',
+          username: '201611104032',
           password: '123'
         },
       }
@@ -70,10 +70,10 @@
               for (var i in role) {
                 roles += role[i].authority;
               }
-              alert(roles);
+              //alert(roles);
               sessionStorage.setItem('roles', roles);
               sessionStorage.setItem('token', resp.data.result.accessToken);
-              /*alert(sessionStorage.getItem("token"))*/
+              //alert(sessionStorage.getItem("token"))
               this.$router.replace({path: '/home'});
             } else if (resp.data.resultCode === 403) {
               this.$router.replace({path: '/error/limit'});
