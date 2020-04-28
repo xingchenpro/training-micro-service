@@ -106,6 +106,8 @@
     margin-left: -32px;
     width: 150px;
     background-color: #fcfffd;
+    max-height: 760px;
+    overflow: auto;
 
   }
 

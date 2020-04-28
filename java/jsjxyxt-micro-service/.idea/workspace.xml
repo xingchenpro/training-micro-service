@@ -43,7 +43,7 @@
       <file leaf-file-name="TrainingSubjectController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/TrainingSubjectController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-112">
+            <state relative-caret-position="233">
               <caret line="36" column="15" lean-forward="true" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -214,9 +214,9 @@
     <option name="jreName" value="#JAVA_INTERNAL" />
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-61" />
-    <option name="y" value="161" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="50" />
+    <option name="y" value="34" />
     <option name="width" value="1854" />
     <option name="height" value="1035" />
   </component>
@@ -717,16 +717,15 @@
       <workItem from="1587985075358" duration="10339000" />
       <workItem from="1588057712382" duration="907000" />
       <workItem from="1588063472410" duration="2137000" />
-      <workItem from="1588081472059" duration="3584000" />
+      <workItem from="1588081472059" duration="4199000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143018000" />
+    <option name="totallyTimeSpent" value="143633000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-61" y="161" width="1854" height="1035" extended-state="1" />
-    <editor active="true" />
+    <frame x="50" y="34" width="1854" height="1035" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.69284064" sideWeight="0.5067416" order="7" side_tool="true" content_ui="tabs" />
@@ -1273,7 +1272,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/TrainingSubjectController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-112">
+        <state relative-caret-position="233">
           <caret line="36" column="15" lean-forward="true" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
