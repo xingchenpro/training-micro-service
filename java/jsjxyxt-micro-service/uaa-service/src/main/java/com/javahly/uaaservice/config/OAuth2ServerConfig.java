@@ -40,7 +40,7 @@ public class OAuth2ServerConfig {
             //资源访问控制，可配置必须通过token认证过后才可以访问的资源，permitAll()表示不需要token可直接访问
             http
                     .authorizeRequests()
-                    .antMatchers("/login","/actuator/**").
+                    .antMatchers("/login","/actuator/**","/v2/api-docs/**").
                     permitAll();
         }
     }

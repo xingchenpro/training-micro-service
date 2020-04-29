@@ -56,7 +56,7 @@ eureka:
   instance:
     # 客户端多久发送一次心跳，没有心跳就剔除
     leaseRenewalIntervalInSeconds: 10
-    health-check-url-path: /v1/leave/actuator/health
+    health-check-url-path: /actuator/health
 
 management:
   endpoints:

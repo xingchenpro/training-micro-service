@@ -30,7 +30,6 @@ import java.util.Map;
 @RestController
 public class TrainingSubjectController {
 
-
     @Autowired
     TrainingSubjectService trainingSubjectService;
 
@@ -49,6 +48,5 @@ public class TrainingSubjectController {
 
         return result;
     }
-
 
 }

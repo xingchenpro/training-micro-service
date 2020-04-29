@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.requestMatchers()
                 .anyRequest()
                 .and().authorizeRequests()
-                .antMatchers( "/oauth/**","/actuator/**").permitAll()
+                .antMatchers( "/oauth/**","/actuator/**","/v2/api-docs/**").permitAll()
                 .anyRequest().authenticated();//其他的路径都是登录后即可访问
     }
     //配置验证管理的Bean

@@ -24,3 +24,18 @@ https://yq.aliyun.com/articles/78124
 ---
 4、Eureka 剔除
 https://segmentfault.com/a/1190000008378268
+
+5、Redis 哨兵无法连接
+https://blog.csdn.net/single_cong/article/details/101019146
+
+6、gateway 依赖 web报错，屏蔽掉
+<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+</dependency>

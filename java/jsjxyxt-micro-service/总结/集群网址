@@ -7,7 +7,26 @@ http://49.233.192.8:8761/
 
 3、端口
 
+1)uaa 8081
+2)info 8082
+3)training 8083
+4)leave 8084
+5)gateway 8889
+6)eureka 8761
+7)admin 8769
+
 
 4、redis
+1)uaa 0
+2)info 2
+3)training 3
+4)leave 4
+5)lcn 5
+
+
+
+
+5、swagger
+http://localhost:8082/v1/info/swagger-ui.html#/
 
 

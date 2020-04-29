@@ -14,3 +14,7 @@ java -jar zipkin-server-2.10.1-exec.jar --STORAGE_TYPE=mysql --MYSQL_HOST=127.0.
 3、
 admin
 https://www.cnblogs.com/ityouknow/p/8440455.html
+
+4、gateway整合swagger
+https://blog.csdn.net/u012453032/article/details/99971896
+https://blog.csdn.net/github_38924695/article/details/104269865?utm_medium=distribute.pc_relevant.none-task-blog-OPENSEARCH-7&depth_1-utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-7

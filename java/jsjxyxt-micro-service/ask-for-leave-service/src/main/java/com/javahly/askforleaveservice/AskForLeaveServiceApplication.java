@@ -1,5 +1,6 @@
 package com.javahly.askforleaveservice;
 
+import brave.sampler.Sampler;
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import com.spring4all.swagger.EnableSwagger2Doc;
 import feign.Retryer;
@@ -37,7 +38,6 @@ import org.springframework.context.annotation.Bean;
 @MapperScan("com.javahly.askforleaveservice.dao")
 @EnableApolloConfig
 @EnableFeignClients
-//@EnableSwagger2Doc//http://localhost:8083/v1/leave/swagger-ui.html#/
 public class AskForLeaveServiceApplication {
 
     public static void main(String[] args) {
@@ -54,5 +54,13 @@ public class AskForLeaveServiceApplication {
         return new Retryer.Default();
     }
 
-
+    /**
+     * 链路追踪
+     *
+     * @return
+     */
+    @Bean
+    public Sampler defaultSampler() {
+        return Sampler.ALWAYS_SAMPLE;
+    }
 }

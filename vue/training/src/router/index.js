@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import Login from '@/components/Login'
+import Page from "@/components/common/Page"
 import PersionInfo from '@/components/info/PersionInfo'
 import Notice from '@/components/history/Notice'
 import LimitError from '@/components/error/LimitError'
@@ -21,6 +22,7 @@ export default new Router({
     { path: '/home', name: 'Home', component: Home,
       children: [
         {path: "/home/info", component: PersionInfo, meta: {requireAuth: true}},
+        {path: "/home/page", component: Page, meta: {requireAuth: true}},
         {path: "/home/leave", component: LeaveApply, meta: {requireAuth: true}},
         {path: "/home/leave/manager", component: LeaveManager, meta: {requireAuth: true}},
         {path: "/home/history/notice", component: Notice, meta: {requireAuth: true}},
