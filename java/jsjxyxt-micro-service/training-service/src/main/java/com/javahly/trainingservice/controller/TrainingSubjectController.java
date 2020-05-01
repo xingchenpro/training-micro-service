@@ -8,10 +8,7 @@ import com.javahly.trainingservice.service.TrainingSubjectService;
 import com.javahly.trainingservice.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
@@ -45,7 +42,17 @@ public class TrainingSubjectController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return result;
+    }
 
+    @RequestMapping(value = "/subject", method = RequestMethod.POST)
+        public Result addSubject(@RequestBody TrainingSubject subject) {
+        Result result = new Result();
+        TrainingSubject  trainingSubject = trainingSubjectService.getTrainingSubject(subject.getsId());
+        //如果查询结果为空就添加
+        if(trainingSubject==null){
+            trainingSubjectService.addTrainingSubject(subject);
+        }
         return result;
     }
 

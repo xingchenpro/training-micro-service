@@ -14,6 +14,9 @@ public interface TrainingSubjectService {
     //学生获取自己的实训课题
     public TrainingSubject getTrainingSubject(String sId);
 
+    //学生提交课题
+    public int addTrainingSubject(TrainingSubject trainingSubject);
+
 
 
 }

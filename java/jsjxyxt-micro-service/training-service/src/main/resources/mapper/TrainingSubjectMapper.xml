@@ -7,6 +7,11 @@
     </sql>
 
 
+    <sql id="add_comm_cols_subject">
+       s_id,title,requirement,contentAndStep,plan,assessmentRequirement,status,tutor,spec_id
+    </sql>
+
+
     <!--学生获取自己的课题-->
     <select id="getTrainingSubject"  resultType="TrainingSubject">
         SELECT <include refid="comm_cols_subject"/> FROM training_subject
@@ -15,5 +20,15 @@
         </if>
         limit 1
     </select>
+
+
+    <!--添加实训题目-->
+    <insert id="addTrainingSubject" parameterType="TrainingSubject" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO training_subject(
+        <include refid="add_comm_cols_subject"/>
+        )VALUES
+        (#{sId},#{title},#{requirement},#{contentAndStep},#{plan},#{assessmentRequirement},#{status},#{tutor},#{specId})
+    </insert>
+
 
 </mapper>

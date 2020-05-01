@@ -73,3 +73,9 @@ server:
 server.servlet.context-path: /v1/training
 
 
+rocketmq:
+  name-server: 106.13.1.171:9876;
+  producer:
+    group: transient_producer
+
+

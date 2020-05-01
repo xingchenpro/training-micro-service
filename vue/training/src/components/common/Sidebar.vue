@@ -35,7 +35,6 @@
         <a target="_blank" href="http://localhost:8769/"><el-menu-item index="2-2">服务监控</el-menu-item></a>
         <a target="_blank" href="http://localhost:8889/swagger-ui.html"><el-menu-item index="2-2">API 管理</el-menu-item></a>
         <a target="_blank" href="http://106.13.1.171:8080/"><el-menu-item index="2-2">RocketMQ 控制台</el-menu-item></a>
-
         <!-- <el-menu-item index="2-1">用户管理</el-menu-item>
          <el-menu-item index="2-2">学生管理</el-menu-item>
          <el-menu-item index="2-3">教师管理</el-menu-item>

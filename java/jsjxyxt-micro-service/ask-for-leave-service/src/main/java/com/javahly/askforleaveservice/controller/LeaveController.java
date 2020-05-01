@@ -7,6 +7,9 @@ import com.javahly.askforleaveservice.entity.TrainingApply;
 import com.javahly.askforleaveservice.feign.basic.entity.Student;
 import com.javahly.askforleaveservice.feign.basic.entity.Teacher;
 import com.javahly.askforleaveservice.feign.basic.service.BasicInformationService;
+import com.javahly.askforleaveservice.feign.training.entity.TrainingSubject;
+import com.javahly.askforleaveservice.feign.training.service.TrainingSubjectService;
+import com.javahly.askforleaveservice.mq.service.TrainingSubjectMqService;
 import com.javahly.askforleaveservice.service.LeaveService;
 import com.javahly.askforleaveservice.service.TrainingApplyService;
 import com.javahly.askforleaveservice.util.InfoUtil;
@@ -46,6 +49,12 @@ public class LeaveController {
 
     @Autowired
     BasicInformationService basicInfoService;
+
+    @Autowired
+    TrainingSubjectService trainingSubjectService;
+
+    @Autowired
+    TrainingSubjectMqService subjectMqService;
 
 
     //添加请假信息
@@ -152,14 +161,12 @@ public class LeaveController {
      * @param leId
      * @param role
      * @param tId
-     * @param subject
      * @param sId
      * @param leBackReason
-     * @param flag
      * @return
      */
     @RequestMapping(value = "/examine", method = RequestMethod.POST)
-    public Result updateExamineStatus(int leStatus, int leId, int role, String tId, String subject, String sId, String leBackReason, @RequestParam(value = "flag", required = false) Integer flag) {
+    public Result updateExamineStatus(int leStatus, int leId, int role, String tId, String title, String sId, String leBackReason) {
         Result result = new Result();
         if (leStatus == 0) {
             if (role == 2) leStatus = -1;
@@ -169,7 +176,6 @@ public class LeaveController {
         //远程调用 学生信息
         List<Student> students = basicInfoService.getStudents();
         //更新请假信息
-        leaveService.updateExamineStatus(leStatus, leId, leBackReason);
         //辅导员
         //查询所有请假信息
         List<Leave> allLeaves = leaveService.getLeaves();
@@ -179,24 +185,37 @@ public class LeaveController {
         List<Leave> examinedLeaves;
         //TODO 远程调用专业信息
         Integer specId = 101;
-        //获得查询请假信息
-        leStatus = LeaveStatusEnum.getStatus(role);
         if (role == 2) {
+            leaveService.updateExamineStatus(leStatus, leId, leBackReason);
+            //获得查询请假信息
+            leStatus = LeaveStatusEnum.getStatus(role);
             needExamineLeaves = leaveService.getLeaves(leStatus);
             examinedLeaves = leaveService.getExaminedLeavesInfo(leStatus + 1);
             result.setResult(matchingStudentInfo(allLeaves, needExamineLeaves, examinedLeaves, students));
         }
         //指导教师
         if (role == 3) {
+            leaveService.updateExamineStatus(leStatus, leId, leBackReason);
+            //获得查询请假信息
+            leStatus = LeaveStatusEnum.getStatus(role);
             needExamineLeaves = leaveService.getLeaves(leStatus, tId);
             examinedLeaves = leaveService.getExaminedLeavesInfo(leStatus + 1, tId);
             result.setResult(matchingStudentInfo(allLeaves, needExamineLeaves, examinedLeaves, students));
         }
         //专业负责人
         if (role == 4) {
+            //leaveService.updateExamineStatus(leStatus, leId, leBackReason);
+            //专业负责人审核通过后更新实训表
+            TrainingSubject subject = new TrainingSubject();
+            subject.setsId(sId);
+            subject.setTitle(title);
+            subjectMqService.save(subject,leStatus,leId,leBackReason);
+            //获得查询请假信息
+            leStatus = LeaveStatusEnum.getStatus(role);
             needExamineLeaves = leaveService.getLeaves(leStatus, specId);
             examinedLeaves = leaveService.getExaminedLeavesInfo(leStatus + 1, specId);
             result.setResult(matchingStudentInfo(allLeaves, needExamineLeaves, examinedLeaves, students));
+
         }
         return result;
     }
