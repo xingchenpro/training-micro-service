@@ -6,6 +6,8 @@ import com.javahly.askforleaveservice.service.TrainingApplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author :hly
  * @github :https://github.com/huangliangyun
@@ -29,5 +31,10 @@ public class TrainingApplyServiceImpl implements TrainingApplyService {
     @Override
     public TrainingApply getTrainingApplyInfoById(Integer apId) {
         return trainingApplyDao.getTrainingApplyInfoById(apId);
+    }
+
+    @Override
+    public List<String> getStudentIdsByTeacherId(String tId) {
+        return trainingApplyDao.getStudentIdsByTeacherId(tId);
     }
 }

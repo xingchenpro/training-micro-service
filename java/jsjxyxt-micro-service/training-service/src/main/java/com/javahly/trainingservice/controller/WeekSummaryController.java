@@ -1,0 +1,73 @@
+package com.javahly.trainingservice.controller;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.javahly.trainingservice.entity.WeekSummary;
+import com.javahly.trainingservice.feign.service.LeaveService;
+import com.javahly.trainingservice.service.WeekSummaryService;
+import com.javahly.trainingservice.util.Result;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.*;
+
+/**
+ * @author :hly
+ * @github :https://github.com/huangliangyun
+ * @blog :http://www.javahly.com/
+ * @CSDN :blog.csdn.net/Sirius_hly
+ * @date :2019/4/18
+ */
+@Slf4j
+@RestController
+public class WeekSummaryController {
+
+    @Autowired
+    WeekSummaryService weekSummaryService;
+
+    @Autowired
+    LeaveService leaveService;
+
+    //查询个人周总结
+    @RequestMapping(value = "/weekSummary", method = RequestMethod.GET)
+    public Result getWeekSummaryInfoByStudentId(String sId) {
+        Result result = new Result();
+        Map<String, Object> resultMap = new HashMap<>();
+        List<WeekSummary> weekSummary = null;
+        weekSummary = weekSummaryService.getWeekSummaryInfoByStudentId(sId);
+        resultMap.put("weekSummary", weekSummary);
+        result.setResult(resultMap);
+        return result;
+    }
+
+    //提交(更新)周总结
+    @RequestMapping(value = "/weekSummary", method = RequestMethod.POST)
+    public Result updateWeekSummaryInfo(@RequestBody WeekSummary weekSummary) {
+        Result result = new Result();
+        weekSummary.setModifyTime(new Date());
+        weekSummaryService.updateWeekSummaryInfo(weekSummary);
+        return result;
+    }
+
+    //指导教师，班主任，查询周总结
+    @RequestMapping(value = "/weekSummaries", method = RequestMethod.GET)
+    public Result getWeekSummaryInfo(int role, String tId) {
+        Result result = new Result();
+        Map<String, Object> resultMap = new HashMap<>();
+        List<String> sIds = leaveService.getStudentIdsByTeacherId(tId);
+        log.info("LeaveService：sIds：{}",sIds);
+        List<List<WeekSummary>> weekSummaries = weekSummaryService.getWeekSummariesInfoByStudentIds(sIds);
+        log.info("LeaveService：weekSummaries：{}",weekSummaries);
+        resultMap.put("weekSummaries",weekSummaries);
+        result.setResult(resultMap);
+        return result;
+    }
+}

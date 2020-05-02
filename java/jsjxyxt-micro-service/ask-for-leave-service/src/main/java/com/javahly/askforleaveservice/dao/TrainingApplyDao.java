@@ -36,7 +36,7 @@ public interface TrainingApplyDao {
     public String getTeacherIdByStudentId(String s_id);
 
     //根据指导教师id查询学生
-    public List<String> getStudentIdsByTeacherId(String s_id);
+    public List<String> getStudentIdsByTeacherId(@Param("tId") String tId);
 
     //实训单位情况，一个公司几个学生，根据单位id获得学生
     public List<String> getStudentsIdByUnitId(Map<String, Object> map);

@@ -26,4 +26,12 @@
         WHERE ap_id = #{apId}
     </select>
 
+    <!--根据指导教师查询学生ID-->
+    <select id="getStudentIdsByTeacherId" resultType="string">
+        SELECT
+        s_id sId
+        FROM trainingapply
+        WHERE t_id = #{tId}
+    </select>
+
 </mapper>

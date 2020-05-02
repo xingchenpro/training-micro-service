@@ -11,7 +11,7 @@
     <sql id="unitAddSql">u_name,u_address,u_remark,u_details,s_id,u_status</sql>
 
     <!--查询单位-->
-    <select id="getUnits" resultType="unit" parameterType="Map">
+    <select id="getUnits" resultType="unit">
         SELECT
         <include refid="comm_cols_units"/>
         FROM unit

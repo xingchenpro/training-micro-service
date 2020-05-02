@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.javahly.trainingservice.dao.WeekSummaryDao">
+
+
+    <sql id="comm_cols_week_summary">
+        s_id sId,w_num wNum,s_name sName,summary summary,advise advise,arrange arrange,deal deal,evaluation evaluation,isSubmit isSubmit,modifyTime modifyTime
+    </sql>
+
+    <sql id="comm_cols_week_summary_sql">
+        s_id ,w_num ,s_name ,summary ,advise ,arrange ,deal ,evaluation ,isSubmit ,modifyTime
+    </sql>
+
+    <!--一对多映射-->
+    <resultMap id="weekSummaryMap" type="weekSummary">
+        <id column="s_id" property="sId"/>
+        <result column="s_name" property="sName"/>
+        <!--联合查询-->
+        <collection property="weekSummaries" ofType="com.javahly.trainingservice.entity.WeekSummary"
+                    select="com.javahly.trainingservice.dao.WeekSummaryDao.getWeekSummaryInfoByStudentId"
+        column="{sId = s_id}">
+        </collection>
+    </resultMap>
+
+    <!--根据id查询周总结-->
+    <select id="getWeekSummaryInfoByStudentId" resultType="weekSummary">
+        SELECT
+        <include refid="comm_cols_week_summary"/>
+        FROM week_summary WHERE s_id=#{sId}
+    </select>
+
+    <!--更新周总结-->
+    <update id="updateWeekSummaryInfo" parameterType="WeekSummary">
+        UPDATE week_summary
+        <set>
+            <if test="summary!=null">summary=#{summary}</if>,
+            <if test="advise!=null">advise=#{advise}</if>,
+            <if test="arrange!=null">arrange=#{arrange}</if>,
+            <if test="deal!=null">deal=#{deal}</if>,
+            <if test="evaluation!=null">evaluation=#{evaluation}</if>,
+            <if test="isSubmit!=null">isSubmit=#{isSubmit}</if>,
+            <if test="modifyTime!=null">modifyTime=#{modifyTime}</if>
+        </set>
+        WHERE s_id =#{sId} AND w_num =#{wNum}
+    </update>
+
+    <!--根据学号集合查询周总结-->
+    <select id="getWeekSummariesInfoByStudentIds" parameterType="List" resultMap="weekSummaryMap">
+        SELECT
+        w.*
+        FROM week_summary w
+        WHERE w.s_id IN
+        <foreach collection="studentIds" item="id" separator="," open="(" close=")" index="index">
+            #{id}
+        </foreach> GROUP BY w.s_id
+    </select>
+</mapper>

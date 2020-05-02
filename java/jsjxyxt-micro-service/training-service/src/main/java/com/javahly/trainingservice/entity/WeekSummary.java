@@ -1,5 +1,9 @@
 package com.javahly.trainingservice.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,7 +24,11 @@ public class WeekSummary {
     private String deal;//老师对问题的处理
     private String evaluation;//老师的评价
     private String isSubmit;//是否填写
-    private String modifyTime;//修改的时间
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")//解析前端参数
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" )//返回参数
+    private Date modifyTime;//修改的时间
+
+    //非数据库
     private List<WeekSummary> weekSummaries;
 
     public String getsId() {
@@ -95,11 +103,11 @@ public class WeekSummary {
         this.isSubmit = isSubmit;
     }
 
-    public String getModifyTime() {
+    public Date getModifyTime() {
         return modifyTime;
     }
 
-    public void setModifyTime(String modifyTime) {
+    public void setModifyTime(Date modifyTime) {
         this.modifyTime = modifyTime;
     }
 
@@ -109,5 +117,22 @@ public class WeekSummary {
 
     public void setWeekSummaries(List<WeekSummary> weekSummaries) {
         this.weekSummaries = weekSummaries;
+    }
+
+    @Override
+    public String toString() {
+        return "WeekSummary{" +
+                "sId='" + sId + '\'' +
+                ", wNum=" + wNum +
+                ", sName='" + sName + '\'' +
+                ", summary='" + summary + '\'' +
+                ", advise='" + advise + '\'' +
+                ", arrange='" + arrange + '\'' +
+                ", deal='" + deal + '\'' +
+                ", evaluation='" + evaluation + '\'' +
+                ", isSubmit='" + isSubmit + '\'' +
+                ", modifyTime=" + modifyTime +
+                ", weekSummaries=" + weekSummaries +
+                '}';
     }
 }

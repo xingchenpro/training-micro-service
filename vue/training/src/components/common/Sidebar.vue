@@ -77,7 +77,7 @@
         <router-link :to="{ path : '/home/training/subjects'}">
           <el-menu-item index="1-2">实训课题审核</el-menu-item>
         </router-link>
-        <router-link to="/home/training/weekSummary">
+        <router-link to="/home/training/WeekSummaries">
           <el-menu-item index="1-1">学生周总结</el-menu-item>
         </router-link>
       </el-submenu>
@@ -110,7 +110,7 @@
           <i class="el-icon-location"></i>
           <span>班级管理</span>
         </template>
-        <router-link to="/home/training/weekSummary">
+        <router-link to="/home/training/WeekSummaries">
           <el-menu-item index="1-1">学生周总结</el-menu-item>
         </router-link>
         <router-link :to="{ path : '/home/training/subjects'}">
@@ -180,7 +180,7 @@
     <!--第几周-->
     <div
       style="width:100%;margin-top:10px;padding:5px;font-size:34px;border-bottom:1px solid #ededed;text-align: center;">
-      第<br/><span style="font-size:34px;">{{ currentWeek }}</span><br/>周
+      第<br/><span style="font-size:34px;">{{ currentWeek}}</span><br/>周
     </div>
 
   </div>
@@ -201,6 +201,7 @@
       this.role = sessionStorage.getItem("role");
       this.roles = sessionStorage.getItem("roles");
       this.username = sessionStorage.getItem("username");
+      this.currentWeek = sessionStorage.getItem("currentWeek");
 
     },
   };

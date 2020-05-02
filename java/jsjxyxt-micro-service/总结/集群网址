@@ -24,9 +24,9 @@ http://49.233.192.8:8761/
 5)lcn 5
 
 
-
-
 5、swagger
 http://localhost:8082/v1/info/swagger-ui.html#/
 
 
+6、RocketMQ
+http://106.13.1.171:8080/#/

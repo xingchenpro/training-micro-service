@@ -40,12 +40,99 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="问题总结" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/总结/问题总结">
+      <file leaf-file-name="WeekSummaryController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/WeekSummaryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="920">
-              <caret line="40" column="13" lean-forward="false" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+            <state relative-caret-position="4">
+              <caret line="52" column="45" lean-forward="false" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeaveMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/resources/mapper/LeaveMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="736">
+              <caret line="44" column="16" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="44" selection-end-column="16" />
+              <folding>
+                <marker date="1587985821323" expanded="true" signature="2459:2644" ph="INSERT INTO `leave`... " />
+                <marker date="1587985821323" expanded="true" signature="2732:2830" ph="SELECT FROM leave" />
+                <marker date="1587985821323" expanded="true" signature="2927:3220" ph="SELECT * FRO... leave" />
+                <marker date="1587985821323" expanded="true" signature="3333:3676" ph="SELECT * FRO... leave" />
+                <marker date="1587985821323" expanded="true" signature="3758:4029" ph="UPDATE `leave`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WeekSummaryMapper.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/training-service/src/main/resources/mapper/WeekSummaryMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+              <folding>
+                <marker date="1588444104780" expanded="true" signature="1142:1242" ph="SELECT * FRO... week_summary" />
+                <marker date="1588444104780" expanded="true" signature="1351:1887" ph="UPDATE week_summary... " />
+                <marker date="1588444104780" expanded="true" signature="2033:2065" ph="SELECT FROM week_summary" />
+                <marker date="1588444104780" expanded="true" signature="2033:2103" ph="SELECT w.s_i... week_summary" />
+                <marker date="1588444104780" expanded="true" signature="2033:2255" ph="SELECT w.* F... week_summary" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway-service/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="56" column="33" lean-forward="false" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="33" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="57" column="20" lean-forward="true" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyBatis总结" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/总结/MyBatis总结">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" column="53" lean-forward="false" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="技术总结" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/总结/技术总结">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="662">
+              <caret line="36" column="53" lean-forward="false" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WeekSummary.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/entity/WeekSummary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+              <folding>
+                <element signature="e#2482#2483#0" expanded="true" />
+                <element signature="e#2532#2533#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,7 +140,7 @@
       <file leaf-file-name="TrainingSubjectMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/training-service/src/main/resources/mapper/TrainingSubjectMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
+            <state relative-caret-position="242">
               <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
               <folding>
                 <marker date="1588164332485" expanded="true" signature="718:875" ph="SELECT FROM training_subject" />
@@ -63,167 +150,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrainingSubjectController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/TrainingSubjectController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="897">
-              <caret line="53" column="41" lean-forward="false" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainingSubjectService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/service/TrainingSubjectService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainingSubjectServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/service/impl/TrainingSubjectServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="29" column="15" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="技术总结" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/总结/技术总结">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UnitsController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/UnitsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UnitMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/training-service/src/main/resources/mapper/UnitMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="191">
+              <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
               <folding>
-                <marker date="1588409099736" expanded="true" signature="555:682" ph="SELECT FROM unit" />
+                <marker date="1588415282566" expanded="true" signature="535:662" ph="SELECT FROM unit" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultRocketMQListenerContainer.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/rocketmq/rocketmq-spring-boot/2.0.3/rocketmq-spring-boot-2.0.3.jar!/org/apache/rocketmq/spring/support/DefaultRocketMQListenerContainer.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-              <folding>
-                <marker date="1586525194563" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1586525194563" expanded="false" signature="158:2080" ph="..." />
-                <marker date="1586525194563" expanded="true" signature="3187:3312" ph="{...}" />
-                <marker date="1586525194563" expanded="false" signature="3364:3375" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="3417:3423" ph=" }" />
-                <marker date="1586525194563" expanded="true" signature="3510:3593" ph="{...}" />
-                <marker date="1586525194563" expanded="false" signature="3640:3651" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="3689:3695" ph=" }" />
-                <marker date="1586525194563" expanded="true" signature="3773:3848" ph="{...}" />
-                <marker date="1586525194563" expanded="false" signature="3883:3894" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="3917:3923" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="3973:3984" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="4013:4019" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="4064:4075" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="4101:4107" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="4170:4181" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="4216:4222" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="4260:4271" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="4297:4303" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="4359:4370" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="4405:4411" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="4441:4452" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="4470:4476" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="4516:4527" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="4546:4552" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="4590:4601" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="4630:4636" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="4668:4679" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="4699:4705" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="4749:4760" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="4783:4789" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="4832:4843" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="4868:4874" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="4934:4945" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="4978:4984" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="5035:5046" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="5075:5081" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="5153:5164" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="5205:5211" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="5276:5287" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="5323:5329" ph=" }" />
-                <marker date="1586525194563" expanded="true" signature="5404:5772" ph="{...}" />
-                <marker date="1586525194563" expanded="false" signature="5813:5824" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="5848:5854" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="5897:5908" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="5933:5939" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="5982:5993" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="6024:6030" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="6073:6084" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="6109:6115" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="6163:6174" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="6195:6201" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="6262:6273" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="6298:6304" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="6377:6388" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="6429:6435" ph=" }" />
-                <marker date="1586525194563" expanded="true" signature="6463:6659" ph="{...}" />
-                <marker date="1586525194563" expanded="false" signature="6695:6706" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="6718:6724" ph=" }" />
-                <marker date="1586525194563" expanded="true" signature="6766:6818" ph="{...}" />
-                <marker date="1586525194563" expanded="true" signature="6844:7319" ph="{...}" />
-                <marker date="1586525194563" expanded="true" signature="7344:7537" ph="{...}" />
-                <marker date="1586525194563" expanded="false" signature="7569:7580" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="7600:7606" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="7652:7663" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="7686:7692" ph=" }" />
-                <marker date="1586525194563" expanded="false" signature="7719:7730" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="7748:7754" ph=" }" />
-                <marker date="1586525194563" expanded="true" signature="7810:7983" ph="{...}" />
-                <marker date="1586525194563" expanded="true" signature="8084:8145" ph="{...}" />
-                <marker date="1586525194563" expanded="true" signature="8176:8540" ph="{...}" />
-                <marker date="1586525194563" expanded="false" signature="8578:8589" ph=" { " />
-                <marker date="1586525194563" expanded="false" signature="8606:8612" ph=" }" />
-                <marker date="1586525194563" expanded="true" signature="8673:9379" ph="{...}" />
-                <marker date="1586525194563" expanded="true" signature="9416:10779" ph="{...}" />
-                <marker date="1586525194563" expanded="true" signature="10850:14558" ph="{...}" />
-                <marker date="1586525194563" expanded="true" signature="14641:15950" ph="{...}" />
-                <marker date="1586525194563" expanded="true" signature="14690:14701" ph="{}" />
-                <marker date="1586525194563" expanded="true" signature="14808:15944" ph="{...}" />
-                <marker date="1586525194563" expanded="true" signature="16043:17363" ph="{...}" />
-                <marker date="1586525194563" expanded="true" signature="16097:16108" ph="{}" />
-                <marker date="1586525194563" expanded="true" signature="16225:17357" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GatewayServiceApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/GatewayServiceApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -246,23 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/training-service/pom.xml" />
-        <option value="$PROJECT_DIR$/uaa-service/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-boot-admin/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-boot-admin/src/main/java/com/javahly/springbootadmin/SpringBootAdminApplication.java" />
-        <option value="$PROJECT_DIR$/uaa-service/src/main/resources/application-prod.yml" />
-        <option value="$PROJECT_DIR$/user-service/pom.xml" />
-        <option value="$PROJECT_DIR$/uaa-service/src/main/resources/application-dev.yml" />
-        <option value="$PROJECT_DIR$/basic-info-service/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/uaa-service/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/总结/集群网址" />
-        <option value="$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/config/SwaggerHeaderFilter.java" />
-        <option value="$PROJECT_DIR$/gateway-service/pom.xml" />
-        <option value="$PROJECT_DIR$/总结/问题总结" />
-        <option value="$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/GatewayServiceApplication.java" />
-        <option value="$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/UaaServiceApplication.java" />
-        <option value="$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/BasicInfoServiceApplication.java" />
-        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/TrainingServiceApplication.java" />
         <option value="$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/config/SwaggerConfig.java" />
         <option value="$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/config/OAuth2ServerConfig.java" />
@@ -280,7 +197,6 @@
         <option value="$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/feign/training/TrainingSubject.java" />
         <option value="$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/feign/training/entity/TrainingSubject.java" />
         <option value="$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/feign/training/service/TrainingSubjectService.java" />
-        <option value="$PROJECT_DIR$/ask-for-leave-service/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/mq/service/TrainingSubjectService.java" />
         <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/mq/listener/SyncSubjectListener.java" />
         <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/util/TransationalUtils.java" />
@@ -294,9 +210,27 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/training-service/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/mq/SubjectConsumer.java" />
-        <option value="$PROJECT_DIR$/总结/技术总结" />
-        <option value="$PROJECT_DIR$/training-service/src/main/resources/mapper/UnitMapper.xml" />
         <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/UnitsController.java" />
+        <option value="$PROJECT_DIR$/training-service/src/main/resources/mapper/UnitMapper.xml" />
+        <option value="$PROJECT_DIR$/uaa-service/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/总结/集群网址" />
+        <option value="$PROJECT_DIR$/basic-info-service/src/main/resources/mapper/StudentMapper.xml" />
+        <option value="$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/service/TrainingApplyService.java" />
+        <option value="$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/dao/TrainingApplyDao.java" />
+        <option value="$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/service/impl/TrainingApplyServiceImpl.java" />
+        <option value="$PROJECT_DIR$/ask-for-leave-service/src/main/resources/mapper/TrainingApplyMapper.xml" />
+        <option value="$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/controller/TrainingApplyController.java" />
+        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/TrainingServiceApplication.java" />
+        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/feign/service/LeaveService.java" />
+        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/dao/WeekSummaryDao.java" />
+        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/service/WeekSummaryService.java" />
+        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/service/impl/WeekSummaryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/entity/WeekSummary.java" />
+        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/WeekSummaryController.java" />
+        <option value="$PROJECT_DIR$/总结/技术总结" />
+        <option value="$PROJECT_DIR$/ask-for-leave-service/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/总结/MyBatis总结" />
+        <option value="$PROJECT_DIR$/training-service/src/main/resources/mapper/WeekSummaryMapper.xml" />
       </list>
     </option>
   </component>
@@ -340,10 +274,10 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="253" />
-    <option name="y" value="88" />
+    <option name="x" value="45" />
+    <option name="y" value="12" />
     <option name="width" value="1797" />
-    <option name="height" value="1020" />
+    <option name="height" value="1018" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -360,7 +294,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -368,6 +302,205 @@
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="askforleaveservice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="askforleaveservice" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="askforleaveservice" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="askforleaveservice" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="askforleaveservice" type="462c0819:PsiDirectoryNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="askforleaveservice" type="462c0819:PsiDirectoryNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+              <item name="training" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="askforleaveservice" type="462c0819:PsiDirectoryNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+              <item name="training" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="askforleaveservice" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="askforleaveservice" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="gateway-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="gateway-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="gateway-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="gateway-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
@@ -443,6 +576,80 @@
               <item name="training-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="trainingservice" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="trainingservice" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="trainingservice" type="462c0819:PsiDirectoryNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="trainingservice" type="462c0819:PsiDirectoryNode" />
+              <item name="feign" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="trainingservice" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="trainingservice" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -457,11 +664,82 @@
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
               <item name="总结" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.0" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="jackson-annotations-2.10.0.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="jackson-annotations-2.10.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="jackson-annotations-2.10.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fasterxml" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="jackson-annotations-2.10.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fasterxml" type="462c0819:PsiDirectoryNode" />
+              <item name="jackson" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="jackson-annotations-2.10.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fasterxml" type="462c0819:PsiDirectoryNode" />
+              <item name="jackson" type="462c0819:PsiDirectoryNode" />
+              <item name="annotation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
@@ -736,13 +1014,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../vue/training" />
+    <property name="last_opened_file_path" value="D:/ORGANIZATION/jsjxyxt-micro-service/service/training-service" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -763,11 +1041,11 @@
       <recent name="com.javahly" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.javahly.trainingservice.controller" />
       <recent name="com.javahly.askforleaveservice.util" />
       <recent name="com.javahly.trainingservice.util" />
       <recent name="com.javahly.trainingservice.mq.listener" />
       <recent name="com.javahly.askforleaveservice.feign.training" />
-      <recent name="com.javahly.trainingservice.config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\project\java\jsjxyxt-micro-service\training-service\src\main\resources\mapper" />
@@ -789,7 +1067,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TrainingServiceApplication">
+  <component name="RunManager" selected="Spring Boot.GatewayServiceApplication">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -1041,23 +1319,23 @@
       <workItem from="1588181020253" duration="9420000" />
       <workItem from="1588245177977" duration="781000" />
       <workItem from="1588251958390" duration="1254000" />
-      <workItem from="1588408126905" duration="2688000" />
+      <workItem from="1588408126905" duration="9485000" />
+      <workItem from="1588427213414" duration="15206000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190118000" />
+    <option name="totallyTimeSpent" value="212121000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="253" y="88" width="1797" height="1020" extended-state="0" />
-    <editor active="true" />
+    <frame x="45" y="12" width="1797" height="1018" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.69284064" sideWeight="0.5067416" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20730338" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43139535" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4310954" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977527" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1071,11 +1349,11 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="LuaCheck" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.3299435" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4393404" sideWeight="0.49325842" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.446281" sideWeight="0.49325842" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31934732" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31877214" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20777713" sideWeight="0.4957369" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20487522" sideWeight="0.4957369" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1150,198 +1428,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/filter/SwaggerHeaderFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/handle/SwaggerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="23" column="37" lean-forward="false" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/controller/OauthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/config/SwaggerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/config/SwaggerProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="36" column="46" lean-forward="false" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/config/SwaggerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/dao/TrainingSubjectDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="67" lean-forward="true" selection-start-line="22" selection-start-column="2" selection-end-line="23" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/feign/training/entity.java" />
-    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/feign/training/entity/TrainingSubject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-207">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/feign/training/service/TrainingSubjectService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/feign/basic/service/BasicInformationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="25" column="32" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$MAVEN_REPOSITORY$/org/apache/rocketmq/rocketmq-spring-boot-starter/2.0.3/rocketmq-spring-boot-starter-2.0.3.pom">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/util/TransationalUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/entity/TrainingSubject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/util/TransationalUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/rocketmq/rocketmq-spring-boot/2.0.3/rocketmq-spring-boot-2.0.3.jar!/org/apache/rocketmq/spring/core/RocketMQLocalTransactionState.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/rocketmq/rocketmq-spring-boot/2.0.3/rocketmq-spring-boot-2.0.3.jar!/org/apache/rocketmq/spring/core/RocketMQLocalTransactionListener.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/service/LeaveService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="58" column="15" lean-forward="false" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/AskForLeaveServiceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="42" column="42" lean-forward="false" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/resources/mapper/LeaveMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1483">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/rocketmq/rocketmq-spring-boot/2.0.3/rocketmq-spring-boot-2.0.3.jar!/org/apache/rocketmq/spring/core/RocketMQTemplate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="361" column="33" lean-forward="false" selection-start-line="361" selection-start-column="33" selection-end-line="361" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/controller/LeaveController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="211" column="32" lean-forward="false" selection-start-line="211" selection-start-column="32" selection-end-line="211" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/rocketmq/rocketmq-spring-boot/2.0.3/rocketmq-spring-boot-2.0.3.jar!/org/apache/rocketmq/spring/annotation/SelectorType.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/rocketmq/rocketmq-spring-boot/2.0.3/rocketmq-spring-boot-2.0.3.jar!/org/apache/rocketmq/spring/annotation/ConsumeMode.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/rocketmq/rocketmq-spring-boot/2.0.3/rocketmq-spring-boot-2.0.3.jar!/org/apache/rocketmq/spring/annotation/MessageModel.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/rocketmq/rocketmq-spring-boot/2.0.3/rocketmq-spring-boot-2.0.3.jar!/org/apache/rocketmq/spring/annotation/RocketMQMessageListener.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/rocketmq/rocketmq-spring-boot/2.0.3/rocketmq-spring-boot-2.0.3.jar!/org/apache/rocketmq/spring/core/RocketMQListener.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -1420,40 +1506,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/training-service/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1817">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/mq/SubjectConsumer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="33" column="62" lean-forward="false" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/总结/问题总结">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="40" column="13" lean-forward="false" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/training-service/src/main/resources/mapper/TrainingSubjectMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-          <folding>
-            <marker date="1588164332485" expanded="true" signature="718:875" ph="SELECT FROM training_subject" />
-            <marker date="1588164332485" expanded="true" signature="1043:1258" ph="INSERT INTO training_subject... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1473,6 +1529,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/rocketmq/rocketmq-spring-boot/2.0.3/rocketmq-spring-boot-2.0.3.jar!/org/apache/rocketmq/spring/support/DefaultRocketMQListenerContainer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/GatewayServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/UnitsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/service/impl/TrainingSubjectServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
@@ -1481,128 +1566,289 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/rocketmq/rocketmq-spring-boot/2.0.3/rocketmq-spring-boot-2.0.3.jar!/org/apache/rocketmq/spring/support/DefaultRocketMQListenerContainer.class">
+    <entry file="file://$PROJECT_DIR$/总结/问题总结">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        <state relative-caret-position="387">
+          <caret line="40" column="13" lean-forward="false" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/总结/集群网址">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="69" column="12" lean-forward="true" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.10.0/jackson-annotations-2.10.0.jar!/com/fasterxml/jackson/annotation/JsonFormat.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2015">
+          <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/controller/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="35" column="68" lean-forward="true" selection-start-line="35" selection-start-column="68" selection-end-line="35" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/resources/mapper/StudentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/controller/LeaveController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1839">
+          <caret line="211" column="32" lean-forward="false" selection-start-line="211" selection-start-column="32" selection-end-line="211" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/entity/Leave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/entity/TrainingApply.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/dao/TrainingApplyDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="34" column="20" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/service/TrainingApplyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <marker date="1586525194563" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1586525194563" expanded="false" signature="158:2080" ph="..." />
-            <marker date="1586525194563" expanded="true" signature="3187:3312" ph="{...}" />
-            <marker date="1586525194563" expanded="false" signature="3364:3375" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="3417:3423" ph=" }" />
-            <marker date="1586525194563" expanded="true" signature="3510:3593" ph="{...}" />
-            <marker date="1586525194563" expanded="false" signature="3640:3651" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="3689:3695" ph=" }" />
-            <marker date="1586525194563" expanded="true" signature="3773:3848" ph="{...}" />
-            <marker date="1586525194563" expanded="false" signature="3883:3894" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="3917:3923" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="3973:3984" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="4013:4019" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="4064:4075" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="4101:4107" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="4170:4181" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="4216:4222" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="4260:4271" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="4297:4303" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="4359:4370" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="4405:4411" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="4441:4452" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="4470:4476" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="4516:4527" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="4546:4552" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="4590:4601" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="4630:4636" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="4668:4679" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="4699:4705" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="4749:4760" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="4783:4789" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="4832:4843" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="4868:4874" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="4934:4945" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="4978:4984" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="5035:5046" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="5075:5081" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="5153:5164" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="5205:5211" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="5276:5287" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="5323:5329" ph=" }" />
-            <marker date="1586525194563" expanded="true" signature="5404:5772" ph="{...}" />
-            <marker date="1586525194563" expanded="false" signature="5813:5824" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="5848:5854" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="5897:5908" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="5933:5939" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="5982:5993" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="6024:6030" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="6073:6084" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="6109:6115" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="6163:6174" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="6195:6201" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="6262:6273" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="6298:6304" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="6377:6388" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="6429:6435" ph=" }" />
-            <marker date="1586525194563" expanded="true" signature="6463:6659" ph="{...}" />
-            <marker date="1586525194563" expanded="false" signature="6695:6706" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="6718:6724" ph=" }" />
-            <marker date="1586525194563" expanded="true" signature="6766:6818" ph="{...}" />
-            <marker date="1586525194563" expanded="true" signature="6844:7319" ph="{...}" />
-            <marker date="1586525194563" expanded="true" signature="7344:7537" ph="{...}" />
-            <marker date="1586525194563" expanded="false" signature="7569:7580" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="7600:7606" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="7652:7663" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="7686:7692" ph=" }" />
-            <marker date="1586525194563" expanded="false" signature="7719:7730" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="7748:7754" ph=" }" />
-            <marker date="1586525194563" expanded="true" signature="7810:7983" ph="{...}" />
-            <marker date="1586525194563" expanded="true" signature="8084:8145" ph="{...}" />
-            <marker date="1586525194563" expanded="true" signature="8176:8540" ph="{...}" />
-            <marker date="1586525194563" expanded="false" signature="8578:8589" ph=" { " />
-            <marker date="1586525194563" expanded="false" signature="8606:8612" ph=" }" />
-            <marker date="1586525194563" expanded="true" signature="8673:9379" ph="{...}" />
-            <marker date="1586525194563" expanded="true" signature="9416:10779" ph="{...}" />
-            <marker date="1586525194563" expanded="true" signature="10850:14558" ph="{...}" />
-            <marker date="1586525194563" expanded="true" signature="14641:15950" ph="{...}" />
-            <marker date="1586525194563" expanded="true" signature="14690:14701" ph="{}" />
-            <marker date="1586525194563" expanded="true" signature="14808:15944" ph="{...}" />
-            <marker date="1586525194563" expanded="true" signature="16043:17363" ph="{...}" />
-            <marker date="1586525194563" expanded="true" signature="16097:16108" ph="{}" />
-            <marker date="1586525194563" expanded="true" signature="16225:17357" ph="{...}" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/GatewayServiceApplication.java">
+    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/service/impl/TrainingApplyServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="690">
+          <caret line="36" column="48" lean-forward="false" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="48" />
+          <folding>
+            <element signature="e#1079#1080#0" expanded="false" />
+            <element signature="e#1148#1149#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/resources/mapper/TrainingApplyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="33" column="23" lean-forward="false" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+          <folding>
+            <marker date="1588426550574" expanded="true" signature="810:1031" ph="INSERT INTO trainingapply... " />
+            <marker date="1588426550574" expanded="true" signature="1125:1231" ph="SELECT FROM trainingapply" />
+            <marker date="1588426550574" expanded="true" signature="1342:1420" ph="SELECT FROM trainingapply" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/controller/TrainingApplyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="33" column="48" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/AskForLeaveServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/总结/技术总结">
+    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/service/LeaveService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="382">
+          <caret line="58" column="15" lean-forward="false" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/feign/training/service/TrainingSubjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/feign/service/LeaveService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="20" column="45" lean-forward="true" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/TrainingServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/dao/WeekSummaryDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="26" column="114" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="26" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/service/WeekSummaryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="19" column="68" lean-forward="false" selection-start-line="19" selection-start-column="68" selection-end-line="19" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/service/impl/WeekSummaryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="32" column="62" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/WeekSummaryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="52" column="45" lean-forward="false" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/resources/mapper/LeaveMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="44" column="16" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="44" selection-end-column="16" />
+          <folding>
+            <marker date="1587985821323" expanded="true" signature="2459:2644" ph="INSERT INTO `leave`... " />
+            <marker date="1587985821323" expanded="true" signature="2732:2830" ph="SELECT FROM leave" />
+            <marker date="1587985821323" expanded="true" signature="2927:3220" ph="SELECT * FRO... leave" />
+            <marker date="1587985821323" expanded="true" signature="3333:3676" ph="SELECT * FRO... leave" />
+            <marker date="1587985821323" expanded="true" signature="3758:4029" ph="UPDATE `leave`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="56" column="33" lean-forward="false" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="57" column="20" lean-forward="true" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/entity/WeekSummary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+          <folding>
+            <element signature="e#2482#2483#0" expanded="true" />
+            <element signature="e#2532#2533#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/resources/mapper/TrainingSubjectMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+          <folding>
+            <marker date="1588164332485" expanded="true" signature="718:875" ph="SELECT FROM training_subject" />
+            <marker date="1588164332485" expanded="true" signature="1043:1258" ph="INSERT INTO training_subject... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/training-service/src/main/resources/mapper/UnitMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="191">
+          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
           <folding>
-            <marker date="1588409099736" expanded="true" signature="555:682" ph="SELECT FROM unit" />
+            <marker date="1588415282566" expanded="true" signature="535:662" ph="SELECT FROM unit" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/UnitsController.java">
+    <entry file="file://$PROJECT_DIR$/总结/技术总结">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state relative-caret-position="662">
+          <caret line="36" column="53" lean-forward="false" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/总结/MyBatis总结">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="53" lean-forward="false" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/resources/mapper/WeekSummaryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding>
+            <marker date="1588444104780" expanded="true" signature="1142:1242" ph="SELECT * FRO... week_summary" />
+            <marker date="1588444104780" expanded="true" signature="1351:1887" ph="UPDATE week_summary... " />
+            <marker date="1588444104780" expanded="true" signature="2033:2065" ph="SELECT FROM week_summary" />
+            <marker date="1588444104780" expanded="true" signature="2033:2103" ph="SELECT w.s_i... week_summary" />
+            <marker date="1588444104780" expanded="true" signature="2033:2255" ph="SELECT w.* F... week_summary" />
+          </folding>
         </state>
       </provider>
     </entry>

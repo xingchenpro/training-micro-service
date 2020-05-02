@@ -15,6 +15,7 @@
         FROM student
     </select>
 
+
     <select id="getStudent" resultType="student">
         SELECT
         <include refid="comm_cols_student"></include>

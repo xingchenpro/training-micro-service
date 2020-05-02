@@ -38,7 +38,7 @@
     data() {
       return {
         loginForm: {
-          username: '201611104033',
+          username: '110053',
           password: '123'
         },
       }
@@ -64,6 +64,7 @@
               });
               sessionStorage.setItem('username', this.loginForm.username);
               sessionStorage.setItem('role', resp.data.result.role[0].authority);
+              sessionStorage.setItem('currentWeek', "10");
               var role = resp.data.result.role;
               //角色数组
               var roles = '';

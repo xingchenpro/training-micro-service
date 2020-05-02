@@ -13,6 +13,7 @@ import Subjects from '@/components/training/Subjects'
 import SubjectsExamine from '@/components/training/SubjectsExamine'
 import Document from '@/components/training/Document'
 import WeekSummary from '@/components/training/WeekSummary'
+import WeekSummaries from '@/components/training/WeekSummaries'
 import UnitManager from '@/components/training/UnitManager'
 
 Vue.use(Router)
@@ -32,6 +33,7 @@ export default new Router({
         {path: "/home/training/subjectExamine", component: SubjectsExamine, meta: {requireAuth: true}},
         {path: "/home/training/document", component: Document, meta: {requireAuth: true}},
         {path: "/home/training/weekSummary", component: WeekSummary, meta: {requireAuth: true}},
+        {path: "/home/training/WeekSummaries", component: WeekSummaries, meta: {requireAuth: true}},
         {path: "/home/training/units", component: UnitManager, meta: {requireAuth: true}},
       ]
     },

@@ -2,6 +2,8 @@ package com.javahly.askforleaveservice.service;
 
 import com.javahly.askforleaveservice.entity.TrainingApply;
 
+import java.util.List;
+
 /**
  * @author :hly
  * @github :https://github.com/huangliangyun
@@ -19,5 +21,7 @@ public interface TrainingApplyService {
     //根据id获得记录
     public TrainingApply getTrainingApplyInfoById(Integer apId);
 
+    //根据指导教师id查询学生
+    public List<String> getStudentIdsByTeacherId(String tId);
 
 }
