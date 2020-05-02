@@ -28,7 +28,7 @@
   </div>
 </template>
 
-<script>
+  <script>
   import {postRequest} from "../utils/api"
   import {getRequest} from "../utils/api"
   import {putRequest} from "../utils/api"
@@ -38,7 +38,7 @@
     data() {
       return {
         loginForm: {
-          username: 'admin',
+          username: '201611104033',
           password: '123'
         },
       }

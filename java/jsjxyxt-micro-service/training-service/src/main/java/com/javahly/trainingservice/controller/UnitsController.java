@@ -27,7 +27,7 @@ public class UnitsController {
     @RequestMapping(value = "/units", method = RequestMethod.GET)
     public List<Unit> getUnits() {
         Map<String, Object> paramMap = new HashMap<>();
-        paramMap.put("uStatus", "1");
+       /* paramMap.put("uStatus", "1");*/
         List<Unit> units = unitService.getUnits(paramMap);
         return units;
     }

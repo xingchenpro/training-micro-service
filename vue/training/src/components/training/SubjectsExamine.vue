@@ -43,10 +43,10 @@
                 <tr class="gradeX" v-for="(item, index) in showTable">
                   <!--v-show="currentClass===item.class||currentClass===''"-->
                   <td v-show="currentStatus == 1">
-                    <el-checkbox type="checkbox" @change="selectSingle(item.sno)" style="display: inline-block;width:14px;height:14px" :value="allSelectedItem.indexOf(item.sno) !== -1"></el-checkbox>
+                    <el-checkbox type="checkbox" @change="selectSingle(item.sId)" style="display: inline-block;width:14px;height:14px" :value="allSelectedItem.indexOf(item.sno) !== -1"></el-checkbox>
                   </td>
                   <td>{{ index + 1 }}</td>
-                  <td>{{ item.sno }}</td>
+                  <td>{{ item.sId }}</td>
                   <td>{{ item.name }}</td>
                   <td>{{ item.className }}</td>
                   <td>{{ item.title }}</td>

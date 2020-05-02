@@ -47,7 +47,7 @@
     <!--辅导员菜单 2-->
     <el-menu default-active="1" class="el-menu-vertical-demo" v-if="role==='2'">
 
-      <router-link to="/home/history/notice">
+      <router-link to="/home/training/units">
         <el-menu-item index="1">
           <i class="el-icon-menu"></i>
           <span slot="title">单位管理</span>
