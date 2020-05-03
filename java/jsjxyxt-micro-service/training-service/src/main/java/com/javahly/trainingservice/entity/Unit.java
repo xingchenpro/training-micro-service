@@ -16,7 +16,7 @@ public class Unit implements Serializable {
     private String uAddress;//单位地址
     private String uRemark;//备注
     private String uDetails;//单位详情
-    private String uSId;//单位详情
+    private String uSId;
     private String uStatus;//已审核 未审核
     private String uReason;//否决原因
 

@@ -2,6 +2,7 @@ package com.javahly.trainingservice.dao;
 
 
 import com.javahly.trainingservice.entity.Unit;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,7 +19,7 @@ import java.util.Map;
 public interface UnitDao {
 
     //查询单位信息
-    public List<Unit> getUnits(Map<String, Object> map);
+    public List<Unit> getUnits(@Param("uStatus") Integer uStatus);
 
     //根据学号查询单位信息
     public Unit getUnit(String sno);
@@ -31,5 +32,8 @@ public interface UnitDao {
 
     //更新单位信息
     public int updateUnit(Unit unit);
+
+    //删除单位信息
+    public int deleteUnit(@Param("uId")Integer uId);
 
 }

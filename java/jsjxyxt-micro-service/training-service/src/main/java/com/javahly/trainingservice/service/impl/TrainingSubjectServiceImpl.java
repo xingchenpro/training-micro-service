@@ -6,6 +6,8 @@ import com.javahly.trainingservice.service.TrainingSubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author :hly
  * @github :https://github.com/huangliangyun
@@ -30,4 +32,25 @@ public class TrainingSubjectServiceImpl implements TrainingSubjectService {
     public int addTrainingSubject(TrainingSubject trainingSubject) {
         return trainingSubjectDao.addTrainingSubject(trainingSubject);
     }
+
+    @Override
+    public int updateTrainingSubject(TrainingSubject trainingSubject) {
+        return trainingSubjectDao.updateTrainingSubject(trainingSubject);
+    }
+
+    @Override
+    public List<TrainingSubject> getTrainingSubjectsByTId(String tId) {
+        return trainingSubjectDao.getTrainingSubjectsByTId(tId);
+    }
+
+    @Override
+    public List<TrainingSubject> getTrainingSubjectsBySpecId(String specId) {
+        return trainingSubjectDao.getTrainingSubjectsBySpecId(specId);
+    }
+
+    @Override
+    public int updateTrainingSubjectStatus(String sId, Integer status, String reason) {
+        return trainingSubjectDao.updateTrainingSubjectStatus(sId, status, reason);
+    }
+
 }

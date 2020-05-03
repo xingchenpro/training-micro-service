@@ -18,7 +18,7 @@
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
-          <span>实训过程管理</span>
+          <span>实训管理</span>
         </template>
         <el-menu-item index="1-1">实训单位情况</el-menu-item>
         <el-menu-item index="1-2">实训学生情况</el-menu-item>
@@ -74,7 +74,7 @@
         <router-link :to="{ path : '/home/leave/manager',query: { currentRole: 3 }}">
           <el-menu-item index="1-1">实训审批</el-menu-item>
         </router-link>
-        <router-link :to="{ path : '/home/training/subjects'}">
+        <router-link :to="{ path : '/home/training/subjects',query: { currentRole: 3 }}">
           <el-menu-item index="1-2">实训课题审核</el-menu-item>
         </router-link>
         <router-link to="/home/training/WeekSummaries">

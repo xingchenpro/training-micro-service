@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "unit-manage"
+        name: "unit-situation"
     }
 </script>
 

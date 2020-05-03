@@ -23,21 +23,31 @@
                   <span class="progress-bar" :class="[subject.status !== -10 ? 'active' : '']"></span>
                   <div class="circle-wrapper">
                     <i class="fa fa-dot-circle-o"
-                       :class="[subject.status !== -10 && (subject.status > 0 || subject.status < -1)? 'font-active': '']"></i></div>
-                  <p class="p2 font-active1 " v-if="subject.status !== -10 && (subject.status > 0 || subject.status < -1)">指导教师审核已通过<i class="fa fa-check"></i></p>
+                       :class="[subject.status !== -10 && (subject.status > 0 || subject.status < -1)? 'font-active': '']"></i>
+                  </div>
+                  <p class="p2 font-active1 "
+                     v-if="subject.status !== -10 && (subject.status > 0 || subject.status < -1)">指导教师审核已通过<i
+                    class="fa fa-check"></i></p>
                   <p class="p2" v-if="subject.status === 0 || subject.status === -10">等待指导教师审核</p>
-                  <p class="p2 font-active-refuse " v-if="subject.status === -1">指导教师审核未通过<i class="fa fa-close"></i></p>
+                  <p class="p2 font-active-refuse " v-if="subject.status === -1">指导教师审核未通过<i class="fa fa-close"></i>
+                  </p>
                 </div>
 
                 <!--等待专业负责人审核-->
                 <div class="progress-box">
-                  <span class="progress-bar" :class="[subject.status !== -10 && (subject.status > 0 || subject.status < -1)? 'active': '']"></span>
+                  <span class="progress-bar"
+                        :class="[subject.status !== -10 && (subject.status > 0 || subject.status < -1)? 'active': '']"></span>
                   <div class="circle-wrapper">
-                    <i class="fa fa-dot-circle-o" :class="[subject.status !== -10 && (subject.status > 1 || subject.status < -2)? 'font-active': '']"></i>
+                    <i class="fa fa-dot-circle-o"
+                       :class="[subject.status !== -10 && (subject.status > 1 || subject.status < -2)? 'font-active': '']"></i>
                   </div>
-                  <p class="p2 font-active1 " v-if="subject.status !== -10 && (subject.status > 1 || subject.status < -2)">专业负责人审核已通过<i class="fa fa-check"></i></p>
-                  <p class="p3" v-if="subject.status === 0 || subject.status === 1 || subject.status === -10">等待专业负责人审核</p>
-                  <p class="p3 font-active-refuse " v-if="subject.status === -2">专业负责人审核未通过<i class="fa fa-close"></i></p>
+                  <p class="p2 font-active1 "
+                     v-if="subject.status !== -10 && (subject.status > 1 || subject.status < -2)">专业负责人审核已通过<i
+                    class="fa fa-check"></i></p>
+                  <p class="p3" v-if="subject.status === 0 || subject.status === 1 || subject.status === -10">
+                    等待专业负责人审核</p>
+                  <p class="p3 font-active-refuse " v-if="subject.status === -2">专业负责人审核未通过<i class="fa fa-close"></i>
+                  </p>
                 </div>
 
                 <div class="progress-box">
@@ -54,10 +64,10 @@
               <div class="widget am-cf">
                 <div class="widget-body am-fr" style="min-height: 700px;">
 
-                  <el-form :model="subject" :rules="rules" ref="subject" label-width="100px">
+                  <el-form :model="subject" :rules="rules" ref="subject" :disabled="!editable" label-width="100px">
 
                     <el-form-item label="课题名称" prop="name">
-                      <el-input v-model="subject.title" style="width:25%;"></el-input>
+                      <el-input :disabled="true" v-model="subject.title" style="width:25%;"></el-input>
                     </el-form-item>
 
                     <el-form-item label="已知技术参数和实训要求" prop="requirement">
@@ -98,14 +108,8 @@
   export default {
     data() {
       return {
-        status: -10,//任务书状态
+        editable: false,//是否可以编辑，只有校外，并且请假通过的可以编辑
         subject: {
-          title: '',
-          requirement: '',
-          contentAndStep: '',
-          plan: '',
-          assessmentRequirement: '',
-          desc: '',
           status: -10,//任务书状态
         },
         rules: {
@@ -129,7 +133,18 @@
     },
 
     created() {
-
+      // 审核通过之前，不能编辑任务书
+      var url = "/leave-service/v1/leave/leave?sId=" + sessionStorage.username;
+      this.$axios.get(url).then((res) => {
+        console.log(res);
+        if (res.data.result.leave && res.data.result.leave.leStatus == 3) {
+          this.editable = true;
+        } else {
+          this.editable = false;
+        }
+      }).catch((err) => {
+        console.log(err);
+      });
       var url = "/training-service/v1/training/subject?sId=" + sessionStorage.username;
       //查看实训课题
       this.$axios.get(url).then((res) => {
@@ -141,20 +156,58 @@
       })
     },
 
-
     methods: {
-      submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
+      submitForm(subject) {
+        this.$refs[subject].validate((valid) => {
           if (valid) {
-            alert('submit!');
+            this.$confirm('确认提交？','确认',{
+              confirmButtonText:'确认',
+              cancelButtonText:'取消'
+            }).then(()=>{
+              this.subject.status = 0;
+              var data = {
+                sId:this.subject.sId,
+                status:this.subject.status,
+                requirement:this.subject.requirement,
+                contentAndStep:this.subject.contentAndStep,
+                plan:this.subject.plan,
+                assessmentRequirement:this.subject.assessmentRequirement,
+              };
+              this.$axios.put('/training-service/v1/training/subject',data).then( (res)=>{
+                if(res.data.resultCode===200){
+                  console.log(res);
+                  this.subject = res.data.result.subject;
+                  this.$notify({
+                    type:'success',
+                    message:'提交成功'
+                  })
+                }else{
+                  this.$notify({
+                    type:'error',
+                    message:'提交失败'
+                  })
+                }
+              }).catch((error)=>{
+                console.log(error);
+                this.$notify({
+                  type:'error',
+                  message:'提交失败'
+                })
+              })
+            }).catch( ()=>{
+              this.$notify({
+                type:'info',
+                message:'已取消'
+              })
+            });
           } else {
             console.log('error submit!!');
             return false;
           }
         });
       },
-      resetForm(formName) {
-        this.$refs[formName].resetFields();
+      resetForm(subject) {
+        this.$refs[subject].resetFields();
       }
     }
   }

@@ -13,8 +13,10 @@
 
 
     <!--学生获取自己的课题-->
-    <select id="getTrainingSubject"  resultType="TrainingSubject">
-        SELECT <include refid="comm_cols_subject"/> FROM training_subject
+    <select id="getTrainingSubject" resultType="TrainingSubject">
+        SELECT
+        <include refid="comm_cols_subject"/>
+        FROM training_subject
         <if test="sId!=null">
             WHERE s_id = #{sId}
         </if>
@@ -23,12 +25,58 @@
 
 
     <!--添加实训题目-->
-    <insert id="addTrainingSubject" parameterType="TrainingSubject" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+    <insert id="addTrainingSubject" parameterType="TrainingSubject" useGeneratedKeys="true" keyColumn="id"
+            keyProperty="id">
         INSERT INTO training_subject(
         <include refid="add_comm_cols_subject"/>
         )VALUES
         (#{sId},#{title},#{requirement},#{contentAndStep},#{plan},#{assessmentRequirement},#{status},#{tutor},#{specId})
     </insert>
 
+    <!--学生更新实训课题-->
+    <update id="updateTrainingSubject" parameterType="TrainingSubject">
+        UPDATE training_subject
+        <set>
+            <if test="title!=null">title=#{title,jdbcType=VARCHAR},</if>
+            <if test="requirement!=null">requirement=#{requirement,jdbcType=VARCHAR},</if>
+            <if test="contentAndStep!=null">contentAndStep=#{contentAndStep,jdbcType=VARCHAR},</if>
+            <if test="plan!=null">plan=#{plan,jdbcType=VARCHAR},</if>
+            <if test="assessmentRequirement!=null">assessmentRequirement=#{assessmentRequirement,jdbcType=VARCHAR},</if>
+            <if test="status!=null">status=#{status},</if>
+        </set>
+        WHERE s_id = #{sId}
+    </update>
+
+    <!--指导教师,专业负责人获得课题-->
+    <select id="getTrainingSubjectsByTId"  resultType="TrainingSubject">
+        SELECT
+        <include refid="comm_cols_subject"/>
+        FROM training_subject
+        <where>
+            <if test="tId!=null">tutor = #{tId}</if>
+        </where>
+        ORDER BY status DESC
+    </select>
+
+    <!--指导教师,专业负责人获得课题-->
+    <select id="getTrainingSubjectsBySpecId"  resultType="TrainingSubject">
+        SELECT
+        <include refid="comm_cols_subject"/>
+        FROM training_subject
+        <where>
+            <if test="specId!=null">spec_id = #{specId}</if>
+        </where>
+        ORDER BY status DESC
+    </select>
+
+    <!--课题审核-->
+    <update id="updateTrainingSubjectStatus" >
+        UPDATE training_subject
+        <set>
+            <if test="status!=null||status!=''">status = #{status},</if>
+            <if test="reason!=null||reason!=''">reason = #{reason},</if>
+        </set>
+        WHERE s_id = #{sId}
+    </update>
 
 </mapper>

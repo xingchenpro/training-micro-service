@@ -154,7 +154,7 @@
         this.currentClass = ''
       },
       //审核请假，传递请求
-      examine(leId, status, sId, subject) {
+      examine(leId, status, sId, title) {
         //如果是否决操作 statu == 0，需要输入理由
         var data;
         if (status == 0) {
@@ -169,7 +169,7 @@
               role: this.$route.query.currentRole || sessionStorage.role, //一定要加上或者取sessionStorage中的角色，（辅导员）
               leStatus: status,
               sId: sId,
-              subject: subject,
+              title: title,
               leBackReason: value
             });
             this.$axios
@@ -216,7 +216,7 @@
                 role: this.$route.query.currentRole || sessionStorage.role, //一定要加上或者取sessionStorage中的角色，（辅导员）
                 leStatus: status,
                 sId: sId,
-                subject: subject
+                title: title
               });
               this.$axios
                 .post("/leave-service/v1/leave/examine", data)

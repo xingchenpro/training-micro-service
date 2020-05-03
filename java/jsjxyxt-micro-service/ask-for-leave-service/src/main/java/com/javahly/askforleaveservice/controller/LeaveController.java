@@ -184,7 +184,7 @@ public class LeaveController {
         //已经审核
         List<Leave> examinedLeaves;
         //TODO 远程调用专业信息
-        Integer specId = 101;
+        String specId = "101";
         if (role == 2) {
             leaveService.updateExamineStatus(leStatus, leId, leBackReason);
             //获得查询请假信息
@@ -209,6 +209,8 @@ public class LeaveController {
             TrainingSubject subject = new TrainingSubject();
             subject.setsId(sId);
             subject.setTitle(title);
+            subject.setTutor(tId);
+            subject.setSpecId(specId);
             subjectMqService.save(subject,leStatus,leId,leBackReason);
             //获得查询请假信息
             leStatus = LeaveStatusEnum.getStatus(role);

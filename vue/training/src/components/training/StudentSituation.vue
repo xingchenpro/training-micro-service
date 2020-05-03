@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "teacher-manage"
+        name: "student-situation"
     }
 </script>
 

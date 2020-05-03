@@ -49,8 +49,7 @@ public class SubjectConsumer implements RocketMQListener<String> {
         //插入实训表，判断存不存在
         TrainingSubject trainingSubject = trainingSubjectService.getTrainingSubject(subject.getsId());
         if (trainingSubject == null) {
-            System.out.println("----");
-           int i = 1 / a;
+           /*int i = 1 / a;*/
             trainingSubjectService.addTrainingSubject(subject);
         }
     }

@@ -209,13 +209,13 @@
 <style scoped>
 
   ul {
-    list-style-type: none;
-    margin-left: -34px;
-    width: 150px;
-    background-color: #fcfffd;
-    max-height: 760px;
-    overflow:hidden;
-  }
+      list-style-type: none;
+      margin-left: -34px;
+      width: 150px;
+      background-color: #fcfffd;
+      max-height: 760px;
+      overflow:hidden;
+    }
 
   li {
     width: inherit;

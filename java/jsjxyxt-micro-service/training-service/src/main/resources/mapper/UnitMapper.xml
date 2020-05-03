@@ -8,16 +8,41 @@
     </sql>
 
 
-    <sql id="unitAddSql">u_name,u_address,u_remark,u_details,s_id,u_status</sql>
+    <sql id="unit_add_sql">u_name,u_address,u_remark,u_details,s_id,u_status</sql>
 
     <!--查询单位-->
     <select id="getUnits" resultType="unit">
         SELECT
         <include refid="comm_cols_units"/>
         FROM unit
-        <if test="status!=null">WHERE u_status = #{uStatus}</if>
+        <if test="uStatus!=null">WHERE u_status = #{uStatus}</if>
     </select>
 
+    <!--添加单位-->
+    <insert id="addUnit" parameterType="Unit">
+        INSERT INTO unit(
+        <include refid="unit_add_sql"/>
+        )VALUES (#{uName},#{uAddress},#{uRemark},#{uDetails},#{uSId},#{uStatus})
+    </insert>
 
+
+    <!--修改单位信息-->
+    <update id="updateUnit" parameterType="Unit">
+        UPDATE unit
+        <set>
+            <if test="uName!=null">u_name = #{uName},</if>
+            <if test="uAddress!=null">u_address = #{uAddress},</if>
+            <if test="uRemark!=null">u_remark = #{uRemark},</if>
+            <if test="uDetails!=null">u_details = #{uDetails},</if>
+            <if test="uReason!=null">u_details = #{uReason},</if>
+            <if test="uStatus!=null">u_status = #{uStatus},</if>
+        </set>
+        WHERE u_id = #{uId}
+    </update>
+
+    <!--删除单位信息-->
+    <delete id="deleteUnit">
+        DELETE FROM unit WHERE u_id = #{uId}
+    </delete>
 
 </mapper>

@@ -8,21 +8,21 @@
       @close="closeDialog">
       <el-form style="width:75%;margin:0 auto;" :model="companyApply" ref="unitInfo" label-width="70px"
                :rules="companyApplyRules">
-        <el-form-item label="公司名称" prop="name">
+        <el-form-item label="名称" prop="name">
           <el-input v-model="companyApply.uName" placeholder="请填写公司名称（请假申请表中已有单位，则无需申请）"></el-input>
         </el-form-item>
-        <el-form-item label="公司所在城市" prop="cityAddress">
+        <el-form-item label="城市" prop="cityAddress">
           <el-cascader v-model="companyApply.cityAddress" placeholder="请选择省市区" :options="this.$store.state.cities"
                        filterable class="setWidth"></el-cascader>
         </el-form-item>
-        <el-form-item label="公司详细地址" prop="detailAddress">
-          <el-input v-model="companyApply.detailAddress" placeholder="街道/办公楼"></el-input>
+        <el-form-item label="地址" prop="detailAddress">
+          <el-input v-model="companyApply.detailAddress" placeholder="详细地址如街道/办公楼"></el-input>
         </el-form-item>
-        <el-form-item label="公司详情介绍" prop="details">
-          <el-input v-model="companyApply.uDetails" type="textarea" rows="4" placeholder="详情介绍"></el-input>
+        <el-form-item label="介绍" prop="details">
+          <el-input v-model="companyApply.uDetails" type="textarea" rows="3" placeholder="详情介绍"></el-input>
         </el-form-item>
         <el-form-item label="备注" prop="remark">
-          <el-input v-model="companyApply.uRemark" type="textarea" rows="4" placeholder="想补充什么？"></el-input>
+          <el-input v-model="companyApply.uRemark" type="textarea" rows="3" placeholder="想补充什么？"></el-input>
         </el-form-item>
         <el-form-item style="text-align: right">
           <el-button type="warning" round @click="dialogFormVisible = false">取消</el-button>
@@ -62,7 +62,12 @@
                 <tr v-for="(item,index) in units">
                   <td>{{index+1}}</td>
                   <td>{{ item.uName }}</td>
-                  <td>{{ item.simpleAddress }}</td>
+                  <td>
+                    <el-popover placement="top-start" title="地址详情" width="300" trigger="hover" :content="item.uAddress">
+                      <span slot="reference"> {{ item.simpleAddress }}</span>
+                    </el-popover>
+
+                  </td>
                   <td>
                     <el-popover placement="top-start" title="公司详情" width="300" trigger="hover" :content="item.uDetails">
                       <span slot="reference"> {{ item.uDetails }}</span>
@@ -76,7 +81,7 @@
                   <td>
                     <div class="tpl-table-black-operation"><a href="javascript:" @click="edit(item)"><i
                       class="am-icon-check"></i> 编辑</a>
-                      <a href="javascript:;" @click="del()" class="tpl-table-black-operation-del"><i
+                      <a href="javascript:;" @click="del(item)" class="tpl-table-black-operation-del"><i
                         class="am-icon-close"></i> 删除</a>
                     </div>
                   </td>
@@ -104,7 +109,7 @@
           uAddress: "", //总地址
           uDetails: "",
           uRemark: "",
-          uStatus: "-1" //未提交的状态
+          uStatus: "1" //提交的状态
         },
         companyApplyRules: {
           uName: [{required: true, message: "请输入公司名称"}],
@@ -123,15 +128,13 @@
         companyForm.validate(valid => {
           if (valid) {
             console.log(this.companyApply);
-            this.$confirm("确认操作？")
-              .then(() => {
-                this.companyApply.address =
+            this.$confirm("确认操作？").then(() => {
+                this.companyApply.uAddress =
                   this.companyApply.cityAddress.join() + "," + this.companyApply.detailAddress; //合并省市区和详细地址，赋给总地址。
-                this.companyApply.role = "2"; //辅导员添加时需要传递角色,
-                var data = this.$qs.stringify(this.companyApply);
+                var data = this.companyApply;
                 //通过有无id判断是添加还是修改
                 let method = this.companyApply.id ? 'put' : 'post';
-                this.$axios[method]("/apiTraining/unit", data)
+                this.$axios[method]("/training-service/v1/training/unit", data)
                   .then(res => {
                     if (res.data.resultCode === 200) {
                       this.dialogFormVisible = false; //关闭模态框
@@ -160,8 +163,7 @@
                       type: "error"
                     });
                   });
-              })
-              .catch(err => {
+              }).catch(err => {
                 this.$notify({
                   title: "提示",
                   message: "已取消",
@@ -191,7 +193,43 @@
       }
       ,
       //删除公司
-      del() {
+      del(item) {
+        this.$confirm("确认操作？").then(() => {
+          var  url = "/training-service/v1/training/unit/"+item.uId;
+          this.$axios.delete(url)
+            .then(res => {
+              if (res.data.resultCode === 200) {
+                //解析地址
+                this.units = res.data.result.units;
+                //调用整理地址的方法
+                this.addressFilter(this.units);
+                this.$notify({
+                  title: "提示",
+                  message: "操作成功！",
+                  type: "success"
+                });
+              } else {
+                this.$notify({
+                  title: "失败",
+                  message: "删除失败！请稍后再试",
+                  type: "error"
+                });
+              }
+            }).catch(err => {
+              console.log(err);
+              this.$notify({
+                title: "提示",
+                message: "删除失败！请稍后再试",
+                type: "error"
+              });
+            });
+        }).catch(err => {
+          this.$notify({
+            title: "提示",
+            message: "已取消",
+            type: "info"
+          });
+        });
       },
 
       //模态框关闭时，重置表单
@@ -204,7 +242,7 @@
           uAddress: "", //总地址
           uDetails: "",
           uRemark: "",
-          uStatus: "-1" //未提交的状态
+          uStatus: "1" //未提交的状态
         }
       }
     },

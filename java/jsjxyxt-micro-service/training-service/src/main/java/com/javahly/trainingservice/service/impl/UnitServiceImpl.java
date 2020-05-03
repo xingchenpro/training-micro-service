@@ -23,9 +23,31 @@ public class UnitServiceImpl implements UnitService {
     @Autowired
     UnitDao unitDao;
 
+
     @Override
-    public List<Unit> getUnits(Map<String, Object> map) {
-        return unitDao.getUnits(map);
+    public List<Unit> getUnits(Integer uStatus) {
+        return unitDao.getUnits(uStatus);
+    }
+
+    @Override
+    public List<Unit> getUnits() {
+        return getUnits(null);
+    }
+
+    @Override
+    public int addUnit(Unit unit) {
+        return unitDao.addUnit(unit);
+    }
+
+
+    @Override
+    public int updateUnit(Unit unit) {
+        return unitDao.updateUnit(unit);
+    }
+
+    @Override
+    public int deleteUnit(Integer uId) {
+        return unitDao.deleteUnit(uId);
     }
 
 

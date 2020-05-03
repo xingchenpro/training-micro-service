@@ -27,13 +27,13 @@ public interface TrainingSubjectDao {
     public int updateTrainingSubject(TrainingSubject trainingSubject);
 
     //根据条件查询课题
-    public List<TrainingSubject> getTrainingSubjects(Map<String, Object> map);
+    public List<TrainingSubject> getTrainingSubjectsByTId(@Param("tId") String tId);
 
-    //指导教师或专业负责人获得课题
-    public List<TrainingSubject> getTrainingSubjectsByTeacherIdOrSpec(Map<String, Object> map);
+    //根据条件查询课题
+    public List<TrainingSubject> getTrainingSubjectsBySpecId(@Param("specId") String specId);
 
     //指导教师或专业负责人审核课题
-    public void updateTrainingSubjectStatus(Map<String, Object> map);
+    public int updateTrainingSubjectStatus(@Param("sId") String sId,@Param("status") Integer status ,@Param("reason") String reason);
 
     //学生更新指导教师
     public int updateTeacher(Map<String, Object> map);

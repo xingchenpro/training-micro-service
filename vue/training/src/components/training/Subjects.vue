@@ -11,8 +11,13 @@
             <div class="widget-body am-fr" style="height: 790px">
 
               <ul>
-                <li><a href="#">第 1 周</a></li>
-                <li><a href="#">第 2 周</a></li>
+                <li v-for="item in subjects" @click="currentSId=item.sId"
+                    :class="item.sId===currentSId ? 'active-li' : ''">
+                  <a :style="item.status >= 1 ? 'color:#67c13a': item.status<0?'color:#F56C6C': 'color:#878787'">
+                    {{item.sId}}
+                  </a>
+                </li>
+
               </ul>
             </div>
           </div>
@@ -42,20 +47,28 @@
                 <span class="progress-bar" :class="[subject.status !== -10 ? 'active' : '']"></span>
                 <div class="circle-wrapper">
                   <i class="fa fa-dot-circle-o"
-                     :class="[subject.status !== -10 && (subject.status > 0 || subject.status < -1)? 'font-active': '']"></i></div>
-                <p class="p2 font-active1 " v-if="subject.status !== -10 && (subject.status > 0 || subject.status < -1)">指导教师审核已通过<i class="fa fa-check"></i></p>
+                     :class="[subject.status !== -10 && (subject.status > 0 || subject.status < -1)? 'font-active': '']"></i>
+                </div>
+                <p class="p2 font-active1 "
+                   v-if="subject.status !== -10 && (subject.status > 0 || subject.status < -1)">指导教师审核已通过<i
+                  class="fa fa-check"></i></p>
                 <p class="p2" v-if="subject.status === 0 || subject.status === -10">等待指导教师审核</p>
                 <p class="p2 font-active-refuse " v-if="subject.status === -1">指导教师审核未通过<i class="fa fa-close"></i></p>
               </div>
 
               <!--等待专业负责人审核-->
               <div class="progress-box">
-                <span class="progress-bar" :class="[subject.status !== -10 && (subject.status > 0 || subject.status < -1)? 'active': '']"></span>
+                <span class="progress-bar"
+                      :class="[subject.status !== -10 && (subject.status > 0 || subject.status < -1)? 'active': '']"></span>
                 <div class="circle-wrapper">
-                  <i class="fa fa-dot-circle-o" :class="[subject.status !== -10 && (subject.status > 1 || subject.status < -2)? 'font-active': '']"></i>
+                  <i class="fa fa-dot-circle-o"
+                     :class="[subject.status !== -10 && (subject.status > 1 || subject.status < -2)? 'font-active': '']"></i>
                 </div>
-                <p class="p2 font-active1 " v-if="subject.status !== -10 && (subject.status > 1 || subject.status < -2)">专业负责人审核已通过<i class="fa fa-check"></i></p>
-                <p class="p3" v-if="subject.status === 0 || subject.status === 1 || subject.status === -10">等待专业负责人审核</p>
+                <p class="p2 font-active1 "
+                   v-if="subject.status !== -10 && (subject.status > 1 || subject.status < -2)">专业负责人审核已通过<i
+                  class="fa fa-check"></i></p>
+                <p class="p3" v-if="subject.status === 0 || subject.status === 1 || subject.status === -10">
+                  等待专业负责人审核</p>
                 <p class="p3 font-active-refuse " v-if="subject.status === -2">专业负责人审核未通过<i class="fa fa-close"></i></p>
               </div>
 
@@ -69,7 +82,7 @@
             <!--申请状态结束-->
           </div>
           <!--填写课题开始-->
-          <div class="am-u-sm-12 am-u-md-12" >
+          <div class="am-u-sm-12 am-u-md-12">
             <div class="widget am-cf">
               <div class="widget-body am-fr" style="min-height: 727px;">
 
@@ -96,8 +109,10 @@
                   </el-form-item>
 
                   <el-form-item>
-                    <el-button type="primary" @click="submitForm('subject')" style="margin: 0 auto">保存</el-button>
-                    <el-button @click="resetForm('subject')" style="float: right">重置</el-button>
+                    <el-button @click="examineSubject(role - 2)" type="primary" style="margin-left: 20px;float: right">
+                      批准
+                    </el-button>
+                    <el-button @click="examineSubject(-role + 2)" style="float: right">否决</el-button>
 
                   </el-form-item>
 
@@ -117,16 +132,12 @@
   export default {
     data() {
       return {
-        status: -10,//任务书状态
+        currentSId: String,
         subject: {
-          title: '',
-          requirement: '',
-          contentAndStep: '',
-          plan: '',
-          assessmentRequirement: '',
-          desc: '',
           status: -10,//任务书状态
         },
+        role: Number,
+        subjects: [],
         rules: {
           title: [
             {required: true, message: '请输入课题名称', trigger: 'blur'},
@@ -149,12 +160,135 @@
 
     //加载
     created() {
-
+      this.role = this.$route.query.currentRole;
+      console.log(this.role);
+      var url = "/training-service/v1/training/subjects" + "?tId=" + sessionStorage.username + "&role=" + this.role;
+      this.$axios.get(url).then(res => {
+        this.loading = false;
+        if (res.data.resultCode === 200) {
+          this.subjects = res.data.result.subjects;
+          this.currentSId = this.subjects[0].sId;
+          console.log(res);
+        }
+      });
     },
 
     //方法
     methods: {
-
+      //审核课题
+      examineSubject(status) {
+        //判断状态如果小于0，则证明是否决操作，需要填写理由
+        if (status < 0) {
+          this.$prompt("请填写否决理由", "通知", {
+            confirmButtonText: "确认",
+            cancelButtonText: "取消",
+            inputType: "textarea"
+          })
+            .then(({value}) => {
+              var data = {
+                sId: this.subject.sId,
+                status: status,
+                role: this.role,
+                reason: value,
+                tutor: sessionStorage.username
+              };
+              console.log(data);
+              this.$axios
+                .put("/training-service/v1/training/examine/subject", data)
+                .then(res => {
+                  if (res.data.resultCode === 200) {
+                    this.subjects = res.data.result.subjects;
+                    //此时学号没有发生变化，不会更新数据，所以手动更新
+                    this.subjects.forEach((item, index) => {
+                      if (item.sId === this.currentSId) {
+                        this.subject = this.subjects[index];
+                      }
+                    });
+                    this.$message({
+                      type: "success",
+                      message: "否决成功"
+                    });
+                  } else {
+                    console.log(res);
+                    this.$message({
+                      type: "error",
+                      message: "否决失败"
+                    });
+                  }
+                }).catch(err => {
+                console.log(err);
+                this.$message({
+                  type: "error",
+                  message: "否决失败"
+                });
+              });
+            }).catch(err => {
+            console.log(err);
+            this.$message({
+              type: "info",
+              message: "已取消"
+            });
+          });
+        }
+        //如果不小于0，直接通过不需要填写理由
+        else {
+          this.$confirm("确认审核？", "提示", {
+            confirmButtonText: "确认",
+            cancelButtonText: "取消"
+          }).then(() => {
+            var data = {
+              sId: this.subject.sId,
+              status: status,
+              role: this.role,
+              tutor: sessionStorage.username
+            };
+            console.log(data);
+            this.$axios
+              .put("/training-service/v1/training/examine/subject", data).then(res => {
+              if (res.data.resultCode === 200) {
+                this.subjects = res.data.result.subjects;
+                //此时学号没有发生变化，不会更新数据，所以手动更新
+                this.subjects.forEach((item, index) => {
+                  if (item.sId === this.currentSId) {
+                    this.subject = this.subjects[index];
+                  }
+                });
+                this.$message({
+                  type: "success",
+                  message: "审核成功"
+                });
+              } else {
+                console.log(res);
+                this.$message({
+                  type: "error",
+                  message: "审核失败"
+                });
+              }
+            }).catch(err => {
+              console.log(err);
+              this.$message({
+                type: "error",
+                message: "审核失败"
+              });
+            });
+          }).catch(() => {
+            this.$message({
+              type: "info",
+              message: "已取消"
+            });
+          });
+        }
+      },
+    },
+    watch: {
+      currentSId: function () {
+        //监视学生变化，显示不同的任务书
+        this.subjects.forEach((item, index) => {
+          if (item.sId === this.currentSId) {
+            this.subject = this.subjects[index];
+          }
+        });
+      }
     },
   }
 </script>
@@ -243,7 +377,12 @@
     background-color: #fcfffd;
     max-height: 760px;
     overflow: auto;
+  }
 
+  li {
+    width: inherit;
+    overflow: auto;
+    cursor: pointer;
   }
 
   li a {
@@ -266,6 +405,10 @@
   li a:hover:not(.active) {
     background-color: #c8c6bc;
     color: white;
+  }
+
+  .active-li {
+    background: #bde1d6;
   }
 
 </style>
