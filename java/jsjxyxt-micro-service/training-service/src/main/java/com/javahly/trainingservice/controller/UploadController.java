@@ -1,44 +1,53 @@
-package com.songguoliang.springboot.controller;
+package com.javahly.trainingservice.controller;
 
 import com.javahly.trainingservice.util.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.io.IOException;
+import java.io.FileOutputStream;
 
-
-@Controller
+@RestController
 @Slf4j
 public class UploadController {
 
-    @PostMapping("/upload")
-    @ResponseBody
-    public Result upload(@RequestParam("file") MultipartFile file) {
+    @Value("${filepath}")
+    private String filepath;
+
+    /**
+     * 文件上传
+     * @param sId 学号
+     * @param file 文件
+     * @return
+     */
+    @PostMapping("/upload/{sId}")
+    public Result upload(@PathVariable("sId") String sId, @RequestParam("file") MultipartFile file) {
         Result result = new Result();
         if (file.isEmpty()) {
             return result;
         }
-
-        String fileName = file.getOriginalFilename();
-        String filePath = "/Users/document/";
-        File dest = new File(filePath + fileName);
-        try {
-            file.transferTo(dest);
-            return result;
-        } catch (IOException e) {
-            log.error("上传失败");
-            result.setErrInfos(500,"上传失败");
+        File targetFile = new File(filepath);
+        if (!targetFile.exists()) {
+            targetFile.mkdirs();
         }
+        //获得文件名
+        String fileName = file.getOriginalFilename();
+        //获得文件后缀
+        String fileType = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+        try (FileOutputStream out = new FileOutputStream(filepath + sId + fileType)) {
+            out.write(file.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("文件上传失败!");
+            return result;
+        }
+        log.info("文件上传成功!");
         return result;
     }
-
 }
 

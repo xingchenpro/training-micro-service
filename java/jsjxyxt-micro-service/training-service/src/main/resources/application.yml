@@ -40,7 +40,16 @@ spring:
         min-idle: 0
     # 链接超时时间
     timeout: 30000
-# ????Mybatis
+    # 文件上传
+  servlet:
+    multipart:
+      enabled: true
+     #最大支持文件大小
+      max-file-size: 100MB
+     #最大支持请求大小
+      max-request-size: 100MB
+
+# Mybatis
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.javahly.trainingservice.entity
@@ -79,3 +88,5 @@ rocketmq:
     group: transient_producer
 
 
+#文件存储路径
+filepath: D:/file/

@@ -130,19 +130,7 @@ public class TrainingSubjectController {
         if (role.equals("4")){
 
         }
-
         return result;
     }
-
-
-
-
-
-
-
-
-
-
-
 
 }
