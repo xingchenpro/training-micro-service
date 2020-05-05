@@ -49,5 +49,22 @@ public class UploadController {
         log.info("文件上传成功!");
         return result;
     }
+
+
+    /**
+     * 根据学号查文档地址
+     * @param sId
+     * @return
+     */
+    @GetMapping("/upload/address/{sId}")
+    public Result uploadAddress(@PathVariable("sId") String sId) {
+        Result result = new Result();
+
+        return result;
+
+    }
+
+
+
 }
 
