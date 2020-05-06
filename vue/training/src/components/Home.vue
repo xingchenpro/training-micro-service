@@ -41,7 +41,14 @@
         sessionStorage.setItem('teachers',JSON.stringify(res.data));
       }).catch( (err)=>{
         console.log(err);
-      })
+      });
+
+      this.$axios.get('/basic-service/v1/info/classes').then( (res)=>{
+        sessionStorage.setItem('classes',JSON.stringify(res.data));
+      }).catch( (err)=>{
+        console.log(err);
+      });
+
     },
 
   };

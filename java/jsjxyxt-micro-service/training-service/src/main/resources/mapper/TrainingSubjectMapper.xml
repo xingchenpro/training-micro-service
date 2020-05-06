@@ -48,7 +48,7 @@
     </update>
 
     <!--指导教师,专业负责人获得课题-->
-    <select id="getTrainingSubjectsByTId"  resultType="TrainingSubject">
+    <select id="getTrainingSubjectsByTId" resultType="TrainingSubject">
         SELECT
         <include refid="comm_cols_subject"/>
         FROM training_subject
@@ -59,7 +59,7 @@
     </select>
 
     <!--指导教师,专业负责人获得课题-->
-    <select id="getTrainingSubjectsBySpecId"  resultType="TrainingSubject">
+    <select id="getTrainingSubjectsBySpecId" resultType="TrainingSubject">
         SELECT
         <include refid="comm_cols_subject"/>
         FROM training_subject
@@ -70,13 +70,23 @@
     </select>
 
     <!--课题审核-->
-    <update id="updateTrainingSubjectStatus" >
+    <update id="updateTrainingSubjectStatus">
         UPDATE training_subject
         <set>
             <if test="status!=null||status!=''">status = #{status},</if>
             <if test="reason!=null||reason!=''">reason = #{reason},</if>
         </set>
         WHERE s_id = #{sId}
+    </update>
+
+    <!--批量更新，不加括号-->
+    <update id="updateTeacher">
+        UPDATE training_subject SET tutor =#{tId}
+        WHERE s_id IN
+        <foreach collection="students" item="id" separator="," open="(" close=")" index="index">
+            #{id}
+        </foreach>
+
     </update>
 
 </mapper>

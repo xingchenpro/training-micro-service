@@ -29,12 +29,24 @@
           <i class="el-icon-location"></i>
           <span>项目管理</span>
         </template>
-        <a target="_blank" href="http://49.233.192.8:8761/" style="color: black"><el-menu-item index="2-2">注册中心</el-menu-item></a>
-        <a target="_blank" href="http://49.233.192.8:8070/"><el-menu-item index="2-2">配置中心</el-menu-item></a>
-        <a target="_blank" href="http://localhost:9411/"><el-menu-item index="2-2">链路追踪</el-menu-item></a>
-        <a target="_blank" href="http://localhost:8769/"><el-menu-item index="2-2">服务监控</el-menu-item></a>
-        <a target="_blank" href="http://localhost:8889/swagger-ui.html"><el-menu-item index="2-2">API 管理</el-menu-item></a>
-        <a target="_blank" href="http://106.13.1.171:8080/"><el-menu-item index="2-2">RocketMQ 控制台</el-menu-item></a>
+        <a target="_blank" href="http://49.233.192.8:8761/" style="color: black">
+          <el-menu-item index="2-2">注册中心</el-menu-item>
+        </a>
+        <a target="_blank" href="http://49.233.192.8:8070/">
+          <el-menu-item index="2-2">配置中心</el-menu-item>
+        </a>
+        <a target="_blank" href="http://localhost:9411/">
+          <el-menu-item index="2-2">链路追踪</el-menu-item>
+        </a>
+        <a target="_blank" href="http://localhost:8769/">
+          <el-menu-item index="2-2">服务监控</el-menu-item>
+        </a>
+        <a target="_blank" href="http://localhost:8889/swagger-ui.html">
+          <el-menu-item index="2-2">API 管理</el-menu-item>
+        </a>
+        <a target="_blank" href="http://106.13.1.171:8080/">
+          <el-menu-item index="2-2">RocketMQ 控制台</el-menu-item>
+        </a>
         <!-- <el-menu-item index="2-1">用户管理</el-menu-item>
          <el-menu-item index="2-2">学生管理</el-menu-item>
          <el-menu-item index="2-3">教师管理</el-menu-item>
@@ -94,7 +106,9 @@
         <router-link :to="{ path : '/home/leave/manager',query: { currentRole: 4 }}">
           <el-menu-item index="1-1">实训审批</el-menu-item>
         </router-link>
-        <el-menu-item index="1-4">实训分配</el-menu-item>
+        <router-link to="/home/training/distribution">
+          <el-menu-item index="1-4">实训分配</el-menu-item>
+        </router-link>
         <router-link :to="{ path : '/home/training/subjectExamine'}">
           <el-menu-item index="1-3">实训课题审核</el-menu-item>
         </router-link>

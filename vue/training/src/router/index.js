@@ -15,6 +15,7 @@ import Document from '@/components/training/Document'
 import WeekSummary from '@/components/training/WeekSummary'
 import WeekSummaries from '@/components/training/WeekSummaries'
 import UnitManager from '@/components/training/UnitManager'
+import TrainingDistribution from '@/components/training/TrainingDistribution'
 
 Vue.use(Router)
 
@@ -35,6 +36,7 @@ export default new Router({
         {path: "/home/training/weekSummary", component: WeekSummary, meta: {requireAuth: true}},
         {path: "/home/training/WeekSummaries", component: WeekSummaries, meta: {requireAuth: true}},
         {path: "/home/training/units", component: UnitManager, meta: {requireAuth: true}},
+        {path: "/home/training/distribution", component: TrainingDistribution, meta: {requireAuth: true}},
       ]
     },
     {path: "/error/limit", component: LimitError, meta: {requireAuth: true}},

@@ -1,6 +1,7 @@
 package com.javahly.trainingservice;
 
 import brave.sampler.Sampler;
+import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.mybatis.spring.annotation.MapperScan;
@@ -15,6 +16,7 @@ import org.springframework.context.annotation.Bean;
 @EnableApolloConfig
 @EnableFeignClients
 @EnableEurekaClient
+//@EnableDistributedTransaction//分布式事务
 public class TrainingServiceApplication {
 
 	public static void main(String[] args) {

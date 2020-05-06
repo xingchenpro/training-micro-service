@@ -32,4 +32,7 @@ public interface TrainingSubjectService {
     //指导教师或专业负责人审核课题
     public int updateTrainingSubjectStatus(@Param("sId") String sId,@Param("status") Integer status ,@Param("reason") String reason);
 
+    //学生更新指导教师
+    public int updateTeacher(String tId,List<String> students);
+
 }

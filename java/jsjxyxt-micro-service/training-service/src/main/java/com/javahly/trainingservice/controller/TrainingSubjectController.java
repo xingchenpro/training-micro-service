@@ -3,10 +3,12 @@ package com.javahly.trainingservice.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.javahly.trainingservice.entity.Distribution;
 import com.javahly.trainingservice.entity.SubjectExamine;
 import com.javahly.trainingservice.entity.TrainingSubject;
 import com.javahly.trainingservice.service.TrainingSubjectService;
 import com.javahly.trainingservice.util.Result;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +27,7 @@ import java.util.Map;
  * @CSDN :blog.csdn.net/Sirius_hly
  * @date :2020/5/2
  */
-
+@Slf4j
 @RestController
 public class TrainingSubjectController {
 
@@ -34,6 +36,7 @@ public class TrainingSubjectController {
 
     /**
      * 学生查询自己的课题
+     *
      * @param sId
      * @return
      */
@@ -54,6 +57,7 @@ public class TrainingSubjectController {
 
     /**
      * 添加课题
+     *
      * @param subject
      * @return
      */
@@ -75,6 +79,7 @@ public class TrainingSubjectController {
 
     /**
      * 修改课题
+     *
      * @param subject
      * @return
      */
@@ -97,6 +102,7 @@ public class TrainingSubjectController {
 
     /**
      * 指导教师，专业负责人,获得课题+学生信息
+     *
      * @param role
      * @return
      */
@@ -104,12 +110,12 @@ public class TrainingSubjectController {
     public Result getTrainingSubjectsByTeacherIdOrSpec(String tId, int role) {
         Result result = new Result();
         Map<String, Object> resultMap = new HashMap<>();
-        if(role==3){
+        if (role == 3) {
             List<TrainingSubject> subjects = trainingSubjectService.getTrainingSubjectsByTId(tId);
-            resultMap.put("subjects",subjects);
+            resultMap.put("subjects", subjects);
             result.setResult(resultMap);
         }
-        if(role==4){
+        if (role == 4) {
 
         }
         return result;
@@ -121,16 +127,51 @@ public class TrainingSubjectController {
         Result result = new Result();
         Map<String, Object> resultMap = new HashMap<>();
         String role = examine.getRole();
-        if (role.equals("3")){
-            trainingSubjectService.updateTrainingSubjectStatus(examine.getsId(),examine.getStatus(),examine.getReason());
+        if (role.equals("3")) {
+            trainingSubjectService.updateTrainingSubjectStatus(examine.getsId(), examine.getStatus(), examine.getReason());
             List<TrainingSubject> subjects = trainingSubjectService.getTrainingSubjectsByTId(examine.getTutor());
-            resultMap.put("subjects",subjects);
+            resultMap.put("subjects", subjects);
             result.setResult(resultMap);
         }
-        if (role.equals("4")){
+        if (role.equals("4")) {
 
         }
         return result;
     }
 
+
+    /**
+     * 获得实训分配信息
+     *
+     * @param tId
+     * @return
+     */
+    @RequestMapping(value = "/training/distribution", method = RequestMethod.GET)
+    public Result getStudentTrainingInfo(String tId) {
+        Result result = new Result();
+        Map<String, Object> resultMap = new HashMap<>();
+        //TODO 获得该教师的专业号
+        String specId = "101";
+        //根据专业号获得课题信息
+        List<TrainingSubject> trainingSubjects = trainingSubjectService.getTrainingSubjectsBySpecId(specId);
+        resultMap.put("trainingSubjects", trainingSubjects);
+        result.setResult(resultMap);
+        return result;
+    }
+
+    /**
+     * 为学生分配指导教师，涉及两个数据库两个表，涉及分布式事务
+     *
+     * @param distribution
+     * @return
+     */
+    @RequestMapping(value = "/training/distribution", method = RequestMethod.PUT)
+    public Result updateStudentTrainingTeacher(@RequestBody Distribution distribution) {
+        Result result = new Result();
+        Map<String, Object> resultMap = new HashMap<>();
+        log.info("updateStudentTrainingTeacher：{}", distribution.getStudents());
+        trainingSubjectService.updateTeacher(distribution.gettId(), distribution.getStudents());
+        return result;
+
+    }
 }

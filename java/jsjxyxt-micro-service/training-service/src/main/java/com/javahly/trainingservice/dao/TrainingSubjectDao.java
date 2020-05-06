@@ -36,6 +36,6 @@ public interface TrainingSubjectDao {
     public int updateTrainingSubjectStatus(@Param("sId") String sId,@Param("status") Integer status ,@Param("reason") String reason);
 
     //学生更新指导教师
-    public int updateTeacher(Map<String, Object> map);
+    public int updateTeacher(@Param("tId") String tId,@Param("students") List<String> students);
 
 }
