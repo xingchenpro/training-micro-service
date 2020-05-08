@@ -34,4 +34,14 @@
         WHERE t_id = #{tId}
     </select>
 
+    <!--批量更新，不加括号-->
+    <update id="updateTeacher">
+        UPDATE trainingapply SET t_id =#{tId}
+        WHERE s_id IN
+        <foreach collection="students" item="id" separator="," open="(" close=")" index="index">
+            #{id}
+        </foreach>
+
+    </update>
+
 </mapper>

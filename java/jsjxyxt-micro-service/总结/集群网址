@@ -4,8 +4,18 @@ http://49.233.192.8:8070/
 2、注册中心安装地址
 http://49.233.192.8:8761/
 
+3、swagger
+http://localhost:8082/v1/info/swagger-ui.html#/
 
-3、端口
+
+4、RocketMQ
+http://106.13.1.171:8080/#/
+
+5、LCN
+http://127.0.0.1:8899/admin/index.html#/
+
+
+端口
 
 1)uaa 8081
 2)info 8082
@@ -16,7 +26,7 @@ http://49.233.192.8:8761/
 7)admin 8769
 
 
-4、redis
+redis
 1)uaa 0
 2)info 2
 3)training 3
@@ -24,9 +34,3 @@ http://49.233.192.8:8761/
 5)lcn 5
 
 
-5、swagger
-http://localhost:8082/v1/info/swagger-ui.html#/
-
-
-6、RocketMQ
-http://106.13.1.171:8080/#/

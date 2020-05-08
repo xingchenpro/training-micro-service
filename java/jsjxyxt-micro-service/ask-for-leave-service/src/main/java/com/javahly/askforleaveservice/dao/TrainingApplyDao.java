@@ -41,7 +41,7 @@ public interface TrainingApplyDao {
     //实训单位情况，一个公司几个学生，根据单位id获得学生
     public List<String> getStudentsIdByUnitId(Map<String, Object> map);
 
-    //更新指导教师
-    public int updateTeacher(Map<String, Object> map);
+    //学生更新指导教师
+    public int updateTeacher(@Param("tId") String tId,@Param("students") List<String> students);
 
 }

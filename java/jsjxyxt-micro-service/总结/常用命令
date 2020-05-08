@@ -14,9 +14,12 @@ java -Dserver.port=8718 -Dcsp.sentinel.dashboard.server=localhost:8718 -Dproject
 ---
 
 3、注册中心后台启动
-nohup java -jar eureka-service-0.0.1-SNAPSHOT.jar >> eureka-service.out &
-nohup java -jar admin-service.jar >> admin-service.out &
+https://blog.csdn.net/thxiong1234/article/details/85623448
 
+nohup java -jar eureka-service-0.0.1-SNAPSHOT.jar >> eureka-service.out 2>&1 &
+nohup java -jar admin-service.jar >> admin-service.out 2>&1 &
+
+exec -a lcn
 ---
 
 4、

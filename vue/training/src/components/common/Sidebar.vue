@@ -44,6 +44,9 @@
         <a target="_blank" href="http://localhost:8889/swagger-ui.html">
           <el-menu-item index="2-2">API 管理</el-menu-item>
         </a>
+        <a target="_blank" href="http://127.0.0.1:8899/admin/index.html#/">
+          <el-menu-item index="2-2">Lcn 分布式事务管理</el-menu-item>
+        </a>
         <a target="_blank" href="http://106.13.1.171:8080/">
           <el-menu-item index="2-2">RocketMQ 控制台</el-menu-item>
         </a>
@@ -156,7 +159,7 @@
       <router-link to="/home/leave">
         <el-menu-item index="2">
           <i class="el-icon-menu"></i>
-          <span slot="title">请假申请</span>
+          <span slot="title">实训申请</span>
         </el-menu-item>
       </router-link>
 

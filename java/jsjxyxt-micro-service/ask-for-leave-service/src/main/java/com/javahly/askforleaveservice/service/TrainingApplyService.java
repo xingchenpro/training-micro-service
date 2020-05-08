@@ -24,4 +24,7 @@ public interface TrainingApplyService {
     //根据指导教师id查询学生
     public List<String> getStudentIdsByTeacherId(String tId);
 
+    //学生更新指导教师
+    public int updateTeacher(String tId,List<String> students);
+
 }

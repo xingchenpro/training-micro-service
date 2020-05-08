@@ -1,7 +1,10 @@
 package com.javahly.trainingservice.feign.service;
 
+import com.javahly.trainingservice.entity.Distribution;
+import com.javahly.trainingservice.util.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,5 +27,8 @@ public interface LeaveService {
     @RequestMapping(value = "/v1/leave/studentIds", method = RequestMethod.GET)
     List<String> getStudentIdsByTeacherId(@RequestParam("tId") String tId);
 
+
+    @RequestMapping(value = "/v1/leave/training/distribution", method = RequestMethod.PUT)
+    Result updateStudentTrainingTeacher(@RequestBody Distribution distribution);
 
 }

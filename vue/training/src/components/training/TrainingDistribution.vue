@@ -85,7 +85,6 @@
                 <!-- more data -->
                 </tbody>
               </table>
-
             </div>
           </div>
         </div>
@@ -165,13 +164,14 @@
           return;
         }
         this.$confirm('确认操作？').then(() => {
-          var data = this.$qs.stringify({
-            students: JSON.stringify(this.allSelectedItem),//把数组变成字符串传递
-            t_id: this.currentTeacher
-          });
-          this.$axios.post('/apiTraining/trainingSubjects', data).then((res) => {
+          var data = {
+            students: this.allSelectedItem,//把数组变成字符串传递
+            tId: this.currentTeacher
+          };
+          this.$axios.put('/training-service/v1/training/training/distribution', data).then((res) => {
             if (res.data.resultCode === 200) {
-              this.trainingSubjects = res.data.result.trainingSubjectss
+              this.trainingSubjects = res.data.result.trainingSubjects;
+              this.allSelectedItem = [];
               this.$notify({
                 type: 'success',
                 message: '分配成功'
@@ -198,13 +198,14 @@
         var arr = [];
         arr.push(sId);
         this.$confirm('确认操作？').then(() => {
-          var data = this.$qs.stringify({
-            students: JSON.stringify(arr),
-            t_id: this.currentTeacher
-          });
-          this.$axios.post('/apiTraining/trainingSubjects', data).then((res) => {
-            this.trainingSubjects = res.data.result.trainingSubjectss;
+          var data = {
+            students: arr,
+            tId: this.currentTeacher
+          };
+          this.$axios.put('/training-service/v1/training/training/distribution', data).then((res) => {
+            this.trainingSubjects = res.data.result.trainingSubjects;
             if (res.data.resultCode === 200) {
+              this.allSelectedItem = [];
               this.$notify({
                 type: 'success',
                 message: '分配成功'
@@ -236,13 +237,11 @@
         }
       }
     },
-
     computed: {
       formFilter() {
         return this.trainingSubjects.filter((item, index) => this.currentClass == '' || item.className == this.currentClass)
       }
     }
-
   }
 </script>
 

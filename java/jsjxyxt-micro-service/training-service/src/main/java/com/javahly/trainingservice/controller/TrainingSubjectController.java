@@ -3,13 +3,16 @@ package com.javahly.trainingservice.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.javahly.trainingservice.entity.Distribution;
 import com.javahly.trainingservice.entity.SubjectExamine;
 import com.javahly.trainingservice.entity.TrainingSubject;
+import com.javahly.trainingservice.feign.service.LeaveService;
 import com.javahly.trainingservice.service.TrainingSubjectService;
 import com.javahly.trainingservice.util.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -33,6 +36,9 @@ public class TrainingSubjectController {
 
     @Autowired
     TrainingSubjectService trainingSubjectService;
+
+    @Autowired
+    LeaveService leaveService;
 
     /**
      * 学生查询自己的课题
@@ -165,12 +171,21 @@ public class TrainingSubjectController {
      * @param distribution
      * @return
      */
+    @Transactional
+    @LcnTransaction
     @RequestMapping(value = "/training/distribution", method = RequestMethod.PUT)
     public Result updateStudentTrainingTeacher(@RequestBody Distribution distribution) {
         Result result = new Result();
         Map<String, Object> resultMap = new HashMap<>();
         log.info("updateStudentTrainingTeacher：{}", distribution.getStudents());
         trainingSubjectService.updateTeacher(distribution.gettId(), distribution.getStudents());
+        leaveService.updateStudentTrainingTeacher(distribution);
+        //TODO 根据教师ID查找专业号
+        String specId = "101";
+        List<TrainingSubject> trainingSubjects = trainingSubjectService.getTrainingSubjectsBySpecId(specId);
+        resultMap.put("trainingSubjects", trainingSubjects);
+        result.setResult(resultMap);
+        //int i = 1/0;
         return result;
 
     }
