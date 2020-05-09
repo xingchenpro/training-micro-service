@@ -4,12 +4,15 @@ import com.javahly.basicinfoservice.cache.RedisKey;
 import com.javahly.basicinfoservice.entity.Student;
 import com.javahly.basicinfoservice.service.StudentService;
 import com.javahly.basicinfoservice.util.Result;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -21,6 +24,7 @@ import java.util.concurrent.TimeUnit;
  * @QQ :1136513099
  * @desc :
  */
+@Slf4j
 @RestController
 public class StudentController {
 
@@ -37,18 +41,38 @@ public class StudentController {
     public List<Student> getStudents() {
         Result result = new Result();
         List<Student> students = studentService.getStudents();
-        redisTemplate.opsForValue().set(RedisKey.STUDENTS_KEY, students, 7, TimeUnit.DAYS);
+        //redisTemplate.opsForValue().set(RedisKey.STUDENTS_KEY, students, 7, TimeUnit.DAYS);
         result.setResult(students);
         return students;
     }
+
+    /**
+     * 查询所有学生信息，放到HashMap
+     * @return
+     */
+    @RequestMapping(value = "/hash/students", method = RequestMethod.GET)
+    public Map<String,Student> getHashStudents() {
+        Result result = new Result();
+        List<Student> students = studentService.getStudents();
+        Map<String,Student> studentHash = new HashMap<>(1<<16);
+        //放到Hash里面
+        for (int i = 0; i < students.size(); i++) {
+            studentHash.put(students.get(i).getsId(),students.get(i));
+        }
+        //redisTemplate.opsForValue().set(RedisKey.STUDENTS_KEY, students, 7, TimeUnit.DAYS);
+        result.setResult(studentHash);
+        return studentHash;
+    }
+
 
     /**
      * 根据学号查询部分学生
      *
      * @return
      */
-    @RequestMapping(value = "/part/students", method = RequestMethod.GET)
+    @RequestMapping(value = "/part/students",method = RequestMethod.POST)
     public List<Student> getStudentByIds(@RequestBody List<String> studentIds) {
+        log.info("StudentController：getStudentByIds：{}",studentIds);
         List<Student> students = studentService.getStudentByIds(studentIds);
         return students;
     }

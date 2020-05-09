@@ -14,7 +14,7 @@
                 <li v-for="item in subjects" @click="currentSId=item.sId"
                     :class="item.sId===currentSId ? 'active-li' : ''">
                   <a :style="item.status >= 1 ? 'color:#67c13a': item.status<0?'color:#F56C6C': 'color:#878787'">
-                    {{item.sId}}
+                    {{item.student.sName}}
                   </a>
                 </li>
 

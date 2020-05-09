@@ -29,6 +29,11 @@ public class TrainingSubjectServiceImpl implements TrainingSubjectService {
     }
 
     @Override
+    public List<TrainingSubject> getTrainingSubjects() {
+        return trainingSubjectDao.getTrainingSubjects();
+    }
+
+    @Override
     public int addTrainingSubject(TrainingSubject trainingSubject) {
         return trainingSubjectDao.addTrainingSubject(trainingSubject);
     }

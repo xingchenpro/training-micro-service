@@ -70,7 +70,6 @@ server:
   port: 8084
 # 必须改成这种格式否则无法注册
 server.servlet.context-path: /v1/leave
-
 # 超时时间配置
 feign:
  client:

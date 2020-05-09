@@ -1,5 +1,7 @@
 package com.javahly.trainingservice.entity;
 
+import com.javahly.trainingservice.feign.basic.entity.Student;
+
 /**
  * @author :hly
  * @github :https://github.com/huangliangyun
@@ -23,8 +25,7 @@ public class TrainingSubject {
     private String reason;//拒绝理由
 
     //非数据库字段
-    private String name;//学生姓名
-    private String className;//班级
+    private Student student;
 
     public int getId() {
         return id;
@@ -107,13 +108,6 @@ public class TrainingSubject {
         this.specId = specId;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getReason() {
         return reason;
@@ -121,14 +115,6 @@ public class TrainingSubject {
 
     public void setReason(String reason) {
         this.reason = reason;
-    }
-
-    public String getClassName() {
-        return className;
-    }
-
-    public void setClassName(String className) {
-        this.className = className;
     }
 
     public String getsId() {
@@ -139,13 +125,20 @@ public class TrainingSubject {
         this.sId = sId;
     }
 
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
     @Override
     public String toString() {
         return "TrainingSubject{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
                 ", sId='" + sId + '\'' +
-                ", name='" + name + '\'' +
+                ", title='" + title + '\'' +
                 ", requirement='" + requirement + '\'' +
                 ", contentAndStep='" + contentAndStep + '\'' +
                 ", plan='" + plan + '\'' +
@@ -153,9 +146,9 @@ public class TrainingSubject {
                 ", status=" + status +
                 ", state=" + state +
                 ", tutor='" + tutor + '\'' +
-                ", className='" + className + '\'' +
                 ", specId='" + specId + '\'' +
                 ", reason='" + reason + '\'' +
+                ", student=" + student +
                 '}';
     }
 }

@@ -17,6 +17,7 @@ import WeekSummaries from '@/components/training/WeekSummaries'
 import UnitManager from '@/components/training/UnitManager'
 import TrainingDistribution from '@/components/training/TrainingDistribution'
 import UnitSituation from '@/components/training/UnitSituation'
+import StudentSituation from '@/components/training/StudentSituation'
 
 Vue.use(Router)
 
@@ -39,6 +40,7 @@ export default new Router({
         {path: "/home/training/units", component: UnitManager, meta: {requireAuth: true}},
         {path: "/home/training/distribution", component: TrainingDistribution, meta: {requireAuth: true}},
         {path: "/home/training/unitSituation", component: UnitSituation, meta: {requireAuth: true}},
+        {path: "/home/training/StudentSituation", component: StudentSituation, meta: {requireAuth: true}},
       ]
     },
     {path: "/error/limit", component: LimitError, meta: {requireAuth: true}},

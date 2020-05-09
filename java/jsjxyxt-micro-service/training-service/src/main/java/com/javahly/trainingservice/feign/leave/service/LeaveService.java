@@ -1,4 +1,4 @@
-package com.javahly.trainingservice.feign.service;
+package com.javahly.trainingservice.feign.leave.service;
 
 import com.javahly.trainingservice.entity.Distribution;
 import com.javahly.trainingservice.util.Result;

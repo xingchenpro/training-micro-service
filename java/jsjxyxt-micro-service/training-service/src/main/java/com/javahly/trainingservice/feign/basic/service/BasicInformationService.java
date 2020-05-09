@@ -1,12 +1,15 @@
-package com.javahly.askforleaveservice.feign.basic.service;
+package com.javahly.trainingservice.feign.basic.service;
 
-import com.javahly.askforleaveservice.feign.basic.entity.Student;
-import com.javahly.askforleaveservice.feign.basic.entity.Teacher;
+import com.javahly.trainingservice.feign.basic.entity.Student;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -22,11 +25,11 @@ import java.util.List;
 @FeignClient(value = "basic-info-service")
 public interface BasicInformationService {
 
-    @RequestMapping(value = "/v1/info/teachers", method = RequestMethod.GET)
-    List<Teacher> getTeachers();
-
     @RequestMapping(value = "/v1/info/students", method = RequestMethod.GET)
     List<Student> getStudents();
+
+    @RequestMapping(value = "/v1/info/hash/students", method = RequestMethod.GET)
+    Map<String,Student> getHashStudents();
 
     @RequestMapping(value = "/v1/info/part/students",method = RequestMethod.POST)
     @ResponseBody

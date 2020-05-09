@@ -17,6 +17,9 @@ public interface TrainingSubjectService {
     //学生获取自己的实训课题
     public TrainingSubject getTrainingSubject(String sId);
 
+    //获得所有课题
+    public List<TrainingSubject> getTrainingSubjects();
+
     //学生提交课题
     public int addTrainingSubject(TrainingSubject trainingSubject);
 
@@ -24,13 +27,13 @@ public interface TrainingSubjectService {
     public int updateTrainingSubject(TrainingSubject trainingSubject);
 
     //根据条件查询课题
-    public List<TrainingSubject> getTrainingSubjectsByTId(@Param("tId") String tId);
+    public List<TrainingSubject> getTrainingSubjectsByTId(String tId);
 
     //根据条件查询课题
-    public List<TrainingSubject> getTrainingSubjectsBySpecId(@Param("specId") String specId);
+    public List<TrainingSubject> getTrainingSubjectsBySpecId(String specId);
 
     //指导教师或专业负责人审核课题
-    public int updateTrainingSubjectStatus(@Param("sId") String sId,@Param("status") Integer status ,@Param("reason") String reason);
+    public int updateTrainingSubjectStatus(String sId,Integer status ,String reason);
 
     //学生更新指导教师
     public int updateTeacher(String tId,List<String> students);

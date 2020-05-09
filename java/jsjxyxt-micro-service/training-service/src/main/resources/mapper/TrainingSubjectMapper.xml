@@ -55,7 +55,7 @@
         <where>
             <if test="tId!=null">tutor = #{tId}</if>
         </where>
-        ORDER BY status DESC
+        ORDER BY status DESC,s_id
     </select>
 
     <!--指导教师,专业负责人获得课题-->
@@ -66,7 +66,14 @@
         <where>
             <if test="specId!=null">spec_id = #{specId}</if>
         </where>
-        ORDER BY status DESC
+        ORDER BY status DESC,s_id
+    </select>
+
+    <!--查询所有课题-->
+    <select id="getTrainingSubjects" resultType="TrainingSubject">
+        SELECT
+        <include refid="comm_cols_subject"/>
+        FROM training_subject ORDER  BY s_id
     </select>
 
     <!--课题审核-->

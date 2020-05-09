@@ -20,6 +20,9 @@ public interface TrainingSubjectDao {
     //学生获取自己的实训课题
     public TrainingSubject getTrainingSubject(@Param("sId") String sId);
 
+    //获得所有课题
+    public List<TrainingSubject> getTrainingSubjects();
+
     //学生提交课题
     public int addTrainingSubject(TrainingSubject trainingSubject);
 

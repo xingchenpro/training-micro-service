@@ -1,24 +1,20 @@
 package com.javahly.trainingservice.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.codingapi.txlcn.tc.annotation.LcnTransaction;
+
 import com.javahly.trainingservice.entity.Distribution;
 import com.javahly.trainingservice.entity.SubjectExamine;
 import com.javahly.trainingservice.entity.TrainingSubject;
-import com.javahly.trainingservice.feign.service.LeaveService;
+import com.javahly.trainingservice.feign.basic.entity.Student;
+import com.javahly.trainingservice.feign.basic.service.BasicInformationService;
 import com.javahly.trainingservice.service.TrainingSubjectService;
+import com.javahly.trainingservice.feign.leave.service.LeaveService;
 import com.javahly.trainingservice.util.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,7 +34,10 @@ public class TrainingSubjectController {
     TrainingSubjectService trainingSubjectService;
 
     @Autowired
-    LeaveService leaveService;
+    BasicInformationService basicInformationService;
+
+    @Autowired
+    private LeaveService leaveService;
 
     /**
      * 学生查询自己的课题
@@ -136,6 +135,10 @@ public class TrainingSubjectController {
         if (role.equals("3")) {
             trainingSubjectService.updateTrainingSubjectStatus(examine.getsId(), examine.getStatus(), examine.getReason());
             List<TrainingSubject> subjects = trainingSubjectService.getTrainingSubjectsByTId(examine.getTutor());
+            Map<String,Student> studentHash = basicInformationService.getHashStudents();
+            for (int i=0;i<subjects.size();i++){
+                subjects.get(i).setStudent(studentHash.get(subjects.get(i).getsId()));
+            }
             resultMap.put("subjects", subjects);
             result.setResult(resultMap);
         }
@@ -160,6 +163,10 @@ public class TrainingSubjectController {
         String specId = "101";
         //根据专业号获得课题信息
         List<TrainingSubject> trainingSubjects = trainingSubjectService.getTrainingSubjectsBySpecId(specId);
+        Map<String,Student> studentHash = basicInformationService.getHashStudents();
+        for (int i=0;i<trainingSubjects.size();i++){
+            trainingSubjects.get(i).setStudent(studentHash.get(trainingSubjects.get(i).getsId()));
+        }
         resultMap.put("trainingSubjects", trainingSubjects);
         result.setResult(resultMap);
         return result;
@@ -183,10 +190,32 @@ public class TrainingSubjectController {
         //TODO 根据教师ID查找专业号
         String specId = "101";
         List<TrainingSubject> trainingSubjects = trainingSubjectService.getTrainingSubjectsBySpecId(specId);
+        Map<String,Student> studentHash = basicInformationService.getHashStudents();
+        for (int i=0;i<trainingSubjects.size();i++){
+            trainingSubjects.get(i).setStudent(studentHash.get(trainingSubjects.get(i).getsId()));
+        }
         resultMap.put("trainingSubjects", trainingSubjects);
         result.setResult(resultMap);
         //int i = 1/0;
         return result;
+    }
 
+    /**
+     * 获得学生实训信息
+     * @return
+     */
+    @RequestMapping(value = "/training/info", method = RequestMethod.GET)
+    public Result getStudentTrainingInfo() {
+        Result result = new Result();
+        Map<String, Object> resultMap = new HashMap<>();
+        //获得所有课题
+        List<TrainingSubject> trainingSubjects = trainingSubjectService.getTrainingSubjects();
+        Map<String,Student> studentHash = basicInformationService.getHashStudents();
+        for (int i=0;i<trainingSubjects.size();i++){
+            trainingSubjects.get(i).setStudent(studentHash.get(trainingSubjects.get(i).getsId()));
+        }
+        resultMap.put("trainingInfo",trainingSubjects);
+        result.setResult(resultMap);
+        return result;
     }
 }

@@ -23,6 +23,21 @@
                   </el-option>
                 </el-select>
                 <el-select
+                  v-model="currentTeachers"
+                  filterable
+                  clearable
+                  placeholder="按老师筛选学生"
+                  @clear="clear(1)"
+                  style="margin-left:20px;">
+                  <el-option
+                    v-for="item in teachers"
+                    :key="item.tId"
+                    :label="item.tName"
+                    :value="item.tId">
+                  </el-option>
+                </el-select>
+                <el-button round type="primary" @click="batchDistribute">分配</el-button>
+                <el-select
                   v-model="currentTeacher"
                   filterable
                   clearable
@@ -35,7 +50,6 @@
                     :value="item.tId">
                   </el-option>
                 </el-select>
-                <el-button round type="primary" @click="batchDistribute">批量分配</el-button>
               </div>
             </div>
             <div class="widget-body  widget-body-lg am-fr" style="min-height: 770px;">
@@ -68,9 +82,9 @@
                       :value="allSelectedItem.indexOf(item.sId) !== -1">
                     </el-checkbox>
                   </td>
-                  <td>{{item.className}}</td>
+                  <td>{{item.student.cId}}</td>
                   <td>{{item.sId}}</td>
-                  <td>{{item.name}}</td>
+                  <td>{{item.student.cName}}</td>
                   <td>{{item.title}}</td>
                   <td>{{item.scope===0 ? '校内': '校外'}}</td>
                   <td>{{showTeaName(item.tutor)}}</td>
@@ -100,8 +114,9 @@
       return {
         teachers: [],
         classes: [],
-        currentTeacher: '',
+        currentTeacher: '',//当前需要分配的老师
         currentClass: '',
+        currentTeachers: '',//根据老师搜索学生
         allSelectedItem: [],//存放勾选的数据
         count: Number,
         allChecked: false, //标识全选
@@ -144,7 +159,8 @@
         //elementUI的@change事件会返回一个value，选中为true，退选为false
         if (value) {
           this.allSelectedItem = [];
-          this.trainingSubjects.forEach((item, index) => {
+          //这里是 formFilter 否则有 Bug 把当前所有的都分配了
+          this.formFilter.forEach((item, index) => {
             this.allSelectedItem.push(item.sId);
             this.allChecked = true
           });
@@ -169,9 +185,9 @@
             tId: this.currentTeacher
           };
           this.$axios.put('/training-service/v1/training/training/distribution', data).then((res) => {
+            this.trainingSubjects = res.data.result.trainingSubjects;
+            this.allSelectedItem = [];
             if (res.data.resultCode === 200) {
-              this.trainingSubjects = res.data.result.trainingSubjects;
-              this.allSelectedItem = [];
               this.$notify({
                 type: 'success',
                 message: '分配成功'
@@ -239,7 +255,8 @@
     },
     computed: {
       formFilter() {
-        return this.trainingSubjects.filter((item, index) => this.currentClass == '' || item.className == this.currentClass)
+        return this.trainingSubjects.filter((item, index) => (this.currentClass == '' || item.student.cId == this.currentClass) &&
+          (this.currentTeachers =='' || this.currentTeachers==item.tutor))
       }
     }
   }

@@ -118,7 +118,9 @@
         <router-link to="/home/training/unitSituation">
           <el-menu-item index="1-5">实训单位情况</el-menu-item>
         </router-link>
-        <el-menu-item index="1-6">实训学生情况</el-menu-item>
+        <router-link to="/home/training/StudentSituation">
+          <el-menu-item index="1-6">实训学生情况</el-menu-item>
+        </router-link>
       </el-submenu>
     </el-menu>
 

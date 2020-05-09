@@ -3,10 +3,10 @@
     <!--学生信息模态框-->
     <el-dialog :visible.sync="dialogVisible" :append-to-body="true" width="40%" @close="closeDialog">
       <el-table :data="students" height="250px" stripe style="width:100%;">
-        <el-table-column prop="s_id" label="学号"></el-table-column>
-        <el-table-column prop="s_name" label="姓名"></el-table-column>
-        <el-table-column prop="c_id" label="班级"></el-table-column>
-        <el-table-column prop="s_phone" label="手机号"></el-table-column>
+        <el-table-column prop="sId" label="学号"></el-table-column>
+        <el-table-column prop="sName" label="姓名"></el-table-column>
+        <el-table-column prop="cId" label="班级"></el-table-column>
+        <el-table-column prop="sPhone" label="手机号"></el-table-column>
       </el-table>
       <span slot="footer" class="dialog-footer">
         <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
@@ -53,7 +53,7 @@
                   </td>
                   <td>
                     <div class="tpl-table-black-operation">
-                      <a href="javascript:;" @click="showStudent(item.id)">
+                      <a href="javascript:;" @click="showStudent(item.uId)">
                         <i class="am-icon-pencil"></i>查看学生
                       </a>
                     </div>
@@ -77,7 +77,6 @@
         units: [],
         students: [],
         dialogVisible: false,
-
       };
     },
     created() {
@@ -104,14 +103,11 @@
       //显示学生
       showStudent(id) {
         this.dialogVisible = true;
-        this.$axios
-          .get("apiLeave/unitStudents?u_id=" + id)
-          .then(res => {
+        this.$axios.get("/leave-service/v1/leave/unit/students?uId=" + id).then(res => {
             if (res.data.resultCode === 200) {
               this.students = res.data.result.students;
             }
-          })
-          .catch(err => {
+          }).catch(err => {
             console.log(err);
           });
       },

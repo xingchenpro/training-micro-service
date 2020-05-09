@@ -23,7 +23,7 @@
               </div>
             </div>
             <div class="widget-body  widget-body-lg am-fr" style="min-height: 750px;">
-              <table width="100%" style="margin-bottom:50px;" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+              <table width="100%" style="margin-bottom:50px;table-layout:fixed" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                 <thead>
                 <tr>
                   <th v-show="currentStatus == 1">

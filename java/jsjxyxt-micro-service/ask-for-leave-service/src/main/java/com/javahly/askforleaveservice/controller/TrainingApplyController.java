@@ -7,6 +7,7 @@ import com.javahly.askforleaveservice.feign.basic.entity.Student;
 import com.javahly.askforleaveservice.feign.basic.service.BasicInformationService;
 import com.javahly.askforleaveservice.service.TrainingApplyService;
 import com.javahly.askforleaveservice.util.Result;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,7 @@ import java.util.Map;
  * @QQ :1136513099
  * @desc :
  */
+@Slf4j
 @RestController
 public class TrainingApplyController {
 
@@ -32,6 +34,7 @@ public class TrainingApplyController {
 
     @Autowired
     BasicInformationService basicInformationService;
+
     /**
      * 实训分配，实训服务调用
      *
@@ -49,7 +52,7 @@ public class TrainingApplyController {
 
     /**
      * 查看单位学生
-     *
+     * 亮点：Feign 客户端传递 List 集合方法与技巧
      * @param uId
      * @return
      */
@@ -58,6 +61,7 @@ public class TrainingApplyController {
         Result result = new Result();
         Map<String, Object> resultMap = new HashMap<>();
         List<String> studentIds = trainingApplyService.getStudentsIdByUnitId(uId);
+        log.info("TrainingApplyController：getStudentsIdByUnitId：{}", studentIds);
         List<Student> students = basicInformationService.getStudentByIds(studentIds);
         resultMap.put("students", students);
         result.setResult(resultMap);

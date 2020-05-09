@@ -1,10 +1,7 @@
 package com.javahly.trainingservice.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.javahly.trainingservice.entity.WeekSummary;
-import com.javahly.trainingservice.feign.service.LeaveService;
+import com.javahly.trainingservice.feign.leave.service.LeaveService;
 import com.javahly.trainingservice.service.WeekSummaryService;
 import com.javahly.trainingservice.util.Result;
 
@@ -14,9 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 /**
