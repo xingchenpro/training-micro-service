@@ -26,6 +26,12 @@ public interface StudentService {
      */
     public Student getStudent(String sId);
 
+    /**
+     * 查询部分学生信息
+     * @param studentIds
+     * @return
+     */
+    public List<Student> getStudentByIds(List<String> studentIds);
 
     /**
      * 修改学生信息

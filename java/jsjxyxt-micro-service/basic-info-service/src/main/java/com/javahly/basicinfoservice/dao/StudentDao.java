@@ -24,6 +24,13 @@ public interface StudentDao {
     public List<Student> getStudents();
 
     /**
+     * 查询部分学生信息
+     * @param studentIds
+     * @return
+     */
+    public List<Student> getStudentByIds(@Param("studentIds") List<String> studentIds);
+
+    /**
      * 根据学号查询单个学生信息
      */
     public Student getStudent(@Param("sId") String sId);
@@ -32,5 +39,7 @@ public interface StudentDao {
      * 修改学生信息
      */
     public int updateStudent(Student student);
+
+
 
 }

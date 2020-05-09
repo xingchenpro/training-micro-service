@@ -43,6 +43,18 @@ public class StudentController {
     }
 
     /**
+     * 根据学号查询部分学生
+     *
+     * @return
+     */
+    @RequestMapping(value = "/part/students", method = RequestMethod.GET)
+    public List<Student> getStudentByIds(@RequestBody List<String> studentIds) {
+        List<Student> students = studentService.getStudentByIds(studentIds);
+        return students;
+    }
+
+
+    /**
      * 根据学号获取学生信息
      */
     @RequestMapping(value = "/student", method = RequestMethod.GET)
@@ -52,6 +64,7 @@ public class StudentController {
         result.setResult(student);
         return result;
     }
+
 
     @RequestMapping(value = "/student", method = RequestMethod.PUT)
     public Result updateStudent(@RequestBody Student student) {

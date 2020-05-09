@@ -2,6 +2,9 @@ package com.javahly.askforleaveservice.controller;
 
 import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.javahly.askforleaveservice.entity.Distribution;
+import com.javahly.askforleaveservice.entity.TrainingApply;
+import com.javahly.askforleaveservice.feign.basic.entity.Student;
+import com.javahly.askforleaveservice.feign.basic.service.BasicInformationService;
 import com.javahly.askforleaveservice.service.TrainingApplyService;
 import com.javahly.askforleaveservice.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +30,14 @@ public class TrainingApplyController {
     @Autowired
     TrainingApplyService trainingApplyService;
 
+    @Autowired
+    BasicInformationService basicInformationService;
+    /**
+     * 实训分配，实训服务调用
+     *
+     * @param distribution
+     * @return
+     */
     @Transactional
     @LcnTransaction
     @RequestMapping(value = "/training/distribution", method = RequestMethod.PUT)
@@ -34,10 +45,28 @@ public class TrainingApplyController {
         Result result = new Result();
         trainingApplyService.updateTeacher(distribution.gettId(), distribution.getStudents());
         return result;
-
     }
+
+    /**
+     * 查看单位学生
+     *
+     * @param uId
+     * @return
+     */
+    @RequestMapping(value = "/unit/students", method = RequestMethod.GET)
+    public Result getStudentsIdByUnitId(String uId) {
+        Result result = new Result();
+        Map<String, Object> resultMap = new HashMap<>();
+        List<String> studentIds = trainingApplyService.getStudentsIdByUnitId(uId);
+        List<Student> students = basicInformationService.getStudentByIds(studentIds);
+        resultMap.put("students", students);
+        result.setResult(resultMap);
+        return result;
+    }
+
     /**
      * 根据指导教师ID查询学生ID
+     *
      * @param tId
      * @return
      */

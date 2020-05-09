@@ -66,7 +66,6 @@
                     <el-popover placement="top-start" title="地址详情" width="300" trigger="hover" :content="item.uAddress">
                       <span slot="reference"> {{ item.simpleAddress }}</span>
                     </el-popover>
-
                   </td>
                   <td>
                     <el-popover placement="top-start" title="公司详情" width="300" trigger="hover" :content="item.uDetails">
@@ -249,8 +248,7 @@
     //页面加载初始化
     created() {
       this.$axios
-        .get("/training-service/v1/training/units")
-        .then(res => {
+        .get("/training-service/v1/training/units").then(res => {
           console.log(res);
           this.units = res.data;
           //调用整理地址的方法

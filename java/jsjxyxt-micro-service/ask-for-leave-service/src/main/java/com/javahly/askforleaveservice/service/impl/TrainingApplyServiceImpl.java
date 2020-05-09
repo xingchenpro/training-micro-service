@@ -40,6 +40,11 @@ public class TrainingApplyServiceImpl implements TrainingApplyService {
 
     @Override
     public int updateTeacher(String tId, List<String> students) {
-        return trainingApplyDao.updateTeacher(tId,students);
+        return trainingApplyDao.updateTeacher(tId, students);
+    }
+
+    @Override
+    public List<String> getStudentsIdByUnitId(String uId) {
+        return trainingApplyDao.getStudentsIdByUnitId(uId);
     }
 }

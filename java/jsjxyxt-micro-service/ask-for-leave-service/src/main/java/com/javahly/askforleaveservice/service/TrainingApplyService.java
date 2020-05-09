@@ -3,6 +3,7 @@ package com.javahly.askforleaveservice.service;
 import com.javahly.askforleaveservice.entity.TrainingApply;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author :hly
@@ -26,5 +27,8 @@ public interface TrainingApplyService {
 
     //学生更新指导教师
     public int updateTeacher(String tId,List<String> students);
+
+    //实训单位情况，一个公司几个学生，根据单位id获得学生
+    public List<String> getStudentsIdByUnitId(String uId);
 
 }

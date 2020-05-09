@@ -23,6 +23,16 @@
         WHERE s_id=#{sId}
     </select>
 
+    <select id="getStudentByIds" resultType="student">
+        SELECT
+        <include refid="comm_cols_student"></include>
+        FROM student
+        WHERE s_id IN
+        <foreach collection="studentIds" item="id" open="(" close=")" index="index" separator=",">
+            #{id}
+        </foreach>
+
+    </select>
     <!--学生修改信息-->
     <update id="updateStudent" parameterType="student">
         UPDATE student

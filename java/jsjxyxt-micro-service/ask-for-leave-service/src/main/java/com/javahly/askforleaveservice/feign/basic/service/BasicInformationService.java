@@ -6,6 +6,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -27,5 +29,8 @@ public interface BasicInformationService {
 
     @RequestMapping(value = "/v1/info/students", method = RequestMethod.GET)
     List<Student> getStudents();
+
+    @RequestMapping(value = "/v1/info/part/students", method = RequestMethod.GET)
+    List<Student> getStudentByIds(@RequestParam("studentIds")List<String> studentIds);
 
 }

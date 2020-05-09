@@ -41,7 +41,12 @@
         <foreach collection="students" item="id" separator="," open="(" close=")" index="index">
             #{id}
         </foreach>
-
     </update>
+
+    <!--根据单位id获得学生学号-->
+    <select id="getStudentsIdByUnitId" resultType="string">
+        SELECT s_id FROM trainingapply
+        <if test="uId!=null">WHERE  u_id = #{uId}</if>
+    </select>
 
 </mapper>
