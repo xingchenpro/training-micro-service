@@ -43,6 +43,4 @@ public class ClassController {
         //redisTemplate.opsForValue().set(RedisKey.CLASSES_KEY, classes, 7, TimeUnit.DAYS);
         return classes;
     }
-
-
 }

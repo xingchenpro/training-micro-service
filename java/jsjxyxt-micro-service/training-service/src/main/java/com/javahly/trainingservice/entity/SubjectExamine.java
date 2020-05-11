@@ -1,5 +1,7 @@
 package com.javahly.trainingservice.entity;
 
+import java.util.List;
+
 /**
  * @author :hly
  * @github :https://github.com/huangliangyun
@@ -14,8 +16,10 @@ public class SubjectExamine {
     private String sId;//
     private int status;//题目状态(已审核，未审核)
     private String tutor;//指导教师
+
     private String role;//角色
     private String reason;//拒绝理由
+    private List<String> sIds;
 
     public String getsId() {
         return sId;
@@ -56,5 +60,13 @@ public class SubjectExamine {
 
     public void setReason(String reason) {
         this.reason = reason;
+    }
+
+    public List<String> getsIds() {
+        return sIds;
+    }
+
+    public void setsIds(List<String> sIds) {
+        this.sIds = sIds;
     }
 }

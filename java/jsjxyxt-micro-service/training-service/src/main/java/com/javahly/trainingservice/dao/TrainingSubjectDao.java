@@ -35,8 +35,11 @@ public interface TrainingSubjectDao {
     //根据条件查询课题
     public List<TrainingSubject> getTrainingSubjectsBySpecId(@Param("specId") String specId);
 
-    //指导教师或专业负责人审核课题
+    //指导教师审核课题
     public int updateTrainingSubjectStatus(@Param("sId") String sId,@Param("status") Integer status ,@Param("reason") String reason);
+
+    //专业负责人审核课题
+    public int updateTrainingSubjectsStatus(@Param("sIds") List<String> sIds,@Param("status") Integer status ,@Param("reason") String reason);
 
     //学生更新指导教师
     public int updateTeacher(@Param("tId") String tId,@Param("students") List<String> students);

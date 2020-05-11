@@ -35,7 +35,7 @@ public class StudentController {
     private StudentService studentService;
 
     /**
-     * 获得所有学生信息
+     * 获得所有学生信息集合
      */
     @RequestMapping(value = "/students", method = RequestMethod.GET)
     public List<Student> getStudents() {
@@ -79,7 +79,7 @@ public class StudentController {
 
 
     /**
-     * 根据学号获取学生信息
+     * 根据学号获取单个学生信息
      */
     @RequestMapping(value = "/student", method = RequestMethod.GET)
     public Result getStudent(@RequestParam String sId) {
@@ -90,6 +90,11 @@ public class StudentController {
     }
 
 
+    /**
+     * 更新学生信息
+     * @param student
+     * @return
+     */
     @RequestMapping(value = "/student", method = RequestMethod.PUT)
     public Result updateStudent(@RequestBody Student student) {
         Result result = new Result();

@@ -32,8 +32,11 @@ public interface TrainingSubjectService {
     //根据条件查询课题
     public List<TrainingSubject> getTrainingSubjectsBySpecId(String specId);
 
-    //指导教师或专业负责人审核课题
+    //指导教师审核课题
     public int updateTrainingSubjectStatus(String sId,Integer status ,String reason);
+
+    //专业负责人审核课题
+    public int updateTrainingSubjectsStatus(List<String> sIds,Integer status ,String reason);
 
     //学生更新指导教师
     public int updateTeacher(String tId,List<String> students);

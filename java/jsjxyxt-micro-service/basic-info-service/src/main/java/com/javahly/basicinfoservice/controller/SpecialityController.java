@@ -32,7 +32,6 @@ public class SpecialityController {
     @Autowired
     private SpecialityService specialityService;
 
-
     /**
      * 专业信息
      */

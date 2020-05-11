@@ -43,5 +43,4 @@ public class TeacherController {
     public List<Teacher> getTeacher() {
         return teacherService.getTeachers();
     }
-
 }

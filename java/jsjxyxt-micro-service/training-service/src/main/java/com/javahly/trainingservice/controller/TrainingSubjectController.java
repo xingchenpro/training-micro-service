@@ -117,11 +117,26 @@ public class TrainingSubjectController {
         Map<String, Object> resultMap = new HashMap<>();
         if (role == 3) {
             List<TrainingSubject> subjects = trainingSubjectService.getTrainingSubjectsByTId(tId);
+            //远程调用获得学生信息
+            Map<String, Student> studentHash = basicInformationService.getHashStudents();
+            for (int i = 0; i < subjects.size(); i++) {
+                subjects.get(i).setStudent(studentHash.get(subjects.get(i).getsId()));
+            }
             resultMap.put("subjects", subjects);
             result.setResult(resultMap);
         }
         if (role == 4) {
-
+            //TODO 根据教师号获得专业
+            String specId = "101";
+            //根据专业号查询课题
+            List<TrainingSubject> subjects = trainingSubjectService.getTrainingSubjectsBySpecId(specId);
+            //远程调用学生信息
+            Map<String, Student> studentHash = basicInformationService.getHashStudents();
+            for (int i = 0; i < subjects.size(); i++) {
+                subjects.get(i).setStudent(studentHash.get(subjects.get(i).getsId()));
+            }
+            resultMap.put("subjects", subjects);
+            result.setResult(resultMap);
         }
         return result;
     }
@@ -133,17 +148,31 @@ public class TrainingSubjectController {
         Map<String, Object> resultMap = new HashMap<>();
         String role = examine.getRole();
         if (role.equals("3")) {
+            //审核单个课题
             trainingSubjectService.updateTrainingSubjectStatus(examine.getsId(), examine.getStatus(), examine.getReason());
+            //根据指导教师查询课题
             List<TrainingSubject> subjects = trainingSubjectService.getTrainingSubjectsByTId(examine.getTutor());
-            Map<String,Student> studentHash = basicInformationService.getHashStudents();
-            for (int i=0;i<subjects.size();i++){
+            //远程调用获得学生信息
+            Map<String, Student> studentHash = basicInformationService.getHashStudents();
+            for (int i = 0; i < subjects.size(); i++) {
                 subjects.get(i).setStudent(studentHash.get(subjects.get(i).getsId()));
             }
             resultMap.put("subjects", subjects);
             result.setResult(resultMap);
         }
+        //专业负责人审核多个课题
         if (role.equals("4")) {
-
+            //TODO 根据教师号获得专业号
+            trainingSubjectService.updateTrainingSubjectsStatus(examine.getsIds(), examine.getStatus(), examine.getReason());
+            //根据指导教师查询课题
+            List<TrainingSubject> subjects = trainingSubjectService.getTrainingSubjectsByTId(examine.getTutor());
+            //远程调用获得学生信息
+            Map<String, Student> studentHash = basicInformationService.getHashStudents();
+            for (int i = 0; i < subjects.size(); i++) {
+                subjects.get(i).setStudent(studentHash.get(subjects.get(i).getsId()));
+            }
+            resultMap.put("subjects", subjects);
+            result.setResult(resultMap);
         }
         return result;
     }
@@ -163,8 +192,8 @@ public class TrainingSubjectController {
         String specId = "101";
         //根据专业号获得课题信息
         List<TrainingSubject> trainingSubjects = trainingSubjectService.getTrainingSubjectsBySpecId(specId);
-        Map<String,Student> studentHash = basicInformationService.getHashStudents();
-        for (int i=0;i<trainingSubjects.size();i++){
+        Map<String, Student> studentHash = basicInformationService.getHashStudents();
+        for (int i = 0; i < trainingSubjects.size(); i++) {
             trainingSubjects.get(i).setStudent(studentHash.get(trainingSubjects.get(i).getsId()));
         }
         resultMap.put("trainingSubjects", trainingSubjects);
@@ -190,8 +219,8 @@ public class TrainingSubjectController {
         //TODO 根据教师ID查找专业号
         String specId = "101";
         List<TrainingSubject> trainingSubjects = trainingSubjectService.getTrainingSubjectsBySpecId(specId);
-        Map<String,Student> studentHash = basicInformationService.getHashStudents();
-        for (int i=0;i<trainingSubjects.size();i++){
+        Map<String, Student> studentHash = basicInformationService.getHashStudents();
+        for (int i = 0; i < trainingSubjects.size(); i++) {
             trainingSubjects.get(i).setStudent(studentHash.get(trainingSubjects.get(i).getsId()));
         }
         resultMap.put("trainingSubjects", trainingSubjects);
@@ -202,6 +231,7 @@ public class TrainingSubjectController {
 
     /**
      * 获得学生实训信息
+     *
      * @return
      */
     @RequestMapping(value = "/training/info", method = RequestMethod.GET)
@@ -210,11 +240,11 @@ public class TrainingSubjectController {
         Map<String, Object> resultMap = new HashMap<>();
         //获得所有课题
         List<TrainingSubject> trainingSubjects = trainingSubjectService.getTrainingSubjects();
-        Map<String,Student> studentHash = basicInformationService.getHashStudents();
-        for (int i=0;i<trainingSubjects.size();i++){
+        Map<String, Student> studentHash = basicInformationService.getHashStudents();
+        for (int i = 0; i < trainingSubjects.size(); i++) {
             trainingSubjects.get(i).setStudent(studentHash.get(trainingSubjects.get(i).getsId()));
         }
-        resultMap.put("trainingInfo",trainingSubjects);
+        resultMap.put("trainingInfo", trainingSubjects);
         result.setResult(resultMap);
         return result;
     }

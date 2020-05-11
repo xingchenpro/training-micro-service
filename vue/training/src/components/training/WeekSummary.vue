@@ -184,7 +184,6 @@
   li a:active {
     background-color: #c8c6bc;
     color: white;
-
   }
 
   li a:hover:not(.active) {

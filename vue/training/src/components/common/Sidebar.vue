@@ -20,8 +20,12 @@
           <i class="el-icon-location"></i>
           <span>实训管理</span>
         </template>
-        <el-menu-item index="1-1">实训单位情况</el-menu-item>
-        <el-menu-item index="1-2">实训学生情况</el-menu-item>
+        <router-link to="/home/training/unitSituation">
+          <el-menu-item index="1-5">实训单位情况</el-menu-item>
+        </router-link>
+        <router-link to="/home/training/StudentSituation">
+          <el-menu-item index="1-6">实训学生情况</el-menu-item>
+        </router-link>
       </el-submenu>
 
       <el-submenu index="2">
@@ -76,6 +80,18 @@
         </el-menu-item>
       </router-link>
 
+        <el-submenu index="3">
+          <template slot="title">
+            <i class="el-icon-location"></i>
+            <span>实训管理</span>
+          </template>
+          <router-link to="/home/training/unitSituation">
+            <el-menu-item index="1-5">实训单位情况</el-menu-item>
+          </router-link>
+          <router-link to="/home/training/StudentSituation">
+            <el-menu-item index="1-6">实训学生情况</el-menu-item>
+          </router-link>
+        </el-submenu>
 
     </el-menu>
 
@@ -112,7 +128,7 @@
         <router-link to="/home/training/distribution">
           <el-menu-item index="1-4">实训分配</el-menu-item>
         </router-link>
-        <router-link :to="{ path : '/home/training/subjectExamine'}">
+        <router-link :to="{ path : '/home/training/subjectExamine',query: { currentRole: 4 }}">
           <el-menu-item index="1-3">实训课题审核</el-menu-item>
         </router-link>
         <router-link to="/home/training/unitSituation">
@@ -137,7 +153,7 @@
         <router-link :to="{ path : '/home/training/subjects'}">
           <el-menu-item index="1-2">学生实训课题</el-menu-item>
         </router-link>
-        <el-menu-item index="1-3">学生实训情况</el-menu-item>
+        <!--<el-menu-item index="1-3">学生实训情况</el-menu-item>-->
         <!-- <el-menu-item index="1-4">实训报告管理</el-menu-item>-->
       </el-submenu>
 

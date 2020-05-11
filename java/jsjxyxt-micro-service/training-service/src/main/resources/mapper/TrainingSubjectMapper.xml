@@ -76,7 +76,7 @@
         FROM training_subject ORDER  BY s_id
     </select>
 
-    <!--课题审核-->
+    <!--指导教师课题审核-->
     <update id="updateTrainingSubjectStatus">
         UPDATE training_subject
         <set>
@@ -84,6 +84,19 @@
             <if test="reason!=null||reason!=''">reason = #{reason},</if>
         </set>
         WHERE s_id = #{sId}
+    </update>
+
+    <!--专业负责人进行课题审核-->
+    <update id="updateTrainingSubjectsStatus">
+        UPDATE training_subject
+        <set>
+            <if test="status!=null||status!=''">status = #{status},</if>
+            <if test="reason!=null||reason!=''">reason = #{reason},</if>
+        </set>
+        WHERE s_id IN
+        <foreach collection="sIds" item="id" separator="," open="(" close=")" index="index">
+            #{id}
+        </foreach>
     </update>
 
     <!--批量更新，不加括号-->

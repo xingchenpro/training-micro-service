@@ -59,6 +59,11 @@ public class TrainingSubjectServiceImpl implements TrainingSubjectService {
     }
 
     @Override
+    public int updateTrainingSubjectsStatus(List<String> sIds, Integer status, String reason) {
+        return trainingSubjectDao.updateTrainingSubjectsStatus(sIds, status , reason);
+    }
+
+    @Override
     public int updateTeacher(String tId, List<String> students) {
         return trainingSubjectDao.updateTeacher(tId,students);
     }
