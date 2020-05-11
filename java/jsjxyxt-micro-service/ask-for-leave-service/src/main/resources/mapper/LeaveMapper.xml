@@ -66,7 +66,7 @@
         <if test="leStatus!=null">leave.le_status=#{leStatus} AND</if>
         <if test="tId!=null">trainingapply.t_id=#{tId} AND</if>
         <if test="specId!=null">trainingapply.spec_id = #{specId} AND</if>
-        leave.ap_id = trainingapply.ap_id;
+        leave.ap_id = trainingapply.ap_id ORDER  BY le_stutus DESC
     </select>
 
     <!--查询已审核请假信息-->
@@ -75,7 +75,7 @@
         <if test="leStatus!=null">(leave.le_status>=#{leStatus} OR leave.le_status &lt;= ((#{leStatus})*(-1)) ) AND</if>
         <if test="specId!=null">trainingapply.spec_id = #{specId} AND</if>
         <if test="tId!=null">trainingapply.t_id=#{tId} AND</if>
-        leave.ap_id = trainingapply.ap_id;
+        leave.ap_id = trainingapply.ap_id ORDER  BY le_stutus DESC
     </select>
 
     <!--审核请假信息-->

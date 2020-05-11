@@ -3,8 +3,10 @@
   <div class="tpl-content-wrapper">
     <div class="row-content am-cf">
       <div class="row">
+        <!--斑马线-->
         <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
           <div class="widget am-cf">
+
             <div class="widget-head am-cf">
               <!--标签页-->
               <div class="widget-title am-fl" style="width:85%;">
@@ -21,7 +23,7 @@
               <div class="widget-function am-fr" style="width:15%;margin-top: 5px;">
                 <form role="form" class="form-inline">
                   <div class="form-group">
-                    <select class="form-control" v-model="currentClass" style="width:160px;margin-top: 9px">
+                    <select class="form-control" v-model="currentClass" style="width:160px;">
                       <option value="">全部班级</option>
                       <option v-for="item in currentClasses" :value="item">{{item}}</option>
                     </select>
@@ -31,9 +33,7 @@
             </div>
             <!--列表-->
             <div class="widget-body  widget-body-lg am-fr" style="min-height: 750px;">
-              <table width="100%" style="margin-bottom:50px;"
-                     class="am-table am-table-compact am-text-nowrap tpl-table-black " id="example-r">
-                <!--头标签-->
+              <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                 <thead>
                 <tr>
                   <th>序号</th>
@@ -49,7 +49,7 @@
                 </thead>
                 <!--body内容标签-->
                 <tbody>
-                <tr v-for="(item,index) in showTable" v-show="currentClass == item.sClass || currentClass === ''">
+                <tr class="even gradeX" v-for="(item,index) in showTable" v-show="currentClass == item.sClass || currentClass === ''">
                   <td>{{index+1}}</td>
                   <td>{{ item.sId }}</td>
                   <td>{{ item.sClass }}</td>
@@ -57,11 +57,11 @@
                   <td>{{ item.leStartTime | dateFormat }}-{{item.leEndTime | dateFormat}}</td>
                   <td>{{ item.trainingApply.apCompany }}</td>
                   <td>{{ item.leStatus }}</td>
-                  <td style="white-space: nowrap">
+                  <td>
                     <span v-show="item.leStatus == 0">等待辅导员审批</span>
                     <span v-show="item.leStatus == 1">等待指导教师审批</span>
                     <span v-show="item.leStatus == 2">等待专业负责人审批</span>
-                    <span v-show="item.leStatus == 3" style="color:#5bbfdd">审核已通过</span>
+                    <span v-show="item.leStatus == 3" style="color:#67c13a">审核已通过</span>
                     <span v-show="item.leStatus == -1" style="color:red;">辅导员审批未通过</span>
                     <span v-show="item.leStatus == -2" style="color:red;">指导教师审批未通过</span>
                     <span v-show="item.leStatus == -3" style="color:red;">专业负责人审批未通过</span>
@@ -92,7 +92,6 @@
                   </td>
                 </tr>
                 </tbody>
-
               </table>
 
               <h3 v-if="showTable.length === 0 && currentStatus == 1" style="text-align: center;margin-top: 200px">
@@ -208,8 +207,7 @@
             confirmButtonText: "确认",
             cancelButtonText: "取消",
             type: "warning"
-          })
-            .then(() => {
+          }).then(() => {
               data = this.$qs.stringify({
                 tId: sessionStorage.username,
                 leId: leId,
@@ -218,9 +216,7 @@
                 sId: sId,
                 title: title
               });
-              this.$axios
-                .post("/leave-service/v1/leave/examine", data)
-                .then(res => {
+              this.$axios.post("/leave-service/v1/leave/examine", data).then(res => {
                   if (res.data.resultCode === 200) {
                     this.allLeaves = res.data.result.allLeaves;
                     this.needExamineLeaves = res.data.result.needExamineLeaves;
@@ -230,16 +226,14 @@
                       message: "操作成功"
                     });
                   }
-                })
-                .catch(error => {
+                }).catch(error => {
                   console.log(error);
                   this.$notify({
                     type: "error",
                     message: "审核失败"
                   });
                 });
-            })
-            .catch(() => {
+            }).catch(() => {
               this.$notify({
                 type: "info",
                 message: "已取消",
@@ -306,7 +300,9 @@
 
 <style scoped>
   tr td {
-    font-size: 12px !important;
+    font-size: 14px !important;
+    height: 17px;
+
   }
 
   tr {

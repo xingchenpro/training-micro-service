@@ -5,9 +5,8 @@
         <!--斑马线-->
         <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
           <div class="widget am-cf">
-            <div
-              class="widget-head am-cf"
-              style="display: flex;border-bottom:none;">
+
+            <div class="widget-head am-cf" style="display: flex;border-bottom:none;">
               <div class="widget-title am-fl" style="flex:0.6">
                 <el-tabs v-model="currentStatus">
                   <el-tab-pane label="查看全部学生" name="全部"></el-tab-pane>
@@ -46,12 +45,9 @@
                 </el-select>
               </div>
             </div>
+
             <div class="widget-body  widget-body-lg am-fr" style="min-height: 785px">
-              <table
-                width="100%"
-                class="am-table am-table-compact am-table-striped tpl-table-black "
-                style="table-layout:fixed"
-                id="example-r">
+              <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " style="table-layout:fixed" id="example-r">
                 <thead>
                 <tr>
                   <th>序号</th>
@@ -74,8 +70,8 @@
                   <td>{{ item.student.sPhone }}</td>
                   <td>{{ item.title }}</td>
                   <td>{{ showTeaName(item.tutor) }}</td>
-                <!--  <td>{{ item.weekSummaryCount }}</td>
-                  <td>{{ item.trainingReportStatus }}</td>-->
+                  <!--  <td>{{ item.weekSummaryCount }}</td>
+                    <td>{{ item.trainingReportStatus }}</td>-->
                 </tr>
                 </tbody>
               </table>
@@ -91,7 +87,7 @@
   export default {
     data() {
       return {
-        currentStatus:"全部",
+        currentStatus: "全部",
         currentClass: "",
         currentTeacher: "",
         teachers: [],
@@ -104,14 +100,14 @@
       this.classes = JSON.parse(sessionStorage.classes);
       this.teachers = JSON.parse(sessionStorage.teachers);
       this.$axios.get("/training-service/v1/training/training/info").then(res => {
-          if (res.data.resultCode === 200) {
-            console.log(res.data.result);
-            this.trainingStudentsInfo = res.data.result.trainingInfo;
-            console.log(this.trainingStudentsInfo);
-          }
-        }).catch(err => {
-          console.log(err);
-        });
+        if (res.data.resultCode === 200) {
+          console.log(res.data.result);
+          this.trainingStudentsInfo = res.data.result.trainingInfo;
+          console.log(this.trainingStudentsInfo);
+        }
+      }).catch(err => {
+        console.log(err);
+      });
     },
     computed: {
       currentTable() {

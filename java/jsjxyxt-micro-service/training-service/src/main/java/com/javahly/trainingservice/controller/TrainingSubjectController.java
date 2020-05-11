@@ -162,10 +162,16 @@ public class TrainingSubjectController {
         }
         //专业负责人审核多个课题
         if (role.equals("4")) {
-            //TODO 根据教师号获得专业号
-            trainingSubjectService.updateTrainingSubjectsStatus(examine.getsIds(), examine.getStatus(), examine.getReason());
-            //根据指导教师查询课题
-            List<TrainingSubject> subjects = trainingSubjectService.getTrainingSubjectsByTId(examine.getTutor());
+            if (examine.getsIds().size() == 0) {
+                //审核单个课题
+                trainingSubjectService.updateTrainingSubjectStatus(examine.getsId(), examine.getStatus(), examine.getReason());
+                log.info("TrainingSubjectController：updateTrainingSubject：单个课题：{}",examine.getsId());
+            } else {
+                trainingSubjectService.updateTrainingSubjectsStatus(examine.getsIds(), examine.getStatus(), examine.getReason());
+            }
+            String specId = "101";
+            //TODO 根据专业号查询课题
+            List<TrainingSubject> subjects = trainingSubjectService.getTrainingSubjectsBySpecId(specId);
             //远程调用获得学生信息
             Map<String, Student> studentHash = basicInformationService.getHashStudents();
             for (int i = 0; i < subjects.size(); i++) {

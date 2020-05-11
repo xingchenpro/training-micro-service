@@ -17,7 +17,7 @@
               <div class="widget-function am-fr" style="flex:0.1;">
                 <form role="form" class="form-inline">
                   <div class="form-group">
-                    <button class="btn btn-info" style="margin-top: 5px" v-show="currentStatus == 1" @click="batchEaxm">
+                    <button class="btn btn-info" style="margin-top: 5px" v-show="currentStatus == 1" @click="batchExam">
                       批量批准
                     </button>
                   </div>
@@ -96,7 +96,7 @@
         role: Number,
         allChecked: 0, //标识全选
         allSelectedItem: [], //存放被勾选的项目
-        currentStatus: "all",
+        currentStatus: "1",
         count: Number,
         subjects: []//后端查询的课题
       };
@@ -138,23 +138,22 @@
           this.allSelectedItem = [];
         }
       },
-      //批量审核
-      batchEaxm() {
+      //批量批准
+      batchExam() {
         //直接把选中的学号数组传给后台即可
         this.$confirm('确认操作？', {
           confirmButtonText: '确认',
           cancelButtonText: '取消'
         }).then(() => {
           var data = {
-            subjects: JSON.stringify(this.allSelectedItem),//数组传递失败，只能暂时转成字符串进行传递
+            sIds: this.allSelectedItem,//数组传递失败，只能暂时转成字符串进行传递
             role: 4,
             status: 2
           };
           console.log(data);
           this.$axios.put('/training-service/v1/training/examine/subject', data,).then((res) => {
-            this.loading = false;
             if (res.data.resultCode === 200) {
-              this.subjects = res.data.result.trainingSubjects;
+              this.subjects = res.data.result.subjects;
               this.allSelectedItem = [];
               this.$notify({
                 type: 'success',
@@ -186,14 +185,13 @@
             inputType: 'textarea'
           }).then(({value}) => {
             data = {
-              subjects: JSON.stringify([item.sId]),//这里只是传个账号，只是为了和批量审核共用一个接口，所以字段名是这个
+              sId: item.sId,//这里只是传个账号，只是为了和批量审核共用一个接口，所以字段名是这个
               role: 4,
               status: status,
-              reason: value
+              reason: value,
+              sIds: []
             };
-            this.$axios
-              .post("/training-service/v1/training/examine/subject", data)
-              .then(res => {
+            this.$axios.put("/training-service/v1/training/examine/subject", data).then(res => {
                 if (res.data.resultCode === 200) {
                   this.subjects = res.data.result.subjects;
                   this.$notify({
@@ -201,8 +199,7 @@
                     message: "操作成功"
                   });
                 }
-              })
-              .catch(error => {
+              }).catch(error => {
                 console.log(error);
                 this.$notify({
                   type: "error",
@@ -223,34 +220,30 @@
             confirmButtonText: "确认",
             cancelButtonText: "取消",
             type: "warning"
-          })
-            .then(() => {
-              data = this.$qs.stringify({
-                examineStudentSubjects: JSON.stringify([item.sId]),
+          }).then(() => {
+              data = {
+                sId: item.sId,
                 role: 4,
                 status: status,
-              });
-              this.$axios
-                .post("/apiTraining/examineSubject", data)
-                .then(res => {
+                sIds: []
+              };
+              this.$axios.put("/training-service/v1/training/examine/subject", data).then(res => {
                   console.log(res);
                   if (res.data.resultCode === 200) {
-                    this.subjects = res.data.result.trainingSubjects;
+                    this.subjects = res.data.result.subjects;
                     this.$notify({
                       type: "success",
                       message: "操作成功"
                     });
                   }
-                })
-                .catch(error => {
+                }).catch(error => {
                   console.log(error);
                   this.$notify({
                     type: "error",
                     message: "审核失败"
                   });
                 });
-            })
-            .catch(() => {
+            }).catch(() => {
               this.$notify({
                 type: "info",
                 message: "已取消",
