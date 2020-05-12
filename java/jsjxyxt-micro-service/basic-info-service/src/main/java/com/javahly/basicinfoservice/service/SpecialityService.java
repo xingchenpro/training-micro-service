@@ -1,6 +1,7 @@
 package com.javahly.basicinfoservice.service;
 
 import com.javahly.basicinfoservice.entity.Speciality;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,4 +21,10 @@ public interface SpecialityService {
      */
     List<Speciality> getSpecialities();
 
+    /**
+     * 根据教师号查询专业信息
+     * @param tId
+     * @return
+     */
+    String getSpecialityIdByTeacherId(String tId);
 }

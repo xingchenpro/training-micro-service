@@ -31,8 +31,17 @@
         <foreach collection="studentIds" item="id" open="(" close=")" index="index" separator=",">
             #{id}
         </foreach>
-
     </select>
+
+    <!--根据教师号查询班级再查询该班级下的学生-->
+    <select id="getStudentByTeacherClass" resultType="student">
+        SELECT
+        s_id sId,s_name sName,s_sex sSex,s_identitycard sIdentitycard,
+        s_email sEmail,s_phone sPhone,s_address sAddress,s_remark sRemark,student.c_id cId,student.spec_id specId
+        FROM teacher,class,student
+        WHERE teacher.t_id = class.t_id AND student.c_id = class.c_id AND teacher.t_id =#{tId}
+    </select>
+
     <!--学生修改信息-->
     <update id="updateStudent" parameterType="student">
         UPDATE student

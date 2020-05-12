@@ -1,6 +1,7 @@
 package com.javahly.basicinfoservice.dao;
 
 import com.javahly.basicinfoservice.entity.Speciality;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -21,4 +22,11 @@ public interface SpecialityDao {
      * 查询所有专业信息
      */
     List<Speciality> getSpecialities();
+
+    /**
+     * 根据教师号查询专业信息
+     * @param tId
+     * @return
+     */
+    String getSpecialityIdByTeacherId(@Param("tId") String tId);
 }

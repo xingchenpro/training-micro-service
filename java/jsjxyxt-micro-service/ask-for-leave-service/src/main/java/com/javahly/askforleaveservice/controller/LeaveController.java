@@ -115,8 +115,6 @@ public class LeaveController {
         List<Leave> needExamineLeaves;
         //已经审核
         List<Leave> examinedLeaves;
-        //TODO 远程调用专业信息
-        Integer specId = 101;
 
         //辅导员
         if (role == 2) {
@@ -132,8 +130,11 @@ public class LeaveController {
         }
         //专业负责人
         if (role == 4) {
-            needExamineLeaves = leaveService.getLeaves(leStatus, specId);
-            examinedLeaves = leaveService.getExaminedLeavesInfo(leStatus + 1, specId);
+            //远程调用专业信息
+            String specId = basicInfoService.getSpecialityId(tId);
+            //这里 specId 需要转化一下类型
+            needExamineLeaves = leaveService.getLeaves(leStatus, Integer.valueOf(specId));
+            examinedLeaves = leaveService.getExaminedLeavesInfo(leStatus + 1, Integer.valueOf(specId));
             result.setResult(matchingStudentInfo(allLeaves, needExamineLeaves, examinedLeaves, students));
         }
         return result;
@@ -183,8 +184,7 @@ public class LeaveController {
         List<Leave> needExamineLeaves;
         //已经审核
         List<Leave> examinedLeaves;
-        //TODO 远程调用专业信息
-        String specId = "101";
+
         if (role == 2) {
             leaveService.updateExamineStatus(leStatus, leId, leBackReason);
             //获得查询请假信息
@@ -204,6 +204,8 @@ public class LeaveController {
         }
         //专业负责人
         if (role == 4) {
+            //远程调用专业信息
+            String specId = basicInfoService.getSpecialityId(tId);
             //leaveService.updateExamineStatus(leStatus, leId, leBackReason);
             //专业负责人审核通过后更新实训表
             TrainingSubject subject = new TrainingSubject();
@@ -211,11 +213,12 @@ public class LeaveController {
             subject.setTitle(title);
             subject.setTutor(tId);
             subject.setSpecId(specId);
-            subjectMqService.save(subject,leStatus,leId,leBackReason);
+            subjectMqService.save(subject, leStatus, leId, leBackReason);
             //获得查询请假信息
             leStatus = LeaveStatusEnum.getStatus(role);
-            needExamineLeaves = leaveService.getLeaves(leStatus, specId);
-            examinedLeaves = leaveService.getExaminedLeavesInfo(leStatus + 1, specId);
+            //这里 specId 需要转化一下类型
+            needExamineLeaves = leaveService.getLeaves(leStatus, Integer.valueOf(specId));
+            examinedLeaves = leaveService.getExaminedLeavesInfo(leStatus + 1, Integer.valueOf(specId));
             result.setResult(matchingStudentInfo(allLeaves, needExamineLeaves, examinedLeaves, students));
 
         }

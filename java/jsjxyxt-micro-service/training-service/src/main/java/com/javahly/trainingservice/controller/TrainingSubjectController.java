@@ -126,8 +126,9 @@ public class TrainingSubjectController {
             result.setResult(resultMap);
         }
         if (role == 4) {
-            //TODO 根据教师号获得专业
-            String specId = "101";
+            //根据教师号获得专业
+            //远程调用专业信息
+            String specId = basicInformationService.getSpecialityId(tId);
             //根据专业号查询课题
             List<TrainingSubject> subjects = trainingSubjectService.getTrainingSubjectsBySpecId(specId);
             //远程调用学生信息
@@ -169,8 +170,9 @@ public class TrainingSubjectController {
             } else {
                 trainingSubjectService.updateTrainingSubjectsStatus(examine.getsIds(), examine.getStatus(), examine.getReason());
             }
-            String specId = "101";
-            //TODO 根据专业号查询课题
+            //远程调用专业信息
+            String specId = basicInformationService.getSpecialityId(examine.getTutor());
+            //根据专业号查询课题
             List<TrainingSubject> subjects = trainingSubjectService.getTrainingSubjectsBySpecId(specId);
             //远程调用获得学生信息
             Map<String, Student> studentHash = basicInformationService.getHashStudents();
@@ -194,8 +196,9 @@ public class TrainingSubjectController {
     public Result getStudentTrainingInfo(String tId) {
         Result result = new Result();
         Map<String, Object> resultMap = new HashMap<>();
-        //TODO 获得该教师的专业号
-        String specId = "101";
+        //获得该教师的专业号
+        //远程调用专业信息
+        String specId = basicInformationService.getSpecialityId(tId);
         //根据专业号获得课题信息
         List<TrainingSubject> trainingSubjects = trainingSubjectService.getTrainingSubjectsBySpecId(specId);
         Map<String, Student> studentHash = basicInformationService.getHashStudents();
@@ -222,8 +225,9 @@ public class TrainingSubjectController {
         log.info("updateStudentTrainingTeacher：{}", distribution.getStudents());
         trainingSubjectService.updateTeacher(distribution.gettId(), distribution.getStudents());
         leaveService.updateStudentTrainingTeacher(distribution);
-        //TODO 根据教师ID查找专业号
-        String specId = "101";
+        //根据教师ID查找专业号
+        //远程调用专业信息
+        String specId = basicInformationService.getSpecialityId(distribution.gettId());
         List<TrainingSubject> trainingSubjects = trainingSubjectService.getTrainingSubjectsBySpecId(specId);
         Map<String, Student> studentHash = basicInformationService.getHashStudents();
         for (int i = 0; i < trainingSubjects.size(); i++) {

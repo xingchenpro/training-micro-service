@@ -34,6 +34,13 @@ public interface StudentService {
     public List<Student> getStudentByIds(List<String> studentIds);
 
     /**
+     * 根据教师号查询班级再查询学生
+     * @param tId
+     * @return
+     */
+    public List<Student> getStudentByTeacherClass(String tId);
+
+    /**
      * 修改学生信息
      */
     public int updateStudent(Student student);

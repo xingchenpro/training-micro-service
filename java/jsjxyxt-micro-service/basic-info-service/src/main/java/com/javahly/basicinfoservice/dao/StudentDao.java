@@ -31,6 +31,13 @@ public interface StudentDao {
     public List<Student> getStudentByIds(@Param("studentIds") List<String> studentIds);
 
     /**
+     * 根据教师号查询班级再查询学生
+     * @param tId
+     * @return
+     */
+    public List<Student> getStudentByTeacherClass(@Param("tId") String tId);
+
+    /**
      * 根据学号查询单个学生信息
      */
     public Student getStudent(@Param("sId") String sId);

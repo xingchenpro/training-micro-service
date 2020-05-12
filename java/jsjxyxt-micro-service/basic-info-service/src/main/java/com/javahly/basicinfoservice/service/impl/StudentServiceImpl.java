@@ -39,6 +39,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public List<Student> getStudentByTeacherClass(String tId) {
+        return studentDao.getStudentByTeacherClass(tId);
+    }
+
+    @Override
     public int updateStudent(Student student) {
         return studentDao.updateStudent(student);
     }

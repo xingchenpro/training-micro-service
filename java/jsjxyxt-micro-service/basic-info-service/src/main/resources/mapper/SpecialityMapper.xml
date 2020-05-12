@@ -13,5 +13,13 @@
         FROM speciality
     </select>
 
+    <!--根据教师号查询专业信息-->
+    <select id="getSpecialityIdByTeacherId" resultType="String">
+        SELECT
+        spec_id specId
+        FROM speciality,teacher
+        WHERE speciality.t_id = teacher.t_id AND teacher.t_id = #{tId}
+    </select>
+
 
 </mapper>

@@ -77,6 +77,17 @@ public class StudentController {
         return students;
     }
 
+    /**
+     * 根据教师号查询班级再查询该班级学生
+     * @return
+     */
+    @RequestMapping(value = "/class/students",method = RequestMethod.GET)
+    public List<Student> getStudentByTeacherClass(@RequestParam("tId")String tId) {
+        log.info("StudentController：getStudentByTeacherClass：{}",tId);
+        List<Student> students = studentService.getStudentByTeacherClass(tId);
+        return students;
+    }
+
 
     /**
      * 根据学号获取单个学生信息

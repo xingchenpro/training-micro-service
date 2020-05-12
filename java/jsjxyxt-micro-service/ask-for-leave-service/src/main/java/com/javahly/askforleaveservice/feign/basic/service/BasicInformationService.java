@@ -1,5 +1,6 @@
 package com.javahly.askforleaveservice.feign.basic.service;
 
+import com.javahly.askforleaveservice.feign.basic.entity.Speciality;
 import com.javahly.askforleaveservice.feign.basic.entity.Student;
 import com.javahly.askforleaveservice.feign.basic.entity.Teacher;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -27,6 +28,9 @@ public interface BasicInformationService {
 
     @RequestMapping(value = "/v1/info/students", method = RequestMethod.GET)
     List<Student> getStudents();
+
+    @RequestMapping(value = "/v1/info/speciality", method = RequestMethod.GET)
+    String getSpecialityId(@RequestParam("tId") String tId);
 
     @RequestMapping(value = "/v1/info/part/students",method = RequestMethod.POST)
     @ResponseBody
