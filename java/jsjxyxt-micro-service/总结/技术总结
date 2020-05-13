@@ -57,3 +57,26 @@ List<Student> getStudentByIds(@RequestBody List<String> studentIds);
 ---
 10、Array 转 String []
 https://blog.csdn.net/jk_wzw/article/details/79768147
+
+11、活动图
+https://blog.csdn.net/weixin_34081595/article/details/86024993
+
+
+12、最小堆，最大堆大小
+设置参数：http://www.imooc.com/wenda/detail/440497
+JVM参数：https://www.cnblogs.com/jinanxiaolaohu/p/12602791.html
+元空间：https://www.cnblogs.com/duanxz/p/3520829.html
+
+-XX:MetaspaceSize=56m -XX:MaxMetaspaceSize=56m -Xms256m -Xmx256m -Xmn128m -Xss256k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC
+
+-XX:MetaspaceSize=128m：元空间默认大小//默认20，建议和 MaxMetaspaceSize 一样大
+-XX:MaxMetaspaceSize=128m：元空间最大大小//默认没有限制
+-Xms256m：堆最大大小//默认1/64
+-Xmx256m：堆默认大小//默认1/4
+-Xmn128m：新生代大小
+-Xss256k：栈最大深度大
+-XX:SurvivorRatio=8：新生代分区比例 8:2,Eden则会分配 128M * 0.8
+-XX:+UseConcMarkSweepGC：指定使用的垃圾收集器，这里使用CMS收集器
+
+13、PostMan卡
+https://blog.csdn.net/lizongbao1234567890/article/details/101015782

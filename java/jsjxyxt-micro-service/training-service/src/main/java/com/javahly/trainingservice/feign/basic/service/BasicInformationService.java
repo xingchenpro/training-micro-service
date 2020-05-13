@@ -25,6 +25,9 @@ public interface BasicInformationService {
     @RequestMapping(value = "/v1/info/students", method = RequestMethod.GET)
     List<Student> getStudents();
 
+    @RequestMapping(value = "/v1/info/class/students", method = RequestMethod.GET)
+    List<String> getStudentByTeacherClass(@RequestParam("tId")String tId);
+
     @RequestMapping(value = "/v1/info/hash/students", method = RequestMethod.GET)
     Map<String,Student> getHashStudents();
 

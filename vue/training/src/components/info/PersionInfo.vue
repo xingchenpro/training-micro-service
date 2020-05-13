@@ -92,6 +92,7 @@
       this.$axios.get("/basic-service/v1/info/student", {
         params: {
           sId: this.username,
+          /*access_token:sessionStorage.token,*/
         },
       }).then(res => {
         console.log(res);

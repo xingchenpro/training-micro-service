@@ -1,6 +1,7 @@
 package com.javahly.trainingservice.controller;
 
 import com.javahly.trainingservice.entity.WeekSummary;
+import com.javahly.trainingservice.feign.basic.service.BasicInformationService;
 import com.javahly.trainingservice.feign.leave.service.LeaveService;
 import com.javahly.trainingservice.service.WeekSummaryService;
 import com.javahly.trainingservice.util.Result;
@@ -31,6 +32,9 @@ public class WeekSummaryController {
     @Autowired
     LeaveService leaveService;
 
+    @Autowired
+    BasicInformationService basicInformationService;
+
     //查询个人周总结
     @RequestMapping(value = "/weekSummary", method = RequestMethod.GET)
     public Result getWeekSummaryInfoByStudentId(String sId) {
@@ -57,12 +61,26 @@ public class WeekSummaryController {
     public Result getWeekSummaryInfo(int role, String tId) {
         Result result = new Result();
         Map<String, Object> resultMap = new HashMap<>();
-        List<String> sIds = leaveService.getStudentIdsByTeacherId(tId);
-        log.info("LeaveService：sIds：{}",sIds);
-        List<List<WeekSummary>> weekSummaries = weekSummaryService.getWeekSummariesInfoByStudentIds(sIds);
-        log.info("LeaveService：weekSummaries：{}",weekSummaries);
-        resultMap.put("weekSummaries",weekSummaries);
-        result.setResult(resultMap);
+        //远程调用指导教师学生ID集合
+        if (role == 3) {
+            List<String> sIds = leaveService.getStudentIdsByTeacherId(tId);
+            log.info("LeaveService：sIds：{}", sIds);
+            if(!sIds.isEmpty()){
+                List<List<WeekSummary>> weekSummaries = weekSummaryService.getWeekSummariesInfoByStudentIds(sIds);
+                log.info("LeaveService：weekSummaries：{}", weekSummaries);
+                resultMap.put("weekSummaries", weekSummaries);
+            }else{
+                resultMap.put("weekSummaries", null);
+            }
+            result.setResult(resultMap);
+        } else if (role == 5) {
+            List<String> sIds = basicInformationService.getStudentByTeacherClass(tId);
+            log.info("LeaveService：sIds：{}", sIds);
+            List<List<WeekSummary>> weekSummaries = weekSummaryService.getWeekSummariesInfoByStudentIds(sIds);
+            log.info("LeaveService：weekSummaries：{}", weekSummaries);
+            resultMap.put("weekSummaries", weekSummaries);
+            result.setResult(resultMap);
+        }
         return result;
     }
 }

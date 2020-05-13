@@ -52,6 +52,7 @@
         WHERE w.s_id IN
         <foreach collection="studentIds" item="id" separator="," open="(" close=")" index="index">
             #{id}
-        </foreach> GROUP BY w.s_id
+        </foreach>
+        GROUP BY w.s_id
     </select>
 </mapper>

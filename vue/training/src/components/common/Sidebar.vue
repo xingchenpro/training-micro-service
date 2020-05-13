@@ -108,7 +108,7 @@
         <router-link :to="{ path : '/home/training/subjects',query: { currentRole: 3 }}">
           <el-menu-item index="1-2">实训课题审核</el-menu-item>
         </router-link>
-        <router-link to="/home/training/WeekSummaries">
+        <router-link :to="{ path : '/home/training/WeekSummaries',query: { currentRole: 3 }}">
           <el-menu-item index="1-1">学生周总结</el-menu-item>
         </router-link>
       </el-submenu>
@@ -147,12 +147,12 @@
           <i class="el-icon-location"></i>
           <span>班级管理</span>
         </template>
-        <router-link to="/home/training/WeekSummaries">
+        <router-link :to="{ path : '/home/training/WeekSummaries',query: { currentRole: 5 }}">
           <el-menu-item index="1-1">学生周总结</el-menu-item>
         </router-link>
-        <router-link :to="{ path : '/home/training/subjects'}">
+       <!-- <router-link :to="{ path : '/home/training/subjects'}">
           <el-menu-item index="1-2">学生实训课题</el-menu-item>
-        </router-link>
+        </router-link>-->
         <!--<el-menu-item index="1-3">学生实训情况</el-menu-item>-->
         <!-- <el-menu-item index="1-4">实训报告管理</el-menu-item>-->
       </el-submenu>

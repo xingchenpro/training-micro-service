@@ -10,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 /**
  * 　　　　　　　   ┏┓　   ┏┓+ +
@@ -40,6 +41,7 @@ import org.springframework.context.annotation.Bean;
 @EnableApolloConfig
 @EnableFeignClients
 //@EnableDistributedTransaction//分布式事务
+@EnableResourceServer
 public class AskForLeaveServiceApplication {
 
     public static void main(String[] args) {

@@ -35,7 +35,7 @@ public interface StudentDao {
      * @param tId
      * @return
      */
-    public List<Student> getStudentByTeacherClass(@Param("tId") String tId);
+    public List<String> getStudentByTeacherClass(@Param("tId") String tId);
 
     /**
      * 根据学号查询单个学生信息

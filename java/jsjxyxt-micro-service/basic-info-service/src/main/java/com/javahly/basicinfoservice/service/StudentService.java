@@ -38,7 +38,7 @@ public interface StudentService {
      * @param tId
      * @return
      */
-    public List<Student> getStudentByTeacherClass(String tId);
+    public List<String> getStudentByTeacherClass(String tId);
 
     /**
      * 修改学生信息

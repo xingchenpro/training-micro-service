@@ -46,3 +46,4 @@ export default new Router({
     {path: "/error/limit", component: LimitError, meta: {requireAuth: true}},
   ]
 });
+

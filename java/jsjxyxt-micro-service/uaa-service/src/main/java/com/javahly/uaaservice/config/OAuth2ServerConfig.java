@@ -2,7 +2,6 @@ package com.javahly.uaaservice.config;
 
 import com.javahly.uaaservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -88,7 +87,7 @@ public class OAuth2ServerConfig {
                     .authorities("oauth2")
                     //客户端密码
                     .secret(finalSecret)
-                    .accessTokenValiditySeconds(2 * 3600);//2小时过期
+                    .accessTokenValiditySeconds(120);//2小时过期
 
 
         }

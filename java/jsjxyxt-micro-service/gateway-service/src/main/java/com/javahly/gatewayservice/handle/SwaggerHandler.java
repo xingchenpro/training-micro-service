@@ -18,7 +18,7 @@ import java.util.Optional;
  * @CSDN :blog.csdn.net/Sirius_hly
  * @date :2020/4/29
  * @QQ :1136513099
- * @desc :
+ * @desc : 提供访问权限
  */
 @RestController
 @RequestMapping("/swagger-resources")

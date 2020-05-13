@@ -82,9 +82,9 @@ public class StudentController {
      * @return
      */
     @RequestMapping(value = "/class/students",method = RequestMethod.GET)
-    public List<Student> getStudentByTeacherClass(@RequestParam("tId")String tId) {
+    public List<String> getStudentByTeacherClass(@RequestParam("tId")String tId) {
         log.info("StudentController：getStudentByTeacherClass：{}",tId);
-        List<Student> students = studentService.getStudentByTeacherClass(tId);
+        List<String> students = studentService.getStudentByTeacherClass(tId);
         return students;
     }
 

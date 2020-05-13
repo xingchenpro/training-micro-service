@@ -38,7 +38,7 @@
     data() {
       return {
         loginForm: {
-          username: '110086',
+          username: '201611104033',
           password: '123'
         },
       }
@@ -74,11 +74,9 @@
               //alert(roles);
               sessionStorage.setItem('roles', roles);
               sessionStorage.setItem('token', resp.data.result.accessToken);
-              //alert(sessionStorage.getItem("token"))
+              alert(sessionStorage.getItem("token"))
               this.$router.replace({path: '/home'});
-            } else if (resp.data.resultCode === 403) {
-              this.$router.replace({path: '/error/limit'});
-            } else {
+            }else {
               this.$notify({
                 message: '登录失败',
                 type: 'error',

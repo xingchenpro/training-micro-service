@@ -8,6 +8,7 @@
           <div class="widget am-cf">
             <div class="widget-head am-cf">
               <div class="widget-title" style="text-align: center;font-weight: 700;color: black">我的学生</div>
+              {{showRole}}
             </div>
             <div class="widget-body am-fr" style="height: 790px">
               <ul>
@@ -112,21 +113,22 @@
   export default {
     data() {
       return {
+        currentRole: "",
         activeIndex:1,
         currentSId:'201611104033',
         currentWeekCount:17,
         currentName:'黄良运',
         currentWeek:Number,
-        weekSummaries:[
-        ],
+        weekSummaries:[],
       };
     },
 
     //初始化
     created() {
+      this.currentRole = this.$route.query.currentRole;
       this.currentWeek = Number(sessionStorage.getItem("currentWeek"));
       this.activeIndex = this.currentWeek;
-      var url = "/training-service/v1/training/weekSummaries?tId=" + sessionStorage.getItem("username")+"&role="+sessionStorage.getItem("role");
+      var url = "/training-service/v1/training/weekSummaries?tId=" + sessionStorage.getItem("username")+"&role="+this.currentRole;
       this.$axios.get(url).then(res => {
         if (res.data.resultCode === 200) {
           this.currentWeek = sessionStorage.currentWeek;
@@ -135,8 +137,7 @@
         } else {
           console.log(res);
         }
-      })
-        .catch(error => {
+      }).catch(error => {
           console.log(error);
         });
     },
@@ -201,8 +202,24 @@
             return this.weekSummaries[i].weekSummaries;
           }
         }
+      },
+      //监听角色的变化发送请求
+      showRole() {
+        this.currentRole = this.$route.query.currentRole;
+        var url = "/training-service/v1/training/weekSummaries?tId=" + sessionStorage.getItem("username")+"&role="+this.currentRole;
+        this.$axios.get(url).then(res => {
+          if (res.data.resultCode === 200) {
+            this.weekSummaries = res.data.result.weekSummaries;
+            this.currentSId=res.data.result.weekSummaries[0].sId
+          } else {
+            console.log(res);
+          }
+        }).catch(error => {
+          console.log(error);
+        });
       }
     },
+
   }
 </script>
 
@@ -214,7 +231,7 @@
       width: 150px;
       background-color: #fcfffd;
       max-height: 760px;
-      overflow:hidden;
+      overflow:auto;
     }
 
   li {
