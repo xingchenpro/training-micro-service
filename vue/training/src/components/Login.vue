@@ -1,7 +1,9 @@
 <template>
 
   <div id="login_content">
+
     <div id="window">
+
       <div class="page page-front">
         <div class="page-content">
           <div class="input-row">
@@ -73,8 +75,9 @@
               }
               //alert(roles);
               sessionStorage.setItem('roles', roles);
-              sessionStorage.setItem('token', resp.data.result.accessToken);
-              alert(sessionStorage.getItem("token"))
+              sessionStorage.setItem('username', resp.data.result.userId);
+              sessionStorage.setItem('token', resp.data.result.token);
+              alert(sessionStorage.getItem("token")+"："+sessionStorage.getItem("username"))
               this.$router.replace({path: '/home'});
             }else {
               this.$notify({

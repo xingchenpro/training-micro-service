@@ -332,14 +332,13 @@
       //获取教师信息
       this.teachers = JSON.parse(sessionStorage.teachers);
       //查询单位
-      this.$axios
-        .get("/training-service/v1/training/units").then(res => {
+      this.$axios.get("/training-service/v1/training/units"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token")).then(res => {
         this.companies = res.data; //拿到公司信息
       }).catch(err => {
         console.log(err);
       });
       //如果有数据则显示
-      var url = "/leave-service/v1/leave/leave?sId=" + this.sId;
+      var url = "/leave-service/v1/leave/leave?sId=" + this.sId+"&username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
       this.$axios
         .get(url)
         .then(res => {
@@ -427,7 +426,7 @@
                     console.log(data1);
                     var data = this.$qs.stringify(data1);
                     this.$axios
-                      .post("/leave-service/v1/leave/leave", data)
+                      .post("/leave-service/v1/leave/leave"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"), data)
                       .then(res => {
                         if (res.data.resultCode === 200) {
                           this.loading = false; //关闭等待

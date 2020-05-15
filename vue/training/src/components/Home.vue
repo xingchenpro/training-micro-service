@@ -37,13 +37,13 @@
     },
     created() {
 
-      this.$axios.get('/basic-service/v1/info/teachers').then( (res)=>{
+      this.$axios.get('/basic-service/v1/info/teachers'+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token")).then( (res)=>{
         sessionStorage.setItem('teachers',JSON.stringify(res.data));
       }).catch( (err)=>{
         console.log(err);
       });
 
-      this.$axios.get('/basic-service/v1/info/classes').then( (res)=>{
+      this.$axios.get('/basic-service/v1/info/classes'+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token")).then( (res)=>{
         sessionStorage.setItem('classes',JSON.stringify(res.data));
       }).catch( (err)=>{
         console.log(err);

@@ -1,4 +1,5 @@
 package com.javahly.gatewayservice.filter;
+
 import com.javahly.gatewayservice.util.SpringBeanUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -24,10 +25,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.server.ServerWebExchange;
 
 import reactor.core.publisher.Mono;
-
-import javax.annotation.Resource;
 import java.nio.charset.StandardCharsets;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author :hly
@@ -55,21 +53,21 @@ public class TokenGlobalFilter implements GatewayFilter, Ordered {
         String token = request.getQueryParams().getFirst(AUTHORIZE_TOKEN);
         String id = DigestUtils.md5Hex(request.getQueryParams().getFirst(AUTHORIZE_USERNAME));
         log.info("id：{},token：{}", id, token);
-        if (!StringUtils.isEmpty(id)&&redisTemplate.hasKey(id)) {
+        if (!StringUtils.isEmpty(id) && redisTemplate.hasKey(id)) {
             String existToken = redisTemplate.opsForValue().get(id);
             if (!StringUtils.isEmpty(existToken) && !StringUtils.isEmpty(token) && token.equals(existToken)) {
                 log.info("网关校验成功");
                 return chain.filter(exchange);
             }
         }
-            log.info("网关校验失败");
-            ServerHttpResponse response = exchange.getResponse();
-            Result result = new Result(401);
-            byte[] datas = JSON.toJSON(result).toString().getBytes(StandardCharsets.UTF_8);
-            DataBuffer buffer = response.bufferFactory().wrap(datas);
-            response.setStatusCode(HttpStatus.UNAUTHORIZED);
-            response.getHeaders().add("Content-Type", "application/json;charset=UTF-8");
-            return response.writeWith(Mono.just(buffer));
+        log.info("网关校验失败");
+        ServerHttpResponse response = exchange.getResponse();
+        Result result = new Result(401);
+        byte[] datas = JSON.toJSON(result).toString().getBytes(StandardCharsets.UTF_8);
+        DataBuffer buffer = response.bufferFactory().wrap(datas);
+        response.setStatusCode(HttpStatus.UNAUTHORIZED);
+        response.getHeaders().add("Content-Type", "application/json;charset=UTF-8");
+        return response.writeWith(Mono.just(buffer));
 
     }
 

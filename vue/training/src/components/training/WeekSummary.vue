@@ -97,7 +97,7 @@
     created() {
       this.currentWeek = Number(sessionStorage.getItem("currentWeek"));
       this.activeIndex = this.currentWeek;
-      var url = "/training-service/v1/training/weekSummary?sId=" + sessionStorage.getItem("username");
+      var url = "/training-service/v1/training/weekSummary?sId=" + sessionStorage.getItem("username")+"&username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
       this.$axios.get(url).then(res => {
         if (res.data.resultCode === 200) {
           this.weekSummary = res.data.result.weekSummary;
@@ -130,7 +130,7 @@
           };
           console.log(data);
           this.$axios
-            .post("/training-service/v1/training/weekSummary", data)
+            .post("/training-service/v1/training/weekSummary"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"), data)
             .then(res => {
               if (res.data.resultCode === 200) {
                 this.$notify({

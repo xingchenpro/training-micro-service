@@ -145,7 +145,7 @@
       }).catch((err) => {
         console.log(err);
       });
-      var url = "/training-service/v1/training/subject?sId=" + sessionStorage.username;
+      var url = "/training-service/v1/training/subject?sId=" + sessionStorage.username+"&username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
       //查看实训课题
       this.$axios.get(url).then((res) => {
         if (res.data.resultCode === 200) {
@@ -173,7 +173,7 @@
                 plan:this.subject.plan,
                 assessmentRequirement:this.subject.assessmentRequirement,
               };
-              this.$axios.put('/training-service/v1/training/subject',data).then( (res)=>{
+              this.$axios.put('/training-service/v1/training/subject'+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"),data).then( (res)=>{
                 if(res.data.resultCode===200){
                   console.log(res);
                   this.subject = res.data.result.subject;

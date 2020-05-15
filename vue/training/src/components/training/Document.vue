@@ -47,7 +47,7 @@
     },
     methods: {
       UploadUrl: function () {
-        return "http://localhost:8889/training-service/v1/training/upload/" + this.sId;
+        return "http://localhost:8889/training-service/v1/training/upload/" + this.sId+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
       }
     }
   }

@@ -92,7 +92,8 @@
       this.$axios.get("/basic-service/v1/info/student", {
         params: {
           sId: this.username,
-          /*access_token:sessionStorage.token,*/
+          token:sessionStorage.token,
+          username:sessionStorage.username,
         },
       }).then(res => {
         console.log(res);
@@ -105,7 +106,7 @@
     },
     methods: {
       onSubmit() {
-        this.$axios.put("/basic-service/v1/info/student",this.info).then(res=>{
+        this.$axios.put("/basic-service/v1/info/student"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"),this.info).then(res=>{
           if(res.data.resultCode===200){
             this.$notify({
               type:'success',
