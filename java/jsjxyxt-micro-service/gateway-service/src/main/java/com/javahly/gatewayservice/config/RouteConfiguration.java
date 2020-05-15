@@ -18,7 +18,7 @@ import reactor.core.publisher.Mono;
 
 
 /**
- * SpringApiGateway Cors
+ * 解决跨域问题
  */
 @Configuration
 public class RouteConfiguration {

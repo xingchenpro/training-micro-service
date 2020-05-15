@@ -40,41 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="OauthController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OauthController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/controller/OauthController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/dao/UserDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OAuth2ServerConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/config/OAuth2ServerConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-932">
-              <caret line="47" column="20" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+            <state relative-caret-position="161">
+              <caret line="43" column="46" lean-forward="false" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,64 +52,90 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/controller/TestController.java">
+      <file leaf-file-name="TokenGlobalFilter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/filter/TokenGlobalFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UaaServiceApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/UaaServiceApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SecurityConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/config/SecurityConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SwaggerConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/config/SwaggerConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EurekaServiceApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eureka-service/src/main/java/com/javahly/EurekaServiceApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="274">
+              <caret line="57" column="65" lean-forward="true" selection-start-line="57" selection-start-column="65" selection-end-line="57" selection-end-column="65" />
               <folding>
-                <element signature="e#342#343#0" expanded="true" />
-                <element signature="e#408#409#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2997#2998#0" expanded="true" />
+                <element signature="e#3022#3023#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eureka-service/src/main/resources/application.yml">
+      <file leaf-file-name="SpringBeanUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/util/SpringBeanUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="115">
+              <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="27" />
+              <folding>
+                <element signature="e#727#728#0" expanded="true" />
+                <element signature="e#768#769#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="问题总结" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/总结/问题总结">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="704">
+              <caret line="44" column="61" lean-forward="false" selection-start-line="44" selection-start-column="61" selection-end-line="44" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransationalUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/util/TransationalUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/controller/ClassController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="106" column="21" lean-forward="false" selection-start-line="106" selection-start-column="21" selection-end-line="106" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway-service/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway-service/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-50">
+              <caret line="32" column="20" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -166,17 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/controller/TeacherController.java" />
-        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/entity/SubjectExamine.java" />
-        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/dao/TrainingSubjectDao.java" />
-        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/service/TrainingSubjectService.java" />
-        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/service/impl/TrainingSubjectServiceImpl.java" />
-        <option value="$PROJECT_DIR$/training-service/src/main/resources/mapper/TrainingSubjectMapper.xml" />
-        <option value="$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/dao/SpecialityDao.java" />
-        <option value="$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/feign/basic/service/BasicInformationService.java" />
-        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/feign/basic/entity/Speciality.java" />
-        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/TrainingSubjectController.java" />
-        <option value="$PROJECT_DIR$/ask-for-leave-service/src/main/resources/mapper/LeaveMapper.xml" />
         <option value="$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/controller/SpecialityController.java" />
         <option value="$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/service/SpecialityService.java" />
         <option value="$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/service/impl/SpecialityServiceImpl.java" />
@@ -189,15 +174,11 @@
         <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/feign/basic/service/BasicInformationService.java" />
         <option value="$PROJECT_DIR$/training-service/src/main/resources/mapper/WeekSummaryMapper.xml" />
         <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/WeekSummaryController.java" />
-        <option value="$PROJECT_DIR$/总结/技术总结" />
         <option value="$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/controller/TestController.java" />
         <option value="$PROJECT_DIR$/总结/集群网址" />
         <option value="$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/handle/SwaggerHandler.java" />
         <option value="$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/config/OAuth2ClientConfig.java" />
         <option value="$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/config/OAuth2ClientConfig.java" />
-        <option value="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/gateway-service/pom.xml" />
-        <option value="$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/GatewayServiceApplication.java" />
         <option value="$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/config/AuthExceptionEntryPoint.java" />
         <option value="$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/config/ResourceServerConfigurer.java" />
         <option value="$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/config/OAuth2ClientConfig.java" />
@@ -209,7 +190,6 @@
         <option value="$PROJECT_DIR$/basic-info-service/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/BasicInfoServiceApplication.java" />
         <option value="$PROJECT_DIR$/training-service/pom.xml" />
-        <option value="$PROJECT_DIR$/training-service/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/TrainingServiceApplication.java" />
         <option value="$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/config/OAuth2ServerConfig.java" />
         <option value="$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/UaaServiceApplication.java" />
@@ -217,6 +197,22 @@
         <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/UploadController.java" />
         <option value="$PROJECT_DIR$/eureka-service/src/main/java/com/javahly/EurekaServiceApplication.java" />
         <option value="$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/controller/OauthController.java" />
+        <option value="$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/GatewayServiceApplication.java" />
+        <option value="$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/util/RedisUtil.java" />
+        <option value="$PROJECT_DIR$/总结/技术总结" />
+        <option value="$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/mq/SubjectConsumer.java" />
+        <option value="$PROJECT_DIR$/training-service/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/config/RouteConfiguration.java" />
+        <option value="$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/config/SwaggerProvider.java" />
+        <option value="$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/config/GatewayRoutesConfiguration.java" />
+        <option value="$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/util/Result.java" />
+        <option value="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/util/RedisUtil.java" />
+        <option value="$PROJECT_DIR$/总结/问题总结" />
+        <option value="$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/util/SpringBeanUtil.java" />
+        <option value="$PROJECT_DIR$/gateway-service/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/filter/TokenGlobalFilter.java" />
       </list>
     </option>
   </component>
@@ -260,10 +256,10 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="30" />
-    <option name="y" value="23" />
+    <option name="x" value="82" />
+    <option name="y" value="20" />
     <option name="width" value="1847" />
-    <option name="height" value="1043" />
+    <option name="height" value="1042" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -280,8 +276,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -292,25 +286,51 @@
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
+              <item name="ask-for-leave-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="basic-info-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="basic-info-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="basic-info-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="basic-info-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -318,7 +338,7 @@
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
+              <item name="basic-info-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -327,7 +347,7 @@
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
+              <item name="basic-info-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -337,7 +357,66 @@
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="eureka-service" type="462c0819:PsiDirectoryNode" />
+              <item name="basic-info-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="basicinfoservice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="basic-info-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="basicinfoservice" type="462c0819:PsiDirectoryNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="basic-info-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="basicinfoservice" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="basic-info-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="basicinfoservice" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="basic-info-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="basicinfoservice" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="basic-info-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -420,11 +499,152 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="javahly" type="462c0819:PsiDirectoryNode" />
               <item name="gatewayservice" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="gateway-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="gatewayservice" type="462c0819:PsiDirectoryNode" />
               <item name="handle" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="gateway-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="gatewayservice" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="gateway-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="trainingservice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="trainingservice" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="trainingservice" type="462c0819:PsiDirectoryNode" />
+              <item name="mq" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="javahly" type="462c0819:PsiDirectoryNode" />
+              <item name="trainingservice" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="training-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
               <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -477,18 +697,6 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="javahly" type="462c0819:PsiDirectoryNode" />
               <item name="uaaservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="javahly" type="462c0819:PsiDirectoryNode" />
-              <item name="uaaservice" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
@@ -512,43 +720,265 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="javahly" type="462c0819:PsiDirectoryNode" />
               <item name="uaaservice" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="javahly" type="462c0819:PsiDirectoryNode" />
-              <item name="uaaservice" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
-              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="javahly" type="462c0819:PsiDirectoryNode" />
-              <item name="uaaservice" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsjxyxt-micro-service" type="462c0819:PsiDirectoryNode" />
+              <item name="总结" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: commons-codec:commons-codec:1.13" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: commons-codec:commons-codec:1.13" type="70bed36:NamedLibraryElementNode" />
+              <item name="commons-codec-1.13.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: commons-codec:commons-codec:1.13" type="70bed36:NamedLibraryElementNode" />
+              <item name="commons-codec-1.13.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: commons-codec:commons-codec:1.13" type="70bed36:NamedLibraryElementNode" />
+              <item name="commons-codec-1.13.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="apache" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: commons-codec:commons-codec:1.13" type="70bed36:NamedLibraryElementNode" />
+              <item name="commons-codec-1.13.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="apache" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: commons-codec:commons-codec:1.13" type="70bed36:NamedLibraryElementNode" />
+              <item name="commons-codec-1.13.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="apache" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
+              <item name="codec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: commons-codec:commons-codec:1.13" type="70bed36:NamedLibraryElementNode" />
+              <item name="commons-codec-1.13.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="apache" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
+              <item name="codec" type="462c0819:PsiDirectoryNode" />
+              <item name="digest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.projectreactor:reactor-core:3.3.0.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.projectreactor:reactor-core:3.3.0.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="reactor-core-3.3.0.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.projectreactor:reactor-core:3.3.0.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="reactor-core-3.3.0.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="reactor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.projectreactor:reactor-core:3.3.0.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="reactor-core-3.3.0.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="reactor" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.projectreactor:reactor-core:3.3.0.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="reactor-core-3.3.0.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="reactor" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="publisher" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.data:spring-data-redis:2.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.data:spring-data-redis:2.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-redis-2.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.data:spring-data-redis:2.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-redis-2.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.data:spring-data-redis:2.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-redis-2.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.data:spring-data-redis:2.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-redis-2.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.data:spring-data-redis:2.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-redis-2.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.data:spring-data-redis:2.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-redis-2.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-context:5.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-context:5.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-context-5.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-context:5.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-context-5.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-context:5.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-context-5.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-context:5.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-context-5.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="context" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-context:5.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-context-5.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="context" type="462c0819:PsiDirectoryNode" />
+              <item name="annotation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-web:5.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-web:5.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-web-5.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-web:5.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-web-5.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-web:5.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-web-5.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsjxyxtmicroservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-web:5.2.1.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-web-5.2.1.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="http" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
-    <property name="last_opened_file_path" value="D:/WEBPRODUCTION/HlyWeb/Spring-Cloud-Finchley/12-spring-cloud-oauth2-micro-service" />
+    <property name="last_opened_file_path" value="D:/91160/project/identify" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -570,11 +1000,11 @@
       <recent name="com.javahly" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.javahly.gatewayservice.util" />
       <recent name="com.javahly.trainingservice.feign.basic.entity" />
       <recent name="com.javahly.trainingservice.feign" />
       <recent name="com.javahly.trainingservice.feign.entity" />
       <recent name="com.javahly.askforleaveservice.entity" />
-      <recent name="com.javahly.trainingservice.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\project\java\jsjxyxt-micro-service\training-service\src\main\java\com\javahly\trainingservice\config" />
@@ -596,7 +1026,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TrainingServiceApplication">
+  <component name="RunManager" selected="Spring Boot.GatewayServiceApplication">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -792,8 +1222,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Spring Boot.UaaServiceApplication" />
-        <item index="1" class="java.lang.String" itemvalue="Spring Boot.GatewayServiceApplication" />
+        <item index="0" class="java.lang.String" itemvalue="Spring Boot.GatewayServiceApplication" />
+        <item index="1" class="java.lang.String" itemvalue="Spring Boot.UaaServiceApplication" />
         <item index="2" class="java.lang.String" itemvalue="Application.TxlcnTmServiceApplication" />
       </list>
     </recent_temporary>
@@ -873,14 +1303,15 @@
       <workItem from="1589380867813" duration="4861000" />
       <workItem from="1589386664946" duration="9681000" />
       <workItem from="1589445586116" duration="7781000" />
+      <workItem from="1589534393319" duration="18997000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319588000" />
+    <option name="totallyTimeSpent" value="338585000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="30" y="23" width="1847" height="1043" extended-state="0" />
+    <frame x="82" y="20" width="1847" height="1042" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -893,18 +1324,19 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38333333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26061997" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31917337" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="LuaCheck" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.3299435" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4168565" sideWeight="0.49325842" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3857635" sideWeight="0.49325842" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3257403" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20755781" sideWeight="0.4957369" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21037789" sideWeight="0.4957369" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -914,7 +1346,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32101616" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287841" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -976,96 +1407,81 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/basic-info-service/pom.xml">
+    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="460">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/config/OAuth2ClientConfig.java" />
-    <entry file="file://$PROJECT_DIR$/training-service/pom.xml">
+    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/config/SecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="161">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/training-service/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/config/SwaggerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        <state relative-caret-position="184">
+          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/config/AuthExceptionEntryPoint.java" />
-    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/TrainingServiceApplication.java">
+    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/config/OAuth2ServerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/BasicInfoServiceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+        <state relative-caret-position="690">
+          <caret line="47" column="20" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/javahly/userservice/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/javahly/userservice/config/SwaggerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="29" column="89" lean-forward="true" selection-start-line="29" selection-start-column="89" selection-end-line="29" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/javahly/userservice/config/WebServerAutoConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-service/src/main/java/com/javahly/userservice/util/BPwdEncoderUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="414">
+          <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/uaa-service/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
+        <state relative-caret-position="195">
           <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic-info-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/BasicInfoServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/controller/SpecialityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1086,295 +1502,520 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hs_err_pid28384.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="-828">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/controller/ClassController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.13/commons-codec-1.13.jar!/org/apache/commons/codec/digest/DigestUtils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="22" />
+        <state relative-caret-position="91">
+          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/controller/SpecialityController.java">
+    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/resources/application-prod.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="68" column="7" lean-forward="true" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
+        <state relative-caret-position="241">
+          <caret line="32" column="24" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="32" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/controller/StudentController.java">
+    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/controller/TestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="109" column="17" lean-forward="false" selection-start-line="109" selection-start-column="11" selection-end-line="109" selection-end-column="17" />
+        <state relative-caret-position="368">
+          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/UaaServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/controller/TeacherController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.2.1.RELEASE/spring-web-5.2.1.RELEASE.jar!/org/springframework/http/HttpStatus.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="42" column="24" lean-forward="true" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="24" />
+        <state relative-caret-position="23">
+          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/service/ClassService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-gateway-core/2.2.0.RELEASE/spring-cloud-gateway-core-2.2.0.RELEASE.jar!/org/springframework/cloud/gateway/route/builder/PredicateSpec.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="159">
+          <caret line="110" column="23" lean-forward="false" selection-start-line="110" selection-start-column="23" selection-end-line="110" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/service/SpecialityService.java">
+    <entry file="file://$PROJECT_DIR$/总结/技术总结">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="28" selection-end-column="50" />
+        <state relative-caret-position="450">
+          <caret line="84" column="12" lean-forward="false" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/service/StudentService.java">
+    <entry file="file://$PROJECT_DIR$/总结/集群网址">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        <state relative-caret-position="253">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/service/TeacherService.java">
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/TrainingServiceApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/dao/ClassDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/dao/SpecialityDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/controller/LeaveController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-673">
-          <caret line="169" column="17" lean-forward="false" selection-start-line="169" selection-start-column="11" selection-end-line="169" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/service/LeaveService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/controller/TrainingApplyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="77" column="23" lean-forward="true" selection-start-line="77" selection-start-column="11" selection-end-line="77" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/java/com/javahly/askforleaveservice/service/TrainingApplyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        <state relative-caret-position="207">
+          <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/TrainingSubjectController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="247" column="17" lean-forward="false" selection-start-line="247" selection-start-column="11" selection-end-line="247" selection-end-column="17" />
+        <state relative-caret-position="391">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/UnitsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="68" column="17" lean-forward="true" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/WeekSummaryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="60" column="17" lean-forward="false" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="17" />
+        <state relative-caret-position="207">
+          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/controller/UploadController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
+        <state relative-caret-position="796">
           <caret line="64" column="5" lean-forward="false" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/service/TrainingSubjectService.java">
+    <entry file="file://$PROJECT_DIR$/ask-for-leave-service/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="41" selection-end-column="63" />
+        <state relative-caret-position="391">
+          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="83" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/service/UnitService.java">
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="32" selection-end-column="39" />
+        <state relative-caret-position="437">
+          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/service/WeekSummaryService.java">
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/mq/SubjectConsumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/GatewayServiceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/handle/SwaggerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/config/RouteConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        <state relative-caret-position="372">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/config/SwaggerProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="168">
+          <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-service/src/main/resources/application.yml">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/projectreactor/reactor-core/3.3.0.RELEASE/reactor-core-3.3.0.RELEASE.jar!/reactor/core/publisher/Mono.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="138">
+          <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-service/src/main/java/com/javahly/EurekaServiceApplication.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-gateway-core/2.2.0.RELEASE/spring-cloud-gateway-core-2.2.0.RELEASE.jar!/org/springframework/cloud/gateway/filter/GatewayFilter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-gateway-core/2.2.0.RELEASE/spring-cloud-gateway-core-2.2.0.RELEASE.jar!/org/springframework/cloud/gateway/filter/GatewayFilterChain.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/util/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.2.1.RELEASE/spring-web-5.2.1.RELEASE.jar!/org/springframework/http/ReactiveHttpOutputMessage.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="22" column="92" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/config/GatewayRoutesConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
           <folding>
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/controller/TestController.java">
+    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/config/RouteConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/UaaServiceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/config/SwaggerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/config/OAuth2ServerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-932">
-          <caret line="47" column="20" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+        <state relative-caret-position="-232">
+          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.2.1.RELEASE/spring-data-redis-2.2.1.RELEASE.jar!/org/springframework/data/redis/core/RedisTemplate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="495" column="19" lean-forward="false" selection-start-line="495" selection-start-column="19" selection-end-line="495" selection-end-column="19" />
+          <folding>
+            <marker date="1588146042647" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1588146042647" expanded="false" signature="159:2202" ph="..." />
+            <marker date="1588146042647" expanded="true" signature="3769:3776" ph="{}" />
+            <marker date="1588146042647" expanded="true" signature="3815:5155" ph="{...}" />
+            <marker date="1588146042647" expanded="false" signature="5220:5231" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="5286:5292" ph=" }" />
+            <marker date="1588146042647" expanded="true" signature="5384:5453" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="5563:7023" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="7078:7619" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="7690:7766" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="7884:9334" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="8318:9214" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="9402:9477" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="9592:10476" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="9644:10468" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="10556:10627" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="10779:10884" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="10976:11439" ph="{...}" />
+            <marker date="1588146042647" expanded="false" signature="11502:11513" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="11542:11548" ph=" }" />
+            <marker date="1588146042647" expanded="true" signature="11627:11883" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="11992:12026" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="12150:12180" ph="{...}" />
+            <marker date="1588146042647" expanded="false" signature="12221:12232" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="12261:12267" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="12330:12341" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="12382:12388" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="12436:12447" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="12483:12489" ph=" }" />
+            <marker date="1588146042647" expanded="true" signature="12567:12638" ph="{...}" />
+            <marker date="1588146042647" expanded="false" signature="12706:12717" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="12747:12753" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="12822:12833" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="12869:12875" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="12940:12951" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="12983:12989" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="13039:13050" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="13076:13082" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="13149:13160" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="13194:13200" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="13252:13263" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="13291:13297" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="13351:13362" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="13392:13398" ph=" }" />
+            <marker date="1588146042647" expanded="true" signature="13475:13534" ph="{...}" />
+            <marker date="1588146042647" expanded="false" signature="13590:13601" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="13633:13639" ph=" }" />
+            <marker date="1588146042647" expanded="true" signature="13720:13783" ph="{...}" />
+            <marker date="1588146042647" expanded="false" signature="13841:13852" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="13881:13887" ph=" }" />
+            <marker date="1588146042647" expanded="true" signature="13967:14024" ph="{...}" />
+            <marker date="1588146042647" expanded="false" signature="14093:14104" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="14141:14147" ph=" }" />
+            <marker date="1588146042647" expanded="true" signature="14187:14376" ph="{...}" />
+            <marker date="1588146042647" expanded="false" signature="14418:14429" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="14473:14479" ph=" }" />
+            <marker date="1588146042647" expanded="true" signature="14523:14668" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="14719:14980" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="15025:15123" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="15357:16653" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="16744:17191" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="17308:17806" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="17839:18100" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="18167:18286" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="18325:18462" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="18497:18737" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="18598:18666" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="18782:19061" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="18974:19037" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="19096:19339" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="19197:19268" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="19384:19666" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="19576:19642" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="19701:19869" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="19798:19855" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="19925:20152" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="20080:20138" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="20216:20625" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="20377:20611" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="20673:21011" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="20770:20997" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="21076:21394" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="21288:21380" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="21429:21591" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="21523:21577" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="21645:21950" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="21739:21936" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="21986:22282" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="22098:22153" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="22318:22487" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="22415:22473" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="22533:22708" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="22630:22694" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="22735:22867" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="22912:23150" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="23047:23136" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="23206:23444" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="23357:23430" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="23478:23645" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="23576:23631" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="23677:23842" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="23773:23828" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="23938:24204" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="24086:24190" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="24230:24351" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="24269:24337" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="24379:24502" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="24418:24488" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="24533:24716" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="24614:24702" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="24760:24935" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="24846:24921" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="24963:25086" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="25002:25072" ph="{...}" />
+            <marker date="1588146042647" expanded="false" signature="25131:25142" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="25188:25194" ph=" }" />
+            <marker date="1588146042647" expanded="true" signature="25291:25644" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="25496:25559" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="25723:25797" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="25926:26694" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="26749:27083" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="26993:27069" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="27135:27265" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="27174:27257" ph="{...}" />
+            <marker date="1588146042647" expanded="false" signature="27315:27326" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="27388:27394" ph=" }" />
+            <marker date="1588146042647" expanded="true" signature="27443:27570" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="27482:27562" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="27603:27725" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="27642:27717" ph="{...}" />
+            <marker date="1588146042647" expanded="false" signature="27777:27788" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="27811:27817" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="27861:27872" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="27891:27897" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="27953:27964" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="28012:28018" ph=" }" />
+            <marker date="1588146042647" expanded="true" signature="28091:28156" ph="{...}" />
+            <marker date="1588146042647" expanded="false" signature="28216:28227" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="28266:28272" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="28332:28343" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="28362:28368" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="28414:28425" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="28445:28451" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="28509:28520" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="28569:28575" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="28631:28642" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="28690:28696" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="28740:28751" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="28770:28776" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="28840:28851" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="28873:28879" ph=" }" />
+            <marker date="1588146042647" expanded="true" signature="29000:29069" ph="{...}" />
+            <marker date="1588146042647" expanded="true" signature="29146:29213" ph="{...}" />
+            <marker date="1588146042647" expanded="false" signature="29273:29284" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="29334:29340" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="29388:29399" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="29420:29426" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="29484:29495" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="29544:29550" ph=" }" />
+            <marker date="1588146042647" expanded="false" signature="29596:29607" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="29627:29633" ph=" }" />
+            <marker date="1588146042647" expanded="true" signature="29713:29786" ph="{...}" />
+            <marker date="1588146042647" expanded="false" signature="29847:29858" ph=" { " />
+            <marker date="1588146042647" expanded="false" signature="29889:29895" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/cache/RedisKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/config/SwaggerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/GatewayServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="24" column="42" lean-forward="false" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1167#1168#0" expanded="false" />
+            <element signature="e#1234#1235#0" expanded="false" />
+            <element signature="e#1310#1477#0" expanded="false" />
+            <element signature="e#1476#1477#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.2.1.RELEASE/spring-context-5.2.1.RELEASE.jar!/org/springframework/context/annotation/DependsOn.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding>
+            <marker date="1573133794513" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1573133794513" expanded="false" signature="162:355" ph="..." />
+            <marker date="1573133794513" expanded="true" signature="357:452" ph="@{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/javahly/uaaservice/controller/OauthController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="28" />
+        <state relative-caret-position="161">
+          <caret line="43" column="46" lean-forward="false" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/util/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+          <folding>
+            <element signature="e#861#862#0" expanded="false" />
+            <element signature="e#923#924#0" expanded="false" />
+            <element signature="e#966#967#0" expanded="false" />
+            <element signature="e#1025#1026#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/总结/问题总结">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="44" column="61" lean-forward="false" selection-start-line="44" selection-start-column="61" selection-end-line="44" selection-end-column="61" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training-service/src/main/java/com/javahly/trainingservice/util/TransationalUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/util/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/util/SpringBeanUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="27" />
+          <folding>
+            <element signature="e#727#728#0" expanded="true" />
+            <element signature="e#768#769#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-50">
+          <caret line="32" column="20" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="106" column="21" lean-forward="false" selection-start-line="106" selection-start-column="21" selection-end-line="106" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic-info-service/src/main/java/com/javahly/basicinfoservice/controller/ClassController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway-service/src/main/java/com/javahly/gatewayservice/filter/TokenGlobalFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="57" column="65" lean-forward="true" selection-start-line="57" selection-start-column="65" selection-end-line="57" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2997#2998#0" expanded="true" />
+            <element signature="e#3022#3023#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

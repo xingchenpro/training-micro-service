@@ -16,8 +16,9 @@ import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
 
 @EnableEurekaClient
-@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class,RedisAutoConfiguration.class,
-		RedisRepositoriesAutoConfiguration.class})
+//RedisAutoConfiguration.class,
+//RedisRepositoriesAutoConfiguration.class
+@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
 @EnableApolloConfig
 public class GatewayServiceApplication {
 

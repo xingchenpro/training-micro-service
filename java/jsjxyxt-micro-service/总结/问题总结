@@ -39,3 +39,7 @@ https://blog.csdn.net/single_cong/article/details/101019146
                 </exclusion>
             </exclusions>
 </dependency>
+
+
+7、gateway注入对象为空
+https://blog.csdn.net/hehuanchun0311/article/details/80513558

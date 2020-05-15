@@ -19,7 +19,7 @@ import java.util.List;
  * @CSDN :blog.csdn.net/Sirius_hly
  * @date :2020/4/29
  * @QQ :1136513099
- * @desc :
+ * @desc : API管理统一配置
  */
 @Component
 @Primary
