@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+
 
 /**
  *
@@ -41,7 +41,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @MapperScan("com.javahly.basicinfoservice.dao")
 @EnableApolloConfig
 @EnableEurekaClient
-@EnableResourceServer
+
 public class BasicInfoServiceApplication {
 
 	public static void main(String[] args) {

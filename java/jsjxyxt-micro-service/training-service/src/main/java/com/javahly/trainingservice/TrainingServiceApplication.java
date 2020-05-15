@@ -1,16 +1,14 @@
 package com.javahly.trainingservice;
 
 import brave.sampler.Sampler;
-import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
-import com.spring4all.swagger.EnableSwagger2Doc;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+
 
 @SpringBootApplication
 @MapperScan("com.javahly.trainingservice.dao")
@@ -18,7 +16,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EnableFeignClients
 @EnableEurekaClient
 //@EnableDistributedTransaction//分布式事务
-@EnableResourceServer
 public class TrainingServiceApplication {
 
 	public static void main(String[] args) {

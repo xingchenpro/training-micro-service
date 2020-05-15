@@ -91,17 +91,3 @@ tx-lcn:
       dtx:
         enabled: true
 
-security:
-  oauth2:
-    resource:
-      user-info-uri: http://localhost:8081/v1/uaa/oauth/current
-    client:
-    # 客户端Id ，与OAuth Provider 中的配置一一对应
-      clientId: client-servic
-      # 客户端密码，与OAuth Provider 中的配置一一对应
-      clientSecret: 123456
-      # 获取Token的节点
-      accessTokenUri: http://localhost:8081/v1/uaa/oauth/token
-      grant-type: client_credentials,password
-      # 客户端的域
-      scope: server

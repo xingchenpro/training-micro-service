@@ -28,23 +28,23 @@ import java.util.Map;
 @RequestMapping("/oauth")
 public class OauthController {
 
-    @Autowired
-    private TokenEndpoint tokenEndpoint;
+/*    @Autowired
+    private TokenEndpoint tokenEndpoint;*/
 
     @Autowired
     UserService userService;
 
     @PostMapping("/token")
-    public Result postAccessTokenWithUserInfo(Principal principal, @RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {
+    public Result login(Principal principal, @RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {
 
         UserDetails userDetails = userService.loadUserByUsername(parameters.get("username"));
-        OAuth2AccessToken accessToken = tokenEndpoint.postAccessToken(principal, parameters).getBody();
-        log.info("用户信息：{}, token 信息：{}", userDetails,accessToken);
+        //OAuth2AccessToken accessToken = tokenEndpoint.postAccessToken(principal, parameters).getBody();
+        //log.info("用户信息：{}, token 信息：{}", userDetails,accessToken);
         Map<String, Object> data = new LinkedHashMap();
-        data.put("accessToken", accessToken.getValue());
+       /* data.put("accessToken", accessToken.getValue());
         if (accessToken.getRefreshToken() != null) {
             data.put("refreshToken", accessToken.getRefreshToken().getValue());
-        }
+        }*/
         Result result = new Result();
         //添加基本信息
         data.put("userId", userDetails.getUsername());
@@ -52,13 +52,6 @@ public class OauthController {
         result.setResult(data);
         return result;
     }
-
-    @RequestMapping(value = "/current", method = RequestMethod.GET)
-    public Principal getUser(Principal principal) {
-        return principal;
-    }
-
-
 
 
 }

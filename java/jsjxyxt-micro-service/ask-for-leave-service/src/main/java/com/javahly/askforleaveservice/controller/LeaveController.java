@@ -71,7 +71,7 @@ public class LeaveController {
 
     //查询请假信息
     @RequestMapping(value = "/leave", method = RequestMethod.GET)
-    public Result addLeaveInfo(String sId) {
+    public Result getLeaveInfo(String sId) {
         Result result = new Result();
         Leave leave = leaveService.getLeaveInfo(sId);
         TrainingApply trainingApply = null;

@@ -27,7 +27,7 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
  * @date :2020/3/20
  */
 
-@Configuration
+//@Configuration
 public class OAuth2ServerConfig {
 
     //配置资源服务
@@ -45,8 +45,8 @@ public class OAuth2ServerConfig {
     }
 
     //授权服务
-    @Configuration
-    @EnableAuthorizationServer
+    //@Configuration
+    //@EnableAuthorizationServer
     protected static class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
 
@@ -87,7 +87,7 @@ public class OAuth2ServerConfig {
                     .authorities("oauth2")
                     //客户端密码
                     .secret(finalSecret)
-                    .accessTokenValiditySeconds(120);//2小时过期
+                    .accessTokenValiditySeconds(2 * 3600);//2小时过期
 
 
         }

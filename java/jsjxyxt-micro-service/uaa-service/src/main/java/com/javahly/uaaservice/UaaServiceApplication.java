@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableResourceServer
+//@EnableResourceServer
 @EnableEurekaClient
 @MapperScan("com.javahly.uaaservice.dao")
 public class UaaServiceApplication {

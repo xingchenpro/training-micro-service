@@ -63,8 +63,5 @@ public class UploadController {
         return result;
 
     }
-
-
-
 }
 
