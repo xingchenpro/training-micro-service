@@ -128,7 +128,7 @@
       this.currentRole = this.$route.query.currentRole;
       this.currentWeek = Number(sessionStorage.getItem("currentWeek"));
       this.activeIndex = this.currentWeek;
-      var url = "/training-service/v1/training/weekSummaries?tId=" + sessionStorage.getItem("username")+"&role="+this.currentRole;
+      var url = "/training-service/v1/training/weekSummaries?tId=" + sessionStorage.getItem("username")+"&role="+this.currentRole+"&username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
       this.$axios.get(url).then(res => {
         if (res.data.resultCode === 200) {
           this.currentWeek = sessionStorage.currentWeek;
@@ -162,7 +162,7 @@
           };
           console.log(data);
           this.$axios
-            .post("/training-service/v1/training/weekSummary", data)
+            .post("/training-service/v1/training/weekSummary"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"), data)
             .then(res => {
               if (res.data.resultCode === 200) {
                 this.$notify({
@@ -206,7 +206,7 @@
       //监听角色的变化发送请求
       showRole() {
         this.currentRole = this.$route.query.currentRole;
-        var url = "/training-service/v1/training/weekSummaries?tId=" + sessionStorage.getItem("username")+"&role="+this.currentRole;
+        var url = "/training-service/v1/training/weekSummaries?tId=" + sessionStorage.getItem("username")+"&role="+this.currentRole+"&username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
         this.$axios.get(url).then(res => {
           if (res.data.resultCode === 200) {
             this.weekSummaries = res.data.result.weekSummaries;

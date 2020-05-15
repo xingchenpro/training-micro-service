@@ -99,7 +99,7 @@
       //获取班级信息
       this.classes = JSON.parse(sessionStorage.classes);
       this.teachers = JSON.parse(sessionStorage.teachers);
-      this.$axios.get("/training-service/v1/training/training/info").then(res => {
+      this.$axios.get("/training-service/v1/training/training/info"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token")).then(res => {
         if (res.data.resultCode === 200) {
           console.log(res.data.result);
           this.trainingStudentsInfo = res.data.result.trainingInfo;

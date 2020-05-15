@@ -80,7 +80,7 @@
       };
     },
     created() {
-      this.$axios.get("/training-service/v1/training/units").then(res => {
+      this.$axios.get("/training-service/v1/training/units"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token")).then(res => {
             this.units = res.data;
             //调用整理地址的方法
             this.addressFilter(this.units);
@@ -103,7 +103,7 @@
       //显示学生
       showStudent(id) {
         this.dialogVisible = true;
-        this.$axios.get("/leave-service/v1/leave/unit/students?uId=" + id).then(res => {
+        this.$axios.get("/leave-service/v1/leave/unit/students?uId=" + id+"&username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token")).then(res => {
             if (res.data.resultCode === 200) {
               this.students = res.data.result.students;
             }

@@ -104,7 +104,7 @@
     created() {
       this.teachers = JSON.parse(sessionStorage.teachers);
       this.role = this.$route.query.currentRole;
-      var url = "/training-service/v1/training/subjects?tId=" + sessionStorage.username + "&role="+this.role;
+      var url = "/training-service/v1/training/subjects?tId=" + sessionStorage.username + "&role="+this.role+"&username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
       this.$axios.get(url).then(res => {
           console.log(res);
           if (res.data.resultCode === 200) {
@@ -151,7 +151,7 @@
             status: 2
           };
           console.log(data);
-          this.$axios.put('/training-service/v1/training/examine/subject', data,).then((res) => {
+          this.$axios.put('/training-service/v1/training/examine/subject'+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"), data,).then((res) => {
             if (res.data.resultCode === 200) {
               this.subjects = res.data.result.subjects;
               this.allSelectedItem = [];
@@ -191,7 +191,7 @@
               reason: value,
               sIds: []
             };
-            this.$axios.put("/training-service/v1/training/examine/subject", data).then(res => {
+            this.$axios.put("/training-service/v1/training/examine/subject"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"), data).then(res => {
                 if (res.data.resultCode === 200) {
                   this.subjects = res.data.result.subjects;
                   this.$notify({
@@ -227,7 +227,7 @@
                 status: status,
                 sIds: []
               };
-              this.$axios.put("/training-service/v1/training/examine/subject", data).then(res => {
+              this.$axios.put("/training-service/v1/training/examine/subject"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"), data).then(res => {
                   console.log(res);
                   if (res.data.resultCode === 200) {
                     this.subjects = res.data.result.subjects;

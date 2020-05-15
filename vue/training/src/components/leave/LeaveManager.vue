@@ -134,7 +134,7 @@
       this.currentRole = this.$route.query.currentRole || sessionStorage.role;
       var tId = sessionStorage.username;
       //请求数据
-      var url = "/leave-service/v1/leave/leaves?role=" + this.currentRole + "&tId=" + tId;
+      var url = "/leave-service/v1/leave/leaves?role=" + this.currentRole + "&tId=" + tId+"&username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
       this.$axios.get(url).then(res => {
         if (res.data.resultCode === 200) {
           console.log(res.data);
@@ -172,7 +172,7 @@
               leBackReason: value
             });
             this.$axios
-              .post("/leave-service/v1/leave/examine", data)
+              .post("/leave-service/v1/leave/examine"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"), data)
               .then(res => {
                 console.log(res);
                 if (res.data.resultCode === 200) {
@@ -216,7 +216,7 @@
                 sId: sId,
                 title: title
               });
-              this.$axios.post("/leave-service/v1/leave/examine", data).then(res => {
+              this.$axios.post("/leave-service/v1/leave/examine"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"), data).then(res => {
                   if (res.data.resultCode === 200) {
                     this.allLeaves = res.data.result.allLeaves;
                     this.needExamineLeaves = res.data.result.needExamineLeaves;
@@ -270,7 +270,7 @@
         this.currentRole = this.$route.query.currentRole || sessionStorage.role;
         var tId = sessionStorage.username;
         //请求数据
-        var url = "/leave-service/v1/leave/leaves?role=" + this.currentRole + "&tId=" + tId;
+        var url = "/leave-service/v1/leave/leaves?role=" + this.currentRole + "&tId=" + tId+"&username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
         this.$axios.get(url).then(res => {
           if (res.data.resultCode === 200) {
             console.log(res.data);

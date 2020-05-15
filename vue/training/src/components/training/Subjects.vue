@@ -162,7 +162,7 @@
     created() {
       this.role = this.$route.query.currentRole;
       console.log(this.role);
-      var url = "/training-service/v1/training/subjects" + "?tId=" + sessionStorage.username + "&role=" + this.role;
+      var url = "/training-service/v1/training/subjects" + "?tId=" + sessionStorage.username + "&role=" + this.role+"&username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
       this.$axios.get(url).then(res => {
         this.loading = false;
         if (res.data.resultCode === 200) {
@@ -194,7 +194,7 @@
               };
               console.log(data);
               this.$axios
-                .put("/training-service/v1/training/examine/subject", data)
+                .put("/training-service/v1/training/examine/subject"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"), data)
                 .then(res => {
                   if (res.data.resultCode === 200) {
                     this.subjects = res.data.result.subjects;
@@ -244,7 +244,7 @@
             };
             console.log(data);
             this.$axios
-              .put("/training-service/v1/training/examine/subject", data).then(res => {
+              .put("/training-service/v1/training/examine/subject"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"), data).then(res => {
               if (res.data.resultCode === 200) {
                 this.subjects = res.data.result.subjects;
                 //此时学号没有发生变化，不会更新数据，所以手动更新

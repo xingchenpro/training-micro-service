@@ -6,10 +6,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.endpoint.TokenEndpoint;
 import org.springframework.util.StringUtils;
@@ -46,20 +49,33 @@ public class OauthController {
     @Autowired
     UserService userService;
 
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
+
     @PostMapping("/token")
     public Result login(@RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {
+
 
         UserDetails userDetails = userService.loadUserByUsername(parameters.get("username"));
         Map<String, Object> data = new LinkedHashMap();
         Result result = new Result();
         String username = userDetails.getUsername();
-        //保存Token,key 为 username MD5加密,value 为生成的 随机数
-        String newToken = saveToken(DigestUtils.md5Hex(username));
-        //添加基本信息
-        data.put("userId", username);
-        data.put("role", userDetails.getAuthorities());
-        data.put("token", newToken);
-        result.setResult(data);
+        //System.err.println(parameters.get("password"));
+        //System.err.println(passwordEncoder.matches(parameters.get("password"),userDetails.getPassword()));
+        //加密前，加密后是否符合，多次加密结果不同
+        if(passwordEncoder.matches(parameters.get("password"),userDetails.getPassword())){
+            //保存Token,key 为 username MD5加密,value 为生成的 随机数
+            String newToken = saveToken(DigestUtils.md5Hex(username));
+            //添加基本信息
+            data.put("userId", username);
+            data.put("role", userDetails.getAuthorities());
+            data.put("token", newToken);
+            result.setResult(data);
+        }else{
+            result.setErrInfos(401,"没有权限");
+        }
         return result;
     }
 

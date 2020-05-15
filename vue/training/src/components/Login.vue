@@ -88,7 +88,7 @@
             }
           }
         });
-        if (this.loginForm.username === '201611104031' && this.loginForm.password === '123') {
+       /* if (this.loginForm.username === '201611104031' && this.loginForm.password === '123') {
           sessionStorage.setItem('username', this.loginForm.username);
           sessionStorage.setItem('role', '6');
           this.$router.push('/home');
@@ -97,7 +97,7 @@
             type: 'success',
             duration: '2000'
           });
-        }
+        }*/
       }
     }
   }

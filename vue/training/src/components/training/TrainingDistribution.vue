@@ -128,7 +128,7 @@
       this.teachers = JSON.parse(sessionStorage.teachers);
       this.classes = JSON.parse(sessionStorage.classes);
       console.log(this.classes);
-      var url = "/training-service/v1/training//training/distribution?tId=" + sessionStorage.username;
+      var url = "/training-service/v1/training//training/distribution?tId=" + sessionStorage.username+"&username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
       this.$axios.get(url).then((res) => {
         this.loading = false;
         console.log(res);
@@ -184,7 +184,7 @@
             students: this.allSelectedItem,//把数组变成字符串传递
             tId: this.currentTeacher
           };
-          this.$axios.put('/training-service/v1/training/training/distribution', data).then((res) => {
+          this.$axios.put('/training-service/v1/training/training/distribution'+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"), data).then((res) => {
             this.trainingSubjects = res.data.result.trainingSubjects;
             this.allSelectedItem = [];
             if (res.data.resultCode === 200) {
@@ -218,7 +218,7 @@
             students: arr,
             tId: this.currentTeacher
           };
-          this.$axios.put('/training-service/v1/training/training/distribution', data).then((res) => {
+          this.$axios.put('/training-service/v1/training/training/distribution'+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"), data).then((res) => {
             this.trainingSubjects = res.data.result.trainingSubjects;
             if (res.data.resultCode === 200) {
               this.allSelectedItem = [];

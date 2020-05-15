@@ -194,7 +194,7 @@
       //删除公司
       del(item) {
         this.$confirm("确认操作？").then(() => {
-          var  url = "/training-service/v1/training/unit/"+item.uId;
+          var  url = "/training-service/v1/training/unit/"+item.uId+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
           this.$axios.delete(url)
             .then(res => {
               if (res.data.resultCode === 200) {
@@ -248,7 +248,7 @@
     //页面加载初始化
     created() {
       this.$axios
-        .get("/training-service/v1/training/units").then(res => {
+        .get("/training-service/v1/training/units"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token")).then(res => {
           console.log(res);
           this.units = res.data;
           //调用整理地址的方法
