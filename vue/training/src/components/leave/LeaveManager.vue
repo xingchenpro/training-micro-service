@@ -42,7 +42,7 @@
                   <th>姓名</th>
                   <th>请假时间</th>
                   <th>实习单位</th>
-                  <th>实习证明</th>
+                <!--  <th>实习证明</th>-->
                   <th>请假进度</th>
                   <th v-show="currentStatus == 2 || currentStatus == 3">审批</th>
                 </tr>
@@ -56,7 +56,7 @@
                   <td>{{ item.sNeme }}</td>
                   <td>{{ item.leStartTime | dateFormat }}-{{item.leEndTime | dateFormat}}</td>
                   <td>{{ item.trainingApply.apCompany }}</td>
-                  <td>{{ item.leStatus }}</td>
+                 <!-- <td>{{ item.leStatus }}</td>-->
                   <td>
                     <span v-show="item.leStatus == 0">等待辅导员审批</span>
                     <span v-show="item.leStatus == 1">等待指导教师审批</span>

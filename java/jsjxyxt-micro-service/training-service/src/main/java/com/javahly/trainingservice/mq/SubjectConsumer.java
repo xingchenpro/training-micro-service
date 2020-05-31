@@ -37,8 +37,6 @@ public class SubjectConsumer implements RocketMQListener<String> {
     @Autowired
     TrainingSubjectService trainingSubjectService;
 
-    public static int a = 0;
-
     //消费传递的消息
     @SneakyThrows
     @Override

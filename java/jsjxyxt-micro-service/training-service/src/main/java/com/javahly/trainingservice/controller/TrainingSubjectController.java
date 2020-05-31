@@ -223,7 +223,9 @@ public class TrainingSubjectController {
         Result result = new Result();
         Map<String, Object> resultMap = new HashMap<>();
         log.info("updateStudentTrainingTeacher：{}", distribution.getStudents());
+        //修改本地实训服务课题表的教师ID
         trainingSubjectService.updateTeacher(distribution.gettId(), distribution.getStudents());
+        //调用远程服务修改离校申请服务实训信息表的教师ID
         leaveService.updateStudentTrainingTeacher(distribution);
         //根据教师ID查找专业号
         //远程调用专业信息

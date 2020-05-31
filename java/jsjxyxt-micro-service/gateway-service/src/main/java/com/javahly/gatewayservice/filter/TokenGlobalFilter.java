@@ -36,8 +36,7 @@ import java.nio.charset.StandardCharsets;
  * @QQ :1136513099
  * @desc : 定义全局过滤器
  */
-@Component
-@Configuration
+//@Component
 @Slf4j
 public class TokenGlobalFilter implements GatewayFilter, Ordered {
 

@@ -40,7 +40,7 @@ public class SyncSubjectListener implements RocketMQLocalTransactionListener {
         TransactionStatus begin = null;
         try {
             begin = transationalUtils.begin();
-            //执行本地消息
+            //执行本地事务
             Integer leStatus =null;
             Integer leId=null;
             String leBackReason=null;

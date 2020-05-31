@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.security.Principal;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Random;
@@ -55,17 +56,14 @@ public class OauthController {
 
 
     @PostMapping("/token")
-    public Result login(@RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {
-
+    public Result login(@RequestParam Map<String, String> parameters) {
 
         UserDetails userDetails = userService.loadUserByUsername(parameters.get("username"));
-        Map<String, Object> data = new LinkedHashMap();
+        Map<String, Object> data = new HashMap<>(1 << 4);
         Result result = new Result();
         String username = userDetails.getUsername();
-        //System.err.println(parameters.get("password"));
-        //System.err.println(passwordEncoder.matches(parameters.get("password"),userDetails.getPassword()));
         //加密前，加密后是否符合，多次加密结果不同
-        if(passwordEncoder.matches(parameters.get("password"),userDetails.getPassword())){
+        if (passwordEncoder.matches(parameters.get("password"), userDetails.getPassword())) {
             //保存Token,key 为 username MD5加密,value 为生成的 随机数
             String newToken = saveToken(DigestUtils.md5Hex(username));
             //添加基本信息
@@ -73,8 +71,8 @@ public class OauthController {
             data.put("role", userDetails.getAuthorities());
             data.put("token", newToken);
             result.setResult(data);
-        }else{
-            result.setErrInfos(401,"没有权限");
+        } else {
+            result.setErrInfos(401, "没有权限");
         }
         return result;
     }
@@ -82,9 +80,6 @@ public class OauthController {
 
     /**
      * 生成随机数
-     *
-     * @param username
-     * @return
      */
     private String generateToken(String username) {
         String character = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
