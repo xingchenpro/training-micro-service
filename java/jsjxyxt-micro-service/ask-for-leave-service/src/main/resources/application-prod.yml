@@ -1,0 +1,63 @@
+app:
+  id: ask-for-leave-service
+apollo:
+  bootstrap:
+    enabled: true
+    namespaces: application
+  meta: http://106.13.129.169:8080
+  cacheDir: /app/war/apollo/temp/
+
+spring:
+  application:
+    name: ask-for-leave-service
+# 集成Mybatis
+mybatis:
+  # Mybatis映射
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.javahly.askforleaveservice.entity
+
+eureka:
+  client:
+    # 多久去拉服务器信息
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: http://49.233.192.8:8761/eureka/
+  instance:
+    # 客户端多久发送一次心跳，没有心跳就剔除
+    leaseRenewalIntervalInSeconds: 1
+    health-check-url-path: /actuator/health
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+# 端口设置
+server:
+  port: 8084
+# 必须改成这种格式否则无法注册
+server.servlet.context-path: /v1/leave
+# 超时时间配置
+feign:
+ client:
+  config:
+   default:
+    connectTimeout: 3000
+    readTimeout: 5000
+
+rocketmq:
+  name-server: 106.13.129.169:9876;
+  producer:
+    group: transient_producer
+
+tx-lcn:
+  client:
+   manager-address:  127.0.0.1:9999
+  ribbon:
+    loadbalancer:
+      dtx:
+        enabled: true
+

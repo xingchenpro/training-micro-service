@@ -3,9 +3,13 @@
   <div id="login_content">
 
     <div id="window">
-
+      <div>
+        <label class="training_title">实训过程管理系统</label>
+      </div>
       <div class="page page-front">
+
         <div class="page-content">
+
           <div class="input-row">
             <label class="label fadeIn">用户名</label>
             <input v-model="loginForm.username" id="username" type="text" class="input fadeIn delay1"/>
@@ -123,6 +127,17 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+  }
+  .training_title{
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 32px;
+    margin: -30px auto;
+    text-align: center;
+    color: #101636;
+    display: block;
+    cursor: pointer;
+    letter-spacing: 5px;
   }
 
   #window {

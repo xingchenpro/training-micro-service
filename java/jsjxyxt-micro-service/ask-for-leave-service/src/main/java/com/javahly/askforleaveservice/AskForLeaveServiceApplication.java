@@ -40,7 +40,7 @@ import org.springframework.context.annotation.Bean;
 @MapperScan("com.javahly.askforleaveservice.dao")
 @EnableApolloConfig
 @EnableFeignClients
-@EnableDistributedTransaction//分布式事务
+//@EnableDistributedTransaction//分布式事务
 
 public class AskForLeaveServiceApplication {
 

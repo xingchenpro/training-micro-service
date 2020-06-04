@@ -1,0 +1,67 @@
+app:
+  id: training-service
+apollo:
+  bootstrap:
+    enabled: true
+    namespaces: application
+  meta: http://106.13.129.169:8080
+  cacheDir: /app/war/apollo/temp/
+
+spring:
+  application:
+    name: training-service
+  servlet:
+    multipart:
+      enabled: true
+     #最大支持文件大小
+      max-file-size: 100MB
+     #最大支持请求大小
+      max-request-size: 100MB
+
+# Mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.javahly.trainingservice.entity
+
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: http://49.233.192.8:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+server:
+  port: 8083
+  servlet:
+    session:
+      timeout: 600
+
+server.servlet.context-path: /v1/training
+
+rocketmq:
+  name-server: 106.13.129.169:9876;
+  producer:
+    group: transient_producer
+
+#文件存储路径
+filepath: D:/file/
+
+tx-lcn:
+  client:
+   manager-address:  127.0.0.1:9999
+  ribbon:
+    loadbalancer:
+      dtx:
+        enabled: true
+

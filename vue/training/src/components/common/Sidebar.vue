@@ -36,7 +36,7 @@
         <a target="_blank" href="http://49.233.192.8:8761/" style="color: black">
           <el-menu-item index="2-2">注册中心</el-menu-item>
         </a>
-        <a target="_blank" href="http://49.233.192.8:8070/">
+        <a target="_blank" href="http://106.13.129.169:8070/">
           <el-menu-item index="2-2">配置中心</el-menu-item>
         </a>
         <a target="_blank" href="http://localhost:9411/">
@@ -51,7 +51,7 @@
         <a target="_blank" href="http://127.0.0.1:8899/admin/index.html#/">
           <el-menu-item index="2-2">Lcn 分布式事务管理</el-menu-item>
         </a>
-        <a target="_blank" href="http://106.13.1.171:8080/">
+        <a target="_blank" href="http://106.13.129.169:8081/">
           <el-menu-item index="2-2">RocketMQ 控制台</el-menu-item>
         </a>
         <!-- <el-menu-item index="2-1">用户管理</el-menu-item>

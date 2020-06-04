@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Bean;
 @EnableApolloConfig
 @EnableFeignClients
 @EnableEurekaClient
-@EnableDistributedTransaction//分布式事务
+//@EnableDistributedTransaction//分布式事务
 public class TrainingServiceApplication {
 
 	public static void main(String[] args) {
