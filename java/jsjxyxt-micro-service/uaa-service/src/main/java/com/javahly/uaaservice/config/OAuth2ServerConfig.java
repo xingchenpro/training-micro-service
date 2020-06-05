@@ -38,7 +38,7 @@ public class OAuth2ServerConfig {
             //资源访问控制，可配置必须通过token认证过后才可以访问的资源，permitAll()表示不需要token可直接访问
             http
                     .authorizeRequests()
-                    .antMatchers("/login","/actuator/**","/v2/api-docs/**").
+                    .antMatchers("/login", "/actuator/**", "/v2/api-docs/**").
                     permitAll();
         }
     }
@@ -86,9 +86,7 @@ public class OAuth2ServerConfig {
                     .authorities("oauth2")
                     //客户端密码
                     .secret(finalSecret)
-                    .accessTokenValiditySeconds(120);//2小时过期
-
-
+                    .accessTokenValiditySeconds(2 * 3600);//2小时过期
         }
 
         @Override
@@ -110,7 +108,5 @@ public class OAuth2ServerConfig {
             //配置获取Token的策略,允许表单认证，配置之后可通过表单获取Token
             oauthServer.allowFormAuthenticationForClients();
         }
-
-
     }
 }

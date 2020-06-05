@@ -42,7 +42,7 @@
                   <th>姓名</th>
                   <th>请假时间</th>
                   <th>实习单位</th>
-                <!--  <th>实习证明</th>-->
+                <th>实习证明</th>
                   <th>请假进度</th>
                   <th v-show="currentStatus == 2 || currentStatus == 3">审批</th>
                 </tr>
@@ -56,7 +56,7 @@
                   <td>{{ item.sNeme }}</td>
                   <td>{{ item.leStartTime | dateFormat }}-{{item.leEndTime | dateFormat}}</td>
                   <td>{{ item.trainingApply.apCompany }}</td>
-                 <!-- <td>{{ item.leStatus }}</td>-->
+                  <td><a style="cursor:pointer;" target="_blank" :href="pdfUrl(item.sId)">查看</a></td>
                   <td>
                     <span v-show="item.leStatus == 0">等待辅导员审批</span>
                     <span v-show="item.leStatus == 1">等待指导教师审批</span>
@@ -148,6 +148,10 @@
     },
 
     methods: {
+      pdfUrl(id){
+        return "http://localhost:8889/leave-service/v1/leave/pdf/"+id+".pdf"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
+        //Api.linkUrl.baseUrl+Api.linkUrl.downloadExcel = http://base地址/下载的地址
+      },
       //切换tab业的时候 重置一下班级
       handleClick() {
         this.currentClass = ''
@@ -245,6 +249,7 @@
     },
 
     computed: {
+
       //当前的 Tab
       showTable() {
         if (this.currentStatus == 1) {

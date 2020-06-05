@@ -10,6 +10,14 @@ apollo:
 spring:
   application:
     name: ask-for-leave-service
+  servlet:
+    multipart:
+      enabled: true
+     #最大支持文件大小
+      max-file-size: 100MB
+     #最大支持请求大小
+      max-request-size: 100MB
+
 # 集成Mybatis
 mybatis:
   # Mybatis映射
@@ -61,3 +69,5 @@ tx-lcn:
       dtx:
         enabled: true
 
+#文件存储路径
+filepath: D:/training/file/ask/

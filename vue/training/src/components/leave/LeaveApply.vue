@@ -73,7 +73,7 @@
                 <div class="widget-head am-cf">
                   <div class="widget-title am-fl">请假申请表</div>
                 </div>
-                <div class="widget-body am-fr" style="height:600px;">
+                <div class="widget-body am-fr" style="height:660px;">
                   <el-form
                     :model="leaveForm"
                     :rules="leaveFormRules"
@@ -132,20 +132,30 @@
                                    :value="item.tId"></el-option>
                       </el-select>
                     </el-form-item>
-                    <el-form-item label="实训证明">
-                      <input type="file"/>
-                    </el-form-item>
+                    <div>
+                      <el-upload
+                        class="upload-demo"
+                        :action="UploadUrl()"
+                        :on-preview="handlePreview"
+                        :on-remove="handleRemove"
+                        :before-remove="beforeRemove"
+                        multiple>
+                        <!--<el-button size="small" type="primary">点击上传</el-button>-->
+                        <div slot="tip" class="el-upload__tip">实习证明上传，只能上传 pdf 文件</div>
+                      </el-upload>
+                    </div>
                   </el-form>
                 </div>
               </div>
             </div>
+
             <!--实训申请表-->
             <div class="am-u-sm-12 am-u-md-12 am-u-lg-6">
               <div class="widget am-cf">
                 <div class="widget-head am-cf">
                   <div class="widget-title am-fl">实训申请表</div>
                 </div>
-                <div class="widget-body am-fr" style="height:600px;">
+                <div class="widget-body am-fr" style="height:660px;">
                   <el-form
                     :model="applyForm"
                     :rules="applyFormRules"
@@ -240,6 +250,7 @@
 <script>
 
   import qs from "qs";
+
   export default {
     data() {
       return {
@@ -332,13 +343,13 @@
       //获取教师信息
       this.teachers = JSON.parse(sessionStorage.teachers);
       //查询单位
-      this.$axios.get("/training-service/v1/training/units"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token")).then(res => {
+      this.$axios.get("/training-service/v1/training/units" + "?username=" + sessionStorage.getItem("username") + "&token=" + sessionStorage.getItem("token")).then(res => {
         this.companies = res.data; //拿到公司信息
       }).catch(err => {
         console.log(err);
       });
       //如果有数据则显示
-      var url = "/leave-service/v1/leave/leave?sId=" + this.sId+"&username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
+      var url = "/leave-service/v1/leave/leave?sId=" + this.sId + "&username=" + sessionStorage.getItem("username") + "&token=" + sessionStorage.getItem("token");
       this.$axios
         .get(url)
         .then(res => {
@@ -392,6 +403,21 @@
     },
 
     methods: {
+      handleRemove(file, fileList) {
+        console.log(file, fileList);
+      },
+      handlePreview(file) {
+        console.log(file);
+      },
+      handleExceed(files, fileList) {
+        this.$message.warning(`当前限制选择 3 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileList.length} 个文件`);
+      },
+      beforeRemove(file, fileList) {
+        return this.$confirm(`确定移除 ${ file.name }？`);
+      },
+      UploadUrl: function () {
+        return "http://localhost:8889/leave-service/v1/leave/upload/" + this.sId + "?username=" + sessionStorage.getItem("username") + "&token=" + sessionStorage.getItem("token");
+      },
       //提交表单
       commit(leaveForm, applyForm) {
         this.$confirm("是否确认提交请假申请？", "提示", {
@@ -426,7 +452,7 @@
                     console.log(data1);
                     var data = this.$qs.stringify(data1);
                     this.$axios
-                      .post("/leave-service/v1/leave/leave"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"), data)
+                      .post("/leave-service/v1/leave/leave" + "?username=" + sessionStorage.getItem("username") + "&token=" + sessionStorage.getItem("token"), data)
                       .then(res => {
                         if (res.data.resultCode === 200) {
                           this.loading = false; //关闭等待
@@ -466,9 +492,7 @@
           });
       }
     },
-    computed: {
-
-    },
+    computed: {},
     watch: {
       leaveForm: {
         handler(newV, oldV) {
@@ -527,6 +551,7 @@
   i {
     color: #e8e8e8;
   }
+
   .circle-wrapper {
     float: left;
     /*border: 1px solid #104cec;*/

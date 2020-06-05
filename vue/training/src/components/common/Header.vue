@@ -44,14 +44,7 @@
         <ul>
           <!-- 欢迎语 -->
           <li class="am-text-sm tpl-header-navbar-welcome">
-            <a>欢迎你,
-              <span v-if="role==='1'">管理员</span>
-              <span v-if="role==='2'">辅导员</span>
-              <span v-if="role==='3'">指导教师</span>
-              <span v-if="role==='4'">专业负责人</span>
-              <span v-if="role==='5'">老师</span>
-              <span v-if="role==='6'">同学</span>
-
+            <a>欢迎你 {{username}}
             </a>
           </li>
 
@@ -217,6 +210,7 @@
     },
     created() {
       this.role = sessionStorage.getItem("role");
+      this.username = sessionStorage.username;
     },
 
     methods: {

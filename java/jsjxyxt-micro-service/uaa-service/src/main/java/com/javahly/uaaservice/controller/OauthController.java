@@ -114,9 +114,9 @@ public class OauthController {
         String newToken = generateToken(username);
         if (!StringUtils.isEmpty(existToken)) {
             redisTemplate.delete(username);
-            redisTemplate.opsForValue().set(username, newToken, 600, TimeUnit.SECONDS);
+            redisTemplate.opsForValue().set(username, newToken, 2*3600, TimeUnit.SECONDS);
         } else {
-            redisTemplate.opsForValue().set(username, newToken, 600, TimeUnit.SECONDS);
+            redisTemplate.opsForValue().set(username, newToken, 2*3600, TimeUnit.SECONDS);
         }
         return newToken;
     }
