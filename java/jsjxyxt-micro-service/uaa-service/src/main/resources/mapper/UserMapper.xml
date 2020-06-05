@@ -18,4 +18,16 @@
         WHERE username = #{username}
     </select>
 
+    <!--修改密码-->
+    <update id="updatePassWord">
+        UPDATE `user`
+        <set>
+            <if test="newPassword!=null">
+                password = #{newPassword},
+            </if>
+        </set>
+        WHERE username = #{username}
+    </update>
+
+
 </mapper>

@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
  * @QQ :1136513099
  * @desc : 配置路由过滤器
  */
-//@Configuration
+@Configuration
 @Slf4j
 public class GatewayRoutesConfiguration {
     /**

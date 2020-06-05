@@ -25,16 +25,16 @@ import java.util.List;
 @Primary
 @AllArgsConstructor
 public class SwaggerProvider implements SwaggerResourcesProvider {
-    public static final String API_URI = "/v2/api-docs";
-
+    //flag 为不需要拦截
+    public static final String API_URI = "/v2/api-docs?flag=1";
 
     @Override
     public List<SwaggerResource> get() {
         List resources = new ArrayList<>();
-        resources.add(swaggerResource("信息服务", "/basic-service/v1/info/v2/api-docs"));
+        resources.add(swaggerResource("信息服务", "/basic-service/v1/info"+API_URI));
         resources.add(swaggerResource("权限服务", "/uaa-service/v1/uaa/v2/api-docs"));
-        resources.add(swaggerResource("请假服务", "/leave-service/v1/leave/v2/api-docs"));
-        resources.add(swaggerResource("实训服务", "/training-service/v1/training/v2/api-docs"));
+        resources.add(swaggerResource("请假服务", "/leave-service/v1/leave"+API_URI));
+        resources.add(swaggerResource("实训服务", "/training-service/v1/training"+API_URI));
         return resources;
     }
 

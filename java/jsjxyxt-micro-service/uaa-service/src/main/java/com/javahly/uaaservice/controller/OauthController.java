@@ -1,28 +1,19 @@
 package com.javahly.uaaservice.controller;
 
-import com.javahly.uaaservice.service.UserService;
+import com.javahly.uaaservice.service.impl.UserService;
 import com.javahly.uaaservice.util.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.redis.core.RedisTemplate;
 
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.common.OAuth2AccessToken;
-import org.springframework.security.oauth2.provider.endpoint.TokenEndpoint;
 import org.springframework.util.StringUtils;
-import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import java.security.Principal;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -57,11 +48,17 @@ public class OauthController {
 
     @PostMapping("/token")
     public Result login(@RequestParam Map<String, String> parameters) {
-
-        UserDetails userDetails = userService.loadUserByUsername(parameters.get("username"));
-        Map<String, Object> data = new HashMap<>(1 << 4);
         Result result = new Result();
-        String username = userDetails.getUsername();
+        UserDetails userDetails = null;
+        String username = null;
+        try {
+            userDetails = userService.loadUserByUsername(parameters.get("username"));
+            username = userDetails.getUsername();
+        } catch (Exception e) {
+            result.setErrInfos(401, "没有权限");
+            return result;
+        }
+        Map<String, Object> data = new HashMap<>(1 << 4);
         //加密前，加密后是否符合，多次加密结果不同
         if (passwordEncoder.matches(parameters.get("password"), userDetails.getPassword())) {
             //保存Token,key 为 username MD5加密,value 为生成的 随机数
@@ -71,12 +68,30 @@ public class OauthController {
             data.put("role", userDetails.getAuthorities());
             data.put("token", newToken);
             result.setResult(data);
+            return result;
         } else {
             result.setErrInfos(401, "没有权限");
+            return result;
+        }
+    }
+
+    //修改密码
+    @RequestMapping(value = "/password", method = RequestMethod.PUT)
+    public Result updatePassWord(String newPassword, String oldPassword, String username) {
+        Result result = new Result();
+        UserDetails userDetails = userService.loadUserByUsername(username);
+        if (!passwordEncoder.matches(oldPassword, userDetails.getPassword())) {
+            result.setErrInfos(500, "修改失败");
+            return result;
+        }
+        try {
+            userService.updatePassWord(passwordEncoder.encode(newPassword), username);
+        } catch (Exception e) {
+            result.setErrInfos(500, "修改失败");
+            return result;
         }
         return result;
     }
-
 
     /**
      * 生成随机数

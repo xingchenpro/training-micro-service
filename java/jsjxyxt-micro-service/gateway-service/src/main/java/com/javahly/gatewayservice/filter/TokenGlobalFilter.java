@@ -36,19 +36,32 @@ import java.nio.charset.StandardCharsets;
  * @QQ :1136513099
  * @desc : 定义全局过滤器
  */
-//@Component
+@Component
 @Slf4j
 public class TokenGlobalFilter implements GatewayFilter, Ordered {
 
+    /**
+     * token
+     */
     private static final String AUTHORIZE_TOKEN = "token";
+    /**
+     * 用户名
+     */
     private static final String AUTHORIZE_USERNAME = "username";
-
+    /**
+     * 不需要拦截标识
+     */
+    private static final String AUTHORIZE_FLAG = "flag";
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         //无法注入，通过扩展点解决
         StringRedisTemplate redisTemplate = SpringBeanUtil.getBean(StringRedisTemplate.class);
         ServerHttpRequest request = exchange.getRequest();
+        //不需要拦截，直接跳过
+        if(request.getQueryParams().getFirst(AUTHORIZE_FLAG)!=null){
+            return chain.filter(exchange);
+        }
         String token = request.getQueryParams().getFirst(AUTHORIZE_TOKEN);
         String id = DigestUtils.md5Hex(request.getQueryParams().getFirst(AUTHORIZE_USERNAME));
         log.info("id：{},token：{}", id, token);
@@ -67,7 +80,6 @@ public class TokenGlobalFilter implements GatewayFilter, Ordered {
         response.setStatusCode(HttpStatus.UNAUTHORIZED);
         response.getHeaders().add("Content-Type", "application/json;charset=UTF-8");
         return response.writeWith(Mono.just(buffer));
-
     }
 
     @Override

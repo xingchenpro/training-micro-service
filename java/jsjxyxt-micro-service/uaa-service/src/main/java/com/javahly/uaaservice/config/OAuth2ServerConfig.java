@@ -1,6 +1,6 @@
 package com.javahly.uaaservice.config;
 
-import com.javahly.uaaservice.service.UserService;
+import com.javahly.uaaservice.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +11,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
@@ -87,7 +86,7 @@ public class OAuth2ServerConfig {
                     .authorities("oauth2")
                     //客户端密码
                     .secret(finalSecret)
-                    .accessTokenValiditySeconds(2 * 3600);//2小时过期
+                    .accessTokenValiditySeconds(120);//2小时过期
 
 
         }

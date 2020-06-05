@@ -34,7 +34,7 @@
   </div>
 </template>
 
-  <script>
+<script>
   import {postRequest} from "../utils/api"
   import {getRequest} from "../utils/api"
   import {putRequest} from "../utils/api"
@@ -64,9 +64,10 @@
             //成功
             if (resp.data.resultCode === 200) {
               this.$notify({
-                message: '登录成功',
+                title: '登录成功',
                 type: 'success',
-                duration: '2000'
+                duration: '2000',
+                message:'欢迎使用'
               });
               sessionStorage.setItem('username', this.loginForm.username);
               sessionStorage.setItem('role', resp.data.result.role[0].authority);
@@ -81,27 +82,28 @@
               sessionStorage.setItem('roles', roles);
               sessionStorage.setItem('username', resp.data.result.userId);
               sessionStorage.setItem('token', resp.data.result.token);
-              alert(sessionStorage.getItem("token")+"："+sessionStorage.getItem("username"))
+              //alert(sessionStorage.getItem("token") + "：" + sessionStorage.getItem("username"))
               this.$router.replace({path: '/home'});
-            }else {
+            }
+            if(resp.data.resultCode===401){
               this.$notify({
-                message: '登录失败',
-                type: 'error',
-                duration: '2000'
-              });
+                type:'error',
+                title:'登录失败',
+                message:'账号或密码错误',
+              })
             }
           }
         });
-       /* if (this.loginForm.username === '201611104031' && this.loginForm.password === '123') {
-          sessionStorage.setItem('username', this.loginForm.username);
-          sessionStorage.setItem('role', '6');
-          this.$router.push('/home');
-          this.$notify({
-            message: '登录成功',
-            type: 'success',
-            duration: '2000'
-          });
-        }*/
+        /* if (this.loginForm.username === '201611104031' && this.loginForm.password === '123') {
+           sessionStorage.setItem('username', this.loginForm.username);
+           sessionStorage.setItem('role', '6');
+           this.$router.push('/home');
+           this.$notify({
+             message: '登录成功',
+             type: 'success',
+             duration: '2000'
+           });
+         }*/
       }
     }
   }
@@ -128,7 +130,8 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
-  .training_title{
+
+  .training_title {
     font-family: sans-serif;
     text-transform: uppercase;
     font-size: 32px;
