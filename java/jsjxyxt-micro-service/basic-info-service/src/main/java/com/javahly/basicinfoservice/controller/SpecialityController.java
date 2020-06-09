@@ -68,7 +68,7 @@ public class SpecialityController {
      * @return
      */
     @RequestMapping(value = "/speciality", method = RequestMethod.GET)
-    public String getSpecialityByTeacherId(@RequestParam("tId") String tId) {
+    public String getSpecialityId(@RequestParam("tId") String tId) {
         String specId = specialityService.getSpecialityIdByTeacherId(tId);
         return specId;
     }

@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : jsjxyxt
+Source Server         : localhost_3306
 Source Server Version : 50724
 Source Host           : localhost:3306
 Source Database       : basicinformationservice
@@ -10,12 +10,13 @@ Target Server Type    : MYSQL
 Target Server Version : 50724
 File Encoding         : 65001
 
-Date: 2019-06-09 18:27:05
+Date: 2020-06-09 14:53:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
 -- ----------------------------
--- Table structure for `class`
+-- Table structure for class
 -- ----------------------------
 DROP TABLE IF EXISTS `class`;
 CREATE TABLE `class` (
@@ -41,15 +42,15 @@ INSERT INTO `class` VALUES ('网络163', '网络163', '103', '110073', '2016', '
 INSERT INTO `class` VALUES ('计科161', '计科161', '102', '110061', '2016', '2020');
 INSERT INTO `class` VALUES ('计科162', '计科162', '102', '110062', '2016', '2020');
 INSERT INTO `class` VALUES ('计科163', '计科163', '102', '110063', '2016', '2020');
-INSERT INTO `class` VALUES ('软件161', '软件161', '101', '110041', '2016', '2020');
-INSERT INTO `class` VALUES ('软件162', '软件162', '101', '110042', '2016', '2020');
-INSERT INTO `class` VALUES ('软件163', '软件163', '101', '110043', '2016', '2020');
+INSERT INTO `class` VALUES ('软件161', '软件161', '101', '110086', '2016', '2020');
+INSERT INTO `class` VALUES ('软件162', '软件162', '101', '110087', '2016', '2020');
+INSERT INTO `class` VALUES ('软件163', '软件163', '101', '110088', '2016', '2020');
 INSERT INTO `class` VALUES ('软测161', '软测161', '101', '110051', '2016', '2020');
 INSERT INTO `class` VALUES ('软测162', '软测162', '101', '110052', '2016', '2020');
 INSERT INTO `class` VALUES ('软测163', '软测163', '101', '110053', '2016', '2020');
 
 -- ----------------------------
--- Table structure for `speciality`
+-- Table structure for speciality
 -- ----------------------------
 DROP TABLE IF EXISTS `speciality`;
 CREATE TABLE `speciality` (
@@ -69,7 +70,7 @@ INSERT INTO `speciality` VALUES ('102', '计算机科学与技术', '110087');
 INSERT INTO `speciality` VALUES ('103', '网络工程', '110088');
 
 -- ----------------------------
--- Table structure for `student`
+-- Table structure for student
 -- ----------------------------
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
@@ -121,9 +122,9 @@ INSERT INTO `student` VALUES ('201611104027', '软件1-27', '男', '450000*****'
 INSERT INTO `student` VALUES ('201611104028', '软件1-28', '男', '450000*****', '13123@qq.com', '17800000128', '北京', '备注', '软件161', '101');
 INSERT INTO `student` VALUES ('201611104029', '软件1-29', '男', '450000*****', '13123@qq.com', '17800000129', '北京', '备注', '软件161', '101');
 INSERT INTO `student` VALUES ('201611104030', '软件1-30', '男', '450000*****', '13123@qq.com', '17800000130', '北京', '备注', '软件161', '101');
-INSERT INTO `student` VALUES ('201611104031', '软件2-01', '男', '450000*****', '13123@qq.com', '17800000201', '北京', '备注', '软件162', '101');
-INSERT INTO `student` VALUES ('201611104032', '软件2-02', '男', '450000*****', '13123@qq.com', '17800000202', '北京', '备注', '软件162', '101');
-INSERT INTO `student` VALUES ('201611104033', '软件2-03', '男', '450000*****', '13123@qq.com', '17800000203', '北京', '备注', '软件162', '101');
+INSERT INTO `student` VALUES ('201611104031', '软件1-31', '男', '450000*****', '13123@qq.com', '17800000201', '北京', '备注', '软件161', '101');
+INSERT INTO `student` VALUES ('201611104032', '软件1-32', '男', '450000*****', '13123@qq.com', '17800000202', '北京', '备注', '软件161', '101');
+INSERT INTO `student` VALUES ('201611104033', '软件1-33', '男', '450000*****', '13123@qq.com', '17800000203', '北京', '备注', '软件161', '101');
 INSERT INTO `student` VALUES ('201611104034', '软件2-04', '男', '450000*****', '13123@qq.com', '17800000204', '北京', '备注', '软件162', '101');
 INSERT INTO `student` VALUES ('201611104035', '软件2-05', '男', '450000*****', '13123@qq.com', '17800000205', '北京', '备注', '软件162', '101');
 INSERT INTO `student` VALUES ('201611104036', '软件2-06', '男', '450000*****', '13123@qq.com', '17800000206', '北京', '备注', '软件162', '101');
@@ -453,7 +454,7 @@ INSERT INTO `student` VALUES ('201611107089', '网络3-29', '男', '450000*****'
 INSERT INTO `student` VALUES ('201611107090', '网络3-30', '男', '450000*****', '13123@qq.com', '17800003330', '北京', '备注', '网络163', '103');
 
 -- ----------------------------
--- Table structure for `teacher`
+-- Table structure for teacher
 -- ----------------------------
 DROP TABLE IF EXISTS `teacher`;
 CREATE TABLE `teacher` (
@@ -473,7 +474,7 @@ CREATE TABLE `teacher` (
 -- ----------------------------
 -- Records of teacher
 -- ----------------------------
-INSERT INTO `teacher` VALUES ('110041', '孙老师', null, null, null, null, null, null, null, null);
+INSERT INTO `teacher` VALUES ('110041', '孙老师', '女', '领导班子', '教授', '学士', '', '', '', '');
 INSERT INTO `teacher` VALUES ('110042', '郭老师', null, null, null, null, null, null, null, null);
 INSERT INTO `teacher` VALUES ('110043', '邢老师', null, null, null, null, null, null, null, null);
 INSERT INTO `teacher` VALUES ('110051', '王老师', null, null, null, null, null, null, null, null);

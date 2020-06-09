@@ -51,6 +51,12 @@
     },
     methods: {
       submitClick: function () {
+        this.$axios.get('/basic-service/v1/info/system?flag=1').then( (res)=>{
+          sessionStorage.setItem('currentWeek',JSON.stringify(res.data.result.week));
+        }).catch( (err)=>{
+          console.log(err);
+        });
+
         postRequest('/uaa-service/v1/uaa/oauth/token', {
           username: this.loginForm.username,
           password: this.loginForm.password,
@@ -71,7 +77,6 @@
               });
               sessionStorage.setItem('username', this.loginForm.username);
               sessionStorage.setItem('role', resp.data.result.role[0].authority);
-              sessionStorage.setItem('currentWeek', "10");
               var role = resp.data.result.role;
               //角色数组
               var roles = '';
@@ -83,7 +88,7 @@
               sessionStorage.setItem('username', resp.data.result.userId);
               sessionStorage.setItem('token', resp.data.result.token);
               //alert(sessionStorage.getItem("token") + "：" + sessionStorage.getItem("username"))
-              this.$router.replace({path: '/home'});
+              this.$router.push({path: '/home'});
             }
             if(resp.data.resultCode===401){
               this.$notify({
@@ -94,6 +99,8 @@
             }
           }
         });
+
+
         /* if (this.loginForm.username === '201611104031' && this.loginForm.password === '123') {
            sessionStorage.setItem('username', this.loginForm.username);
            sessionStorage.setItem('role', '6');
@@ -340,9 +347,9 @@
   }
 
   #window .input:focus, #window .input.fyll-focus {
-    -moz-box-shadow: 0 0 0 3px #d85c89;
-    -webkit-box-shadow: 0 0 0 3px #d85c89;
-    box-shadow: 0 0 0 3px #d85c89;
+    -moz-box-shadow: 0 0 0 3px #13bfe1;
+    -webkit-box-shadow: 0 0 0 3px #13bfe1;
+    box-shadow: 0 0 0 3px #13bfe1;
   }
 
   #window .button {
@@ -359,13 +366,11 @@
     cursor: pointer;
     overflow: hidden;
     font-size: 17px;
-    background: #D85C89;
+    background: #13bfe1;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-    background-image: -moz-linear-gradient(bottom, #d85c89, #e7779f);
-    background-image: -webkit-linear-gradient(bottom, #d85c89, #e7779f);
-    background-image: linear-gradient(to top, #d85c89, #e7779f);
+    background-image: -webkit-linear-gradient(bottom, #13bfe1, #13bfe1);
     -moz-box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.4), 0 0 4px rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.4), 0 0 4px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.4), 0 0 4px rgba(0, 0, 0, 0.5);
@@ -394,10 +399,9 @@
   }
 
   #window .button:active, #window .button.fyll-focus {
-    background: #D85C89;
-    background-image: -moz-linear-gradient(bottom, #d85c89, #d85c89);
-    background-image: -webkit-linear-gradient(bottom, #d85c89, #d85c89);
-    background-image: linear-gradient(to top, #d85c89, #d85c89);
+    background: #13bfe1;
+    background-image: -moz-linear-gradient(bottom, #13bfe1, #13bfe1);
+    background-image: -webkit-linear-gradient(bottom, #13bfe1, #13bfe1);
     -moz-transform: rotateX(20deg);
     -ms-transform: rotateX(20deg);
     -webkit-transform: rotateX(20deg);

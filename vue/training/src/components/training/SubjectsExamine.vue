@@ -146,6 +146,7 @@
           cancelButtonText: '取消'
         }).then(() => {
           var data = {
+            tutor:sessionStorage.getItem("username"),
             sIds: this.allSelectedItem,//数组传递失败，只能暂时转成字符串进行传递
             role: 4,
             status: 2
@@ -185,6 +186,7 @@
             inputType: 'textarea'
           }).then(({value}) => {
             data = {
+              tutor:sessionStorage.getItem("username"),
               sId: item.sId,//这里只是传个账号，只是为了和批量审核共用一个接口，所以字段名是这个
               role: 4,
               status: status,
@@ -222,6 +224,7 @@
             type: "warning"
           }).then(() => {
               data = {
+                tutor:sessionStorage.getItem("username"),
                 sId: item.sId,
                 role: 4,
                 status: status,

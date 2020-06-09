@@ -54,6 +54,9 @@
         <a target="_blank" href="http://106.13.129.169:8081/">
           <el-menu-item index="2-2">RocketMQ 控制台</el-menu-item>
         </a>
+        <a target="_blank" href="http://106.13.129.169:9000/#/">
+          <el-menu-item index="2-2">Docker Web 管理</el-menu-item>
+        </a>
         <!-- <el-menu-item index="2-1">用户管理</el-menu-item>
          <el-menu-item index="2-2">学生管理</el-menu-item>
          <el-menu-item index="2-3">教师管理</el-menu-item>
@@ -88,9 +91,9 @@
           <router-link to="/home/training/unitSituation">
             <el-menu-item index="1-5">实训单位情况</el-menu-item>
           </router-link>
-          <router-link to="/home/training/StudentSituation">
+       <!--   <router-link to="/home/training/StudentSituation">
             <el-menu-item index="1-6">实训学生情况</el-menu-item>
-          </router-link>
+          </router-link>-->
         </el-submenu>
 
     </el-menu>
@@ -131,9 +134,9 @@
         <router-link :to="{ path : '/home/training/subjectExamine',query: { currentRole: 4 }}">
           <el-menu-item index="1-3">实训课题审核</el-menu-item>
         </router-link>
-        <router-link to="/home/training/unitSituation">
+     <!--   <router-link to="/home/training/unitSituation">
           <el-menu-item index="1-5">实训单位情况</el-menu-item>
-        </router-link>
+        </router-link>-->
         <router-link to="/home/training/StudentSituation">
           <el-menu-item index="1-6">实训学生情况</el-menu-item>
         </router-link>
@@ -231,15 +234,21 @@
         role: Number,
         roles: String, //多个角色
         username: String,
-        currentWeek: "一"
+        currentWeek: "1"
       }
     },
     created() {
+      this.$axios.get('/basic-service/v1/info/system?flag=1').then( (res)=>{
+        sessionStorage.setItem('currentWeek',JSON.stringify(res.data.result.week));
+      }).catch( (err)=>{
+        console.log(err);
+      });
       this.role = sessionStorage.getItem("role");
       this.roles = sessionStorage.getItem("roles");
       this.username = sessionStorage.getItem("username");
       this.currentWeek = sessionStorage.getItem("currentWeek");
-
+    },
+    computed:{
     },
   };
 </script>

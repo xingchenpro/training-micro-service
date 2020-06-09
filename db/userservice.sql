@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 123.56.219.53
+Source Server         : localhost_3306
 Source Server Version : 50724
-Source Host           : 123.56.219.53:3306
+Source Host           : localhost:3306
 Source Database       : userservice
 
 Target Server Type    : MYSQL
 Target Server Version : 50724
 File Encoding         : 65001
 
-Date: 2020-03-04 17:03:06
+Date: 2020-06-09 14:52:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -50,7 +50,7 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'admin', '$2a$10$Ai11uX395RNchpGgR8GKyOLHb.V93mnHrlKze1DzCUY/q2Aw3BHWW');
+INSERT INTO `user` VALUES ('1', 'admin', '$2a$10$NmtmORbN/ATToou17gvjl.CUu1yTNxxRjsO2GOJUbJFsWd21pYmFi');
 INSERT INTO `user` VALUES ('2', 'fdy', '$2a$10$NmtmORbN/ATToou17gvjl.CUu1yTNxxRjsO2GOJUbJFsWd21pYmFi');
 INSERT INTO `user` VALUES ('3', 'fdy2', '$2a$10$NmtmORbN/ATToou17gvjl.CUu1yTNxxRjsO2GOJUbJFsWd21pYmFi');
 INSERT INTO `user` VALUES ('386', '201611104001', '$2a$10$NmtmORbN/ATToou17gvjl.CUu1yTNxxRjsO2GOJUbJFsWd21pYmFi');
@@ -84,7 +84,7 @@ INSERT INTO `user` VALUES ('413', '201611104029', '$2a$10$NmtmORbN/ATToou17gvjl.
 INSERT INTO `user` VALUES ('414', '201611104030', '$2a$10$NmtmORbN/ATToou17gvjl.CUu1yTNxxRjsO2GOJUbJFsWd21pYmFi');
 INSERT INTO `user` VALUES ('415', '201611104031', '$2a$10$NmtmORbN/ATToou17gvjl.CUu1yTNxxRjsO2GOJUbJFsWd21pYmFi');
 INSERT INTO `user` VALUES ('416', '201611104032', '$2a$10$NmtmORbN/ATToou17gvjl.CUu1yTNxxRjsO2GOJUbJFsWd21pYmFi');
-INSERT INTO `user` VALUES ('417', '201611104033', '$2a$10$NmtmORbN/ATToou17gvjl.CUu1yTNxxRjsO2GOJUbJFsWd21pYmFi');
+INSERT INTO `user` VALUES ('417', '201611104033', '$2a$10$tXl4TrArr.ST9RgbOMCVNebHqqF06EI3BRGhGTI2arOJOyw2fudym');
 INSERT INTO `user` VALUES ('418', '201611104034', '$2a$10$NmtmORbN/ATToou17gvjl.CUu1yTNxxRjsO2GOJUbJFsWd21pYmFi');
 INSERT INTO `user` VALUES ('419', '201611104036', '$2a$10$NmtmORbN/ATToou17gvjl.CUu1yTNxxRjsO2GOJUbJFsWd21pYmFi');
 INSERT INTO `user` VALUES ('420', '201611104012', '$2a$10$NmtmORbN/ATToou17gvjl.CUu1yTNxxRjsO2GOJUbJFsWd21pYmFi');
@@ -817,7 +817,9 @@ INSERT INTO `user_role` VALUES ('753', '5');
 INSERT INTO `user_role` VALUES ('754', '5');
 INSERT INTO `user_role` VALUES ('755', '5');
 INSERT INTO `user_role` VALUES ('756', '4');
-INSERT INTO `user_role` VALUES ('757', '5');
-INSERT INTO `user_role` VALUES ('758', '5');
 INSERT INTO `user_role` VALUES ('759', '4');
+INSERT INTO `user_role` VALUES ('757', '5');
+INSERT INTO `user_role` VALUES ('757', '3');
+INSERT INTO `user_role` VALUES ('756', '3');
 INSERT INTO `user_role` VALUES ('760', '4');
+INSERT INTO `user_role` VALUES ('756', '5');

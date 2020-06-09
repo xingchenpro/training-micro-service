@@ -170,7 +170,8 @@ public class TrainingSubjectController {
             } else {
                 trainingSubjectService.updateTrainingSubjectsStatus(examine.getsIds(), examine.getStatus(), examine.getReason());
             }
-            //远程调用专业信息
+            //TODO 远程调用专业信息,传递专业负责人ID
+            System.err.println(examine.getTutor());
             String specId = basicInformationService.getSpecialityId(examine.getTutor());
             //根据专业号查询课题
             List<TrainingSubject> subjects = trainingSubjectService.getTrainingSubjectsBySpecId(specId);

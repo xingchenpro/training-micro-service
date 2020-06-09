@@ -15,7 +15,7 @@ public class SubjectExamine {
 
     private String sId;//
     private int status;//题目状态(已审核，未审核)
-    private String tutor;//指导教师
+    private String tutor;//专业负责人教师ID
 
     private String role;//角色
     private String reason;//拒绝理由

@@ -132,8 +132,8 @@
                   this.companyApply.cityAddress.join() + "," + this.companyApply.detailAddress; //合并省市区和详细地址，赋给总地址。
                 var data = this.companyApply;
                 //通过有无id判断是添加还是修改
-                let method = this.companyApply.id ? 'put' : 'post';
-                this.$axios[method]("/training-service/v1/training/unit", data)
+                let method = this.companyApply.uId ? 'put' : 'post';
+                this.$axios[method]("/training-service/v1/training/unit"+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token"), data)
                   .then(res => {
                     if (res.data.resultCode === 200) {
                       this.dialogFormVisible = false; //关闭模态框
