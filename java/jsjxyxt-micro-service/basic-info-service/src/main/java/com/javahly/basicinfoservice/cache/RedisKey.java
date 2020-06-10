@@ -27,6 +27,10 @@ public class RedisKey {
     public static final String STUDENTS_KEY = "info_students_key";
 
     /**
+     * 所有学生信息 key 放到 hash
+     */
+    public static final String STUDENTS_HASH_KEY = "info_students_hash_key";
+    /**
      * 所有教师信息 key
      */
     public static final String TEACHERs_KEY = "info_teachers_key";
