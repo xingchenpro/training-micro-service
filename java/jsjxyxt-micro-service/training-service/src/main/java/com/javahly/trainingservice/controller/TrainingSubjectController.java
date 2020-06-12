@@ -238,6 +238,7 @@ public class TrainingSubjectController {
         }
         resultMap.put("trainingSubjects", trainingSubjects);
         result.setResult(resultMap);
+        //不能 try
         //int i = 1/0;
         return result;
     }

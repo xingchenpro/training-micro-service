@@ -4,7 +4,7 @@
 
     <div id="window">
       <div>
-        <label class="training_title">实训过程管理系统</label>
+        <label class="training_title">微服务架构专业实训管理系统</label>
       </div>
       <div class="page page-front">
 
@@ -120,11 +120,12 @@
   html, body {
     height: 100%;
   }
+  #login_content{
+    background: black;
+  }
 
   body {
-    background-image: -moz-radial-gradient(ellipse closest-side, #ffffff, #d4e2af);
-    background-image: -webkit-radial-gradient(ellipse closest-side, #ffffff, #d4e2af);
-    background-image: radial-gradient(ellipse closest-side, #ffffff, #d4e2af);
+   background-image: -webkit-radial-gradient(ellipse closest-side, #ffffff, #d4e2af);
     -moz-perspective: 1000px;
     -webkit-perspective: 1000px;
     perspective: 1000px;
@@ -147,7 +148,7 @@
     color: #101636;
     display: block;
     cursor: pointer;
-    letter-spacing: 5px;
+
   }
 
   #window {

@@ -21,6 +21,7 @@
   import Skin from "./common/Skin";
   import Sidebar from "./common/Sidebar";
   import Footer from "./common/Footer";
+  import Page from "./common/Page";
 
   export default {
     name: "Home",
@@ -39,6 +40,7 @@
 
       this.$axios.get('/basic-service/v1/info/teachers'+"?username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token")).then( (res)=>{
         sessionStorage.setItem('teachers',JSON.stringify(res.data));
+        console.log(JSON.stringify(res.data))
       }).catch( (err)=>{
         console.log(err);
       });

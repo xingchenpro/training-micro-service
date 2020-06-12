@@ -27,9 +27,9 @@ public class GatewayRoutesConfiguration {
     public RouteLocator routeLocator(RouteLocatorBuilder builder) {
         log.info("ServerGatewayFilter filtet........");
         return builder.routes()
-               /* .route(r -> r.path("/basic-service/**")
+                .route(r -> r.path("/basic-service/**")
                         .filters(f -> f.stripPrefix(1).filters(new TokenGlobalFilter()))
-                        .uri("lb://basic-info-service"))*/
+                        .uri("lb://basic-info-service"))
                 .route(r -> r.path("/training-service/**")
                         .filters(f -> f.stripPrefix(1).filters(new TokenGlobalFilter()))
                         .uri("lb://training-service"))

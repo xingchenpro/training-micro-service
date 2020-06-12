@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50724
 File Encoding         : 65001
 
-Date: 2020-06-09 14:52:30
+Date: 2020-06-12 14:07:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,7 +34,7 @@ CREATE TABLE `leave` (
   `le_throughtime` date DEFAULT NULL COMMENT '专业负责人通过时间',
   `le_backreason` text COMMENT '驳回理由',
   PRIMARY KEY (`le_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of leave
@@ -47,8 +47,7 @@ INSERT INTO `leave` VALUES ('16', '201611104005', '2019-03-08', '2019-03-08', '2
 INSERT INTO `leave` VALUES ('17', '201611104006', '2019-03-08', '2019-03-08', '2019-03-08', '17865168830', '实习', '北京', '17', '3', null, null, null);
 INSERT INTO `leave` VALUES ('18', '201611104007', '2019-03-08', '2019-03-08', '2019-03-08', '17865168830', '实习', '北京', '18', '3', null, null, null);
 INSERT INTO `leave` VALUES ('19', '201611104008', '2019-03-08', '2019-03-08', '2019-03-08', '17865168830', '实习', '北京', '19', '3', null, null, null);
-INSERT INTO `leave` VALUES ('20', '201611104009', '2019-03-08', '2019-03-08', '2019-03-08', '17865168830', '实习', '北京', '20', '1', null, null, null);
-INSERT INTO `leave` VALUES ('22', '201611104033', '2020-06-09', '2020-07-10', '2020-06-10', '17865168830', '实习', '北京市,北京市,东城区,小区', '23', '3', null, null, null);
+INSERT INTO `leave` VALUES ('20', '201611104009', '2019-03-08', '2019-03-08', '2019-03-08', '17865168830', '实习', '北京', '20', '-2', null, null, '123');
 
 -- ----------------------------
 -- Table structure for trainingapply
@@ -71,18 +70,17 @@ CREATE TABLE `trainingapply` (
   `ap_pdf_status` int(1) DEFAULT NULL COMMENT '实习证明提交状态',
   `ap_pdf_time` datetime DEFAULT NULL COMMENT '提交证明时间',
   PRIMARY KEY (`ap_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of trainingapply
 -- ----------------------------
-INSERT INTO `trainingapply` VALUES ('12', '201611104003', '谷歌', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110086', '101', '0', '1', null, null);
-INSERT INTO `trainingapply` VALUES ('13', '201611104001', '谷歌', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110042', '101', '0', '1', null, null);
-INSERT INTO `trainingapply` VALUES ('14', '201611104002', '谷歌', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110043', '101', '0', '1', null, null);
-INSERT INTO `trainingapply` VALUES ('15', '201611104004', '谷歌', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110086', '101', '0', '1', null, null);
-INSERT INTO `trainingapply` VALUES ('16', '201611104005', '谷歌', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110086', '101', '0', '1', null, null);
-INSERT INTO `trainingapply` VALUES ('17', '201611104006', '谷歌', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110086', '101', '0', '1', null, null);
-INSERT INTO `trainingapply` VALUES ('18', '201611104007', '谷歌', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110086', '101', '0', '1', null, null);
-INSERT INTO `trainingapply` VALUES ('19', '201611104008', '谷歌', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110086', '101', '0', '1', null, null);
-INSERT INTO `trainingapply` VALUES ('20', '201611104009', '谷歌', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110086', '101', '0', '1', null, null);
-INSERT INTO `trainingapply` VALUES ('23', '201611104033', '服务网格', '网营科技', '实习', '北京市,北京市,东城区,小区', '王老师', '王老师', '17865168830', '110086', '101', '0', '3', null, null);
+INSERT INTO `trainingapply` VALUES ('12', '201611104003', '服务网格', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110086', '101', '0', '1', null, null);
+INSERT INTO `trainingapply` VALUES ('13', '201611104001', '服务网格', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110041', '101', '0', '1', null, null);
+INSERT INTO `trainingapply` VALUES ('14', '201611104002', '服务网格', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110043', '101', '0', '1', null, null);
+INSERT INTO `trainingapply` VALUES ('15', '201611104004', '服务网格', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110086', '101', '0', '1', null, null);
+INSERT INTO `trainingapply` VALUES ('16', '201611104005', '服务网格', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110086', '101', '0', '1', null, null);
+INSERT INTO `trainingapply` VALUES ('17', '201611104006', '服务网格', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110086', '101', '0', '1', null, null);
+INSERT INTO `trainingapply` VALUES ('18', '201611104007', '服务网格', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110086', '101', '0', '1', null, null);
+INSERT INTO `trainingapply` VALUES ('19', '201611104008', '服务网格', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110086', '101', '0', '1', null, null);
+INSERT INTO `trainingapply` VALUES ('20', '201611104009', '服务网格', '谷歌', '实训', '北京', '王老师', '经理', '17865168830', '110086', '101', '0', '1', null, null);

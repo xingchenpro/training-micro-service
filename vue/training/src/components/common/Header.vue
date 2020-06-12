@@ -44,8 +44,8 @@
         <ul>
           <!-- 欢迎语 -->
           <li class="am-text-sm tpl-header-navbar-welcome">
-            <a>欢迎你 {{username}}
-            </a>
+            <a v-if="role!=6&&role!=2&&role!=1">欢迎你 {{showTeaName()}}</a>
+            <a v-if="role!=3&&role!=4&&role!=5">欢迎你 {{username}}</a>
           </li>
 
           <!-- 新邮件 -->
@@ -185,6 +185,7 @@
         }
       };
       return {
+        teachers: [],
         role: Number,
         currentWeek: "一",
         dialogFormVisible: false,
@@ -211,9 +212,18 @@
     created() {
       this.role = sessionStorage.getItem("role");
       this.username = sessionStorage.username;
+      this.teachers = JSON.parse(sessionStorage.teachers);
     },
 
     methods: {
+      showTeaName() {
+        var len = this.teachers.length;
+        for (var i = 0; i < len; i++) {
+          if (this.teachers[i].tId == this.username) {
+            return this.teachers[i].tName
+          }
+        }
+      },
       quit() {
         sessionStorage.removeItem('username');
         sessionStorage.removeItem('token');

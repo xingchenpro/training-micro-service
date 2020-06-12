@@ -26,6 +26,13 @@
         WHERE ap_id = #{apId}
     </select>
 
+    <select id="getTrainingApplyInfoBySId" resultType="trainingApply">
+        SELECT
+        <include refid="comm_cols_apply"/>
+        FROM trainingapply
+        WHERE s_id = #{sId}
+    </select>
+
     <!--根据指导教师查询学生ID-->
     <select id="getStudentIdsByTeacherId" resultType="string">
         SELECT

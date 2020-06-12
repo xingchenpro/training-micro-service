@@ -13,4 +13,5 @@ https://www.cnblogs.com/gunelark/p/8492468.html
 3、v-for 把序号打印出来
 v-for="(item,index) in showTable"
 
-4、sessionStore 打开新标签失效，需要用 localstorage
+4、sessionStore 打开新标签失效(一个窗口公用)，需要用 localstorage
+https://blog.csdn.net/weixin_33716154/article/details/88797059

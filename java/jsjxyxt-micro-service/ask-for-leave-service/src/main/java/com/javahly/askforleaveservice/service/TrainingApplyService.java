@@ -1,6 +1,7 @@
 package com.javahly.askforleaveservice.service;
 
 import com.javahly.askforleaveservice.entity.TrainingApply;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -30,5 +31,7 @@ public interface TrainingApplyService {
 
     //实训单位情况，一个公司几个学生，根据单位id获得学生
     public List<String> getStudentsIdByUnitId(String uId);
+
+    public TrainingApply getTrainingApplyInfoBySId(String sId);
 
 }

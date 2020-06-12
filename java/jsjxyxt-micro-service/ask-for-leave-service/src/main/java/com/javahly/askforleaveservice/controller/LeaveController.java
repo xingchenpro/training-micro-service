@@ -208,10 +208,13 @@ public class LeaveController {
             String specId = basicInfoService.getSpecialityId(tId);
             //leaveService.updateExamineStatus(leStatus, leId, leBackReason);
             //专业负责人审核通过后更新实训表
+            TrainingApply trainingApply = trainingApplyService.getTrainingApplyInfoBySId(sId);
             TrainingSubject subject = new TrainingSubject();
             subject.setsId(sId);
             subject.setTitle(title);
-            subject.setTutor(tId);
+            subject.setStatus(-10);
+            //指导教师ID
+            subject.setTutor(trainingApply.gettId());
             subject.setSpecId(specId);
             subjectMqService.save(subject, leStatus, leId, leBackReason);
             //获得查询请假信息

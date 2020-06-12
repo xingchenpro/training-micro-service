@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50724
 File Encoding         : 65001
 
-Date: 2020-06-09 14:52:53
+Date: 2020-06-12 14:08:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -819,7 +819,20 @@ INSERT INTO `user_role` VALUES ('755', '5');
 INSERT INTO `user_role` VALUES ('756', '4');
 INSERT INTO `user_role` VALUES ('759', '4');
 INSERT INTO `user_role` VALUES ('757', '5');
-INSERT INTO `user_role` VALUES ('757', '3');
-INSERT INTO `user_role` VALUES ('756', '3');
+INSERT INTO `user_role` VALUES ('740', '3');
 INSERT INTO `user_role` VALUES ('760', '4');
 INSERT INTO `user_role` VALUES ('756', '5');
+INSERT INTO `user_role` VALUES ('746', '3');
+INSERT INTO `user_role` VALUES ('747', '3');
+INSERT INTO `user_role` VALUES ('748', '3');
+INSERT INTO `user_role` VALUES ('749', '3');
+INSERT INTO `user_role` VALUES ('750', '3');
+INSERT INTO `user_role` VALUES ('751', '3');
+INSERT INTO `user_role` VALUES ('752', '3');
+INSERT INTO `user_role` VALUES ('753', '3');
+INSERT INTO `user_role` VALUES ('754', '3');
+INSERT INTO `user_role` VALUES ('755', '3');
+INSERT INTO `user_role` VALUES ('756', '3');
+INSERT INTO `user_role` VALUES ('757', '3');
+INSERT INTO `user_role` VALUES ('758', '3');
+INSERT INTO `user_role` VALUES ('759', '3');

@@ -88,7 +88,7 @@
 
                 <el-form :model="subject" :rules="rules" ref="subject" label-width="100px">
 
-                  <el-form-item label="课题名称" prop="name">
+                  <el-form-item label="实训题目" prop="name">
                     <el-input v-model="subject.title" style="width:25%;"></el-input>
                   </el-form-item>
 

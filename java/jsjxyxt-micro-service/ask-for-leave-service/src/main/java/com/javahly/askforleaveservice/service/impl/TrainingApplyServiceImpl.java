@@ -47,4 +47,9 @@ public class TrainingApplyServiceImpl implements TrainingApplyService {
     public List<String> getStudentsIdByUnitId(String uId) {
         return trainingApplyDao.getStudentsIdByUnitId(uId);
     }
+
+    @Override
+    public TrainingApply getTrainingApplyInfoBySId(String sId) {
+        return trainingApplyDao.getTrainingApplyInfoBySId(sId);
+    }
 }

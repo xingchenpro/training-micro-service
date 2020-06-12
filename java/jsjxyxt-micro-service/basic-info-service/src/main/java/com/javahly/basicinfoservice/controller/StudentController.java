@@ -51,7 +51,7 @@ public class StudentController {
             return students;
         }
         students = studentService.getStudents();
-        redisTemplate.opsForValue().set(RedisKey.STUDENTS_KEY, students, 7, TimeUnit.DAYS);
+        redisTemplate.opsForValue().set(RedisKey.STUDENTS_KEY, students, 1, TimeUnit.DAYS);
         log.info("数据库查询学生信息放入缓存：/students");
         result.setResult(students);
         return students;
@@ -77,7 +77,7 @@ public class StudentController {
         for (int i = 0; i < students.size(); i++) {
             studentHash.put(students.get(i).getsId(), students.get(i));
         }
-        redisTemplate.opsForValue().set(RedisKey.STUDENTS_HASH_KEY, studentHash, 7, TimeUnit.DAYS);
+        redisTemplate.opsForValue().set(RedisKey.STUDENTS_HASH_KEY, studentHash, 1, TimeUnit.DAYS);
         log.info("数据库查询学生信息放入缓存：/hash/students");
         result.setResult(studentHash);
         return studentHash;
@@ -111,7 +111,7 @@ public class StudentController {
             return students;
         }
         students = studentService.getStudentByTeacherClass(tId);
-        redisTemplate.opsForValue().set(tId, students, 7, TimeUnit.DAYS);
+        redisTemplate.opsForValue().set(tId, students, 1, TimeUnit.DAYS);
         log.info("数据库查询学生信息放入缓存：/class/students");
         return students;
     }
@@ -151,7 +151,7 @@ public class StudentController {
             return result;
         }
         redisTemplate.delete(student.getsId());
-        log.info("删除单个学生缓存：/student");
+        log.info("删除学生缓存：/student");
         return result;
     }
 }

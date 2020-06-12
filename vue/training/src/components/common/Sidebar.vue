@@ -238,6 +238,10 @@
       }
     },
     created() {
+      if(sessionStorage.getItem("username")==null){
+        this.$router.push({path: '/'});
+      }
+
       this.$axios.get('/basic-service/v1/info/system?flag=1').then( (res)=>{
         sessionStorage.setItem('currentWeek',JSON.stringify(res.data.result.week));
       }).catch( (err)=>{

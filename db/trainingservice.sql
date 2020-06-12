@@ -10,50 +10,10 @@ Target Server Type    : MYSQL
 Target Server Version : 50724
 File Encoding         : 65001
 
-Date: 2020-06-09 14:52:41
+Date: 2020-06-12 14:07:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for sys_para
--- ----------------------------
-DROP TABLE IF EXISTS `sys_para`;
-CREATE TABLE `sys_para` (
-  `para_id` int(20) NOT NULL AUTO_INCREMENT,
-  `para_name` varchar(20) DEFAULT NULL,
-  `para_type` varchar(50) DEFAULT NULL,
-  `para_value` varchar(50) DEFAULT NULL,
-  `para_remark` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`para_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of sys_para
--- ----------------------------
-INSERT INTO `sys_para` VALUES ('1', 'presentWeek', '', '10', '当前周');
-INSERT INTO `sys_para` VALUES ('2', 'firstWeek', null, '2019-9-3', '教学周开始时间');
-INSERT INTO `sys_para` VALUES ('3', 'startWeek', null, '3', '实训开始周次');
-
--- ----------------------------
--- Table structure for training_history
--- ----------------------------
-DROP TABLE IF EXISTS `training_history`;
-CREATE TABLE `training_history` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `s_id` varchar(20) DEFAULT NULL COMMENT '学号',
-  `s_name` varchar(20) DEFAULT NULL COMMENT '姓名',
-  `spec` varchar(20) DEFAULT NULL COMMENT '专业',
-  `c_name` varchar(20) DEFAULT NULL COMMENT '班级',
-  `sub_title` text COMMENT '实训题目',
-  `unit` varchar(30) DEFAULT NULL COMMENT '实习公司',
-  `year` varchar(20) DEFAULT NULL COMMENT '实训届次',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='历史记录';
-
--- ----------------------------
--- Records of training_history
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for training_subject
@@ -74,20 +34,19 @@ CREATE TABLE `training_subject` (
   `reason` varchar(255) DEFAULT NULL COMMENT '否决理由',
   `document` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='实训题目+任务书';
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='实训题目+任务书';
 
 -- ----------------------------
 -- Records of training_subject
 -- ----------------------------
 INSERT INTO `training_subject` VALUES ('2', '201611104003', '服务网格设计', null, null, null, null, '2', '1', '110086', '101', null, null);
-INSERT INTO `training_subject` VALUES ('3', '201611104001', '服务网格设计', null, null, null, null, '-2', '1', '110042', '101', null, null);
+INSERT INTO `training_subject` VALUES ('3', '201611104001', '服务网格设计', null, null, null, null, '-2', '1', '110041', '101', null, null);
 INSERT INTO `training_subject` VALUES ('4', '201611104002', '服务网格设计', null, null, null, null, '2', '1', '110043', '101', null, null);
 INSERT INTO `training_subject` VALUES ('5', '201611104004', '服务网格设计', null, null, null, null, '0', '1', '110086', '101', null, null);
 INSERT INTO `training_subject` VALUES ('6', '201611104005', '服务网格设计', null, null, null, null, '2', '1', '110086', '101', null, null);
 INSERT INTO `training_subject` VALUES ('7', '201611104006', '服务网格设计', null, null, null, null, '2', '1', '110086', '101', null, null);
 INSERT INTO `training_subject` VALUES ('8', '201611104007', '服务网格设计', null, null, null, null, '1', '1', '110086', '101', null, null);
 INSERT INTO `training_subject` VALUES ('9', '201611104008', '服务网格设计', null, null, null, null, '2', '1', '110086', '101', null, null);
-INSERT INTO `training_subject` VALUES ('10', '201611104033', '服务网格', null, null, null, null, '2', '1', '110086', '101', null, null);
 
 -- ----------------------------
 -- Table structure for unit
@@ -103,7 +62,7 @@ CREATE TABLE `unit` (
   `u_reason` varchar(255) DEFAULT NULL COMMENT '否决理由',
   `u_status` varchar(255) DEFAULT '1' COMMENT '已审核 未审核',
   PRIMARY KEY (`u_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8 COMMENT='实训单位';
+) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8 COMMENT='实训单位';
 
 -- ----------------------------
 -- Records of unit
@@ -731,7 +690,7 @@ INSERT INTO `week_summary` VALUES ('201611104033', '7', '软件1-33', null, null
 INSERT INTO `week_summary` VALUES ('201611104033', '8', '软件1-33', null, null, null, null, null, '0', null);
 INSERT INTO `week_summary` VALUES ('201611104033', '9', '软件1-33', null, null, null, null, null, '0', null);
 INSERT INTO `week_summary` VALUES ('201611104033', '10', '软件1-33', '1、搭建注册中心 Eureka\n2、搭建配置中心 Apollo\n3、搭建Redis 单机版（后续会搭建集群），复习持久化机制\n4、搭建网关 Kong\n5、编写用户服务user-service代码\n6、搭建Vue环境，对接SpringBoot\n7、学习MySQL 主从复制\n8、学习Zookeeper实现服务注册发现，分布式锁实现\n9、每天刷3道算法\n10、每天写博客写作\n', '无', '1、搭建注册中心 Eureka\n2、搭建配置中心 Apollo\n3、搭建Redis 单机版（后续会搭建集群），复习持久化机制\n4、搭建网关 Kong\n5、编写用户服务user-service代码\n6、搭建Vue环境，对接SpringBoot\n7、学习MySQL 主从复制\n8、学习Zookeeper实现服务注册发现，分布式锁实现\n9、每天刷3道算法\n10、每天写博客写作\n', '无', '很好', '1', '2020-05-19 20:05:01');
-INSERT INTO `week_summary` VALUES ('201611104033', '11', '软件1-33', null, null, null, null, null, '0', null);
+INSERT INTO `week_summary` VALUES ('201611104033', '11', '软件1-33', '123', '123', '123', '123', '123', '1', '2020-06-12 11:15:30');
 INSERT INTO `week_summary` VALUES ('201611104033', '12', '软件1-33', null, null, null, null, null, '0', null);
 INSERT INTO `week_summary` VALUES ('201611104033', '13', '软件1-33', null, null, null, null, null, '0', null);
 INSERT INTO `week_summary` VALUES ('201611104033', '14', '软件1-33', null, null, null, null, null, '0', null);

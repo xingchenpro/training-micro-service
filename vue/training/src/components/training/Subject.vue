@@ -66,7 +66,7 @@
 
                   <el-form :model="subject" :rules="rules" ref="subject" :disabled="!editable" label-width="100px">
 
-                    <el-form-item label="课题名称" prop="name">
+                    <el-form-item label="实训题目" prop="name">
                       <el-input :disabled="true" v-model="subject.title" style="width:25%;"></el-input>
                     </el-form-item>
 
@@ -134,10 +134,10 @@
 
     created() {
       // 审核通过之前，不能编辑任务书
-      var url = "/leave-service/v1/leave/leave?sId=" + sessionStorage.username;
+      var url = "/leave-service/v1/leave/leave?sId=" + sessionStorage.username+"&username="+sessionStorage.getItem("username")+"&token="+sessionStorage.getItem("token");
       this.$axios.get(url).then((res) => {
         console.log(res);
-        if (res.data.result.leave && res.data.result.leave.leStatus == 3) {
+        if (res.data.result.leave && res.data.result.leave.leStatus === 3) {
           this.editable = true;
         } else {
           this.editable = false;

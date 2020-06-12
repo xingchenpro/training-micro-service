@@ -19,3 +19,11 @@ style="cursor:pointer;"
 6、vue 动态 url
 https://blog.csdn.net/Taurus_0811/article/details/96481134?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase
 
+7、设置图片铺满
+
+.theme-white {
+  /*background: #75d9e1;*/
+  background: url("../../images/fig.jpg") no-repeat;
+  background-size:100% 100%;
+  background-attachment:fixed;
+}

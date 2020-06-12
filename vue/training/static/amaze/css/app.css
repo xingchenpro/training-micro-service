@@ -643,7 +643,10 @@ ul.tpl-dropdown-content .tpl-dropdown-menu-messages-item .menu-messages-content 
   display: block;
 }
 .theme-white {
-  background: #e9ecf3;
+  /*background: #75d9e1;*/
+  background: url("../../images/fig.jpg") no-repeat;
+  background-size:100% 100%;
+  background-attachment:fixed;
 }
 .theme-white .sidebar-nav-sub .sidebar-nav-link-logo {
   margin-left: 10px;

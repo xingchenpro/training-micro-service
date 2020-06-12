@@ -52,6 +52,7 @@ public class WeekSummaryController {
     public Result updateWeekSummaryInfo(@RequestBody WeekSummary weekSummary) {
         Result result = new Result();
         weekSummary.setModifyTime(new Date());
+        System.err.println(weekSummary);
         weekSummaryService.updateWeekSummaryInfo(weekSummary);
         return result;
     }

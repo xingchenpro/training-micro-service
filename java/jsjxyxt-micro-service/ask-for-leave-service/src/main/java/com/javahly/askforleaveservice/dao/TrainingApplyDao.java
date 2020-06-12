@@ -29,6 +29,8 @@ public interface TrainingApplyDao {
     //根据id获得记录
     public TrainingApply getTrainingApplyInfoById(@Param("apId") Integer apId);
 
+    public TrainingApply getTrainingApplyInfoBySId(@Param("sId") String sId);
+
     //根据条件查询学生的实训信息
     public List<TrainingApply> getTrainingInfo(Map<String, Object> map);
 

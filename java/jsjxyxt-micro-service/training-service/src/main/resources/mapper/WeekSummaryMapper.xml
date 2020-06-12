@@ -33,13 +33,13 @@
     <update id="updateWeekSummaryInfo" parameterType="WeekSummary">
         UPDATE week_summary
         <set>
-            <if test="summary!=null">summary=#{summary}</if>,
-            <if test="advise!=null">advise=#{advise}</if>,
-            <if test="arrange!=null">arrange=#{arrange}</if>,
-            <if test="deal!=null">deal=#{deal}</if>,
-            <if test="evaluation!=null">evaluation=#{evaluation}</if>,
-            <if test="isSubmit!=null">isSubmit=#{isSubmit}</if>,
-            <if test="modifyTime!=null">modifyTime=#{modifyTime}</if>
+            <if test="summary!=null">summary=#{summary},</if>
+            <if test="advise!=null">advise=#{advise},</if>
+            <if test="arrange!=null">arrange=#{arrange},</if>
+            <if test="deal!=null">deal=#{deal},</if>
+            <if test="evaluation!=null">evaluation=#{evaluation},</if>
+            <if test="isSubmit!=null">isSubmit=#{isSubmit},</if>
+            <if test="modifyTime!=null">modifyTime=#{modifyTime},</if>
         </set>
         WHERE s_id =#{sId} AND w_num =#{wNum}
     </update>
