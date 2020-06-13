@@ -46,6 +46,7 @@
           <li class="am-text-sm tpl-header-navbar-welcome">
             <a v-if="role!=6&&role!=2&&role!=1">欢迎你 {{showTeaName()}}</a>
             <a v-if="role!=3&&role!=4&&role!=5">欢迎你 {{username}}</a>
+           <!-- <a v-if="role==2">欢迎你 辅导员</a>-->
           </li>
 
           <!-- 新邮件 -->
